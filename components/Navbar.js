@@ -5,10 +5,10 @@ import { Avatar, Flex, Link } from '@chakra-ui/core';
 
 const DashboardShell = ({ children }) => {
   return (
-    <Flex flexDirection="column" backgroundColor="white">
+    <Flex flexDirection="column">
       <Flex
         margin="0 auto"
-        w="80%"
+        w="70%"
         // backgroundColor="white"
         alignItems="center"
         justifyContent="space-between"

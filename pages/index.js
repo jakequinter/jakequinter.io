@@ -1,9 +1,13 @@
 import React from 'react';
+import Head from 'next/head';
 import { Flex, Box, Heading, Text, Button } from '@chakra-ui/core';
 
 const index = () => (
-  <Flex margin="0 auto" width="60%" alignItems="center">
-    <Box mt="200px">
+  <Flex margin="0 auto" width="60%" height="100vh" alignItems="center">
+    <Head>
+      <title>Jake Quinter</title>
+    </Head>
+    <Box height="70vh">
       <Heading as="h2" size="xl" textAlign="left">
         Hi, I'm Jake.
       </Heading>
