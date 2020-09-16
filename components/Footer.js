@@ -1,42 +1,32 @@
-import { Flex, Link, IconButton } from '@chakra-ui/core';
-import styles from '../styles/Home.module.css';
+import NextLink from 'next/link';
+import { Button, Box, Flex, Link } from '@chakra-ui/core';
+import { FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
+import { VscGithubAlt } from 'react-icons/vsc';
 
 const Footer = () => (
-  <Flex className={styles.footer} align="center" mb="4" direction="column">
-    <div>
-      <Link href="https://twitter.com/jakequinter">
-        <IconButton
-          variant="ghost"
-          variantColor="gray"
-          aria-label="Send email"
-          icon="email"
-        />
-      </Link>
-      <Link href="https://twitter.com/jakequinter">
-        <IconButton
-          variant="ghost"
-          variantColor="gray"
-          aria-label="Send email"
-          icon="email"
-        />
-      </Link>
-      <Link href="https://twitter.com/jakequinter">
-        <IconButton
-          variant="ghost"
-          variantColor="gray"
-          aria-label="Send email"
-          icon="email"
-        />
-      </Link>
-      <Link href="https://twitter.com/jakequinter">
-        <IconButton
-          variant="ghost"
-          variantColor="gray"
-          aria-label="Send email"
-          icon="email"
-        />
-      </Link>
-    </div>
+  <Flex alignItems="center" justifyContent="center">
+    {/* <Flex> */}
+    <Link href="https://github.com/jakequinter" passHref>
+      <Button as="a" variant="ghost">
+        <Box as={VscGithubAlt} color="gray.500" size="20px" />
+      </Button>
+    </Link>
+    <Link href="https://github.com/jakequinter" passHref>
+      <Button as="a" variant="ghost">
+        <Box as={FiTwitter} color="gray.400" size="20px" />
+      </Button>
+    </Link>
+    <Link href="https://www.linkedin.com/in/jake-quinter-b9731915b/" passHref>
+      <Button as="a" variant="ghost">
+        <Box as={FiLinkedin} color="gray.400" size="20px" />
+      </Button>
+    </Link>
+    <Link href="mailto:jquinter13@gmail.com" title="Email" isExternal>
+      <Button as="a" variant="ghost">
+        <Box as={FiMail} color="gray.400" size="20px" />
+      </Button>
+    </Link>
+    {/* </Flex> */}
   </Flex>
 );
 

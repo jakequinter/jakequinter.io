@@ -12,7 +12,7 @@ const index = () => (
         Hi, I'm Jake.
       </Heading>
       <Text fontSize="lg" color="#484848">
-        I’m a developer, tech enthusiast and life long student.
+        Developer, tech enthusiast and life long student.
       </Text>
       <Button
         mt={8}
