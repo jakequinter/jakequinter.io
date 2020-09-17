@@ -1,32 +1,54 @@
-import NextLink from 'next/link';
-import { Button, Box, Flex, Link } from '@chakra-ui/core';
-import { FiTwitter, FiLinkedin, FiMail } from 'react-icons/fi';
-import { VscGithubAlt } from 'react-icons/vsc';
+import { Flex, Link, IconButton } from '@chakra-ui/core';
+import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 
 const Footer = () => (
-  <Flex alignItems="center" justifyContent="center">
-    {/* <Flex> */}
-    <Link href="https://github.com/jakequinter" passHref>
-      <Button as="a" variant="ghost">
-        <Box as={VscGithubAlt} color="gray.500" size="20px" />
-      </Button>
+  <Flex
+    alignItems="center"
+    justifyContent="center"
+    flexShrink="0"
+    height="40px"
+    textAlign="center"
+  >
+    <Link href="https://github.com/jakequinter" title="Email" isExternal>
+      <IconButton
+        aria-label="Github"
+        icon={FiGithub}
+        size="lg"
+        color="gray.400"
+        variant="ghost"
+      />
     </Link>
-    <Link href="https://github.com/jakequinter" passHref>
-      <Button as="a" variant="ghost">
-        <Box as={FiTwitter} color="gray.400" size="20px" />
-      </Button>
+    <Link href="https://twitter.com/jakequinter" title="Email" isExternal>
+      <IconButton
+        aria-label="Twitter"
+        icon={FiTwitter}
+        size="lg"
+        color="gray.400"
+        variant="ghost"
+      />
     </Link>
-    <Link href="https://www.linkedin.com/in/jake-quinter-b9731915b/" passHref>
-      <Button as="a" variant="ghost">
-        <Box as={FiLinkedin} color="gray.400" size="20px" />
-      </Button>
+    <Link
+      href="https://www.linkedin.com/in/jake-quinter-b9731915b/"
+      title="Email"
+      isExternal
+    >
+      <IconButton
+        aria-label="LinkedIn"
+        icon={FiLinkedin}
+        size="lg"
+        color="gray.400"
+        variant="ghost"
+      />
     </Link>
-    <Link href="mailto:jquinter13@gmail.com" title="Email" isExternal>
-      <Button as="a" variant="ghost">
-        <Box as={FiMail} color="gray.400" size="20px" />
-      </Button>
+    <Link href="mailto:quinter13@gmail.com" title="Email" isExternal>
+      <IconButton
+        aria-label="Email"
+        icon={FiMail}
+        size="lg"
+        color="gray.400"
+        variant="ghost"
+      />
     </Link>
-    {/* </Flex> */}
   </Flex>
 );
 

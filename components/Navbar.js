@@ -14,11 +14,14 @@ const DashboardShell = ({ children }) => {
         py={4}
         px={8}
       >
-        <Box>
-          <Link href="/">
-            <Image src="/logo.png" alt="Jake Quinter" maxH="50px" />
-          </Link>
-        </Box>
+        <NextLink href="/">
+          <Image
+            src="/logo.png"
+            alt="Jake Quinter"
+            maxH="50px"
+            cursor="pointer"
+          />
+        </NextLink>
         <Box>
           <NextLink href="/about" passHref>
             <Button as="a" size="sm" variant="ghost" p={[1, 4]}>

@@ -11,6 +11,11 @@ const GlobalStyle = ({ children }) => {
       <CSSReset />
       <Global
         styles={css`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
           html {
             margin: 0;
             height: 100%;
@@ -32,10 +37,10 @@ const GlobalStyle = ({ children }) => {
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={customTheme}>
-      <Navbar />
+      {/* <Navbar /> */}
       <GlobalStyle />
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }
