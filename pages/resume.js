@@ -168,7 +168,7 @@ const Resume = () => (
           </Box>
           <Box color="#484848" textAlign="right">
             <Text>Green Bay, WI</Text>
-            <Text as="em">April 2019 &ndash; March 2020</Text>
+            <Text as="em">Apr 2019 &ndash; Mar 2020</Text>
           </Box>
         </Flex>
         <List>
@@ -178,8 +178,7 @@ const Resume = () => (
         </List>
         <Divider m="10" borderColor="#d8d8d8" />
         <Text color="#484848">
-          If you would like to see projects that I normally include on my
-          resumé, please checkout what I'm working on over at my{' '}
+          If you would like to see projects that I working on, please visit my{' '}
           <Link color="#4970FB" href="/about">
             about page
           </Link>

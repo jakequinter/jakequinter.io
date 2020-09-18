@@ -12,7 +12,7 @@ const Container = ({ children }) => (
       alignItems="center"
       justifyContent="space-between"
       py={4}
-      px={8}
+      px={4}
     >
       <NextLink href="/">
         <Image
@@ -40,7 +40,7 @@ const Container = ({ children }) => (
         </NextLink>
       </Box>
     </Flex>
-    <Flex as="main" justifyContent="center" flexDirection="column" px={8}>
+    <Flex as="main" justifyContent="center" flexDirection="column" px={4}>
       {children}
       <Footer />
     </Flex>

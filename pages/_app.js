@@ -37,10 +37,8 @@ const GlobalStyle = ({ children }) => {
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={customTheme}>
-      {/* <Navbar /> */}
       <GlobalStyle />
       <Component {...pageProps} />
-      {/* <Footer /> */}
     </ThemeProvider>
   );
 }

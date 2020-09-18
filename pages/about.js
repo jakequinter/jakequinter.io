@@ -2,10 +2,10 @@ import Head from 'next/head';
 import {
   Box,
   Flex,
-  Grid,
   Heading,
   Image,
   List,
+  Icon,
   ListIcon,
   ListItem,
   SimpleGrid,
@@ -13,12 +13,38 @@ import {
   Text
 } from '@chakra-ui/core';
 import { AiOutlineHtml5, AiOutlineCloudServer } from 'react-icons/ai';
-import { DiReact, DiJsBadge, DiJava } from 'react-icons/di';
-import { SiFirebase, SiMongodb, SiNextDotJs } from 'react-icons/si';
-import { FaAdobe, FaNodeJs, FaCcStripe, FaShippingFast } from 'react-icons/fa';
+import { DiReact, DiJsBadge } from 'react-icons/di';
+import { SiFirebase, SiMongodb, SiNextDotJs, SiJava } from 'react-icons/si';
+import {
+  FaCode,
+  FaAdobe,
+  FaNodeJs,
+  FaCcStripe,
+  FaShippingFast
+} from 'react-icons/fa';
 import { FiDatabase } from 'react-icons/fi';
 
 import Container from '@/components/Container';
+
+const TechItem = ({ content, icon }) => (
+  <ListItem color="#484848">
+    <Stack ml={2} mb={4}>
+      <Flex align="center">
+        <Text pr="2">{content}</Text>
+        <Box as={icon} color="#d0d0d0" mr={2} />
+      </Flex>
+    </Stack>
+  </ListItem>
+);
+
+const BuiltWithItem = ({ text, icon }) => (
+  <Stack ml={2} mb={4}>
+    <Box align="center">
+      <Text>{text}</Text>
+      <Box as={icon} m="0 auto" color="#d0d0d0" mt="2" />
+    </Box>
+  </Stack>
+);
 
 const About = () => (
   <Container>
@@ -46,7 +72,7 @@ const About = () => (
       >
         <Box w="100%">
           <Heading as="h1" size="xl" color="#333">
-            About Me 🚀
+            About Me
           </Heading>
           <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
             <Box color="#484848">
@@ -82,7 +108,7 @@ const About = () => (
         </Box>
         <Box w="100%" mt="12" color="#484848">
           <Heading as="h3" size="lg" fontWeight="medium" color="#333">
-            Technologies I'm Interested In 🔥
+            Technologies I'm Interested In
           </Heading>
 
           <Box mb={8} display="block" width="100%">
@@ -93,51 +119,24 @@ const About = () => (
               flexDirection={['column', 'row']}
             >
               <Box>
-                <List py="3" spacing={3}>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    JavaScript <Box display="inline" as={DiJsBadge} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    React <Box display="inline" as={DiReact} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Next.js <Box display="inline" as={SiNextDotJs} />
-                  </ListItem>
+                <List py="3">
+                  <TechItem content="JavaScript" icon={DiJsBadge} />
+                  <TechItem content="React" icon={DiReact} />
+                  <TechItem content="Next.js" icon={SiNextDotJs} />
                 </List>
               </Box>
               <Box>
                 <List py="3" spacing={3}>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Node.js <Box display="inline" as={FaNodeJs} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    HTML & CSS <Box display="inline" as={AiOutlineHtml5} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Design <Box display="inline" as={FaAdobe} />
-                  </ListItem>
+                  <TechItem content="Node.js" icon={FaNodeJs} />
+                  <TechItem content="HTML & CSS" icon={AiOutlineHtml5} />
+                  <TechItem content="Design" icon={FaAdobe} />
                 </List>
               </Box>
               <Box>
                 <List py="3" spacing={3}>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Java <Box display="inline" as={DiJava} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Databases <Box display="inline" as={FiDatabase} />
-                  </ListItem>
-                  <ListItem>
-                    <ListIcon icon="chevron-right" color="black.500" />
-                    Servers <Box display="inline" as={AiOutlineCloudServer} />
-                  </ListItem>
+                  <TechItem content="Java" icon={SiJava} />
+                  <TechItem content="Databases" icon={FiDatabase} />
+                  <TechItem content="Servers" icon={AiOutlineCloudServer} />
                 </List>
               </Box>
             </Flex>
@@ -145,7 +144,7 @@ const About = () => (
         </Box>
         <Box w="100%" mt="12" color="#484848">
           <Heading as="h3" size="lg" mb="3" fontWeight="medium" color="#333">
-            What I'm Working On 👨🏼‍💻
+            What I'm Working On
           </Heading>
           <Heading as="h4" size="sm" fontWeight="medium" mb="1" color="#333">
             Quisp
@@ -167,7 +166,7 @@ const About = () => (
               // maxH="500px"
             />
           </Box>
-          <Heading
+          {/* <Heading
             as="h5"
             size="sm"
             fontWeight="medium"
@@ -176,28 +175,13 @@ const About = () => (
             color="#333"
           >
             Built With
-          </Heading>
-          <Flex justifyContent="space-between">
-            <Box textAlign="center">
-              <Text>React</Text>
-              <Box as={DiReact} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>Node.js</Text>
-              <Box as={FaNodeJs} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>Express</Text>
-              <Box as={FaShippingFast} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>MongoDB</Text>
-              <Box as={SiMongodb} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>Stripe</Text>
-              <Box as={FaCcStripe} m="0 auto" />
-            </Box>
+          </Heading> */}
+          <Flex justifyContent="space-between" pt="5">
+            <BuiltWithItem text="React" icon={DiReact} />
+            <BuiltWithItem text="Node.js" icon={FaNodeJs} />
+            <BuiltWithItem text="Express" icon={FaShippingFast} />
+            <BuiltWithItem text="MongoDB" icon={SiMongodb} />
+            <BuiltWithItem text="Stripe" icon={FaCcStripe} />
           </Flex>
           <Heading
             as="h4"
@@ -215,7 +199,7 @@ const About = () => (
             and SSR, along with Vercel’s fast refresh, file base routing system
             and easy no config deploys.
           </Text>
-          <Heading
+          {/* <Heading
             as="h5"
             size="sm"
             fontWeight="medium"
@@ -224,21 +208,12 @@ const About = () => (
             color="#333"
           >
             Built With
-          </Heading>
-          <Flex justifyContent="space-between">
+          </Heading> */}
+          <Flex justifyContent="space-between" pt="5">
             <Box textAlign="center"></Box>
-            <Box textAlign="center">
-              <Text>Next.js</Text>
-              <Box as={SiNextDotJs} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>Firebase</Text>
-              <Box as={SiFirebase} m="0 auto" />
-            </Box>
-            <Box textAlign="center">
-              <Text>Chakra UI</Text>
-              <Box as={AiOutlineCloudServer} m="0 auto" />
-            </Box>
+            <BuiltWithItem text="Next.js" icon={SiNextDotJs} />
+            <BuiltWithItem text="Firebase" icon={SiFirebase} />
+            <BuiltWithItem text="Chakra UI" icon={FaCode} />
             <Box textAlign="center"></Box>
           </Flex>
         </Box>
