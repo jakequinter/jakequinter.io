@@ -27,7 +27,7 @@ const Contact = () => (
       mb={8}
       mx="auto"
     >
-      <Box w="100%">
+      <Box w="100%" border="3px solid #F8F8F8">
         <Heading as="h1" size="xl" color="#333">
           What's Next?
         </Heading>

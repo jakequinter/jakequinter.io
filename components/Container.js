@@ -16,12 +16,11 @@ const Container = ({ children }) => (
     >
       <NextLink href="/">
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           alt="Jake Quinter"
           maxH="50px"
           cursor="pointer"
         />
-        {/* <Avatar size="md" name="Segun Adebayo" src="/jake.jpg" /> */}
       </NextLink>
       <Box>
         <NextLink href="/about" passHref>
