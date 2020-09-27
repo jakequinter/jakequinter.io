@@ -10,7 +10,6 @@ import {
   Text,
   List,
   ListItem,
-  ListIcon,
   Stack
 } from '@chakra-ui/core';
 
@@ -52,11 +51,11 @@ const Resume = () => (
         maxWidth="900px"
         minH="Calc(100vh - 40px - 82px);"
         width="100%"
-        p={4}
+        py={8}
         mb={8}
         mx="auto"
       >
-        <Box w="100%" mt="8">
+        <Box w="100%">
           <Heading as="h1" size="xl" color="#333">
             Resumé
           </Heading>
@@ -87,10 +86,10 @@ const Resume = () => (
               <Link pl="1" href="/resume.pdf" color="#4970FB" isExternal>
                 Resume (.pdf)
               </Link>
-              <br />
+              {/* <br />
               <Link pl="1" href="/resume.pdf" color="#4970FB">
                 Resume (.docx)
-              </Link>
+              </Link> */}
             </Box>
           </SimpleGrid>
         </Box>
@@ -168,7 +167,7 @@ const Resume = () => (
           </Box>
           <Box color="#484848" textAlign="right">
             <Text>Green Bay, WI</Text>
-            <Text as="em">Apr 2019 &ndash; Mar 2020</Text>
+            <Text as="em">April 2019 &ndash; March 2020</Text>
           </Box>
         </Flex>
         <List>

@@ -1,4 +1,4 @@
-import { Flex, Link, IconButton } from '@chakra-ui/core';
+import { Box, Flex, Link, IconButton, Text } from '@chakra-ui/core';
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 
 const Footer = () => (
@@ -40,7 +40,7 @@ const Footer = () => (
         variant="ghost"
       />
     </Link>
-    <Link href="mailto:quinter13@gmail.com" title="Email" isExternal>
+    <Link href="mailto:jquinter13@gmail.com" title="Email" isExternal>
       <IconButton
         aria-label="Email"
         icon={FiMail}

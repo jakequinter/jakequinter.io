@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Flex, Box, Heading, Text, Stack, Button } from '@chakra-ui/core';
+import { Box, Button, Divider, Heading, Text, Stack } from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 
@@ -25,24 +25,26 @@ const index = () => (
         position="relative"
       >
         <Box
+          textAlign="center"
           w="100%"
-          mt="8"
+          my="4"
           position="absolute"
-          top="41%"
-          transform="translateY(-41%)"
+          top="35%"
+          transform="translateY(-35%)"
         >
-          <Heading as="h2" size="xl" textAlign="left">
+          <Heading as="h2" size="2xl" my="4">
             Hi, I'm Jake.
           </Heading>
-          <Text fontSize="lg" color="#484848">
+          <Divider width="50%" pb="4" margin="0 auto" borderColor="##000" />
+          <Text fontSize="lg" color="#484848" my="8">
             Developer, tech enthusiast and life long student.
           </Text>
           <Button
-            mt={8}
             variant="solid"
             size="md"
-            color="#333"
-            backgroundColor="gray.200"
+            color="#fff"
+            backgroundColor="#4970FB"
+            _hover={{ backgroundColor: '#8DA6FC' }}
           >
             Get In Touch
           </Button>

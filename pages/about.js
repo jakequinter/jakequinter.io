@@ -5,8 +5,6 @@ import {
   Heading,
   Image,
   List,
-  Icon,
-  ListIcon,
   ListItem,
   SimpleGrid,
   Stack,
@@ -66,7 +64,7 @@ const About = () => (
         maxWidth="900px"
         minH="Calc(100vh - 40px - 82px);"
         width="100%"
-        p={8}
+        py={8}
         mb={8}
         mx="auto"
       >
@@ -74,23 +72,22 @@ const About = () => (
           <Heading as="h1" size="xl" color="#333">
             About Me
           </Heading>
-          <SimpleGrid columns={{ sm: 1, md: 1, lg: 2 }} spacing={5}>
+          <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
             <Box color="#484848">
-              <Text pt="2">
+              <Text pt="3">
                 Hello! I’m Jake Quinter, a software developer based in Appleton,
-                WI. Whether you stumbled upon my site or been here before,
+                WI. Whether you stumbled upon my site or have been here before,
                 welcome!
               </Text>
-              <Text pt="2">
-                I grew up in a small town in central Wisconsin, where I spent my
-                free time playing sports, hanging out with friends, and trying
-                to find anything else to keep myself busy.
+              <Text pt="3">
+                I grew up in a small town in central Wisconsin where I spent my
+                free time playing sports, hanging out with friends, enjoying the
+                outdoors, and trying to find anything else to keep myself busy.
               </Text>
-              <Text pt="2">
-                After high school, I experimented with multiple things,
-                including business and engineering school until I finally found
-                something that I loved. For me, that was (you guessed it)
-                computers!
+              <Text pt="3">
+                Currently I am finishing up my business minor at Lakeland
+                University to fulfill the credit requirement for a Bachelor of
+                Computer Science.
               </Text>
             </Box>
             <Box
@@ -98,10 +95,12 @@ const About = () => (
               mr={{ xs: 'auto', sm: 'auto', md: 'auto', lg: '0' }}
             >
               <Image
+                mt="3"
                 src="/jake.jpg"
                 alt="Jake Quinter"
-                maxH="300px"
+                maxW="350px"
                 borderRadius="5px"
+                boxShadow={['none', 'none', 'none', '10px 10px #e2e8f0']}
               />
             </Box>
           </SimpleGrid>
@@ -111,7 +110,7 @@ const About = () => (
             Technologies I'm Interested In
           </Heading>
 
-          <Box mb={8} display="block" width="100%">
+          <Box display="block" width="100%">
             <Flex
               width="100%"
               align="flex-start"
@@ -146,11 +145,11 @@ const About = () => (
           <Heading as="h3" size="lg" mb="3" fontWeight="medium" color="#333">
             What I'm Working On
           </Heading>
-          <Heading as="h4" size="sm" fontWeight="medium" mb="1" color="#333">
+          <Heading as="h4" size="sm" fontWeight="medium" pb="1" color="#333">
             Quisp
           </Heading>
           <Box>
-            <Text>
+            <Text pb="3">
               A web applicaiton to help bar and restaurant owners digitize their
               sign-in and employee data. With built in success and error
               notifications, duplicate name and number entry validation,
