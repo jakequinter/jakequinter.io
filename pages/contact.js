@@ -35,15 +35,13 @@ const Contact = () => (
           <Text pt="3">
             Let’s get in touch! Please feel free to reach out to me directly,
             via email, or send me a message on LinkedIn or Twitter. I will do my
-            best to get back to you as quickly as possible. And by as quickly as
-            possible, odds are it will be a matter of minutes. I really have no
-            excuse since I’m on my computer all day.
+            best to get back to you as quickly as possible.
           </Text>
           <Text pt="3">
             I am currently open to new opportunities that may arise. Jobs or
             projects that I'm interested in include but are not limited to
             startups, freelance work, and remote opportunities. If you are
-            interested in what I’m looking for in my work, please check out the
+            interested in what I’m looking for in my work please check out the
             “Technologies I’m Interested In” section on my{' '}
             <Link color="#4970FB" href="/about">
               about page
@@ -63,8 +61,9 @@ const Contact = () => (
             Reach out to me directly
           </Heading>
           <Text fontSize="1.2rem">
+            Monday &ndash; Sunday <br /> 5:00a.m. &ndash; 10:00p.m. (UTC)
+            <br />
             (920) 585-1903 <br />
-            Monday &ndash; Sunday <br /> 5am &ndash; 10pm
           </Text>
         </Box>
       </Box>

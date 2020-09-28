@@ -12,6 +12,7 @@ const GlobalStyle = ({ children }) => {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f7fafc;
           }
           html {
             margin: 0;

@@ -18,7 +18,7 @@ import Container from '@/components/Container';
 const ResumeItem = ({ content, children }) => {
   return (
     <ListItem color="#484848">
-      <Stack ml={2} mb={4}>
+      <Stack ml={2} pb={3}>
         <Flex align="center">
           <Icon name="chevron-right" mr={2} />
           <Text>{content}</Text>
@@ -57,18 +57,18 @@ const Resume = () => (
       >
         <Box w="100%">
           <Heading as="h1" size="xl" color="#333">
-            Resumé
+            Resume
           </Heading>
           <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
             <Box color="#484848">
               <Text pt="2">
-                I have posted my resumé in .pdf and .docx formats. Please feel
-                free to click on them to view or download to your computer. Feel
-                free to share these with friends, colleagues or your workplace.
+                I have posted the PDF version of my resumé here for your needs.
+                Please feel free to view or download to your computer. Feel free
+                to share with friends, businesses, colleagues or your workplace.
               </Text>
             </Box>
             <Box
-              border="1px solid gray"
+              border="2px solid #e2e8f0"
               borderRadius="5px"
               width={['80%', '80%', '80%', '60%']}
               ml={{ xs: 'auto', sm: 'auto', md: 'auto', lg: 'auto' }}
@@ -86,10 +86,6 @@ const Resume = () => (
               <Link pl="1" href="/resume.pdf" color="#4970FB" isExternal>
                 Resume (.pdf)
               </Link>
-              {/* <br />
-              <Link pl="1" href="/resume.pdf" color="#4970FB">
-                Resume (.docx)
-              </Link> */}
             </Box>
           </SimpleGrid>
         </Box>
@@ -177,7 +173,8 @@ const Resume = () => (
         </List>
         <Divider m="10" borderColor="#d8d8d8" />
         <Text color="#484848">
-          If you would like to see projects that I working on, please visit my{' '}
+          If you would like to see projects that I am currently working on,
+          please visit my{' '}
           <Link color="#4970FB" href="/about">
             about page
           </Link>
