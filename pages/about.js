@@ -183,7 +183,7 @@ const About = () => (
             </Box>
           </Box>
           <Box>
-            <Image src="/test.jpg" alt="Quisp" mt="3" borderRadius="5px" />
+            <Image src="/test.svg" alt="Quisp" mt="3" borderRadius="5px" />
           </Box>
           <Flex justifyContent="space-between" pt="5">
             <BuiltWithItem text="React" icon={DiReact} />
