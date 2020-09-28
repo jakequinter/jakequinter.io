@@ -40,6 +40,8 @@ const index = () => (
             Developer, tech enthusiast and life long student.
           </Text>
           <Button
+            as="a"
+            href="/contact"
             variant="solid"
             size="md"
             color="#fff"

@@ -5,6 +5,7 @@ import {
   Heading,
   Image,
   List,
+  Link,
   ListItem,
   SimpleGrid,
   Stack,
@@ -75,19 +76,28 @@ const About = () => (
           <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
             <Box color="#484848">
               <Text pt="3">
-                Hello! I’m Jake Quinter, a software developer based in Appleton,
-                WI. Whether you stumbled upon my site or have been here before,
+                Hello, I’m Jake Quinter. I'm a software developer based in
+                Appleton, WI. I work on the Application Maintenance and
+                Production Support team at{' '}
+                <Link
+                  color="#4970FB"
+                  isExternal
+                  href="https://www.thrivent.com/what-we-offer/?utm_source=sem&utm_campaign=brand&utm_medium=google&utm_goal=fr&s_kwcid=AL!6300!3!%7bcreative%7d!%7bmatchtype%7d!%7bplacement%7d!%7bnetwork%7d!!%7bkeyword%7d&gclid=Cj0KCQjwk8b7BRCaARIsAARRTL6gaA11z2RoLJrVgvcDLLTrN6GKAkRySSanbd63rn4FtWRBrsuKHosaAmDIEALw_wcB&gclsrc=aw.ds"
+                >
+                  Thrivent
+                </Link>
+                . Whether you stumbled upon my site or have been here before,
                 welcome!
+              </Text>
+              <Text pt="3">
+                Currently, I am finishing up my business minor at Lakeland
+                University to fulfill the credit requirement for a Bachelor of
+                Computer Science.
               </Text>
               <Text pt="3">
                 I grew up in a small town in central Wisconsin where I spent my
                 free time playing sports, hanging out with friends, enjoying the
                 outdoors, and trying to find anything else to keep myself busy.
-              </Text>
-              <Text pt="3">
-                Currently I am finishing up my business minor at Lakeland
-                University to fulfill the credit requirement for a Bachelor of
-                Computer Science.
               </Text>
             </Box>
             <Box
@@ -96,9 +106,9 @@ const About = () => (
             >
               <Image
                 mt="3"
-                src="/jake.jpg"
+                src="/jake2.jpg"
                 alt="Jake Quinter"
-                maxW="350px"
+                // maxW="350px"
                 borderRadius="5px"
                 boxShadow={['none', 'none', 'none', '10px 10px #e2e8f0']}
               />
@@ -149,32 +159,32 @@ const About = () => (
             Quisp
           </Heading>
           <Box>
-            <Text pb="3">
+            <Text pt="1">
               A web applicaiton to help bar and restaurant owners digitize their
-              sign-in and employee data. With built in success and error
-              notifications, duplicate name and number entry validation,
-              authorized access sign on, and more.
+              sign-in and employee data. Add and authorize your employees, set
+              employee access and permissions, and add members to digitally keep
+              track of your sign-in members.
             </Text>
+            <Box
+              textAlign="center"
+              border="2px solid #e2e8f0"
+              borderRadius="5px"
+              my="3"
+              p="5"
+            >
+              <Text as="em" pt="1" pb="3">
+                *If you are a bar or restaurant owner and are here to find out
+                more about Quisp, please{' '}
+                <Link href="/contact" color="#4970FB">
+                  contact
+                </Link>{' '}
+                me.
+              </Text>
+            </Box>
           </Box>
           <Box>
-            <Image
-              src="/Quisp-01.svg"
-              alt="Quisp"
-              mt="3"
-              borderRadius="5px"
-              // maxH="500px"
-            />
+            <Image src="/test.jpg" alt="Quisp" mt="3" borderRadius="5px" />
           </Box>
-          {/* <Heading
-            as="h5"
-            size="sm"
-            fontWeight="medium"
-            textAlign="center"
-            py="3"
-            color="#333"
-          >
-            Built With
-          </Heading> */}
           <Flex justifyContent="space-between" pt="5">
             <BuiltWithItem text="React" icon={DiReact} />
             <BuiltWithItem text="Node.js" icon={FaNodeJs} />
@@ -192,22 +202,14 @@ const About = () => (
           >
             My Personal Website
           </Heading>
-          <Text>
-            A web application to connect with and hear from people across the
-            world. I created this site to familiarize myself with Next.js, SSG
-            and SSR, along with Vercel’s fast refresh, file base routing system
-            and easy no config deploys.
+          <Text pt="1">
+            I've wanted to create a personal website for awhile now, but other
+            projects always seemed to take precedence. I was always trying to
+            challenge myself and taking the time to knock out a personal website
+            in plain html and css seemed unworthy of my time. I recently became
+            intrigued by Next.js and Vercel, so I thought this would be the
+            perfect time to build this site.
           </Text>
-          {/* <Heading
-            as="h5"
-            size="sm"
-            fontWeight="medium"
-            textAlign="center"
-            py="3"
-            color="#333"
-          >
-            Built With
-          </Heading> */}
           <Flex justifyContent="space-between" pt="5">
             <Box textAlign="center"></Box>
             <BuiltWithItem text="Next.js" icon={SiNextDotJs} />
