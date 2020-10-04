@@ -100,10 +100,10 @@ const About = () => {
                   Computer Science.
                 </Text>
                 <Text pt="3">
-                  I grew up in a small town in central Wisconsin where I spent
-                  my free time playing sports, hanging out with friends,
-                  enjoying the outdoors, and trying to find anything else to
-                  keep myself busy.
+                  In my free time I enjoy learning and reading about various
+                  technologies. When I find myself needing to step away from the
+                  computer, I enjoy reading, health and fitness, spending time
+                  with friends and family, and the outdoors.
                 </Text>
               </Box>
               <Box
