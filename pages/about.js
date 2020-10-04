@@ -210,11 +210,11 @@ const About = () => {
               I've wanted to create a personal website for awhile now, but other
               projects always seemed to take precedence. I was always trying to
               challenge myself and taking the time to knock out a personal
-              website in plain html and css seemed unworthy of my time. I
+              website in plain HTML and CSS seemed unworthy of my time. I
               recently became intrigued by Next.js and Vercel, so I thought this
               would be the perfect time to build this site. This is the first
-              implementation, but I'm excited to see what this becomes and what
-              I decide to add in the future.
+              implementation, but I'm excited to see what my personal site
+              becomes and what I decide to add in the future.
             </Text>
             <Flex justifyContent="space-between" pt="5">
               <Box textAlign="center"></Box>

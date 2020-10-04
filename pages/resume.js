@@ -17,7 +17,7 @@ import Container from '@/components/Container';
 
 const ResumeItem = ({ content, children }) => {
   return (
-    <ListItem color="#484848">
+    <ListItem color="#484848" width={['100%', '80%']}>
       <Stack ml={2} pb={3}>
         <Flex align="center">
           <Icon name="chevron-right" mr={2} />
@@ -62,7 +62,7 @@ const Resume = () => (
           <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
             <Box color="#484848">
               <Text pt="2">
-                I have posted the PDF version of my resumé here for your needs.
+                I have posted the PDF version of my resume here for your needs.
                 Please feel free to view or download to your computer. Feel free
                 to share with friends, businesses, colleagues or your workplace.
               </Text>
@@ -84,7 +84,7 @@ const Resume = () => (
                 Downloads
               </Heading>
               <Link pl="1" href="/resume.pdf" color="#4970FB" isExternal>
-                Resume (.pdf)
+                Resume (PDF)
               </Link>
             </Box>
           </SimpleGrid>
@@ -150,9 +150,9 @@ const Resume = () => (
           </Box>
         </Flex>
         <List>
-          <ResumeItem content="Discussed implementation strategies to determine best development methods" />
-          <ResumeItem content="Worked with creator and lead engineer to improve and modify web application" />
-          <ResumeItem content="Developed application code primarily using JavaScript and React" />
+          <ResumeItem content="Discuss implementation strategies to determine best development methods" />
+          <ResumeItem content="Work with creator and lead engineer to improve and modify web application" />
+          <ResumeItem content="Develop application code primarily using JavaScript and React" />
         </List>
         <Flex justifyContent="space-between" mb="5">
           <Box color="#484848">
@@ -168,7 +168,7 @@ const Resume = () => (
         </Flex>
         <List>
           <ResumeItem content="Developed electronic filing applications to be used by clients nationwide using primarly Java and C#" />
-          <ResumeItem content="Collaborated with a small team of developers to create an automated workflow for testing hundreds of eleconic files using TestComplete" />
+          <ResumeItem content="Collaborated with a small team of developers to create an automated workflow for testing hundreds of electronic files using TestComplete" />
           <ResumeItem content="Implemented and maintained our library of forms using MySQL" />
         </List>
         <Divider m="10" borderColor="#d8d8d8" />
