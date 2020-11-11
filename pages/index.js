@@ -10,9 +10,8 @@ const index = () => (
       as="main"
       spacing={8}
       justifyContent="center"
-      alignItems="stretch"
+      alignItems="flex-start"
       m="0 0 4rem 0"
-      maxWidth="2000px"
     >
       <Head>
         <title>Jake Quinter</title>
