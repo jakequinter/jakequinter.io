@@ -1,30 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [jakequinter.io](https://jakequinter.io/)
 
-## Getting Started
+This is my personal site, which is just a small location to display some of the projects I'm working on, have employers easily access my resume, and keep bookmarks for all things I want to remember for later. It is currently in the second iteration, so it is relatively new, but I tend to keep this site up-to-date and update it as often as possible. Recently, I incorporated the API and `/Bookmarks` page to keep track of all things I find exceptional on the internet.
 
-First, run the development server:
+### Overview
 
-```bash
-npm run dev
-# or
-yarn dev
+- `pages/api/things/*`: API routes for retrieving the 'internet things' destinations on the `/bookmarks` page.
+- `pages/bookmarks`: Retrieves information from `pages/api/things/*` to display the content on the internet I find most fascinating.
+- `pages/things`: This is an authenticated route which displays a form to push new 'internet things' onto the API.
+- `pages/*`: All other pages are static pages.
+
+### Running Locally
+
+```
+$ git clone https://github.com/jakequinter/jakequinter.io.git
+$ cd jakequinter.io
+$ yarn
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env.local` file similar to what is posted below:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+FIREBASE_PRIVATE_KEY=
+FIREBASE_CLIENT_EMAIL=
+```
 
-## Learn More
+### Built With
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Vercel](https://vercel.com/)
+- [Next.js](https://nextjs.org/)
+- [Firebase](https://firebase.google.com/)
+- [Chakra UI](https://chakra-ui.com/)

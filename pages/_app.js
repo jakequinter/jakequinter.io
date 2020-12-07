@@ -1,6 +1,7 @@
 import { Global, css } from '@emotion/core';
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 import customTheme from '../styles/theme';
+import { AuthProvider } from '@/lib/auth';
 
 const GlobalStyle = ({ children }) => {
   return (
@@ -35,8 +36,10 @@ const GlobalStyle = ({ children }) => {
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={customTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
+      <AuthProvider>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

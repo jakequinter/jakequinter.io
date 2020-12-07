@@ -14,7 +14,14 @@ import {
 } from '@chakra-ui/core';
 import { AiOutlineHtml5, AiOutlineCloudServer } from 'react-icons/ai';
 import { DiReact, DiJsBadge } from 'react-icons/di';
-import { SiFirebase, SiMongodb, SiNextDotJs, SiJava } from 'react-icons/si';
+import {
+  SiFirebase,
+  SiMongodb,
+  SiNextDotJs,
+  SiJava,
+  SiTailwindcss,
+  SiTypescript
+} from 'react-icons/si';
 import {
   FaCode,
   FaAdobe,
@@ -22,7 +29,7 @@ import {
   FaCcStripe,
   FaShippingFast
 } from 'react-icons/fa';
-import { FiDatabase } from 'react-icons/fi';
+import { FiDatabase, FiLink } from 'react-icons/fi';
 
 import Container from '@/components/Container';
 
@@ -158,71 +165,116 @@ const About = () => {
             </Box>
           </Box>
           <Box w="100%" mt="12" color="#484848">
-            <Heading as="h3" size="lg" mb="3" fontWeight="medium" color="#333">
+            <Heading as="h3" size="lg" mb="4" fontWeight="medium" color="#333">
               What I'm Working On
             </Heading>
-            <Heading as="h4" size="sm" fontWeight="medium" pb="1" color="#333">
-              Quisp
-            </Heading>
-            <Box>
-              <Text pt="1">
-                A web application to help bar and restaurant owners digitize
-                their sign-in and employee data. Add and authorize your
-                employees, set employee access and permissions, and add members
-                to digitally keep track of your sign-in members.
-              </Text>
-              <Box
-                textAlign="center"
-                border="2px solid #e2e8f0"
-                borderRadius="5px"
-                my="3"
-                p="5"
-              >
-                <Text as="em" pt="1" pb="3">
-                  *If you are a bar or restaurant owner and are here to find out
-                  more about Quisp, please{' '}
-                  <Link href="/contact" color="#4970FB">
-                    contact
-                  </Link>{' '}
-                  me.
+            <Box pb={4}>
+              <Flex>
+                <Heading
+                  as="h4"
+                  size="sm"
+                  fontWeight="medium"
+                  pb="1"
+                  color="#333"
+                >
+                  jenniferspick.com
+                </Heading>
+                <Link
+                  _hover={{ color: '#4970FB' }}
+                  ml={2}
+                  isExternal
+                  href="https://jenniferspick.com"
+                >
+                  <FiLink />
+                </Link>
+              </Flex>
+              <Box>
+                <Text pt="1">
+                  A personal website that I built to start the transitioning
+                  from JavaScript to TypeScript. This is a Next.js application
+                  hosted on Vercel.
                 </Text>
               </Box>
-              <Image src="/quisp.svg" alt="Quisp" mt="3" borderRadius="5px" />
+              <Flex justifyContent={['space-between', 'space-around']} pt={4}>
+                <BuiltWithItem text="Next.js" icon={SiNextDotJs} />
+                <BuiltWithItem text="TypeScript" icon={SiTypescript} />
+                <BuiltWithItem text="Firebase" icon={SiFirebase} />
+                <BuiltWithItem text="Tailwind CSS" icon={SiTailwindcss} />
+              </Flex>
             </Box>
-            <Flex justifyContent="space-between" pt="5">
-              <BuiltWithItem text="React" icon={DiReact} />
-              <BuiltWithItem text="Node.js" icon={FaNodeJs} />
-              <BuiltWithItem text="Express" icon={FaShippingFast} />
-              <BuiltWithItem text="MongoDB" icon={SiMongodb} />
-              <BuiltWithItem text="Stripe" icon={FaCcStripe} />
-            </Flex>
-            <Heading
-              as="h4"
-              size="sm"
-              fontWeight="medium"
-              mt="10"
-              mb="1"
-              color="#333"
-            >
-              My Personal Website
-            </Heading>
-            <Text pt="1">
-              I've wanted to create a personal website for awhile now, but other
-              projects always seemed to take precedence. I was always trying to
-              challenge myself and taking the time to knock out a personal
-              website in plain HTML and CSS seemed unworthy of my time. I
-              recently became intrigued by Next.js and Vercel, so I thought this
-              would be the perfect time to build this site. This is the first
-              implementation, but I'm excited to see what my personal site
-              becomes and what I decide to add in the future.
-            </Text>
-            <Flex justifyContent="space-between" pt="5">
-              <Box textAlign="center"></Box>
-              <BuiltWithItem text="Next.js" icon={SiNextDotJs} />
-              <BuiltWithItem text="Firebase" icon={SiFirebase} />
-              <BuiltWithItem text="Chakra UI" icon={FaCode} />
-              <Box textAlign="center"></Box>
-            </Flex>
+            <Box pb={4}>
+              <Heading
+                as="h4"
+                size="sm"
+                fontWeight="medium"
+                pb="1"
+                color="#333"
+              >
+                Quisp
+              </Heading>
+              <Box>
+                <Text pt="1">
+                  A web application to help bar and restaurant owners digitize
+                  their sign-in and employee data. Add and authorize your
+                  employees, set employee access and permissions, and add
+                  members to digitally keep track of your sign-in members.
+                </Text>
+                <Box
+                  textAlign="center"
+                  border="2px solid #e2e8f0"
+                  borderRadius="5px"
+                  my={2}
+                  p={4}
+                >
+                  <Text as="em" pt="1" pb="3">
+                    *If you are a bar or restaurant owner and are here to find
+                    out more about Quisp, please{' '}
+                    <Link href="/contact" color="#4970FB">
+                      contact
+                    </Link>{' '}
+                    me.
+                  </Text>
+                </Box>
+                <Image src="/quisp.svg" alt="Quisp" mt="3" borderRadius="5px" />
+              </Box>
+              <Flex justifyContent="space-between" pt={4}>
+                <BuiltWithItem text="React" icon={DiReact} />
+                <BuiltWithItem text="Node.js" icon={FaNodeJs} />
+                <BuiltWithItem text="Express" icon={FaShippingFast} />
+                <BuiltWithItem text="MongoDB" icon={SiMongodb} />
+                <BuiltWithItem text="Stripe" icon={FaCcStripe} />
+              </Flex>
+            </Box>
+            <Box>
+              <Heading
+                as="h4"
+                size="sm"
+                fontWeight="medium"
+                mb="1"
+                color="#333"
+              >
+                My Personal Website
+              </Heading>
+              <Text pt="1">
+                This is my small slice of the internet. I developed this site as
+                a tool to communicate with myself, potential employers, and
+                whoever else I may feel like communicating with. Also, whenever
+                I want to learn or test out something new, I use this site as my
+                playground. This site is brand spanking new and I'm excited to
+                see how my personal site evolves as time goes on. The high
+                priority development plans are to migrate over to TypeScript and
+                modify the styles to use Tailwind CSS. The feature(s) I'm
+                thinking of implementing are now down to a blog because I
+                recently incorporated the API and Bookmarks page.
+              </Text>
+              <Flex justifyContent={['space-between', 'space-around']} pt={4}>
+                {/* <Box textAlign="center"></Box> */}
+                <BuiltWithItem text="Next.js" icon={SiNextDotJs} />
+                <BuiltWithItem text="Firebase" icon={SiFirebase} />
+                <BuiltWithItem text="Chakra UI" icon={FaCode} />
+                {/* <Box textAlign="center"></Box> */}
+              </Flex>
+            </Box>
           </Box>
         </Box>
       </Stack>

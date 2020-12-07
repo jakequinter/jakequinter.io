@@ -28,9 +28,9 @@ const DashboardShell = ({ children }) => {
               ABOUT
             </Button>
           </NextLink>
-          <NextLink href="/resume" passHref>
+          <NextLink href="/bookmarks" passHref>
             <Button as="a" size="sm" variant="ghost" p={[1, 4]}>
-              RESUME
+              BOOKMARKS
             </Button>
           </NextLink>
           <NextLink href="/contact" passHref>
