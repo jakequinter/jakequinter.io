@@ -40,7 +40,7 @@ const ResumeItem = ({ content, children }) => {
 const Resume = () => (
   <Container>
     <Head>
-      <title>Jake Quinter | Resume</title>
+      <title>Jake Quinter 📌</title>
     </Head>
     <Box
       flexDirection="row"

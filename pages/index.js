@@ -15,7 +15,7 @@ const index = () => (
       m="0 0 4rem 0"
     >
       <Head>
-        <title>Jake Quinter</title>
+        <title>Jake Quinter 👋</title>
       </Head>
       <Box
         m="0 auto"

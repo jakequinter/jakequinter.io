@@ -65,7 +65,7 @@ const About = () => {
         maxWidth="2000px"
       >
         <Head>
-          <title>Jake Quinter | About</title>
+          <title>Jake Quinter 👨‍💻</title>
         </Head>
         <Box
           flexDirection="row"
