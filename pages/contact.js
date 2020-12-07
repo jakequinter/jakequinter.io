@@ -14,7 +14,7 @@ const Contact = () => (
       maxWidth="2000px"
     > */}
     <Head>
-      <title>Jake Quinter | Contact</title>
+      <title>Jake Quinter 📱</title>
     </Head>
     <Box
       flexDirection="row"
