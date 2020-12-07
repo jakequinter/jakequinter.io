@@ -11,6 +11,7 @@ const index = () => (
       spacing={8}
       justifyContent="center"
       alignItems="flex-start"
+      y
       m="0 0 4rem 0"
     >
       <Head>
@@ -45,7 +46,9 @@ const index = () => (
             size="md"
             color="#fff"
             backgroundColor="#4970FB"
-            _hover={{ backgroundColor: '#8DA6FC' }}
+            _hover={{
+              backgroundColor: '#8DA6FC'
+            }}
           >
             Get In Touch
           </Button>

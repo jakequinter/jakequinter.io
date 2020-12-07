@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Heading, Link, Text } from '@chakra-ui/core';
+import { Box, Button, Heading, Link, SimpleGrid, Text } from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 
