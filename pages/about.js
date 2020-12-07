@@ -190,9 +190,10 @@ const About = () => {
               </Flex>
               <Box>
                 <Text pt="1">
-                  A personal website that I built to start the transitioning
-                  from JavaScript to TypeScript. This is a Next.js application
-                  hosted on Vercel.
+                  A personal website that I built to start transitioning from
+                  JavaScript to TypeScript. I also finally got started
+                  experimenting with Tailwind CSS, and I love it! This is a
+                  Next.js application hosted on Vercel.
                 </Text>
               </Box>
               <Flex justifyContent={['space-between', 'space-around']} pt={4}>
