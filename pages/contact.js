@@ -1,18 +1,10 @@
 import Head from 'next/head';
-import { Box, Button, Heading, Link, SimpleGrid, Text } from '@chakra-ui/core';
+import { Box, Heading, Link, Text } from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 
 const Contact = () => (
   <Container>
-    {/* <Stack
-      as="main"
-      spacing={8}
-      justifyContent="center"
-      alignItems="flex-start"
-      m="0 auto 2rem auto"
-      maxWidth="2000px"
-    > */}
     <Head>
       <title>Jake Quinter 📱</title>
     </Head>
@@ -68,7 +60,6 @@ const Contact = () => (
         </Box>
       </Box>
     </Box>
-    {/* </Stack> */}
   </Container>
 );
 

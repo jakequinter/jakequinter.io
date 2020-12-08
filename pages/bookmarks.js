@@ -1,21 +1,12 @@
 import Head from 'next/head';
 import {
   Box,
-  Heading,
-  Link,
   Flex,
+  Heading,
   Icon,
-  Divider,
-  SimpleGrid,
-  Text,
-  List,
   ListItem,
   Stack,
-  Tab,
-  Tabs,
-  TabList,
-  TabPanel,
-  TabPanels
+  Text
 } from '@chakra-ui/core';
 
 import Container from '@/components/Container';

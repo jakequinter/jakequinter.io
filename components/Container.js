@@ -1,6 +1,7 @@
 import NextLink from 'next/link';
-import { Avatar, Button, Flex, Box, Image, Link } from '@chakra-ui/core';
+import { Button, Box, Flex, Image } from '@chakra-ui/core';
 
+import NavButton from '@/components/NavButton';
 import Footer from './Footer';
 
 const Container = ({ children }) => (
@@ -23,39 +24,9 @@ const Container = ({ children }) => (
         />
       </NextLink>
       <Box>
-        <NextLink href="/about" passHref>
-          <Button
-            as="a"
-            size="sm"
-            fontSize={['md', 'lg']}
-            variant="ghost"
-            p={[1, 6]}
-          >
-            About
-          </Button>
-        </NextLink>
-        <NextLink href="/bookmarks" passHref>
-          <Button
-            as="a"
-            size="sm"
-            fontSize={['md', 'lg']}
-            variant="ghost"
-            p={[1, 6]}
-          >
-            Bookmarks
-          </Button>
-        </NextLink>
-        <NextLink href="/contact" passHref>
-          <Button
-            as="a"
-            size="sm"
-            fontSize={['md', 'lg']}
-            variant="ghost"
-            p={[1, 6]}
-          >
-            Contact
-          </Button>
-        </NextLink>
+        <NavButton href="/about" text="About" />
+        <NavButton href="/bookmarks" text="Bookmarks" />
+        <NavButton href="/contact" text="Contact" />
         <NextLink href="/resume.pdf" passHref>
           <a target="_blank">
             <Button

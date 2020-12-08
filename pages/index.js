@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Button, Divider, Heading, Text, Stack } from '@chakra-ui/core';
+import { Box, Button, Divider, Heading, Stack, Text } from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 
@@ -11,7 +11,6 @@ const index = () => (
       spacing={8}
       justifyContent="center"
       alignItems="flex-start"
-      y
       m="0 0 4rem 0"
     >
       <Head>

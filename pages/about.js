@@ -5,8 +5,8 @@ import {
   Flex,
   Heading,
   Image,
-  List,
   Link,
+  List,
   ListItem,
   SimpleGrid,
   Stack,
@@ -16,17 +16,17 @@ import { AiOutlineHtml5, AiOutlineCloudServer } from 'react-icons/ai';
 import { DiReact, DiJsBadge } from 'react-icons/di';
 import {
   SiFirebase,
+  SiJava,
   SiMongodb,
   SiNextDotJs,
-  SiJava,
   SiTailwindcss,
   SiTypescript
 } from 'react-icons/si';
 import {
-  FaCode,
   FaAdobe,
-  FaNodeJs,
   FaCcStripe,
+  FaCode,
+  FaNodeJs,
   FaShippingFast
 } from 'react-icons/fa';
 import { FiDatabase, FiLink } from 'react-icons/fi';

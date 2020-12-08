@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Link, Tag, Text } from '@chakra-ui/core';
+import { Box, Heading, Link, Text } from '@chakra-ui/core';
 
 const Thing = ({ id, link, title, type, description }) => {
   return (

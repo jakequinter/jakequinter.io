@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import { Box, Button, Flex, Image, Link } from '@chakra-ui/core';
+import { Box, Button, Flex, Image } from '@chakra-ui/core';
 
 const DashboardShell = ({ children }) => {
   return (
