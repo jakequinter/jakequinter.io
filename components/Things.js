@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import useSWR, { mutate } from 'swr';
-import { Tabs, TabList, Tab, TabPanels, TabPanel, Link } from '@chakra-ui/core';
+import React from 'react';
+import useSWR from 'swr';
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/core';
 
+import BookmarkPanel from '@/components/BookmarkPanel';
 import fetcher from '@/utils/fetcher';
-import Thing from '@/components/Thing';
 
 const Things = () => {
   const { data: allThings } = useSWR('/api/things', fetcher);
@@ -21,56 +21,16 @@ const Things = () => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          {allThings &&
-            allThings.things.map(thing => (
-              <Thing
-                key={thing.id}
-                id={thing.id}
-                link={thing.link}
-                title={thing.title}
-                type={thing.type}
-                description={thing.description}
-              />
-            ))}
+          <BookmarkPanel data={allThings} />
         </TabPanel>
         <TabPanel>
-          {personalThings &&
-            personalThings.things.map(thing => (
-              <Thing
-                key={thing.id}
-                id={thing.id}
-                link={thing.link}
-                title={thing.title}
-                type={thing.type}
-                description={thing.description}
-              />
-            ))}
+          <BookmarkPanel data={personalThings} />
         </TabPanel>
         <TabPanel>
-          {peopleThings &&
-            peopleThings.things.map(thing => (
-              <Thing
-                key={thing.id}
-                id={thing.id}
-                link={thing.link}
-                title={thing.title}
-                type={thing.type}
-                description={thing.description}
-              />
-            ))}
+          <BookmarkPanel data={peopleThings} />
         </TabPanel>
         <TabPanel>
-          {podcastThings &&
-            podcastThings.things.map(thing => (
-              <Thing
-                key={thing.id}
-                id={thing.id}
-                link={thing.link}
-                title={thing.title}
-                type={thing.type}
-                description={thing.description}
-              />
-            ))}
+          <BookmarkPanel data={podcastThings} />
         </TabPanel>
       </TabPanels>
     </Tabs>

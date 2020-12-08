@@ -3,9 +3,9 @@ import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import {
   Box,
+  Button,
   FormControl,
   FormLabel,
-  Button,
   Input,
   Select
 } from '@chakra-ui/core';
