@@ -1,7 +1,10 @@
+import { DefaultSeo } from 'next-seo';
 import { Global, css } from '@emotion/core';
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
-import customTheme from '../styles/theme';
+
 import { AuthProvider } from '@/lib/auth';
+import customTheme from '../styles/theme';
+import SEO from '../next-seo.config';
 
 const GlobalStyle = ({ children }) => {
   return (
@@ -37,6 +40,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={customTheme}>
       <AuthProvider>
+        <DefaultSeo {...SEO} />
         <GlobalStyle />
         <Component {...pageProps} />
       </AuthProvider>

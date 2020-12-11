@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import {
   Box,
   Flex,
@@ -30,9 +31,14 @@ const ResumeItem = ({ content, children }) => {
 
 const Resume = () => (
   <Container>
-    <Head>
-      <title>Jake Quinter 📌</title>
-    </Head>
+    <NextSeo
+      title="Jake Quinter 📌"
+      canonical="https://jakequinter.io/bookmarks"
+      openGraph={{
+        url: 'https://jakequinter.io/bookmarks',
+        title: 'Jake Quinter 📌'
+      }}
+    />
     <Box
       flexDirection="row"
       justifyContent="space-between"

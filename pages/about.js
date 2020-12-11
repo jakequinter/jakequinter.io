@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import {
   Box,
   Flex,
@@ -56,6 +57,14 @@ const BuiltWithItem = ({ text, icon }) => (
 const About = () => {
   return (
     <Container>
+      <NextSeo
+        title="Jake Quinter 👨‍💻"
+        canonical="https://jakequinter.io/about"
+        openGraph={{
+          url: 'https://jakequinter.io/about',
+          title: 'Jake Quinter 👨‍💻'
+        }}
+      />
       <Stack
         as="main"
         spacing={8}
@@ -64,9 +73,6 @@ const About = () => {
         m="0 auto 2rem auto"
         maxWidth="2000px"
       >
-        <Head>
-          <title>Jake Quinter 👨‍💻</title>
-        </Head>
         <Box
           flexDirection="row"
           justifyContent="space-between"

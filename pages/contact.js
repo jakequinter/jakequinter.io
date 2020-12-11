@@ -1,13 +1,19 @@
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import { Box, Heading, Link, Text } from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 
 const Contact = () => (
   <Container>
-    <Head>
-      <title>Jake Quinter 📱</title>
-    </Head>
+    <NextSeo
+      title="Jake Quinter 📱"
+      canonical="https://jakequinter.io/contact"
+      openGraph={{
+        url: 'https://jakequinter.io/contact',
+        title: 'Jake Quinter 📱'
+      }}
+    />
     <Box
       flexDirection="row"
       justifyContent="space-between"
