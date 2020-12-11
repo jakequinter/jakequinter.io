@@ -13,9 +13,9 @@ const index = () => (
       alignItems="flex-start"
       m="0 0 4rem 0"
     >
-      <Head>
+      {/* <Head>
         <title>Jake Quinter 👋</title>
-      </Head>
+      </Head> */}
       <Box
         m="0 auto"
         justifyItems="center"
