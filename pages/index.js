@@ -1,59 +1,28 @@
 import React from 'react';
-import Head from 'next/head';
-import { Box, Button, Divider, Heading, Stack, Text } from '@chakra-ui/core';
+import NextLink from 'next/link';
 
 import Container from '@/components/Container';
 
 const index = () => (
   <Container>
-    <Stack
-      as="main"
-      spacing={8}
-      justifyContent="center"
-      alignItems="flex-start"
-      m="0 0 4rem 0"
-    >
-      {/* <Head>
-        <title>Jake Quinter 👋</title>
-      </Head> */}
-      <Box
-        m="0 auto"
-        justifyItems="center"
-        minH="Calc(100vh - 40px - 82px);"
-        width={{ xs: '90%', sm: '90%', md: '50%' }}
-        position="relative"
-      >
-        <Box
-          textAlign="center"
-          w="100%"
-          my="4"
-          position="absolute"
-          top="35%"
-          transform="translateY(-35%)"
-        >
-          <Heading as="h2" size="2xl" my="4">
-            Hi, I'm Jake.
-          </Heading>
-          <Divider width="50%" pb="4" margin="0 auto" borderColor="##000" />
-          <Text fontSize="lg" color="#484848" my="8">
-            Developer, tech enthusiast and life long student.
-          </Text>
-          <Button
-            as="a"
-            href="/contact"
-            variant="solid"
-            size="md"
-            color="#fff"
-            backgroundColor="#4970FB"
+    <div className="mx-auto items-center relative">
+      <div className="text-center w-full my-4">
+        <h1 className="text-4xl text-gray-900 font-bold">Hi, I'm Jake.</h1>
+        <p className="text-lg my-4" fontSize="lg" color="#484848" my="8">
+          I am a software developer, tech enthusiast and life long student.
+        </p>
+        <NextLink href="/contact" passHref>
+          <a
+            className="bg-blue-500 text-white px-8 py-4 rounded"
             _hover={{
               backgroundColor: '#8DA6FC'
             }}
           >
             Get In Touch
-          </Button>
-        </Box>
-      </Box>
-    </Stack>
+          </a>
+        </NextLink>
+      </div>
+    </div>
   </Container>
 );
 

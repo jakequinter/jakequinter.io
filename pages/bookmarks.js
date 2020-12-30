@@ -39,34 +39,22 @@ const Resume = () => (
         title: 'Jake Quinter 📌'
       }}
     />
-    <Box
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-      maxWidth="900px"
-      minH="Calc(100vh - 40px - 82px);"
-      width="100%"
-      py={8}
-      mb={8}
-      mx="auto"
-    >
-      <Box w="100%">
-        <Heading as="h1" size="xl" color="#333">
-          Internet Things
-        </Heading>
-        <Box color="#484848">
-          <Text pt="3">
-            This page is going to be a collection of “internet things” that I
-            feel are exceptional and want to save for future reference. These
-            "internet things" are going to range from personal websites I
-            admire, people who I believe are worth following, books I believe
-            are worth reading, podcasts that deserve a listen, blogs worth
-            reading, musings, and who knows what else.
-          </Text>
-        </Box>
+    <div className="flex-row justify-between align-center">
+      <h1 as="h1" size="xl" color="#333">
+        Internet Things
+      </h1>
+      <div>
+        <p className="pt-4">
+          This page is going to be a collection of “internet things” that I feel
+          are exceptional and want to save for future reference. These "internet
+          things" are going to range from personal websites I admire, people who
+          I believe are worth following, books I believe are worth reading,
+          podcasts that deserve a listen, blogs worth reading, musings, and who
+          knows what else.
+        </p>
         <Things />
-      </Box>
-    </Box>
+      </div>
+    </div>
   </Container>
 );
 

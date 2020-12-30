@@ -1,0 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.theme-light {
+  --text: theme(colors.gray.800);
+  --bg-color: theme(colors.gray.50);
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  color: #4b5563;
+  background-color: #f7fafc;
+  /* font-family: 'Inter, Roboto, sans-serif'; */
+  font-size: 16px;
+}
