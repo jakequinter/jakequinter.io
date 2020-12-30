@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box } from '@chakra-ui/core';
 
 import Spinner from '@/components/Spinner';
 import Thing from '@/components/Thing';
 
 const BookmarkPanel = ({ data }) => {
-  console.log(data);
   return (
     <div>
       {!data && <Spinner />}
