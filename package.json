@@ -8,12 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
     "autoprefixer": "^10.1.0",
     "date-fns": "^2.16.1",
-    "emotion-theming": "^10.0.27",
     "firebase": "^8.1.2",
     "firebase-admin": "^9.4.1",
     "next": "^10.0.3",

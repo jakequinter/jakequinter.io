@@ -1,15 +1,8 @@
-import { Flex, IconButton, Link, Text } from '@chakra-ui/core';
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 
 const Footer = () => (
-  <Flex
-    alignItems="center"
-    justifyContent="center"
-    flexShrink="0"
-    height="40px"
-    textAlign="center"
-  >
-    <Link href="https://github.com/jakequinter" title="Email" isExternal>
+  <div className="flex items-center justify-center flex-shrink-0 h-48 tet-center">
+    {/* <Link href="https://github.com/jakequinter" title="Email" isExternal>
       <IconButton
         aria-label="Github"
         icon={FiGithub}
@@ -48,8 +41,8 @@ const Footer = () => (
         color="gray.400"
         variant="ghost"
       />
-    </Link>
-  </Flex>
+    </Link> */}
+  </div>
 );
 
 export default Footer;
