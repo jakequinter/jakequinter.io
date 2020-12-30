@@ -1,14 +1,5 @@
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  ListItem,
-  Stack,
-  Text
-} from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 import Things from '@/components/Things';

@@ -1,14 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
-import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  Select
-} from '@chakra-ui/core';
 
 import { createThing } from '@/lib/db';
 import { useAuth } from '@/lib/auth';

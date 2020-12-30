@@ -1,6 +1,5 @@
 import NextLink from 'next/link';
 import Image from 'next/image';
-// import { Button, Box, Flex, Image } from '@chakra-ui/core';
 
 import NavButton from '@/components/NavButton';
 import Footer from './Footer';
