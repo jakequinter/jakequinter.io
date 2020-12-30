@@ -23,21 +23,11 @@ const ThingsForm = () => {
   };
 
   return (
-    <Box
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-      maxWidth="900px"
-      minH="Calc(100vh - 40px - 82px);"
-      width="100%"
-      py={8}
-      mb={8}
-      mx="auto"
-    >
+    <div className="flex-row justify-between items-center">
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
-      <Box as="form" onSubmit={handleSubmit(onCreateThing)}>
+      {/* <Box as="form" onSubmit={handleSubmit(onCreateThing)}>
         <FormControl>
           <FormLabel>Title</FormLabel>
           <Input
@@ -123,8 +113,8 @@ const ThingsForm = () => {
             Add
           </Button>
         </FormControl>
-      </Box>
-    </Box>
+      </Box> */}
+    </div>
   );
 };
 
