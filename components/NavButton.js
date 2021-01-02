@@ -13,8 +13,8 @@ const NavButton = ({ href, text }) => {
       <a
         className={
           isActive
-            ? 'text-sm xs:text-lg text-blue-500 font-medium'
-            : 'text-sm xs:text-lg text-gray-900 font-medium'
+            ? 'text-sm xs:text-base text-blue-500 font-medium'
+            : 'text-sm xs:text-base text-gray-900 hover:text-blue-500 font-medium'
         }
         onClick={() => setIsActive(!isActive)}
       >

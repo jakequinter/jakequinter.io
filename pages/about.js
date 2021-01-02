@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import { AiOutlineHtml5, AiOutlineCloudServer } from 'react-icons/ai';
@@ -24,11 +24,9 @@ import { FiDatabase, FiLink } from 'react-icons/fi';
 import Container from '@/components/Container';
 
 const BuiltWithItem = ({ text, icon }) => (
-  <div className="ml-2 mb-4">
-    <div className="flex flex-col justify-center">
-      <p>{text}</p>
-      <span className="mt-2 mx-auto text-gray-300">{icon}</span>
-    </div>
+  <div className="flex flex-col justify-center">
+    <p>{text}</p>
+    <span className="mt-2 mx-auto text-gray-300">{icon}</span>
   </div>
 );
 
@@ -93,87 +91,101 @@ const About = () => {
         <h3 className="text-2xl text-gray-900 font-bold pb-4">
           What I'm working on
         </h3>
-        <div pb={4}>
-          <div className="flex">
-            <h5 className="text-lg font-medium text-gray-900 pb-4">
-              jenniferspick.com
-            </h5>
-            {/* <Link
-                _hover={{ color: '#4970FB' }}
-                ml={2}
-                isExternal
-                href="https://jenniferspick.com"
-              >
-                <FiLink />
-              </Link> */}
-          </div>
-          <div>
-            <p>
-              A personal website that I built to start transitioning from
-              JavaScript to TypeScript. I also finally got started experimenting
-              with Tailwind CSS, and I love it! This is a Next.js application
-              hosted on Vercel.
-            </p>
-          </div>
-          <div className="flex justify-between pt-4">
-            <BuiltWithItem text="Next.js" icon={<SiNextDotJs />} />
-            <BuiltWithItem text="TypeScript" icon={<SiTypescript />} />
-            <BuiltWithItem text="Firebase" icon={<SiFirebase />} />
-            <BuiltWithItem text="Tailwind CSS" icon={<SiTailwindcss />} />
-          </div>
-        </div>
-
-        <div>
-          <div className="pt-4">
-            <div className="flex">
-              <h5 className="text-lg font-medium text-gray-900 pb-4">Quisp</h5>
+        <Link href="https://jenniferspick.com">
+          <a target="_blank">
+            <div className="py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+              <div className="flex">
+                <h5 className="text-lg font-medium text-gray-900 pb-2">
+                  jenniferspick.com
+                </h5>
+              </div>
+              <div>
+                <p>
+                  A personal website that I built to start transitioning from
+                  JavaScript to TypeScript. I also finally got started
+                  experimenting with Tailwind CSS, and I love it! This is a
+                  Next.js application hosted on Vercel.
+                </p>
+              </div>
             </div>
-            <div>
-              <p>
-                A web application to help bar and restaurant owners digitize
-                their sign-in and employee data. Add and authorize your
-                employees, set employee access and permissions, and add members
-                to digitally keep track of your sign-in members.
-              </p>
+          </a>
+        </Link>
+        <Link href="https://github.com/jakequinter/quisp-web-app">
+          <a target="_blank">
+            <div className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+              <div className="flex">
+                <h5 className="text-lg font-medium text-gray-900 pb-2">
+                  Quisp
+                </h5>
+              </div>
+              <div>
+                <p>
+                  A web application to help bar and restaurant owners digitize
+                  their sign-in and employee data. Add and authorize your
+                  employees, set employee access and permissions, and add
+                  members to digitally keep track of your sign-in members.
+                </p>
+              </div>
             </div>
-            {/* <Image src="/quisp.svg" alt="Quisp" height={1000} width={2000} /> */}
-            <div className="flex justify-between pt-4">
-              <BuiltWithItem text="React" icon={<DiReact />} />
-              <BuiltWithItem text="Node.js" icon={<FaNodeJs />} />
-              <BuiltWithItem text="Express" icon={<FaShippingFast />} />
-              <BuiltWithItem text="MongoDB" icon={<SiMongodb />} />
-              <BuiltWithItem text="Stripe" icon={<FaCcStripe />} />
+          </a>
+        </Link>
+        <Link href="https://jenniferspick.com">
+          <a target="_blank">
+            <div className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+              <div className="flex">
+                <h5 className="text-lg font-medium text-gray-900 pb-2">
+                  My personal site
+                </h5>
+              </div>
+              <div>
+                <p>
+                  This is my small slice of the internet. I developed this site
+                  as a tool to communicate with myself, potential employers, and
+                  whoever else I may feel like communicating with. Also,
+                  whenever I want to learn or test out something new, I use this
+                  site as my playground. This site is brand spanking new and I'm
+                  excited to see how my personal site evolves as time goes on.
+                  The high priority development plans are to migrate over to
+                  TypeScript and modify the styles to use Tailwind CSS. The
+                  feature(s) I'm thinking of implementing are now down to a blog
+                  because I recently incorporated the API and Bookmarks page.
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div>
-          <div className="pt-4">
-            <div className="flex">
-              <h5 className="text-lg font-medium text-gray-900 pb-4">
-                My personal site
-              </h5>
-            </div>
-            <div>
-              <p>
-                This is my small slice of the internet. I developed this site as
-                a tool to communicate with myself, potential employers, and
-                whoever else I may feel like communicating with. Also, whenever
-                I want to learn or test out something new, I use this site as my
-                playground. This site is brand spanking new and I'm excited to
-                see how my personal site evolves as time goes on. The high
-                priority development plans are to migrate over to TypeScript and
-                modify the styles to use Tailwind CSS. The feature(s) I'm
-                thinking of implementing are now down to a blog because I
-                recently incorporated the API and Bookmarks page.
-              </p>
-            </div>
-            <div className="flex justify-between pt-4">
-              <BuiltWithItem text="Next.js" icon={<SiNextDotJs />} />
-              <BuiltWithItem text="Firebase" icon={<SiFirebase />} />
-              <BuiltWithItem text="Chakra UI" icon={<FaCode />} />
-            </div>
-          </div>
+          </a>
+        </Link>
+      </div>
+      <div className="mt-8">
+        <h3 className="text-2xl text-gray-900 font-bold pb-4">Other work</h3>
+        <Link href="https://www.chippergolf.com">
+          <a className="text-lg font-medium text-blue-500 pb-2" target="_blank">
+            Chipper Golf
+          </a>
+        </Link>
+        <p>
+          In November 2019 I started working with the developer of Chipper Golf.
+          The experience I gained and continue gaining are far and beyond any of
+          the expectations I anticipated in the beginning. This is what
+          transpired my passion for JavaScript and its libraries and frameworks
+          like React. I have been soley interested in front-end technologies
+          ever since.
+        </p>
+        <div className="pt-4">
+          <Link href="https://www.playertrader.net">
+            <a
+              className="text-lg font-medium text-blue-500 pb-2"
+              target="_blank"
+            >
+              PlayerTrader
+            </a>
+          </Link>
+          <p>
+            I have recently started working on front-end maintenance at
+            PlayerTrader in my free time. I am in the very beginning with my
+            time here at PlayerTrader, but the group has been awesome to work
+            with and I've enjoyed implementing UI/UX features for their web
+            application.
+          </p>
         </div>
       </div>
     </Container>

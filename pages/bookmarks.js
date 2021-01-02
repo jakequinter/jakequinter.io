@@ -31,11 +31,9 @@ const Resume = () => (
       }}
     />
     <div className="flex-row justify-between align-center">
-      <h1 as="h1" size="xl" color="#333">
-        Internet Things
-      </h1>
+      <h1 className="text-4xl text-gray-900 font-bold pb-4">Internet Things</h1>
       <div>
-        <p className="pt-4">
+        <p className="pb-4">
           This page is going to be a collection of “internet things” that I feel
           are exceptional and want to save for future reference. These "internet
           things" are going to range from personal websites I admire, people who

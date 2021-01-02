@@ -34,7 +34,7 @@ const Things = () => {
     <div>
       <div>
         <div className="border-b border-gray-200">
-          <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+          <nav className="-mb-px flex space-x-3 xs:space-x-8" aria-label="Tabs">
             <TabButton text={'All'} data={allThings} />
             <TabButton text={'Personal Sites'} data={personalThings} />
             <TabButton text={'People'} data={peopleThings} />
