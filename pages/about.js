@@ -129,31 +129,28 @@ const About = () => {
             </div>
           </a>
         </Link>
-        <Link href="https://jenniferspick.com">
-          <a target="_blank">
-            <div className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
-              <div className="flex">
-                <h5 className="text-lg font-medium text-gray-900 pb-2">
-                  My personal site
-                </h5>
-              </div>
-              <div>
-                <p>
-                  This is my small slice of the internet. I developed this site
-                  as a tool to communicate with myself, potential employers, and
-                  whoever else I may feel like communicating with. Also,
-                  whenever I want to learn or test out something new, I use this
-                  site as my playground. This site is brand spanking new and I'm
-                  excited to see how my personal site evolves as time goes on.
-                  The high priority development plans are to migrate over to
-                  TypeScript and modify the styles to use Tailwind CSS. The
-                  feature(s) I'm thinking of implementing are now down to a blog
-                  because I recently incorporated the API and Bookmarks page.
-                </p>
-              </div>
-            </div>
-          </a>
-        </Link>
+        {/* <Link href="https://jenniferspick.com"> */}
+        {/* <a target="_blank"> */}
+        <div
+          className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer"
+          onClick={() => alert("Really? You're here already")}
+        >
+          <div className="flex">
+            <h5 className="text-lg font-medium text-gray-900 pb-2">
+              My personal site
+            </h5>
+          </div>
+          <div>
+            <p>
+              This is my small slice of the internet. I developed this site as a
+              tool to communicate with myself, potential employers, and whoever
+              else I may come across in this life. Whenever I want to learn or
+              test out something new, I use this site as my playground.
+            </p>
+          </div>
+        </div>
+        {/* </a> */}
+        {/* </Link> */}
       </div>
       <div className="mt-8">
         <h3 className="text-2xl text-gray-900 font-bold pb-4">Other work</h3>

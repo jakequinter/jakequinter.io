@@ -2,10 +2,10 @@ import React from 'react';
 
 import determineLogo from '@/utils/determineLogo';
 
-const Timeline2020 = ({ data }) => {
+const Timeline2021 = ({ data }) => {
   return (
     <div className="mb-12">
-      <h3 className="text-xl text-gray-900 font-bold ">2020</h3>
+      <h3 className="text-xl text-gray-900 font-bold ">2021</h3>
       <hr className="mt-1 mb-6" />
       <div className="ml-2">
         <ul className="-mb-8">
@@ -46,4 +46,4 @@ const Timeline2020 = ({ data }) => {
   );
 };
 
-export default Timeline2020;
+export default Timeline2021;

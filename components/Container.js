@@ -26,7 +26,7 @@ const Container = ({ children }) => {
       <hr />
       <div
         className="flex-col justify-center px-4 mt-16 mb-16 max-w-4xl mx-auto"
-        style={{ minHeight: 'calc(100vh - 170px)' }}
+        style={{ minHeight: 'calc(100vh - 210px)' }}
       >
         {children}
       </div>
