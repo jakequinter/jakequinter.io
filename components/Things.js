@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
-import { MdPersonalVideo } from 'react-icons/md';
-import { BsBook, BsCardChecklist, BsPeople } from 'react-icons/bs';
 
 import BookmarkPanel from '@/components/BookmarkPanel';
 import fetcher from '@/utils/fetcher';

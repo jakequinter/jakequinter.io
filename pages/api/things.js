@@ -1,6 +1,6 @@
 import { getAllThings } from '@/lib/db-admin';
 
-export default async (_, res) => {
+export default async (req, res) => {
   try {
     const { things } = await getAllThings();
 

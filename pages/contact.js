@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
 import Container from '@/components/Container';
@@ -25,16 +23,10 @@ const Contact = () => (
         <p className="pt-2">
           I am currently open to new opportunities that may arise. Jobs or
           projects that I'm interested in include but are not limited to
-          startups, freelance work, and remote opportunities. If you are
-          interested in what I’m looking for in my work please check out the
-          “Technologies I’m Interested In” section on my{' '}
-          <Link href="/about">
-            <a className="text-blue-500">about page</a>
-          </Link>
-          .
+          startups, freelance work, and remote opportunities.
         </p>
         <p className="pt-2">I look forward to hearing from you!</p>
-        <div className="text-center border-2 border-solid border-gray-200 mt-4 p-4 rounded">
+        <div className="text-center border border-light-gray-200 mt-4 p-4 rounded">
           <h3 className="text-2xl text-gray-900 font-medium pb-4">
             Reach out to me directly
           </h3>

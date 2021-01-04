@@ -1,5 +1,4 @@
 import NextLink from 'next/link';
-import Image from 'next/image';
 
 import NavButton from '@/components/NavButton';
 import Footer from './Footer';

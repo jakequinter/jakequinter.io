@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 const NavButton = ({ href, text }) => {
   const [isActive, setIsActive] = useState(false);
@@ -9,7 +9,7 @@ const NavButton = ({ href, text }) => {
   }, []);
 
   return (
-    <NextLink href={href} passHref>
+    <Link href={href} passHref>
       <a
         className={
           isActive
@@ -20,7 +20,7 @@ const NavButton = ({ href, text }) => {
       >
         {text}
       </a>
-    </NextLink>
+    </Link>
   );
 };
 

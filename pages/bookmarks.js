@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
 import Container from '@/components/Container';
@@ -41,8 +41,21 @@ const Resume = () => (
           podcasts that deserve a listen, blogs worth reading, musings, and who
           knows what else.
         </p>
-        <Things />
+        <Link href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296">
+          <a target="_blank">
+            <div className="mb-8 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+              <p>
+                <span className="text-gray-900 font-bold">
+                  Currently Reading:
+                </span>{' '}
+                Zero to One: Notes on Startups, or How to Build the Future by
+                Peter Thiel and Blake Masters
+              </p>
+            </div>
+          </a>
+        </Link>
       </div>
+      <Things />
     </div>
   </Container>
 );

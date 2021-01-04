@@ -2,24 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
-import { AiOutlineHtml5, AiOutlineCloudServer } from 'react-icons/ai';
-import { DiReact, DiJsBadge } from 'react-icons/di';
-import {
-  SiFirebase,
-  SiJava,
-  SiMongodb,
-  SiNextDotJs,
-  SiTailwindcss,
-  SiTypescript
-} from 'react-icons/si';
-import {
-  FaAdobe,
-  FaCcStripe,
-  FaCode,
-  FaNodeJs,
-  FaShippingFast
-} from 'react-icons/fa';
-import { FiDatabase, FiLink } from 'react-icons/fi';
 
 import Container from '@/components/Container';
 
@@ -129,8 +111,6 @@ const About = () => {
             </div>
           </a>
         </Link>
-        {/* <Link href="https://jenniferspick.com"> */}
-        {/* <a target="_blank"> */}
         <div
           className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer"
           onClick={() => alert("Really? You're here already")}
@@ -149,8 +129,6 @@ const About = () => {
             </p>
           </div>
         </div>
-        {/* </a> */}
-        {/* </Link> */}
       </div>
       <div className="mt-8">
         <h3 className="text-2xl text-gray-900 font-bold pb-4">Other work</h3>
