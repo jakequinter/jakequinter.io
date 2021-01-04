@@ -4,7 +4,7 @@ import determineLogo from '@/utils/determineLogo';
 
 const Timeline2019 = ({ data }) => {
   return (
-    <div className="mb-12">
+    <div>
       <h3 className="text-xl text-gray-900 font-bold ">2019</h3>
       <hr className="mt-1 mb-6" />
       <div className="ml-2">
