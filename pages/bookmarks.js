@@ -1,14 +1,5 @@
-import Head from 'next/head';
+import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  ListItem,
-  Stack,
-  Text
-} from '@chakra-ui/core';
 
 import Container from '@/components/Container';
 import Things from '@/components/Things';
@@ -39,34 +30,33 @@ const Resume = () => (
         title: 'Jake Quinter 📌'
       }}
     />
-    <Box
-      flexDirection="row"
-      justifyContent="space-between"
-      alignItems="center"
-      maxWidth="900px"
-      minH="Calc(100vh - 40px - 82px);"
-      width="100%"
-      py={8}
-      mb={8}
-      mx="auto"
-    >
-      <Box w="100%">
-        <Heading as="h1" size="xl" color="#333">
-          Internet Things
-        </Heading>
-        <Box color="#484848">
-          <Text pt="3">
-            This page is going to be a collection of “internet things” that I
-            feel are exceptional and want to save for future reference. These
-            "internet things" are going to range from personal websites I
-            admire, people who I believe are worth following, books I believe
-            are worth reading, podcasts that deserve a listen, blogs worth
-            reading, musings, and who knows what else.
-          </Text>
-        </Box>
-        <Things />
-      </Box>
-    </Box>
+    <div className="flex-row justify-between align-center">
+      <h1 className="text-4xl text-gray-900 font-bold pb-4">Internet Things</h1>
+      <div>
+        <p className="pb-8">
+          This page is going to be a collection of “internet things” that I feel
+          are exceptional and want to save for future reference. These "internet
+          things" are going to range from personal websites I admire, people who
+          I believe are worth following, books I believe are worth reading,
+          podcasts that deserve a listen, blogs worth reading, musings, and who
+          knows what else.
+        </p>
+        <Link href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296">
+          <a target="_blank">
+            <div className="mb-8 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+              <p>
+                <span className="text-gray-900 font-bold">
+                  Currently Reading:
+                </span>{' '}
+                Zero to One: Notes on Startups, or How to Build the Future by
+                Peter Thiel and Blake Masters
+              </p>
+            </div>
+          </a>
+        </Link>
+      </div>
+      <Things />
+    </div>
   </Container>
 );
 

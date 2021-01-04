@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NextLink from 'next/link';
-import { Button } from '@chakra-ui/core';
+import Link from 'next/link';
 
 const NavButton = ({ href, text }) => {
   const [isActive, setIsActive] = useState(false);
@@ -10,19 +9,18 @@ const NavButton = ({ href, text }) => {
   }, []);
 
   return (
-    <NextLink href={href} passHref>
-      <Button
-        as="a"
-        size="sm"
-        fontSize={['md', 'lg']}
-        variant="ghost"
-        p={[1, 6]}
-        color={isActive ? '#4970FB' : '#1A202C'}
+    <Link href={href} passHref>
+      <a
+        className={
+          isActive
+            ? 'text-sm xs:text-base text-blue-500 font-medium'
+            : 'text-sm xs:text-base text-gray-900 hover:text-blue-500 font-medium'
+        }
         onClick={() => setIsActive(!isActive)}
       >
         {text}
-      </Button>
-    </NextLink>
+      </a>
+    </Link>
   );
 };
 

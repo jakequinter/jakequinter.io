@@ -1,10 +1,10 @@
 import React from 'react';
-import { Flex, Image } from '@chakra-ui/core';
+import Image from 'next/image';
 
 const Spinner = () => (
-  <Flex justifyContent="center">
-    <Image src="/spinner.gif" alt="loading" size="100px" />
-  </Flex>
+  <div className="flex justify-center mt-8">
+    <Image src="/spinner.gif" alt="loading" height={30} width={30} />
+  </div>
 );
 
 export default Spinner;

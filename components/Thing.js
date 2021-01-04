@@ -1,19 +1,19 @@
 import React from 'react';
-import { Box, Heading, Link, Text } from '@chakra-ui/core';
+import Link from 'next/link';
 
 const Thing = ({ id, link, title, type, description }) => {
   return (
-    <Box py={2} color="#484848">
-      <Heading size="sm" fontWeight="medium">
-        <Link color="#4970FB" isExternal href={link}>
-          {title}
+    <div className="py-2">
+      <div>
+        <Link href={link}>
+          <a className="font-medium text-blue-500" target="_blank">
+            {title}
+          </a>
         </Link>
-      </Heading>
-      <Text as="em" fontSize="xs">
-        {type}
-      </Text>
-      <Text>{description}</Text>
-    </Box>
+      </div>
+      <em className="text-xs">{type}</em>
+      <p>{description}</p>
+    </div>
   );
 };
 

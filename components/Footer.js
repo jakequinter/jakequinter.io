@@ -1,55 +1,31 @@
-import { Flex, IconButton, Link, Text } from '@chakra-ui/core';
+import Link from 'next/link';
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi';
 
+const FooterIcon = ({ href, icon }) => (
+  <Link href={href}>
+    <a className="text-gray-400" target="_blank">
+      {icon}
+    </a>
+  </Link>
+);
+
 const Footer = () => (
-  <Flex
-    alignItems="center"
-    justifyContent="center"
-    flexShrink="0"
-    height="40px"
-    textAlign="center"
-  >
-    <Link href="https://github.com/jakequinter" title="Email" isExternal>
-      <IconButton
-        aria-label="Github"
-        icon={FiGithub}
-        size="lg"
-        color="gray.400"
-        variant="ghost"
-      />
-    </Link>
-    <Link href="https://twitter.com/jakequinter" title="Email" isExternal>
-      <IconButton
-        aria-label="Twitter"
-        icon={FiTwitter}
-        size="lg"
-        color="gray.400"
-        variant="ghost"
-      />
-    </Link>
-    <Link
-      href="https://www.linkedin.com/in/jake-quinter-b9731915b/"
-      title="Email"
-      isExternal
-    >
-      <IconButton
-        aria-label="LinkedIn"
-        icon={FiLinkedin}
-        size="lg"
-        color="gray.400"
-        variant="ghost"
-      />
-    </Link>
-    <Link href="mailto:hello@jakequinter.io" title="Email" isExternal>
-      <IconButton
-        aria-label="Email"
-        icon={FiMail}
-        size="lg"
-        color="gray.400"
-        variant="ghost"
-      />
-    </Link>
-  </Flex>
+  <footer className="pb-2">
+    <div className="mx-auto">
+      <div className="flex justify-center space-x-6">
+        <FooterIcon href="https://github.com/jakequinter" icon={<FiGithub />} />
+        <FooterIcon
+          href="https://twitter.com/jakequinter"
+          icon={<FiTwitter />}
+        />
+        <FooterIcon
+          href="https://www.linkedin.com/in/jake-quinter-b9731915b/"
+          icon={<FiLinkedin />}
+        />
+        <FooterIcon href="mailto:hello@jakequinter.io" icon={<FiMail />} />
+      </div>
+    </div>
+  </footer>
 );
 
 export default Footer;

@@ -1,5 +1,4 @@
 import NextLink from 'next/link';
-import { Button, Box, Flex, Image } from '@chakra-ui/core';
 
 import NavButton from '@/components/NavButton';
 import Footer from './Footer';
@@ -7,46 +6,30 @@ import Footer from './Footer';
 const Container = ({ children }) => {
   return (
     <>
-      <Flex
-        margin="0 auto"
-        w={{ xs: '100%', md: '70%' }}
-        maxWidth="1500px"
-        alignItems="center"
-        justifyContent="space-between"
-        py={4}
-        px={4}
-      >
-        <NextLink href="/">
-          <Image
-            src="/logo.svg"
-            alt="Jake Quinter"
-            maxH="50px"
-            cursor="pointer"
-          />
-        </NextLink>
-        <Box>
+      <div style={{ backgroundColor: '#FCFDFE' }}>
+        <div className="flex justify-between items-center p-4 xs:max-w-4xl mx-auto w-full">
+          <NavButton href="/" text="Home" />
           <NavButton href="/about" text="About" />
           <NavButton href="/bookmarks" text="Bookmarks" />
           <NavButton href="/contact" text="Contact" />
           <NextLink href="/resume.pdf" passHref>
-            <a target="_blank">
-              <Button
-                size="sm"
-                fontSize={['md', 'lg']}
-                variant="ghost"
-                p={[1, 6]}
-                _is
-              >
-                Resume
-              </Button>
+            <a
+              className="text-sm xs:text-base text-gray-900 hover:text-blue-500 font-medium"
+              target="_blank"
+            >
+              Resume
             </a>
           </NextLink>
-        </Box>
-      </Flex>
-      <Flex as="main" justifyContent="center" flexDirection="column" px={4}>
+        </div>
+      </div>
+      <hr />
+      <div
+        className="flex-col justify-center px-4 mt-16 mb-16 max-w-4xl mx-auto"
+        style={{ minHeight: 'calc(100vh - 210px)' }}
+      >
         {children}
-        <Footer />
-      </Flex>
+      </div>
+      <Footer />
     </>
   );
 };
