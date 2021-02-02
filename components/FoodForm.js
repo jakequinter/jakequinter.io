@@ -2,24 +2,35 @@ import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 
-import { createThing } from '@/lib/db';
+import { createFood } from '@/lib/db';
 import { useAuth } from '@/lib/auth';
 
-const ThingsForm = () => {
+const FoodForm = () => {
   const auth = useAuth();
   const { handleSubmit, register } = useForm();
 
-  const onCreateThing = ({ title, type, description, link }) => {
-    const newThing = {
+  const onCreateFood = ({
+    name,
+    description,
+    link,
+    type,
+    jakeRating,
+    jenRating,
+    imageUrl
+  }) => {
+    const newFood = {
       authorId: auth.user.uid,
       createdAt: new Date().toISOString(),
-      title,
-      type,
+      name,
       description,
-      link
+      link,
+      type,
+      jakeRating,
+      jenRating,
+      imageUrl
     };
 
-    createThing(newThing);
+    createFood(newFood);
   };
 
   return (
@@ -29,24 +40,24 @@ const ThingsForm = () => {
       </Head>
       <div>
         <h3 className="text-4xl text-gray-900 text-center pb-8">
-          Add new thing
+          Add new food
         </h3>
         <div>
-          <form className="space-y-6" onSubmit={handleSubmit(onCreateThing)}>
+          <form className="space-y-6" onSubmit={handleSubmit(onCreateFood)}>
             <div>
               <label
-                htmlFor="title"
+                htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Title
+                Restaurant name
               </label>
               <div className="mt-1">
                 <input
                   type="text"
-                  name="title"
-                  id="title"
+                  name="name"
+                  id="name"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                  placeholder="Naval"
+                  placeholder="Regina's Pizzeria"
                   ref={register({
                     required: 'Required'
                   })}
@@ -66,10 +77,9 @@ const ThingsForm = () => {
                   required: 'Required'
                 })}
               >
-                <option value="personal">Personal</option>
-                <option value="people">People</option>
-                <option value="book">Book</option>
-                <option value="podcast">Podcast</option>
+                <option value="personal">Pizza</option>
+                <option value="people">Breakfast & Dessert</option>
+                <option value="book">Seafood</option>
               </select>
             </div>
 
@@ -85,6 +95,50 @@ const ThingsForm = () => {
                   type="text"
                   name="description"
                   id="description"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  placeholder="Naval is a must follow."
+                  ref={register({
+                    required: 'Required'
+                  })}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="jakeRating"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Jake's rating
+              </label>
+              <div className="mt-1">
+                <input
+                  type="number"
+                  step=".1"
+                  name="jakeRating"
+                  id="jakeRating"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  placeholder="Naval is a must follow."
+                  ref={register({
+                    required: 'Required'
+                  })}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="jenRating"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Jen's rating
+              </label>
+              <div className="mt-1">
+                <input
+                  type="number"
+                  step=".1"
+                  name="jenRating"
+                  id="jenRating"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                   placeholder="Naval is a must follow."
                   ref={register({
@@ -115,6 +169,27 @@ const ThingsForm = () => {
               </div>
             </div>
 
+            <div>
+              <label
+                htmlFor="imageUrl"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Image URL
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="imageUrl"
+                  id="imageUrl"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  placeholder="https://websiteurl.com"
+                  ref={register({
+                    required: 'Required'
+                  })}
+                />
+              </div>
+            </div>
+
             <button
               className="mt-8 bg-gray-700 px-4 py-2 rounded text-white float-right hover:bg-gray-900"
               onClick={() => auth.signout()}
@@ -134,4 +209,4 @@ const ThingsForm = () => {
   );
 };
 
-export default ThingsForm;
+export default FoodForm;
