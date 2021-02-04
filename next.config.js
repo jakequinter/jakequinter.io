@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['images.unsplash.com']
+    domains: ['i.ibb.co']
   }
 };

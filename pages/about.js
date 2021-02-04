@@ -27,8 +27,8 @@ const About = () => {
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
         <div className="pr-4">
           <p>
-            Hello, I’m Jake Quinter. I'm a software developer based in Appleton,
-            WI. I work on the Application Maintenance and Production Support
+            Hello, I’m Jake Quinter. I'm a software developer based in Boston,
+            MA. I work on the Application Maintenance and Production Support
             team at{' '}
             <a
               className="text-blue-500"

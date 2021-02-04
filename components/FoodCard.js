@@ -21,7 +21,7 @@ const FoodCard = ({
           <div>
             <img
               className="inline-block h-12 w-12 mr-2 rounded-full"
-              src="/jakeAvi.jpg"
+              src="/jakeAvi.png"
               alt=""
             />
             <h5 className="text-gray-900 text-lg inline">{jakeRating}</h5>
@@ -29,7 +29,7 @@ const FoodCard = ({
           <div>
             <img
               className="inline-block h-12 w-12 mr-2 rounded-full"
-              src="/jen.jpg"
+              src="/jenAvi.png"
               alt=""
             />
             <h5 className="text-gray-900 text-lg inline">{jenRating}</h5>
@@ -37,13 +37,14 @@ const FoodCard = ({
         </div>
       </div>
       {/* <p className="pb-8">{description}</p> */}
-      <div className="my-auto">
+      <div className="flex justify-center">
         <Image
           className="rounded-lg"
           src={imageUrl}
           alt="Jake Quinter"
-          height={2000}
-          width={1500}
+          height={4032}
+          width={3024}
+          priority
         />
       </div>
     </div>
