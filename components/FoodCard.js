@@ -22,7 +22,7 @@ const FoodCard = ({
             <img
               className="inline-block h-12 w-12 mr-2 rounded-full"
               src="/jakeAvi.png"
-              alt=""
+              alt="Jake avatar"
             />
             <h5 className="text-gray-900 text-lg inline">{jakeRating}</h5>
           </div>
@@ -30,7 +30,7 @@ const FoodCard = ({
             <img
               className="inline-block h-12 w-12 mr-2 rounded-full"
               src="/jenAvi.png"
-              alt=""
+              alt="Jen avatar"
             />
             <h5 className="text-gray-900 text-lg inline">{jenRating}</h5>
           </div>
