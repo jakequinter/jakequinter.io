@@ -43,7 +43,7 @@ const Resume = () => (
         </p>
         <Link href="https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021">
           <a target="_blank">
-            <div className="mb-8 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+            <div className="mb-8 p-4 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
               <p>
                 <span className="text-gray-900 font-bold">
                   Currently Reading:

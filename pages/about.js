@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
+import { FiLink } from 'react-icons/fi';
 
 import Container from '@/components/Container';
 
@@ -73,7 +74,7 @@ const About = () => {
         <h3 className="text-2xl text-gray-900 font-bold pb-4">
           What I'm working on
         </h3>
-        <Link href="https://jenniferspick.com">
+        {/* <Link href="https://jenniferspick.com">
           <a target="_blank">
             <div className="py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
               <div className="flex">
@@ -91,30 +92,40 @@ const About = () => {
               </div>
             </div>
           </a>
-        </Link>
-        <Link href="https://github.com/jakequinter/quisp-web-app">
-          <a target="_blank">
-            <div className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
-              <div className="flex">
-                <h5 className="text-lg font-medium text-gray-900 pb-2">
-                  Quisp
-                </h5>
-              </div>
-              <div>
-                <p>
-                  A web application to help bar and restaurant owners digitize
-                  their sign-in and employee data. Add and authorize your
-                  employees, set employee access and permissions, and add
-                  members to digitally keep track of your sign-in members.
-                </p>
-              </div>
-            </div>
-          </a>
-        </Link>
-        <div
-          className="mt-4 py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer"
-          onClick={() => alert("Really? You're here already")}
-        >
+        </Link> */}
+        {/* <Link href="https://github.com/jakequinter/quisp-web-app"> */}
+        {/* <a target="_blank"> */}
+        <div className="mt-4 py-4 px-8 rounded border border-light-gray-200">
+          <div className="flex justify-between">
+            <h5 className="text-lg font-medium text-gray-900 pb-2">Quisp</h5>
+          </div>
+          <div>
+            <p>
+              Quisp is a web application to help bar and restaurant owners
+              digitize their sign-in and employee data. I'm reworking the{' '}
+              <Link href="https://github.com/jakequinter/quisp-web-app">
+                <a className="text-blue-500" target="_blank">
+                  initial design
+                </a>
+              </Link>{' '}
+              to be a Next.js application hosted on Vercel. Here is the{' '}
+              <Link href="https://quispco-4437lwuug.vercel.app/">
+                <a className="text-blue-500" target="_blank">
+                  current development version
+                </a>
+              </Link>
+              .
+            </p>
+            <p className="pt-2">
+              * The development version is a work in progress, so you may come
+              across bugs that I haven't worked out yet, placeholder images, and
+              non-functioning implementations.
+            </p>
+          </div>
+        </div>
+        {/* </a> */}
+        {/* </Link> */}
+        <div className="mt-4 py-4 px-8 rounded border border-light-gray-200">
           <div className="flex">
             <h5 className="text-lg font-medium text-gray-900 pb-2">
               My personal site
