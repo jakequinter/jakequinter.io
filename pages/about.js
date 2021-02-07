@@ -74,27 +74,6 @@ const About = () => {
         <h3 className="text-2xl text-gray-900 font-bold pb-4">
           What I'm working on
         </h3>
-        {/* <Link href="https://jenniferspick.com">
-          <a target="_blank">
-            <div className="py-4 px-8 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
-              <div className="flex">
-                <h5 className="text-lg font-medium text-gray-900 pb-2">
-                  jenniferspick.com
-                </h5>
-              </div>
-              <div>
-                <p>
-                  A personal website that I built to start transitioning from
-                  JavaScript to TypeScript. I also finally got started
-                  experimenting with Tailwind CSS, and I love it! This is a
-                  Next.js application hosted on Vercel.
-                </p>
-              </div>
-            </div>
-          </a>
-        </Link> */}
-        {/* <Link href="https://github.com/jakequinter/quisp-web-app"> */}
-        {/* <a target="_blank"> */}
         <div className="mt-4 py-4 px-8 rounded border border-light-gray-200">
           <div className="flex justify-between">
             <h5 className="text-lg font-medium text-gray-900 pb-2">Quisp</h5>

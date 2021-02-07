@@ -19,12 +19,12 @@ const Food = () => (
       <div>
         <p className="pb-16">
           My girlfriend and I love food. We love trying new places, cuisines,
-          and keeping track of what we really loved, what we liked, and what we
-          didn’t care for. Since moving to Boston, we have been introduced to a
-          new realm of restaurants. It’s quite different than what we were
-          accustomed to back in Appleton, WI. There’s literally food everywhere
-          here. So, we thought it would be cool to keep track of the food we’ve
-          tried, give it a rating, and remember it for future reference.
+          keeping track of what we loved, what we liked, and what we didn’t care
+          for. Since moving to Boston, we have been introduced to a new realm of
+          restaurants. It’s quite different than what we were accustomed to in
+          Appleton, WI. There’s food everywhere here. So, we thought it would be
+          cool to keep track of the food we’ve tried, give it a rating, and
+          remember it for future reference.
         </p>
       </div>
       <FoodList />
