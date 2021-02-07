@@ -10,7 +10,7 @@ const FoodCard = ({
   imageUrl
 }) => {
   return (
-    <div className="bg-white p-8 rounded">
+    <div className="bg-white p-8 rounded border border-light-gray-200 shadow-md">
       <div className="text-center">
         <Link href={link}>
           <a target="_blank" className="text-xl text-blue-500">

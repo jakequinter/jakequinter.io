@@ -23,7 +23,7 @@ const Container = ({ children }) => {
 
   return (
     <>
-      <nav className="flex items-center flex-wrap bg-white bg-opacity-25 p-3 ">
+      <nav className="sticky-nav flex items-center justify-between w-full bg-white border-b flex-wrap p-3">
         {!isOpen && width < 767 ? (
           <h5 className="text-gray-900 font-bold">{handlePageTitle()}</h5>
         ) : null}
@@ -33,12 +33,6 @@ const Container = ({ children }) => {
         >
           {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
         </button>
-        {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
-        {/* <div
-          className={`${
-            isOpen ? '' : 'hidden'
-          }   w-full md:inline-flex md:flex-grow md:w-auto`}
-        > */}
         <div
           className={`${
             isOpen ? '' : 'hidden'
@@ -56,15 +50,14 @@ const Container = ({ children }) => {
               Resume
             </a>
           </Link>
-          {/* </div> */}
         </div>
       </nav>
-      <hr />
+      {/* <hr /> */}
       <div
-        className="flex-col justify-center px-4 mt-16 mb-16 max-w-4xl mx-auto"
-        style={{ minHeight: 'calc(100vh - 210px)' }}
+        className="flex-col justify-center pt-16 pb-16 px-4 max-w-4xl mx-auto"
+        style={{ minHeight: 'calc(100vh - 21px)' }}
       >
-        {children}
+        <div className="pt-16">{children}</div>
       </div>
       <Footer />
     </>

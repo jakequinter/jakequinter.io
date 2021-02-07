@@ -2,29 +2,28 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.theme-light {
+/* .theme-light {
   --text: theme(colors.gray.800);
   --bg-color: theme(colors.gray.50);
-}
+} */
 
-html {
+/* html {
   overflow: hidden;
   height: 100%;
-}
+} */
 
 body {
   height: 100%;
   overflow: auto;
   color: #4b5563;
   background-color: #f7fafc;
-  /* font-family: 'Inter, Roboto, sans-serif'; */
   font-size: 16px;
 }
 
-/* .sticky-nav {
-  position: sticky;
+.sticky-nav {
+  position: fixed;
   z-index: 10;
   top: 0;
-  backdrop-filter: saturate(180%) blur(20px);
-  transition: background-color 0.1 ease-in-out;
-} */
+  /* backdrop-filter: saturate(180%) blur(20px); */
+  /* transition: background-color 0.1 ease-in-out; */
+}

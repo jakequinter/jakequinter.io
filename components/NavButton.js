@@ -9,7 +9,7 @@ const NavButton = ({ href, text }) => {
   }, []);
 
   return (
-    <Link href={href} passHref>
+    <Link href={href}>
       <a
         className={
           isActive
