@@ -4,9 +4,13 @@ This is my personal site, which is just a small location to display some of the 
 
 ### Overview
 
+- `pages/api/years/*`: API routes for retrieving the timeline information on the `/` page.
 - `pages/api/things/*`: API routes for retrieving the 'internet things' destinations on the `/bookmarks` page.
+- `pages/api/food`: API route for retrieving all the food on the `/food` page.
+- `pages/index`: Retrieves information from `pages/api/years/*` to display the content for the timeline.
 - `pages/bookmarks`: Retrieves information from `pages/api/things/*` to display the content on the internet I find most fascinating.
-- `pages/things`: This is an authenticated route which displays a form to push new 'internet things' onto the API.
+- `pages/food`: Retrieves information from `pages/api/food` to display the food my girlfriend and I keep track of.
+- `pages/things`: This is an authenticated route which displays a UI for me to select which category I want to add to (years, things, food.)
 - `pages/*`: All other pages are static pages.
 
 ### Running Locally
