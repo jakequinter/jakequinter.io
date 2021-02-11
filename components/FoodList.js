@@ -12,6 +12,7 @@ const FoodList = () => {
       {data &&
         data.food.map(item => (
           <FoodCard
+            key={item.id}
             name={item.name}
             link={item.link}
             description={item.description}

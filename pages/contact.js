@@ -26,8 +26,8 @@ const Contact = () => (
           startups, freelance work, and remote opportunities.
         </p>
         <p>I look forward to hearing from you!</p>
-        <div className="text-center border border-light-gray-200 mt-8 p-4 rounded">
-          <h3 className="text-2xl text-gray-900 font-medium py-8">
+        <div className="text-center border border-light-gray-200 mt-8 py-8 rounded">
+          <h3 className="text-2xl text-gray-900 font-medium pb-4">
             Reach out to me directly
           </h3>
           <p>
