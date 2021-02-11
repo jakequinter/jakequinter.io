@@ -15,8 +15,6 @@ html {
 body {
   height: 100%;
   overflow: auto;
-  color: #4b5563;
+  color: #374151;
   background-color: #f7fafc;
-  /* font-family: 'Inter, Roboto, sans-serif'; */
-  font-size: 16px;
 }

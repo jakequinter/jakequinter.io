@@ -69,8 +69,8 @@ const About = () => {
           />
         </div>
       </div>
-      <div className="mt-8">
-        <h3 className="text-2xl text-gray-900 font-bold pb-4">
+      <div className="mt-16">
+        <h3 className="text-2xl text-gray-900 font-bold pb-8">
           What I'm working on
         </h3>
         <Link href="https://jenniferspick.com">

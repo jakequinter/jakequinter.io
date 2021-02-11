@@ -8,7 +8,7 @@ const index = () => (
   <Container>
     <div className="flex-col">
       <h1 className="text-4xl text-gray-900 font-bold">Hi, I'm Jake.</h1>
-      <p className="text-lg pt-2 pb-8 font-medium text-gray-700">
+      <p className="text-lg pt-2 pb-8 text-gray-900">
         I'm a software developer, tech enthusiast and live for designing and
         building things that live on the web. I'm currently building SMS
         messaging applications for Thrivent.

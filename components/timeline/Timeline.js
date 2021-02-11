@@ -15,7 +15,7 @@ const Timeline = () => {
 
   return (
     <div className="flow-root mt-16">
-      <h3 className="text-3xl text-gray-900 font-bold pb-4">Timeline</h3>
+      <h3 className="text-2xl text-gray-900 font-bold pb-8">Timeline</h3>
       {!year2020 && <Spinner />}
       {year2020 && (
         <>

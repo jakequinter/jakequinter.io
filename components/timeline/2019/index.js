@@ -5,14 +5,14 @@ import determineLogo from '@/utils/determineLogo';
 const Timeline2019 = ({ data }) => {
   return (
     <div>
-      <h3 className="text-xl text-gray-900 font-bold ">2019</h3>
+      <h3 className="text-xl text-gray-900 font-medium ">2019</h3>
       <hr className="mt-1 mb-6" />
       <div className="ml-2">
         <ul className="-mb-8">
           {data &&
             data.years.map((item, i) => (
               <li key={item.id}>
-                <div className="relative pb-8">
+                <div className="relative pb-12">
                   {data.years.length === i + 1 ? null : (
                     <span
                       className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
@@ -30,7 +30,7 @@ const Timeline2019 = ({ data }) => {
                         <p className="font-medium text-gray-900">
                           {item.title}
                         </p>
-                        <p className="text-sm pt-2">{item.description}</p>
+                        <p className="text-sm pt-4">{item.description}</p>
                       </div>
                       <div className="text-right text-sm whitespace-nowrap text-gray-500">
                         <em>{item.date}</em>
