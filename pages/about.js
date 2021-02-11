@@ -25,7 +25,7 @@ const About = () => {
       />
       <h1 className="text-4xl text-gray-900 font-bold pb-8">About Me</h1>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        <div className="pr-16">
+        <div className="pr-0 md:pr-16">
           <p className="pb-4">
             Hello, I’m Jake Quinter. I'm a software developer based in Boston,
             MA. I work on the Application Maintenance and Production Support
@@ -100,22 +100,22 @@ const About = () => {
                   </svg>
                 </div>
                 <div class="ml-3 flex-1 md:flex md:justify-between">
-                  <p class="text-sm text-blue-700">
+                  <p class="text-sm text-blue-700 pb-4">
                     This is the current development version and is a work in
                     progress. Therefore, you will come across bugs that I
                     haven't worked out yet, placeholder images, and
                     non-functioning implementations.
-                    <Link href="https://quispco-4437lwuug.vercel.app/">
-                      <a
-                        className="pl-8 font-medium text-blue-800 hover:text-blue-900"
-                        target="_blank"
-                      >
-                        View site <span aria-hidden="true">&rarr;</span>
-                      </a>
-                    </Link>
                   </p>
                 </div>
               </div>
+              <Link href="https://quispco-4437lwuug.vercel.app/">
+                <a
+                  className="pl-8 font-medium text-blue-800 hover:text-blue-900"
+                  target="_blank"
+                >
+                  View site <span aria-hidden="true">&rarr;</span>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
