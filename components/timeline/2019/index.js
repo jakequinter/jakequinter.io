@@ -12,7 +12,7 @@ const Timeline2019 = ({ data }) => {
           {data &&
             data.years.map((item, i) => (
               <li key={item.id}>
-                <div className="relative pb-12">
+                <div className="relative pb-8">
                   {data.years.length === i + 1 ? null : (
                     <span
                       className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"

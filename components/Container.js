@@ -41,7 +41,6 @@ const Container = ({ children }) => {
           <NavButton href="/" text="Home" />
           <NavButton href="/about" text="About" />
           <NavButton href="/bookmarks" text="Bookmarks" />
-          {/* <NavButton href="/contact" text="Contact" /> */}
           <Link href="/resume.pdf" passHref>
             <a
               className="md:inline-flex md:w-auto w-full px-3 py-2 rounded items-center justify-center text-gray-900 hover:text-blue-500 font-medium"
@@ -52,7 +51,6 @@ const Container = ({ children }) => {
           </Link>
         </div>
       </nav>
-      {/* <hr /> */}
       <div
         className="flex-col justify-center pt-16 pb-24 px-4 max-w-4xl mx-auto"
         style={{ minHeight: 'calc(100vh - 242px)' }}

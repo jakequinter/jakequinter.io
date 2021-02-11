@@ -15,7 +15,7 @@ const Food = () => (
       }}
     />
     <div className="flex-row justify-between align-center">
-      <h1 className="text-4xl text-gray-900 font-bold pb-4">Food</h1>
+      <h1 className="text-4xl text-gray-900 font-bold pb-8">Food</h1>
       <div>
         <p className="pb-16">
           My girlfriend and I love food. We love trying new places, cuisines,

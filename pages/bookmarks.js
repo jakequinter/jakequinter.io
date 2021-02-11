@@ -31,7 +31,7 @@ const Resume = () => (
       }}
     />
     <div className="flex-row justify-between align-center">
-      <h1 className="text-4xl text-gray-900 font-bold pb-4">Internet Things</h1>
+      <h1 className="text-4xl text-gray-900 font-bold pb-8">Internet Things</h1>
       <div>
         <p className="pb-8">
           This page is going to be a collection of “internet things” that I feel
@@ -43,7 +43,7 @@ const Resume = () => (
         </p>
         <Link href="https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021">
           <a target="_blank">
-            <div className="mb-8 p-4 rounded border border-light-gray-200 hover:shadow-md cursor-pointer">
+            <div className="mb-8 p-4 shadow-md hover:shadow-lg cursor-pointer">
               <p>
                 <span className="text-gray-900 font-bold">
                   Currently Reading:

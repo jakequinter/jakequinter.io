@@ -17,16 +17,10 @@ body {
   overflow: auto;
   color: #374151;
   background-color: #f7fafc;
-<<<<<<< HEAD
-=======
-  font-size: 16px;
->>>>>>> eaef1851fdf69bec31b548f2806f974f8fdf69f1
 }
 
 .sticky-nav {
   position: fixed;
   z-index: 10;
   top: 0;
-  /* backdrop-filter: saturate(180%) blur(20px); */
-  /* transition: background-color 0.1 ease-in-out; */
 }
