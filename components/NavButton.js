@@ -9,12 +9,12 @@ const NavButton = ({ href, text }) => {
   }, []);
 
   return (
-    <Link href={href} passHref>
+    <Link href={href}>
       <a
         className={
           isActive
-            ? 'text-sm xs:text-base text-blue-500 font-medium'
-            : 'text-sm xs:text-base text-gray-900 hover:text-blue-500 font-medium'
+            ? 'md:inline-flex md:w-auto w-full px-3 py-2 rounded items-center justify-center text-blue-500 bg-blue-100 md:bg-transparent font-medium'
+            : 'md:inline-flex md:w-auto w-full px-3 py-2 rounded items-center justify-center text-gray-900 hover:text-blue-500 font-medium'
         }
         onClick={() => setIsActive(!isActive)}
       >
