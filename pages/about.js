@@ -110,7 +110,7 @@ const About = () => {
               </div>
               <Link href="https://quispco-4437lwuug.vercel.app/">
                 <a
-                  className="pl-8 font-medium text-blue-800 hover:text-blue-900"
+                  className="ml-8 font-medium text-blue-800 hover:text-blue-900"
                   target="_blank"
                 >
                   View site <span aria-hidden="true">&rarr;</span>

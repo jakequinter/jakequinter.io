@@ -31,7 +31,7 @@ const Contact = () => (
             Reach out to me directly
           </h3>
           <p>
-            Monday &ndash; Sunday <br /> 5:00a.m. &ndash; 10:00p.m. (UTC)
+            Monday &ndash; Sunday <br /> 5:00a.m. &ndash; 10:00p.m. (EST)
             <br />
             (920) 585-1903 <br />
           </p>
