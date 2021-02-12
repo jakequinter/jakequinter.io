@@ -80,7 +80,7 @@ const About = () => {
           <div>
             <p className="pb-4">
               A web application to help bar and restaurant owners digitize their
-              sign-in and employee data. I am currently modifying a
+              sign-in and employee data.
             </p>
             <div className="rounded-md bg-blue-100 p-4">
               <div className="flex">
