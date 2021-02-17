@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@splitbee/web": "^0.2.4",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.1.0",
     "date-fns": "^2.16.1",
