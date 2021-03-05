@@ -79,15 +79,14 @@ const About = () => {
           </div>
           <div>
             <p>
-              Quisp has had a few different iterations with it starting as a
-              desktop application to help bar and restaurant owners manage their
-              sign-in and employee data. Since then, it migrated to a full-stack
-              web application using React, Redux, Node.js, Express, MongoDB, and
+              Quisp has had a few different iterations, starting as a desktop
+              application to help bar and restaurant owners manage their sign-in
+              and employee data. Since then, it migrated to a full-stack web
+              application using React, Redux, Node.js, Express, MongoDB, and
               Stripe as its core technologies. Currently, I'm iterating for
-              (hopefully) the last time. It is now in the process of being
-              converted to a Next.js application using TypeScript and GraphqlQL.
-              A web application to help bar and restaurant owners digitize their
-              sign-in and employee data.
+              (hopefully) the last time. It is now being converted to a Next.js
+              application using TypeScript, GraphQL, Apollo, Prisma, and
+              Firebase.
             </p>
           </div>
         </div>
