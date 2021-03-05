@@ -41,14 +41,14 @@ const Resume = () => (
           podcasts that deserve a listen, blogs worth reading, musings, and who
           knows what else.
         </p>
-        <Link href="https://www.amazon.com/Principles-Life-Work-Ray-Dalio/dp/1501124021">
+        <Link href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">
           <a target="_blank">
-            <div className="mb-8 p-4 shadow-md hover:shadow-lg cursor-pointer">
+            <div className="mb-8 p-4 bg-white rounded-md shadow-sm hover:shadow-md cursor-pointer">
               <p>
                 <span className="text-gray-900 font-bold">
                   Currently Reading:
                 </span>{' '}
-                Principles: Life and Work by Ray Dalio
+                Thinking, Fast and Slow by Daniel Kahneman
               </p>
             </div>
           </a>

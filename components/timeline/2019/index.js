@@ -1,45 +1,27 @@
-import React from 'react';
+import { FiZap } from 'react-icons/fi';
+import { IoSchoolOutline } from 'react-icons/io5';
+import TimelineEntry from '../TimelineEntry';
 
-import determineLogo from '@/utils/determineLogo';
-
-const Timeline2019 = ({ data }) => {
+const Timeline2019 = () => {
   return (
     <div>
       <h3 className="text-xl text-gray-900 font-medium ">2019</h3>
       <hr className="mt-1 mb-6" />
       <div className="ml-2">
         <ul className="-mb-8">
-          {data &&
-            data.years.map((item, i) => (
-              <li key={item.id}>
-                <div className="relative pb-8">
-                  {data.years.length === i + 1 ? null : (
-                    <span
-                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
-                      aria-hidden="true"
-                    ></span>
-                  )}
-                  <div className="relative flex space-x-3">
-                    <div>
-                      <span className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center ring-8 ring-gray-100">
-                        {determineLogo(item.type)}
-                      </span>
-                    </div>
-                    <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
-                      <div>
-                        <p className="font-medium text-gray-900">
-                          {item.title}
-                        </p>
-                        <p className="text-sm pt-4">{item.description}</p>
-                      </div>
-                      <div className="text-right text-sm whitespace-nowrap text-gray-500">
-                        <em>{item.date}</em>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
+          <TimelineEntry
+            title="Graduated from Fox Valley Technical College"
+            description="I'm glad I chose FVTC to start my journey in tech. I learned a lot from both hands on experience and the theory behind software."
+            date="Dec 19"
+            logo={<IoSchoolOutline size={18} />}
+          />
+          <TimelineEntry
+            title="Landed an internship at IGEN"
+            description="I am very excited for my first role in IT. I will be working around 25 hours/wk on top of my studies."
+            date="Apr 1"
+            logo={<FiZap size={18} />}
+            isLast="true"
+          />
         </ul>
       </div>
     </div>
