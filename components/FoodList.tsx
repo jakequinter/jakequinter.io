@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
 
 import fetcher from '@/utils/fetcher';
 import FoodCard from '@/components/FoodCard';
+import { grid } from '@/styles/grid';
 
-const FoodList = () => {
+export default function FoodList() {
   const { data } = useSWR('/api/food', fetcher);
 
   return (
-    <div className="grid gap-4 xs:grid-cols:1 sm:grid-cols-2">
+    <div className={grid()}>
       {data &&
         data.food.map(item => (
           <FoodCard
@@ -23,6 +23,4 @@ const FoodList = () => {
         ))}
     </div>
   );
-};
-
-export default FoodList;
+}

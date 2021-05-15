@@ -1,18 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 import { box } from '../styles/box';
 import NavButton from '@/components/NavButton';
-import { styled } from '../stitches.config';
 import useWindowSize from '@/utils/useWindowSize';
-
-// const Nav = styled('nav', {
-//   display: 'flex',
-//   alignItems: 'center',
-//   width: '100%'
-// });
+import { link } from '@/styles/link';
+import ThemeChanger from '@/components/ThemeChanger';
 
 export default function Header() {
   const router = useRouter();
@@ -36,7 +32,7 @@ export default function Header() {
       {/* <MenuButton
           className="inline-flex p-3 rounded md:hidden text-gray-900 ml-auto outline-none"
           onClick={() => setIsOpen(!isOpen)}
-        >
+          >
           {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
         </MenuButton> */}
       <div
@@ -45,16 +41,25 @@ export default function Header() {
           width: '100%',
           justifyContent: 'space-between',
           maxWidth: '56rem',
-          mx: 'auto'
+          mx: 'auto',
+          paddingTop: '$3',
         })}
       >
-        <div className={box({ display: 'flex' })}>
+        <div className={box({ display: 'flex', alignItems: 'center' })}>
           <NavButton href="/" text="Home" />
         </div>
-        <div className={box({ display: 'flex', flexWrap: 'wrap', gap: '$4' })}>
+        <div
+          className={box({
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '$4',
+          })}
+        >
           <NavButton href="/about" text="About" />
           <NavButton href="/bookmarks" text="Bookmarks" />
           <NavButton href="/blog" text="Blog" />
+          <ThemeChanger />
         </div>
       </div>
     </div>

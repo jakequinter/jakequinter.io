@@ -3,6 +3,8 @@ import useSWR from 'swr';
 
 import BookmarkPanel from '@/components/BookmarkPanel';
 import fetcher from '@/utils/fetcher';
+import { box } from '@/styles/box';
+import { button } from '@/styles/button';
 
 const Things = () => {
   const { data: allThings } = useSWR('/api/things', fetcher);
@@ -20,19 +22,28 @@ const Things = () => {
       onClick={() => setTabData(data)}
       className={
         tabData === data
-          ? 'border-blue-500 text-blue-500 focus:outline-none whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
-          : ' text-gray-500 hover:text-gray-700 focus:outline-none border-none whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
+          ? button({ type: 'activetab' })
+          : button({ type: 'inactivetab' })
       }
+      // className={
+      //   tabData === data
+      //     ? 'border-blue-500 text-blue-500 focus:outline-none whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
+      //     : ' text-gray-500 hover:text-gray-700 focus:outline-none border-none whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
+      // }
     >
       {text}
     </button>
   );
 
   return (
-    <div>
+    <>
       <div>
-        <div className="border-b border-gray-200">
-          <nav className="-mb-px flex space-x-3 xs:space-x-8" aria-label="Tabs">
+        <div
+          className={box({
+            borderBottom: '1px solid $gray500'
+          })}
+        >
+          <nav aria-label="Tabs">
             <TabButton text={'All'} data={allThings} />
             <TabButton text={'Personal Sites'} data={personalThings} />
             <TabButton text={'People'} data={peopleThings} />
@@ -41,7 +52,7 @@ const Things = () => {
         </div>
       </div>
       <BookmarkPanel data={tabData} />
-    </div>
+    </>
   );
 };
 

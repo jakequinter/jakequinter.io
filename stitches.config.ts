@@ -6,15 +6,16 @@ const stitchesConfig = createCss({
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
 
-      gray100: '#FAFBFC',
-      gray200: '#EAEAEA',
-      gray300: '#9F9F9F',
-      gray400: '#8B8B8B',
-      gray500: '#393939',
-      gray600: '#404040'
+      gray600: '#FAFBFC',
+      gray500: '#EAEAEA',
+      gray400: '#9F9F9F',
+      gray300: '#8B8B8B',
+      gray200: '#393939',
+      gray100: '#404040',
+
     },
     fonts: {
-      system: 'system-ui'
+      system: 'system-ui',
     },
     fontSizes: {
       1: '12px',
@@ -25,7 +26,7 @@ const stitchesConfig = createCss({
       6: '32px',
       7: '48px',
       8: '64px',
-      9: '72px'
+      9: '72px',
     },
     space: {
       1: '4px',
@@ -35,7 +36,7 @@ const stitchesConfig = createCss({
       5: '64px',
       6: '128px',
       7: '256px',
-      8: '512px'
+      8: '512px',
     },
     sizes: {
       1: '4px',
@@ -45,7 +46,7 @@ const stitchesConfig = createCss({
       5: '64px',
       6: '128px',
       7: '256px',
-      8: '512px'
+      8: '512px',
     },
     lineHeights: {
       1: '18px',
@@ -56,40 +57,53 @@ const stitchesConfig = createCss({
       6: '48px',
       7: '72px',
       8: '96px',
-      9: '108px'
+      9: '108px',
     },
     radii: {
       1: '2px',
       2: '4px',
       3: '8px',
-      round: '9999px'
-    }
+      round: '9999px',
+    },
   },
   media: {
     bp1: '(min-width: 575px)',
     bp2: '(min-width: 750px)',
     bp3: '(min-width: 1000px)',
-    bp4: '(min-width: 1200px)'
+    bp4: '(min-width: 1200px)',
+    dark: '(prefers-color-scheme: dark)',
   },
   utils: {
     mx: config => value => ({
       marginLeft: value,
-      marginRight: value
+      marginRight: value,
     }),
     my: config => value => ({
       marginTop: value,
-      marginBottom: value
+      marginBottom: value,
     }),
     px: config => value => ({
       paddingLeft: value,
-      paddingRight: value
+      paddingRight: value,
     }),
     py: config => value => ({
       paddingTop: value,
-      paddingBottom: value
-    })
-  }
+      paddingBottom: value,
+    }),
+  },
 });
+
+export const darkTheme = stitchesConfig.theme({
+  colors: {
+    gray100: '#FAFBFC',
+    gray200: '#EAEAEA',
+    gray300: '#9F9F9F',
+    gray400: '#8B8B8B',
+    gray500: '#393939',
+    gray600: '#404040',
+
+  }
+})
 
 export type CSS = StitchesCss<typeof stitchesConfig>;
 

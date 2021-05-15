@@ -3,22 +3,9 @@ import { NextSeo } from 'next-seo';
 
 import Container from '@/components/Container';
 import Things from '@/components/Things';
-
-const ResumeItem = ({ content, children }) => {
-  return (
-    <ListItem color="#484848" width={['100%', '80%']}>
-      <Stack ml={2} pb={3}>
-        <Flex align="center">
-          <Icon name="chevron-right" mr={2} />
-          <Text>{content}</Text>
-        </Flex>
-        <Text color="#d8d8d8" ml={6}>
-          {children}
-        </Text>
-      </Stack>
-    </ListItem>
-  );
-};
+import { text } from '@/styles/text';
+import { box } from '@/styles/box';
+import { link } from '@/styles/link';
 
 const Resume = () => (
   <Container>
@@ -31,9 +18,17 @@ const Resume = () => (
       }}
     />
     <div className="flex-row justify-between align-center">
-      <h1 className="text-4xl text-gray-900 font-bold pb-8">Internet Things</h1>
+      <h1
+        className={text({
+          size: '7',
+          weight: 'medium',
+          css: { marginBottom: '$4' }
+        })}
+      >
+        Internet Things
+      </h1>
       <div>
-        <p className="pb-8">
+        <p className={text({ css: { paddingBottom: '$4' } })}>
           This page is going to be a collection of “internet things” that I feel
           are exceptional and want to save for future reference. These "internet
           things" are going to range from personal websites I admire, people who
@@ -42,13 +37,17 @@ const Resume = () => (
           knows what else.
         </p>
         <Link href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">
-          <a target="_blank">
-            <div className="mb-8 p-4 bg-white rounded-md shadow-sm hover:shadow-md cursor-pointer">
-              <p>
-                <span className="text-gray-900 font-bold">
-                  Currently Reading:
-                </span>{' '}
-                Thinking, Fast and Slow by Daniel Kahneman
+          <a className={link()} target="_blank">
+            <div
+              className={box({
+                border: '1px solid $gray500',
+                marginBottom: '$4',
+                padding: '$3',
+                borderRadius: '5px'
+              })}
+            >
+              <p className={text()}>
+                Currently Reading: Thinking, Fast and Slow by Daniel Kahneman
               </p>
             </div>
           </a>

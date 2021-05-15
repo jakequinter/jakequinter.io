@@ -1,23 +1,34 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import Container from '@/components/Container';
+import Header from '@/components/Header';
 import FoodList from '@/components/FoodList';
+import { text } from '@/styles/text';
+import { box } from '@/styles/box';
 
 const Food = () => (
-  <Container>
+  <div>
     <NextSeo
-      title="Jake Quinter 📌"
-      canonical="https://jakequinter.io/bookmarks"
+      title="Jake Quinter 🍕"
+      canonical="https://jakequinter.io/food"
       openGraph={{
-        url: 'https://jakequinter.io/bookmarks',
-        title: 'Jake Quinter 📌'
+        url: 'https://jakequinter.io/food',
+        title: 'Jake Quinter 🍕'
       }}
     />
-    <div className="flex-row justify-between align-center">
-      <h1 className="text-4xl text-gray-900 font-bold pb-8">Food</h1>
+    <Header />
+    <div className={box({ my: 80, maxWidth: '56rem', mx: 'auto' })}>
+      <h1
+        className={text({
+          size: '7',
+          weight: 'medium',
+          css: { marginBottom: '$4' }
+        })}
+      >
+        Food 😋
+      </h1>
       <div>
-        <p className="pb-16">
+        <p className={text({ css: { paddingBottom: '$5' } })}>
           My girlfriend and I love food. We love trying new places, cuisines,
           keeping track of what we loved, what we liked, and what we didn’t care
           for. Since moving to Boston, we have been introduced to a new realm of
@@ -29,7 +40,7 @@ const Food = () => (
       </div>
       <FoodList />
     </div>
-  </Container>
+  </div>
 );
 
 export default Food;

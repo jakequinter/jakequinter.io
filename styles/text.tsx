@@ -24,15 +24,18 @@ export const text = css({
       },
       5: {
         fontSize: '24px',
-        lineHeight: '36px'
+        lineHeight: '36px',
+        color: '$gray100'
       },
       6: {
         fontSize: '32px',
-        lineHeight: '48px'
+        lineHeight: '48px',
+        color: '$gray100'
       },
       7: {
         fontSize: '48px',
-        lineHeight: '48px'
+        lineHeight: '48px',
+        color: '$gray100'
       },
       8: {
         fontSize: '64px',

@@ -5,20 +5,19 @@ export const link = css({
   cursor: 'default',
   textDecoration: 'none',
   color: '$gray400',
-  py: '$3',
 
   // '&:visited': {
   //   color: 'inherit'
   // },
 
   '&:hover': {
-    color: '$gray200'
+    color: '$gray300',
   },
 
   variants: {
     type: {
       active: { color: '$gray200', border: 'none' },
-      unactive: { border: 'none' }
-    }
-  }
+      unactive: { border: 'none' },
+    },
+  },
 });

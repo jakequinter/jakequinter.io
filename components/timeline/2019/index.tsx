@@ -1,26 +1,36 @@
-import { FiZap } from 'react-icons/fi';
-import { IoSchoolOutline } from 'react-icons/io5';
+import { HiOutlineLightningBolt, HiOutlineAcademicCap } from 'react-icons/hi';
+
 import TimelineEntry from '../TimelineEntry';
+import { text } from '@/styles/text';
+import { box } from '@/styles/box';
 
 const Timeline2019 = () => {
   return (
     <div>
-      <h3 className="text-xl text-gray-900 font-medium ">2019</h3>
-      <hr className="mt-1 mb-6" />
-      <div className="ml-2">
-        <ul className="-mb-8">
+      <h1
+        className={text({
+          size: '5',
+          weight: 'medium',
+          css: { color: '$gray300', marginBottom: '$1' }
+        })}
+      >
+        2019
+      </h1>
+      <hr className={text({ css: { borderColor: '$gray500' } })} />
+      <div>
+        <ul className={box({ listStyle: 'none', padding: 0 })}>
           <TimelineEntry
             title="Graduated from Fox Valley Technical College"
             description="I'm glad I chose FVTC to start my journey in tech. I learned a lot from both hands on experience and the theory behind software."
             date="Dec 19"
-            logo={<IoSchoolOutline size={18} />}
+            logo={<HiOutlineAcademicCap size={20} />}
           />
           <TimelineEntry
             title="Landed an internship at IGEN"
             description="I am very excited for my first role in IT. I will be working around 25 hours/wk on top of my studies."
             date="Apr 1"
-            logo={<FiZap size={18} />}
-            isLast="true"
+            logo={<HiOutlineLightningBolt size={20} />}
+            isLast={true}
           />
         </ul>
       </div>
