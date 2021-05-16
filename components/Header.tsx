@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <div>
-      {!isOpen && width < 767 ? (
+      {/* {!isOpen && width < 767 ? (
         <h5 className="text-gray-900 font-bold">{handlePageTitle()}</h5>
       ) : null}
       {width < 767 ? (
@@ -40,7 +40,7 @@ export default function Header() {
         >
           {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
         </button>
-      ) : null}
+      ) : null} */}
       <div
         className={box({
           display: 'flex',
@@ -65,7 +65,9 @@ export default function Header() {
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
-            gap: '$4',
+            gap: '$3',
+
+            '@bp1': { gap: '$4' },
           })}
         >
           <NavButton href="/about" text="About" />

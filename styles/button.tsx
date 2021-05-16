@@ -10,19 +10,17 @@ export const button = css({
   margin: 0,
   py: '$2',
   px: '$3',
-  backgroundColor: '$gray100',
+  backgroundColor: '$gray200',
   color: '$gray500',
   fontSize: '$3',
   lineHeight: 1,
 
   '&:hover': {
-    color: '#000',
+    color: '$gray600',
   },
 
   '&:focus': {
     outline: 'none',
-    bc: '$black',
-    color: '$white',
   },
 
   variants: {
@@ -31,7 +29,7 @@ export const button = css({
         border: 'none',
         borderBottom: '1px solid white',
         px: 0,
-        marginRight: '$2',
+        marginRight: '$3',
         fontSize: '$2',
         backgroundColor: 'inherit',
         borderRadius: 0,
@@ -49,7 +47,7 @@ export const button = css({
         border: 'none',
         px: 0,
         fontSize: '$2',
-        marginRight: '$2',
+        marginRight: '$3',
         backgroundColor: 'inherit',
         borderRadius: 0,
         color: '$gray400',

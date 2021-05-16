@@ -82,7 +82,7 @@ const ThingsForm = () => {
                   required: 'Required',
                 })}
               >
-                <option value="personal">Personal</option>
+                <option value="site">Site</option>
                 <option value="people">People</option>
                 <option value="book">Book</option>
                 <option value="podcast">Podcast</option>

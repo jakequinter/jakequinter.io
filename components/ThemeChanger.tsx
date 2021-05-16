@@ -22,13 +22,14 @@ export default function ThemeToggle() {
   return (
     <a
       className={link({
-        // type: 'unactive',
+        type: 'unactive',
         css: {
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: '#fff',
+          backgroundColor: '$gray500',
           padding: '$2',
-          borderRadius: '$1',
+          borderRadius: '5px',
+          // border: 'none',
         },
       })}
       onClick={handleTheme}

@@ -52,6 +52,10 @@ export default function Bookmarks({
                   marginBottom: '$4',
                   padding: '$3',
                   borderRadius: '5px',
+                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                  '&:hover': {
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                  },
                 })}
               >
                 <p className={text()}>

@@ -8,6 +8,7 @@ import Timeline from '@/components/timeline/Timeline';
 import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { link } from '@/styles/link';
+import { image } from '@/styles/image';
 
 const About = () => {
   return (
@@ -59,8 +60,8 @@ const About = () => {
           justifyContent: 'center',
         })}
       >
-        <img
-          style={{ borderRadius: '10px' }}
+        <Image
+          className={image()}
           src="/jake.jpg"
           alt="Jake Quinter"
           height={375}
