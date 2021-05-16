@@ -1,12 +1,9 @@
-import React from 'react';
-
 import Container from '@/components/Container';
-import ThingsForm from '@/components/ThingsForm';
 import LoginForm from '@/components/LoginForm';
 import { useAuth } from '../lib/auth';
 import UpdateSelection from '@/components/UpdateSelection';
 
-const things = () => {
+export default function Things() {
   const auth = useAuth();
 
   const determineUser = () => {
@@ -18,6 +15,4 @@ const things = () => {
     }
   };
   return <Container>{determineUser()}</Container>;
-};
-
-export default things;
+}

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -7,7 +6,6 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { box } from '../styles/box';
 import NavButton from '@/components/NavButton';
 import useWindowSize from '@/utils/useWindowSize';
-import { link } from '@/styles/link';
 import ThemeChanger from '@/components/ThemeChanger';
 
 export default function Header() {

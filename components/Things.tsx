@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import useSWR from 'swr';
+import { useState, useEffect } from 'react';
 
 import BookmarkPanel from '@/components/BookmarkPanel';
-import fetcher from '@/utils/fetcher';
 import { box } from '@/styles/box';
 import { button } from '@/styles/button';
 
-const Things = () => {
-  const { data: allThings } = useSWR('/api/things', fetcher);
-  const { data: personalThings } = useSWR('/api/things/personal', fetcher);
-  const { data: peopleThings } = useSWR('/api/things/people', fetcher);
-  const { data: podcastThings } = useSWR('/api/things/podcast', fetcher);
+const Things = ({ allThings, personalSites, people, booksAndPodcasts }) => {
   const [tabData, setTabData] = useState(null);
 
   useEffect(() => {
@@ -40,14 +34,14 @@ const Things = () => {
       <div>
         <div
           className={box({
-            borderBottom: '1px solid $gray500'
+            borderBottom: '1px solid $gray500',
           })}
         >
           <nav aria-label="Tabs">
             <TabButton text={'All'} data={allThings} />
-            <TabButton text={'Personal Sites'} data={personalThings} />
-            <TabButton text={'People'} data={peopleThings} />
-            <TabButton text={'Books & Podcasts'} data={podcastThings} />
+            <TabButton text={'Personal Sites'} data={personalSites} />
+            <TabButton text={'People'} data={people} />
+            <TabButton text={'Books & Podcasts'} data={booksAndPodcasts} />
           </nav>
         </div>
       </div>

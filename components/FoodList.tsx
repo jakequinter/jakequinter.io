@@ -1,16 +1,11 @@
-import useSWR from 'swr';
-
-import fetcher from '@/utils/fetcher';
 import FoodCard from '@/components/FoodCard';
 import { grid } from '@/styles/grid';
 
-export default function FoodList() {
-  const { data } = useSWR('/api/food', fetcher);
-
+export default function FoodList({ data }) {
   return (
     <div className={grid()}>
       {data &&
-        data.food.map(item => (
+        data.map(item => (
           <FoodCard
             key={item.id}
             name={item.name}

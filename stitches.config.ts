@@ -13,6 +13,10 @@ const stitchesConfig = createCss({
       gray200: '#393939',
       gray100: '#404040',
 
+      yellow100: '#FEF3C7',
+      yellow400: '#FBBF24',
+      yellow700: '#B45309'
+
     },
     fonts: {
       system: 'system-ui',

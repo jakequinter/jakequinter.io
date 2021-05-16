@@ -1,9 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 import { createFood } from '@/lib/db';
 import { useAuth } from '@/lib/auth';
+import { box } from '@/styles/box';
+import { text } from '@/styles/text';
+import { input } from '@/styles/input';
+import { button } from '@/styles/button';
 
 const FoodForm = () => {
   const auth = useAuth();
@@ -16,7 +21,7 @@ const FoodForm = () => {
     type,
     jakeRating,
     jenRating,
-    imageUrl
+    imageUrl,
   }) => {
     const newFood = {
       authorId: auth.user.uid,
@@ -27,23 +32,35 @@ const FoodForm = () => {
       type,
       jakeRating,
       jenRating,
-      imageUrl
+      imageUrl,
     };
 
-    createFood(newFood);
+    try {
+      createFood(newFood);
+
+      toast.success('Your food has been added.');
+    } catch (error) {
+      toast.error('Error: there was a problem');
+    }
   };
 
   return (
-    <div className="flex-row justify-between items-center">
+    <div
+      className={box({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      })}
+    >
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
       <div>
-        <h3 className="text-4xl text-gray-900 text-center pb-8">
+        <h3 className={text({ size: '7', css: { paddingBottom: '$4' } })}>
           Add new food
         </h3>
         <div>
-          <form className="space-y-6" onSubmit={handleSubmit(onCreateFood)}>
+          <form onSubmit={handleSubmit(onCreateFood)}>
             <div>
               <label
                 htmlFor="name"
@@ -56,10 +73,10 @@ const FoodForm = () => {
                   type="text"
                   name="name"
                   id="name"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="Regina's Pizzeria"
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
@@ -72,9 +89,9 @@ const FoodForm = () => {
               <select
                 id="type"
                 name="type"
-                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                className={input()}
                 ref={register({
-                  required: 'Required'
+                  required: 'Required',
                 })}
               >
                 <option value="personal">Pizza</option>
@@ -95,10 +112,10 @@ const FoodForm = () => {
                   type="text"
                   name="description"
                   id="description"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="Naval is a must follow."
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
@@ -117,10 +134,10 @@ const FoodForm = () => {
                   step=".1"
                   name="jakeRating"
                   id="jakeRating"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="Naval is a must follow."
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
@@ -139,10 +156,10 @@ const FoodForm = () => {
                   step=".1"
                   name="jenRating"
                   id="jenRating"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="Naval is a must follow."
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
@@ -160,10 +177,10 @@ const FoodForm = () => {
                   type="text"
                   name="link"
                   id="link"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="https://websiteurl.com"
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
@@ -181,27 +198,28 @@ const FoodForm = () => {
                   type="text"
                   name="imageUrl"
                   id="imageUrl"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                  className={input()}
                   placeholder="https://websiteurl.com"
                   ref={register({
-                    required: 'Required'
+                    required: 'Required',
                   })}
                 />
               </div>
             </div>
 
-            <button
-              className="mt-8 bg-gray-700 px-4 py-2 rounded text-white float-right hover:bg-gray-900"
-              onClick={() => auth.signout()}
+            <div
+              className={box({
+                display: 'flex',
+                justifyContent: 'space-around',
+              })}
             >
-              Sign out
-            </button>
-            <button
-              className="mt-8 mr-4 bg-blue-500 px-4 py-2 rounded text-white float-right hover:bg-blue-600"
-              type="submit"
-            >
-              Submit
-            </button>
+              <button className={button()} onClick={() => auth.signout()}>
+                Sign out
+              </button>
+              <button className={button()} type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
