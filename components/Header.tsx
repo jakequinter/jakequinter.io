@@ -1,17 +1,22 @@
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 
 import { box } from '../styles/box';
 import NavButton from '@/components/NavButton';
 import useWindowSize from '@/utils/useWindowSize';
 import ThemeChanger from '@/components/ThemeChanger';
+import { button } from '@/styles/button';
 
 export default function Header() {
   const router = useRouter();
   const { width } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const handlePageTitle = () => {
     if (router.pathname === '/') return 'Home';
@@ -27,12 +32,15 @@ export default function Header() {
       {!isOpen && width < 767 ? (
         <h5 className="text-gray-900 font-bold">{handlePageTitle()}</h5>
       ) : null}
-      {/* <MenuButton
-          className="inline-flex p-3 rounded md:hidden text-gray-900 ml-auto outline-none"
+      {width < 767 ? (
+        <button
+          className={button()}
+          // className="inline-flex p-3 rounded md:hidden text-gray-900 ml-auto outline-none"
           onClick={() => setIsOpen(!isOpen)}
-          >
+        >
           {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-        </MenuButton> */}
+        </button>
+      ) : null}
       <div
         className={box({
           display: 'flex',
@@ -44,7 +52,13 @@ export default function Header() {
         })}
       >
         <div className={box({ display: 'flex', alignItems: 'center' })}>
-          <NavButton href="/" text="Home" />
+          <Link href="/">
+            {theme === 'dark' ? (
+              <Image src="/darklogo.png" height={50} width={60} />
+            ) : (
+              <Image src="/lightlogo.png" height={50} width={60} />
+            )}
+          </Link>
         </div>
         <div
           className={box({

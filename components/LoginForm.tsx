@@ -77,7 +77,6 @@ export default function LoginForm() {
               alignItems: 'center',
             },
           })}
-          // className=" flex justify-center items-center w-3/5 bg-white py-3 text-gray-900 font-medium hover:bg-gray-100 rounded"
           onClick={() => auth.signinWithGoogle()}
         >
           <FcGoogle
