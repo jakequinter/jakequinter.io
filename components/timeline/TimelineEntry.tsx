@@ -16,7 +16,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
       <div
         className={box({
           position: 'relative',
-          paddingBottom: '$5'
+          paddingBottom: '$5',
         })}
       >
         {!isLast ? (
@@ -27,7 +27,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
               left: '21px', // 1/2 of span height/width
               height: '100%',
               width: '1px',
-              backgroundColor: '$gray500'
+              backgroundColor: '$gray500',
             })}
             // className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
             aria-hidden="true"
@@ -45,7 +45,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginRight: '$4',
-                color: '$gray400'
+                color: '$gray400',
                 // padding: '$3'
               })}
             >
@@ -54,19 +54,19 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
           </div>
           <div
             className={box({
-              width: '100%'
+              width: '100%',
             })}
           >
             <div
               className={box({
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'center'
+                alignItems: 'center',
               })}
             >
               <p
                 className={text({
-                  weight: 'medium'
+                  weight: 'medium',
                   // css: { marginBottom: '$1' }
                 })}
               >
@@ -75,7 +75,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
               <em
                 className={text({
                   size: '2',
-                  css: { color: '$gray600' }
+                  css: { color: '$gray400' },
                 })}
               >
                 {date}
@@ -84,7 +84,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
             <p
               className={text({
                 size: '2',
-                css: { color: '$gray700', paddingTop: '$2' }
+                css: { color: '$gray700', paddingTop: '$2' },
               })}
             >
               {description}

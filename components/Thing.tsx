@@ -16,18 +16,22 @@ export default function Thing({ id, link, title, type, description }: Thing) {
   return (
     <div key={id} className={box({ py: '$3' })}>
       <div>
-        <Link href={link}>
+        <Link href={link} passHref>
           <a
             className={stylelink({
               type: 'unactive',
-              css: {
-                color: '$gray200',
-                '&:hover': { color: '$gray300' }
-              }
+              css: { '&:hover': { borderBottom: '1px solid $gray300' } },
             })}
             target="_blank"
           >
-            {title}
+            <p
+              className={text({
+                weight: 'medium',
+                css: { display: 'inline', cursor: 'default' },
+              })}
+            >
+              {title}
+            </p>
           </a>
         </Link>
         <span
@@ -41,8 +45,8 @@ export default function Thing({ id, link, title, type, description }: Thing) {
               fontSize: '$1',
               lineHeight: '$2',
               backgroundColor: '$gray500',
-              color: '$gray400'
-            }
+              color: '$gray400',
+            },
           })}
         >
           {type}

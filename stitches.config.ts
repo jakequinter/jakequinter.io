@@ -6,6 +6,7 @@ const stitchesConfig = createCss({
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
 
+      gray700: '#666666',
       gray600: '#FAFBFC',
       gray500: '#EAEAEA',
       gray400: '#9F9F9F',
@@ -105,6 +106,7 @@ export const darkTheme = stitchesConfig.theme({
     gray400: '#8B8B8B',
     gray500: '#393939',
     gray600: '#404040',
+    gray700: '#666666',
 
   }
 })

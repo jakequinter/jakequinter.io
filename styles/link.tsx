@@ -16,7 +16,11 @@ export const link = css({
 
   variants: {
     type: {
-      active: { color: '$gray200', border: 'none' },
+      active: {
+        color: '$gray200',
+        border: 'none',
+        '&:hover': { color: '$gray200' },
+      },
       unactive: { border: 'none' },
     },
   },
