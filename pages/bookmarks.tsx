@@ -8,6 +8,7 @@ import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { link } from '@/styles/link';
 import { getAllThings } from '@/lib/db-admin';
+import { grid } from '@/styles/grid';
 
 export default function Bookmarks({
   allThings,
@@ -44,26 +45,141 @@ export default function Bookmarks({
             are worth reading, podcasts that deserve a listen, blogs worth
             reading, musings, and who knows what else.
           </p>
-          <Link href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">
-            <a className={link()} target="_blank">
-              <div
-                className={box({
-                  border: '1px solid $gray500',
-                  marginBottom: '$4',
-                  padding: '$3',
-                  borderRadius: '5px',
-                  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                  '&:hover': {
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                  },
+
+          <h3
+            className={text({
+              size: '3',
+              weight: 'medium',
+              css: { textAlign: 'center', paddingBottom: '$2' },
+            })}
+          >
+            Currently reading 📚
+          </h3>
+          <div
+            className={grid({
+              rows: '3',
+              css: { gap: '$2', marginBottom: '$5' },
+            })}
+          >
+            <Link href="https://www.amazon.com/Rational-Optimist-Prosperity-Evolves-P-s/dp/0061452068">
+              <a
+                className={link({
+                  type: 'unactive',
+                  css: { '&:hover': { color: '$gray400' } },
                 })}
+                target="_blank"
               >
-                <p className={text()}>
-                  Currently Reading: Thinking, Fast and Slow by Daniel Kahneman
-                </p>
-              </div>
-            </a>
-          </Link>
+                <div
+                  className={box({
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid $gray500',
+                    padding: '$3',
+                    borderRadius: '5px',
+                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                    '@bp2': {
+                      flexDirection: 'column',
+                      alignItems: 'start',
+                    },
+                    '&:hover': {
+                      borderColor: '$gray400',
+                    },
+                  })}
+                >
+                  <p className={text()}>The Rational Optimist</p>
+                  <p
+                    className={text({
+                      size: '2',
+                      css: { color: '$gray300', paddingTop: '$2' },
+                    })}
+                  >
+                    Matt Ridley
+                  </p>
+                </div>
+              </a>
+            </Link>
+            <Link href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557">
+              <a
+                className={link({
+                  type: 'unactive',
+                  css: { '&:hover': { color: '$gray400' } },
+                })}
+                target="_blank"
+              >
+                <div
+                  className={box({
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid $gray500',
+                    padding: '$3',
+                    borderRadius: '5px',
+                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                    '@bp2': {
+                      flexDirection: 'column',
+                      alignItems: 'start',
+                    },
+                    '&:hover': {
+                      borderColor: '$gray400',
+                    },
+                  })}
+                >
+                  <div>
+                    <p className={text()}>Thinking in Systems</p>
+                  </div>
+                  <div>
+                    <p
+                      className={text({
+                        size: '2',
+                        css: { color: '$gray300', paddingTop: '$2' },
+                      })}
+                    >
+                      Donella Meadows
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
+            <Link href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898">
+              <a
+                className={link({
+                  type: 'unactive',
+                  css: { '&:hover': { color: '$gray400' } },
+                })}
+                target="_blank"
+              >
+                <div
+                  className={box({
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid $gray500',
+                    padding: '$3',
+                    borderRadius: '5px',
+                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                    '@bp2': {
+                      flexDirection: 'column',
+                      alignItems: 'start',
+                    },
+                    '&:hover': {
+                      borderColor: '$gray400',
+                    },
+                  })}
+                >
+                  <p className={text()}>The Lean Startup</p>
+                  <p
+                    className={text({
+                      size: '2',
+                      css: { color: '$gray300', paddingTop: '$2' },
+                    })}
+                  >
+                    Eric Ries
+                  </p>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
         <Things
           allThings={allThings}
