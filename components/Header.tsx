@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { HiOutlineSun, HiOutlineMoon } from 'react-icons/hi';
 
 import { box } from '../styles/box';
 import NavButton from '@/components/NavButton';

@@ -8,7 +8,6 @@ import { box } from '@/styles/box';
 
 const UpdateSelection = () => {
   const [form, setForm] = useState(null);
-  console.log(form);
 
   const determineForm = () => {
     if (form === 'Bookmarks') {
