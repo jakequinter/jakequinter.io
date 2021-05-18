@@ -10,7 +10,6 @@ export default function FoodList({ data }) {
             key={item.id}
             name={item.name}
             link={item.link}
-            description={item.description}
             jakeRating={item.jakeRating}
             jenRating={item.jenRating}
             imageUrl={item.imageUrl}
