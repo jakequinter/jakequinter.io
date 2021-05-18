@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
@@ -192,7 +192,7 @@ export default function Bookmarks({
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getStaticProps: GetStaticProps = async context => {
   const allThings = await getAllThings();
   const personalSites = allThings.filter(t => t.type === 'site');
   const people = allThings.filter(t => t.type === 'people');
