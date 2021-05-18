@@ -36,7 +36,8 @@ export default function Blog({ posts }) {
                 title={post.data.title}
                 description={post.data.description}
                 createdAt={format(formattedDate, 'PP')}
-                slug={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`}
+                slug={`/blog/${post.data.slug}`}
+                // slug={`/blog/${post.filePath.replace(/\.mdx?$/, '')}`}
               />
             </li>
           );

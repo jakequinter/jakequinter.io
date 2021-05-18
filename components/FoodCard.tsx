@@ -8,7 +8,6 @@ import { image } from '@/styles/image';
 export default function FoodCard({
   name,
   link,
-  description,
   jakeRating,
   jenRating,
   imageUrl,
@@ -18,14 +17,14 @@ export default function FoodCard({
       className={box({
         padding: '$4',
         borderRadius: '5px',
-        border: '1px solid $gray500',
+        border: '1px solid $border',
         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
       })}
     >
       <div className={box({ textAlign: 'center' })}>
         <Link href={link}>
           <a
-            className={stylelink({ type: 'unactive', css: { fontSize: '$4' } })}
+            className={stylelink({ css: { fontSize: '$5', border: 'none' } })}
             target="_blank"
           >
             {name}
@@ -48,7 +47,7 @@ export default function FoodCard({
             <p
               className={text({
                 size: '3',
-                css: { marginLeft: '$3', color: '$gray200' },
+                css: { marginLeft: '$3' },
               })}
             >
               {jakeRating}
@@ -59,7 +58,7 @@ export default function FoodCard({
             <p
               className={text({
                 size: '3',
-                css: { marginLeft: '$3', color: '$gray200' },
+                css: { marginLeft: '$3' },
               })}
             >
               {jenRating}

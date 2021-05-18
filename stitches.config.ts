@@ -5,18 +5,38 @@ const stitchesConfig = createCss({
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
-
-      gray700: '#666666',
-      gray600: '#FAFBFC',
-      gray500: '#EAEAEA',
-      gray400: '#9F9F9F',
-      gray300: '#8B8B8B',
-      gray200: '#393939',
-      gray100: '#404040',
+      
+      gray950: '#202020',
+      gray900: 'hsl(210, 24%, 16%)',
+      gray800: 'hsl(209, 20%, 25%)',
+      gray700: 'hsl(209, 18%, 30%)',
+      gray600: 'hsl(209, 14%, 37%)',
+      gray500: 'hsl(211, 12%, 43%)',
+      gray400: 'hsl(211, 10%, 53%)',
+      gray300: 'hsl(211, 13%, 65%)',
+      gray200: 'hsl(210, 16%, 82%)',
+      gray100: 'hsl(214, 15%, 91%)',
+      gray50: 'hsl(216, 33%, 97%)',
+      
+      blue500: '#3B82F6',
+      blue600: '#2563EB',
 
       yellow100: '#FEF3C7',
       yellow400: '#FBBF24',
-      yellow700: '#B45309'
+      yellow700: '#B45309',
+
+      // aliases
+      primary: '$gray900',
+      secondary: '$gray700',
+      tertiary: '$gray100',
+      shade: '$gray200',
+      tint: '$gray50',
+      border: '$gray100',
+      borderhover: '$gray200',
+      activenavlink: '$gray800',
+      unactivenavlink: '$gray500',
+      link: '$blue500',
+      linkhover: '$blue600',
 
     },
     fonts: {
@@ -100,13 +120,19 @@ const stitchesConfig = createCss({
 
 export const darkTheme = stitchesConfig.theme({
   colors: {
-    gray100: '#FAFBFC',
-    gray200: '#EAEAEA',
-    gray300: '#9F9F9F',
-    gray400: '#8B8B8B',
-    gray500: '#393939',
-    gray600: '#404040',
-    gray700: '#666666',
+
+    // aliases
+    primary: '$gray100',
+    secondary: '$gray300',
+    tertiary: '$gray900',
+    shade: '$gray800',
+    tint: '$gray950',
+    border: '$gray800',
+    borderhover: '$gray700',
+    activenavlink: '$gray300',
+    unactivenavlink: '$gray500',
+    link: '$gray400',
+    linkhover: '$gray300',
 
   }
 })

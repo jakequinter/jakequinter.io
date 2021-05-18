@@ -3,7 +3,7 @@ import {
   HiArrowNarrowRight,
   HiOutlineDesktopComputer,
   HiOutlineLightningBolt,
-  HiOutlineAcademicCap
+  HiOutlineAcademicCap,
 } from 'react-icons/hi';
 
 import TimelineEntry from '../TimelineEntry';
@@ -18,19 +18,19 @@ export default function Timeline2020() {
         className={text({
           size: '5',
           weight: 'medium',
-          css: { color: '$gray300', marginBottom: '$1' }
+          css: { color: '$primary', marginBottom: '$1' },
         })}
       >
         2020
       </h1>
-      <hr className={text({ css: { borderColor: '$gray500' } })} />
+      <hr className={text({ css: { borderColor: '$shade' } })} />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <li>
             <div
               className={box({
                 position: 'relative',
-                paddingBottom: '$5'
+                paddingBottom: '$5',
               })}
             >
               <span
@@ -40,7 +40,7 @@ export default function Timeline2020() {
                   left: '21px', // 1/2 of span height/width
                   height: '100%',
                   width: '1px',
-                  backgroundColor: '$gray500'
+                  backgroundColor: '$tertiary',
                 })}
                 aria-hidden="true"
               ></span>
@@ -51,12 +51,12 @@ export default function Timeline2020() {
                       height: '42px', // double of span top/left
                       width: '42px', // double of span top/left
                       borderRadius: '50px',
-                      backgroundColor: '$gray500',
+                      backgroundColor: '$tertiary',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginRight: '$4',
-                      color: '$gray400'
+                      color: '$gray500',
                       // padding: '$3'
                     })}
                   >
@@ -65,20 +65,20 @@ export default function Timeline2020() {
                 </div>
                 <div
                   className={box({
-                    width: '100%'
+                    width: '100%',
                   })}
                 >
                   <div
                     className={box({
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
                     })}
                   >
                     <p
                       className={text({
-                        weight: 'medium'
-                        // css: { marginBottom: '$1' }
+                        weight: 'medium',
+                        css: { color: '$primary' },
                       })}
                     >
                       Added bookmarks page to jakequinter.io
@@ -86,7 +86,7 @@ export default function Timeline2020() {
                     <em
                       className={text({
                         size: '2',
-                        css: { color: '$gray600' }
+                        css: { color: '$shade' },
                       })}
                     >
                       Dec 7
@@ -95,7 +95,7 @@ export default function Timeline2020() {
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$gray700', paddingTop: '$2' }
+                      css: { paddingTop: '$2' },
                     })}
                   >
                     I have seen various "bookmarks" pages around the web and
@@ -111,14 +111,14 @@ export default function Timeline2020() {
                         css: {
                           display: 'flex',
                           alignItems: 'center',
-                          marginTop: '$3'
-                        }
+                          marginTop: '$3',
+                        },
                       })}
                     >
                       Bookmarks page
                       <HiArrowNarrowRight
                         className={text({
-                          css: { marginLeft: '$3', color: 'inherit' }
+                          css: { marginLeft: '$3', color: 'inherit' },
                         })}
                         size={20}
                       />

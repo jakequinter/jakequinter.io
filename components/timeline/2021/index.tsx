@@ -3,7 +3,7 @@ import {
   HiArrowNarrowRight,
   HiOutlineDesktopComputer,
   HiOutlineLightningBolt,
-  HiOutlineHome
+  HiOutlineHome,
 } from 'react-icons/hi';
 
 import TimelineEntry from '../TimelineEntry';
@@ -16,21 +16,21 @@ const Timeline2021 = () => {
     <div className="mb-12">
       <h1
         className={text({
-          size: '5',
+          size: '4',
           weight: 'medium',
-          css: { color: '$gray300', marginBottom: '$1' }
+          css: { color: '$primary', marginBottom: '$1' },
         })}
       >
         2021
       </h1>
-      <hr className={text({ css: { borderColor: '$gray500' } })} />
+      <hr className={text({ css: { borderColor: '$shade' } })} />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <li>
             <div
               className={box({
                 position: 'relative',
-                paddingBottom: '$5'
+                paddingBottom: '$5',
               })}
             >
               <span
@@ -40,7 +40,7 @@ const Timeline2021 = () => {
                   left: '21px', // 1/2 of span height/width
                   height: '100%',
                   width: '1px',
-                  backgroundColor: '$gray500'
+                  backgroundColor: '$tertiary',
                 })}
                 aria-hidden="true"
               ></span>
@@ -51,12 +51,12 @@ const Timeline2021 = () => {
                       height: '42px', // double of span top/left
                       width: '42px', // double of span top/left
                       borderRadius: '50px',
-                      backgroundColor: '$gray500',
+                      backgroundColor: '$tertiary',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginRight: '$4',
-                      color: '$gray400'
+                      color: '$gray500',
                       // padding: '$3'
                     })}
                   >
@@ -65,20 +65,20 @@ const Timeline2021 = () => {
                 </div>
                 <div
                   className={box({
-                    width: '100%'
+                    width: '100%',
                   })}
                 >
                   <div
                     className={box({
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
                     })}
                   >
                     <p
                       className={text({
-                        weight: 'medium'
-                        // css: { marginBottom: '$1' }
+                        weight: 'medium',
+                        css: { color: '$primary' },
                       })}
                     >
                       Added food page to jakequinter.io and did a little
@@ -87,14 +87,16 @@ const Timeline2021 = () => {
                     <em
                       className={text({
                         size: '2',
-                        css: { color: '$gray600' }
+                        css: { color: '$shade' },
                       })}
-                    ></em>
+                    >
+                      Feb 7
+                    </em>
                   </div>
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$gray700', paddingTop: '$2' }
+                      css: { paddingTop: '$2' },
                     })}
                   >
                     Since making Boston our new home, my girlfriend and I have
@@ -110,14 +112,14 @@ const Timeline2021 = () => {
                         css: {
                           display: 'flex',
                           alignItems: 'center',
-                          marginTop: '$3'
-                        }
+                          marginTop: '$3',
+                        },
                       })}
                     >
                       Food page
                       <HiArrowNarrowRight
                         className={text({
-                          css: { marginLeft: '$3', color: 'inherit' }
+                          css: { marginLeft: '$3', color: 'inherit' },
                         })}
                         size={20}
                       />

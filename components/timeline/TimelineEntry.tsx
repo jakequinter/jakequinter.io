@@ -27,7 +27,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
               left: '21px', // 1/2 of span height/width
               height: '100%',
               width: '1px',
-              backgroundColor: '$gray500',
+              backgroundColor: '$tertiary',
             })}
             // className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
             aria-hidden="true"
@@ -40,12 +40,12 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
                 height: '42px', // double of span top/left
                 width: '42px', // double of span top/left
                 borderRadius: '50px',
-                backgroundColor: '$gray500',
+                backgroundColor: '$tertiary',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginRight: '$4',
-                color: '$gray400',
+                color: '$gray500',
                 // padding: '$3'
               })}
             >
@@ -67,15 +67,15 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
               <p
                 className={text({
                   weight: 'medium',
-                  // css: { marginBottom: '$1' }
+                  css: { color: '$primary' },
                 })}
               >
                 {title}
               </p>
               <em
                 className={text({
-                  size: '2',
-                  css: { color: '$gray400' },
+                  size: '1',
+                  css: { color: '$shade' },
                 })}
               >
                 {date}
@@ -84,7 +84,7 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
             <p
               className={text({
                 size: '2',
-                css: { color: '$gray700', paddingTop: '$2' },
+                css: { paddingTop: '$2' },
               })}
             >
               {description}

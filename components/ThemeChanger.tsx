@@ -26,7 +26,7 @@ export default function ThemeToggle() {
         css: {
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: '$gray500',
+          backgroundColor: '$tertiary',
           padding: '$2',
           borderRadius: '5px',
           // border: 'none',

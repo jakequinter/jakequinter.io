@@ -72,6 +72,17 @@ export default function Header() {
           <NavButton href="/about" text="About" />
           <NavButton href="/bookmarks" text="Bookmarks" />
           <NavButton href="/blog" text="Blog" />
+        </div>
+        <div
+          className={box({
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '$3',
+
+            '@bp1': { gap: '$4' },
+          })}
+        >
           <ThemeChanger />
         </div>
       </div>

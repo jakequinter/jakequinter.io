@@ -34,7 +34,7 @@ const Things = ({ allThings, personalSites, people, booksAndPodcasts }) => {
       <div>
         <div
           className={box({
-            borderBottom: '1px solid $gray500',
+            borderBottom: '1px solid $border',
           })}
         >
           <nav aria-label="Tabs">

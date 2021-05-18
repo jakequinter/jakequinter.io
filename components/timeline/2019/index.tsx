@@ -11,12 +11,12 @@ const Timeline2019 = () => {
         className={text({
           size: '5',
           weight: 'medium',
-          css: { color: '$gray300', marginBottom: '$1' }
+          css: { color: '$primary', marginBottom: '$1' },
         })}
       >
         2019
       </h1>
-      <hr className={text({ css: { borderColor: '$gray500' } })} />
+      <hr className={text({ css: { borderColor: '$shade' } })} />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <TimelineEntry

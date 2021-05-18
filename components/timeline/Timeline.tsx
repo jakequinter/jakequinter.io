@@ -15,7 +15,7 @@ const Timeline = () => {
         className={text({
           size: '6',
           weight: 'medium',
-          css: { marginTop: '$5', marginBottom: '$3' }
+          css: { marginTop: '$5', marginBottom: '$3' },
         })}
       >
         Timeline

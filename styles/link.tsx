@@ -1,27 +1,31 @@
 import { css } from '../stitches.config';
 
 export const link = css({
-  borderBottom: '1px solid $gray300',
+  borderBottom: '1px solid $link',
   cursor: 'default',
   textDecoration: 'none',
-  color: '$gray400',
+  color: '$link',
 
   // '&:visited': {
   //   color: 'inherit'
   // },
 
   '&:hover': {
-    color: '$gray300',
+    color: '$linkhover',
   },
 
   variants: {
     type: {
       active: {
-        color: '$gray200',
+        color: '$activenavlink',
         border: 'none',
-        '&:hover': { color: '$gray200' },
+        '&:hover': { color: '$activenavlink' },
       },
-      unactive: { border: 'none' },
+      unactive: {
+        color: '$unactivenavlink',
+        border: 'none',
+        '&:hover': { color: '$activenavlink' },
+      },
     },
   },
 });

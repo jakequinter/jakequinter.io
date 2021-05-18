@@ -13,21 +13,25 @@ const Contact = () => (
       canonical="https://jakequinter.io/contact"
       openGraph={{
         url: 'https://jakequinter.io/contact',
-        title: 'Jake Quinter 📱'
+        title: 'Jake Quinter 📱',
       }}
     />
 
-    <p className={text({ css: { color: '$gray100' } })}>Get in touch.</p>
+    <p className={text({ css: { color: '$primary' } })}>Get in touch.</p>
     <div
       className={box({
-        borderLeft: '3px solid #666666',
+        borderLeft: '3px solid $secondary',
         marginTop: '$4',
-        py: '2px'
+        py: '2px',
       })}
     >
-      <p className={text({ css: { marginLeft: '$3', color: '$gray700' } })}>
+      <p className={text({ css: { marginLeft: '$3' } })}>
         <Link href="mailto:hello@jakequinter.io?subject=Hello" passHref>
-          <a className={link({ type: 'unactive' })}>hello@jakequinter.io</a>
+          <a
+            className={link({ type: 'unactive', css: { color: '$secondary' } })}
+          >
+            hello@jakequinter.io
+          </a>
         </Link>
       </p>
     </div>

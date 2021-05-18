@@ -20,14 +20,18 @@ export default function Thing({ id, link, title, type, description }: Thing) {
           <a
             className={stylelink({
               type: 'unactive',
-              css: { '&:hover': { borderBottom: '1px solid $gray300' } },
+              css: { '&:hover': { borderBottom: '1px solid $primary' } },
             })}
             target="_blank"
           >
             <p
               className={text({
                 weight: 'medium',
-                css: { display: 'inline', cursor: 'default' },
+                css: {
+                  display: 'inline',
+                  cursor: 'default',
+                  color: '$primary',
+                },
               })}
             >
               {title}
@@ -44,15 +48,15 @@ export default function Thing({ id, link, title, type, description }: Thing) {
               borderRadius: '9999px',
               fontSize: '$1',
               lineHeight: '$2',
-              backgroundColor: '$gray500',
-              color: '$gray400',
+              backgroundColor: '$tertiary',
+              color: '$gray500',
             },
           })}
         >
           {type}
         </span>
       </div>
-      <p className={text({ css: { color: '$gray700' } })}>{description}</p>
+      <p className={text()}>{description}</p>
     </div>
   );
 }

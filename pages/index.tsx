@@ -14,13 +14,13 @@ const index = () => (
         <h1
           className={text({
             size: '8',
-            weight: 'medium',
-            css: { marginBottom: '$5' }
+            weight: 'bold',
+            css: { marginBottom: '$4', color: '$primary' },
           })}
         >
           Jake Quinter
         </h1>
-        <p className={text({ css: { marginBottom: '$4' } })}>
+        <p className={text({ css: { marginBottom: '$3' } })}>
           Software developer and wannabe designer interested in many things.
           Mainly software, technology, and optimizing habits for a more
           productive and self-fulfilling life.

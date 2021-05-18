@@ -1,11 +1,41 @@
 ---
 title: Hello, world!
+slug: hello-world
 description: This is the description
 createdAt: '2021-05-27'
 ---
 
 # This should be an H1
 
-[click me]('https://jakequinter.io')
+## This should be an H2
 
-`test`
+### This should be an H3
+
+[click me](https://jakequinter.io/)
+
+```
+// App.tsx
+
+  export const getStaticPaths = async () => {
+    const paths = postFilePaths
+      // Remove file extensions for page paths
+      .map(path => path.replace(/\.mdx?$/, ''))
+      // Map the path into the static paths object required by Next.js
+      .map(slug => ({ params: { slug } }));
+
+    return {
+      paths,
+      fallback: false,
+    };
+};
+```
+
+```
+import { css } from '../../stitches.config';
+
+export const line = css({
+  display: 'table-row',
+});
+```
+
+hello testing

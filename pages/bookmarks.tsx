@@ -50,7 +50,11 @@ export default function Bookmarks({
             className={text({
               size: '3',
               weight: 'medium',
-              css: { textAlign: 'center', paddingBottom: '$2' },
+              css: {
+                textAlign: 'center',
+                paddingBottom: '$2',
+                color: '$primary',
+              },
             })}
           >
             Currently reading 📚
@@ -65,7 +69,6 @@ export default function Bookmarks({
               <a
                 className={link({
                   type: 'unactive',
-                  css: { '&:hover': { color: '$gray400' } },
                 })}
                 target="_blank"
               >
@@ -74,7 +77,7 @@ export default function Bookmarks({
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    border: '1px solid $gray500',
+                    border: '1px solid $border',
                     padding: '$3',
                     borderRadius: '5px',
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
@@ -83,7 +86,7 @@ export default function Bookmarks({
                       alignItems: 'start',
                     },
                     '&:hover': {
-                      borderColor: '$gray400',
+                      borderColor: '$borderhover',
                     },
                   })}
                 >
@@ -91,7 +94,7 @@ export default function Bookmarks({
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$gray300', paddingTop: '$2' },
+                      css: { color: '$shade', paddingTop: '$2' },
                     })}
                   >
                     Matt Ridley
@@ -103,7 +106,6 @@ export default function Bookmarks({
               <a
                 className={link({
                   type: 'unactive',
-                  css: { '&:hover': { color: '$gray400' } },
                 })}
                 target="_blank"
               >
@@ -112,7 +114,7 @@ export default function Bookmarks({
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    border: '1px solid $gray500',
+                    border: '1px solid $border',
                     padding: '$3',
                     borderRadius: '5px',
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
@@ -121,7 +123,7 @@ export default function Bookmarks({
                       alignItems: 'start',
                     },
                     '&:hover': {
-                      borderColor: '$gray400',
+                      borderColor: '$borderhover',
                     },
                   })}
                 >
@@ -132,7 +134,7 @@ export default function Bookmarks({
                     <p
                       className={text({
                         size: '2',
-                        css: { color: '$gray300', paddingTop: '$2' },
+                        css: { color: '$shade', paddingTop: '$2' },
                       })}
                     >
                       Donella Meadows
@@ -145,7 +147,6 @@ export default function Bookmarks({
               <a
                 className={link({
                   type: 'unactive',
-                  css: { '&:hover': { color: '$gray400' } },
                 })}
                 target="_blank"
               >
@@ -154,7 +155,7 @@ export default function Bookmarks({
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    border: '1px solid $gray500',
+                    border: '1px solid $border',
                     padding: '$3',
                     borderRadius: '5px',
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
@@ -163,7 +164,7 @@ export default function Bookmarks({
                       alignItems: 'start',
                     },
                     '&:hover': {
-                      borderColor: '$gray400',
+                      borderColor: '$borderhover',
                     },
                   })}
                 >
@@ -171,7 +172,7 @@ export default function Bookmarks({
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$gray300', paddingTop: '$2' },
+                      css: { color: '$shade', paddingTop: '$2' },
                     })}
                   >
                     Eric Ries

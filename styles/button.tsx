@@ -5,18 +5,19 @@ export const button = css({
   appearance: 'none',
   borderRadius: '5px',
 
-  border: '1px solid $gray300',
+  border: '1px solid $border',
   WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
   margin: 0,
   py: '$2',
   px: '$3',
-  backgroundColor: '$gray200',
-  color: '$gray500',
+  backgroundColor: '$tint',
+  color: '$secondary',
   fontSize: '$3',
   lineHeight: 1,
 
   '&:hover': {
-    color: '$gray600',
+    // color: '$gray600',
+    border: '1px solid $borderhover',
   },
 
   '&:focus': {
@@ -27,16 +28,18 @@ export const button = css({
     type: {
       activetab: {
         border: 'none',
-        borderBottom: '1px solid white',
+        borderBottom: '1px solid $primary',
         px: 0,
         marginRight: '$3',
         fontSize: '$2',
         backgroundColor: 'inherit',
         borderRadius: 0,
-        color: '$gray200',
+        color: '$activenavlink',
 
         '&:hover': {
-          color: '$gray200',
+          color: '$activenavlink',
+          border: 'none',
+          borderBottom: '1px solid white',
         },
 
         '@bp1': {
@@ -50,10 +53,11 @@ export const button = css({
         marginRight: '$3',
         backgroundColor: 'inherit',
         borderRadius: 0,
-        color: '$gray400',
+        color: '$unactivenavlink',
 
         '&:hover': {
-          color: '$gray300',
+          color: '$activenavlink',
+          border: 'none',
         },
 
         '@bp1': {
