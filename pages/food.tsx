@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
 import Header from '@/components/Header';
@@ -46,7 +46,7 @@ export default function Food({ food }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getStaticProps: GetStaticProps = async context => {
   const food = await getAllFood();
 
   return {

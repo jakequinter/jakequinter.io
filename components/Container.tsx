@@ -1,8 +1,8 @@
 import { Toaster } from 'react-hot-toast';
 
-import { box } from '../styles/box';
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
+import { box } from '../styles/box';
 
 const Container = ({ children }) => (
   <>
