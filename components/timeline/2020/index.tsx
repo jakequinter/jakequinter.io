@@ -13,7 +13,7 @@ import { button } from '@/styles/button';
 
 export default function Timeline2020() {
   return (
-    <div className="mb-12">
+    <>
       <h1
         className={text({
           size: '5',
@@ -23,7 +23,7 @@ export default function Timeline2020() {
       >
         2020
       </h1>
-      <hr className={text({ css: { borderColor: '$shade' } })} />
+      <hr className={text({ css: { borderColor: '$tertiary' } })} />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <li>
@@ -71,8 +71,13 @@ export default function Timeline2020() {
                   <div
                     className={box({
                       display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
+                      flexDirection: 'column',
+
+                      '@bp2': {
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      },
                     })}
                   >
                     <p
@@ -86,7 +91,7 @@ export default function Timeline2020() {
                     <em
                       className={text({
                         size: '2',
-                        css: { color: '$shade' },
+                        css: { color: '$secondary' },
                       })}
                     >
                       Dec 7
@@ -161,6 +166,6 @@ export default function Timeline2020() {
           />
         </ul>
       </div>
-    </div>
+    </>
   );
 }

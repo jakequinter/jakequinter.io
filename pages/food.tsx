@@ -23,7 +23,7 @@ export default function Food({ food }) {
         <h1
           className={text({
             size: '7',
-            weight: 'medium',
+            weight: 'bold',
             css: { marginBottom: '$4' },
           })}
         >

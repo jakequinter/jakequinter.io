@@ -30,8 +30,8 @@ export default function Bookmarks({
         <h1
           className={text({
             size: '7',
-            weight: 'medium',
-            css: { marginBottom: '$4' },
+            weight: 'bold',
+            css: { marginBottom: '$4', marginTop: '$6' },
           })}
         >
           Internet Things

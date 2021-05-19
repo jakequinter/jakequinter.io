@@ -24,34 +24,35 @@ const About = () => {
       <h1
         className={text({
           size: '7',
-          weight: 'medium',
-          css: { marginBottom: '$4' },
+          weight: 'bold',
+          css: { marginBottom: '$4', marginTop: '$6' },
         })}
       >
         About me
       </h1>
       <div>
         <p className={text({ css: { paddingBottom: '$3' } })}>
-          Hello, I’m Jake Quinter. I'm a software developer based in Boston, MA.
-          I work on the Application Maintenance and Production Support team at{' '}
-          <a className={link()} target="_blank" href="https://www.thrivent.com">
-            Thrivent
-          </a>
-          . Whether you stumbled upon my site or have been here before, welcome!
-        </p>
-        <p className={text({ css: { paddingBottom: '$3' } })}>
-          Besides work, I am currently finishing up my business minor at{' '}
-          <a className={link()} target="_blank" href="https://lakeland.edu/">
-            Lakeland University
+          Hello, I’m Jake. I’m a software developer based in Boston, MA. I work
+          at{' '}
+          <a
+            className={link()}
+            target="_blank"
+            href="https://www.deltadefense.com/"
+          >
+            Delta Defense
           </a>{' '}
-          to fulfill my credit requirements for a Bachelor of Science in
-          Computer Science.
+          as a Frontend Developer.
         </p>
         <p className={text({ css: { paddingBottom: '$3' } })}>
-          In my free time I enjoy learning and reading about various
-          technologies. When I find myself needing to step away from the
-          computer, I enjoy reading, health and fitness, spending time with
-          friends and family, and the outdoors.
+          Outside of my full-time role, I tinker with indie projects and build
+          meaningful software to help people. I am becoming more interested in
+          the thought of entrepreneurship and indie software.
+        </p>
+        <p className={text({ css: { paddingBottom: '$3' } })}>
+          I grew up in Wisconsin but moved to Boston at the beginning of the
+          year. When I find myself needing to step away from the computer, I
+          enjoy reading, health and fitness, spending time with friends and
+          family, the outdoors, and exploring my new home.
         </p>
       </div>
       <div

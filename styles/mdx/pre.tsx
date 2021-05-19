@@ -8,4 +8,6 @@ export const pre = css({
   fontSize: '$2',
   width: '100%',
   borderRadius: '5px',
+  overflowX: 'scroll',
+  '@bp1': { overflowX: 'hidden' },
 });

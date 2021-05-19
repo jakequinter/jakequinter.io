@@ -60,8 +60,13 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
             <div
               className={box({
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
+                flexDirection: 'column',
+
+                '@bp2': {
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                },
               })}
             >
               <p
@@ -74,8 +79,8 @@ const TimelineEntry = ({ title, description, date, logo, isLast = false }) => {
               </p>
               <em
                 className={text({
-                  size: '1',
-                  css: { color: '$shade' },
+                  size: '2',
+                  css: { color: '$secondary' },
                 })}
               >
                 {date}

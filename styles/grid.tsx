@@ -11,8 +11,18 @@ export const grid = css({
 
   variants: {
     rows: {
+      2: {
+        '@bp2': {
+          gridTemplateColumns: 'repeat(2, 1fr)',
+        },
+      },
       3: {
         '@bp2': {
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        },
+      },
+      footer: {
+        '@bp1': {
           gridTemplateColumns: 'repeat(3, 1fr)',
         },
       },

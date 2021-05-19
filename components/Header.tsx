@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -13,8 +13,8 @@ import { button } from '@/styles/button';
 
 export default function Header() {
   const router = useRouter();
-  const { width } = useWindowSize();
-  const [isOpen, setIsOpen] = useState(false);
+  // const { width } = useWindowSize();
+  // const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
 
   const handlePageTitle = () => {
@@ -27,7 +27,19 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <nav
+      className={box({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'fixed',
+        top: 0,
+        zIndex: 10,
+        width: '100%',
+        py: '$3',
+        backgroundColor: '$nav',
+      })}
+    >
       {/* {!isOpen && width < 767 ? (
         <h5 className="text-gray-900 font-bold">{handlePageTitle()}</h5>
       ) : null}
@@ -46,17 +58,17 @@ export default function Header() {
           width: '100%',
           justifyContent: 'space-between',
           maxWidth: '56rem',
-          mx: 'auto',
-          paddingTop: '$3',
         })}
       >
         <div className={box({ display: 'flex', alignItems: 'center' })}>
-          <Link href="/">
-            {theme === 'dark' ? (
-              <Image src="/darklogo.png" height={50} width={60} />
-            ) : (
-              <Image src="/lightlogo.png" height={50} width={60} />
-            )}
+          <Link href="/" passHref>
+            <a>
+              {theme === 'dark' ? (
+                <Image src="/darklogo.png" height={50} width={60} />
+              ) : (
+                <Image src="/lightlogo.png" height={50} width={60} />
+              )}
+            </a>
           </Link>
         </div>
         <div
@@ -86,6 +98,6 @@ export default function Header() {
           <ThemeChanger />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

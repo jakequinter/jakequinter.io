@@ -64,6 +64,25 @@ export const button = css({
           marginRight: '$4',
         },
       },
+      blog: {
+        border: 'none',
+        px: 0,
+        fontSize: '$3',
+        // marginRight: '$3',
+        // backgroundColor: 'inherit',
+        // borderRadius: 0,
+        color: '$unactivenavlink',
+        backgroundColor: 'inherit',
+
+        '&:hover': {
+          color: '$activenavlink',
+          border: 'none',
+        },
+
+        // '@bp1': {
+        //   marginRight: '$4',
+        // },
+      },
     },
   },
 });

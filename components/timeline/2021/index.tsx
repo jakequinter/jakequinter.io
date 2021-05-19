@@ -11,9 +11,9 @@ import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { button } from '@/styles/button';
 
-const Timeline2021 = () => {
+export default function Timeline2021() {
   return (
-    <div className="mb-12">
+    <>
       <h1
         className={text({
           size: '4',
@@ -23,7 +23,11 @@ const Timeline2021 = () => {
       >
         2021
       </h1>
-      <hr className={text({ css: { borderColor: '$shade' } })} />
+      <hr
+        className={text({
+          css: { borderColor: '$tertiary', borderWidth: '1px' },
+        })}
+      />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <li>
@@ -71,8 +75,13 @@ const Timeline2021 = () => {
                   <div
                     className={box({
                       display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
+                      flexDirection: 'column',
+
+                      '@bp2': {
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      },
                     })}
                   >
                     <p
@@ -87,7 +96,7 @@ const Timeline2021 = () => {
                     <em
                       className={text({
                         size: '2',
-                        css: { color: '$shade' },
+                        css: { color: '$secondary' },
                       })}
                     >
                       Feb 7
@@ -150,8 +159,6 @@ const Timeline2021 = () => {
           />
         </ul>
       </div>
-    </div>
+    </>
   );
-};
-
-export default Timeline2021;
+}

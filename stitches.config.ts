@@ -37,6 +37,7 @@ const stitchesConfig = createCss({
       unactivenavlink: '$gray500',
       link: '$blue500',
       linkhover: '$blue600',
+      nav: '$loContrast'
 
     },
     fonts: {
@@ -133,8 +134,9 @@ export const darkTheme = stitchesConfig.theme({
     unactivenavlink: '$gray500',
     link: '$gray400',
     linkhover: '$gray300',
+    nav: '#121212'
 
-  }
+  },
 })
 
 export type CSS = StitchesCss<typeof stitchesConfig>;

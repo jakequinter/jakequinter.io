@@ -6,7 +6,7 @@ import { box } from '@/styles/box';
 
 const Timeline2019 = () => {
   return (
-    <div>
+    <>
       <h1
         className={text({
           size: '5',
@@ -34,7 +34,7 @@ const Timeline2019 = () => {
           />
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 
