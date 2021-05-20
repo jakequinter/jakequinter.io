@@ -1,16 +1,14 @@
 # [jakequinter.io](https://jakequinter.io/)
 
-This is my personal site, which is just a small location to display some of the projects I'm working on, have employers easily access my resume, and keep bookmarks for all things I want to remember for later. It is currently in the second iteration, so it is relatively new, but I tend to keep this site up-to-date and update it as often as possible. Recently, I incorporated the API and `/Bookmarks` page to keep track of all things I find exceptional on the internet.
+My personal site changes often. I find it a space where I can implement new technologies I find interesting. I have transformed it to add a timeline of life events, currently at `'/about`, my `/bookmarks` for things I want to remember for later, and even a fun little `/food` rating page.
 
 ### Overview
 
-- `pages/api/years/*`: API routes for retrieving the timeline information on the `/` page.
 - `pages/api/things/*`: API routes for retrieving the 'internet things' destinations on the `/bookmarks` page.
 - `pages/api/food`: API route for retrieving all the food on the `/food` page.
-- `pages/index`: Retrieves information from `pages/api/years/*` to display the content for the timeline.
 - `pages/bookmarks`: Retrieves information from `pages/api/things/*` to display the content on the internet I find most fascinating.
 - `pages/food`: Retrieves information from `pages/api/food` to display the food my girlfriend and I keep track of.
-- `pages/things`: This is an authenticated route which displays a UI for me to select which category I want to add to (years, things, food.)
+- `pages/things`: This is an authenticated route which displays a UI for me to select which category I want to add to (bookmarks or food.)
 - `pages/*`: All other pages are static pages.
 
 ### Running Locally
@@ -37,4 +35,4 @@ FIREBASE_CLIENT_EMAIL=
 - [Vercel](https://vercel.com/)
 - [Next.js](https://nextjs.org/)
 - [Firebase](https://firebase.google.com/)
-- [Chakra UI](https://chakra-ui.com/)
+- [Stitches.js](https://stitches.dev/)
