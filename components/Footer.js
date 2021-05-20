@@ -22,6 +22,8 @@ const Footer = () => (
       // justifyContent: 'center',
       width: '100%',
       mx: 'auto',
+      px: '$3',
+      '@bp3': { px: 0 },
     })}
   >
     <div
