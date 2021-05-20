@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -13,6 +14,14 @@ import { box } from '@/styles/box';
 export default function Blog({ posts }) {
   return (
     <Container>
+      <NextSeo
+        title="Jake Quinter ✍️"
+        canonical="https://jakequinter.io/blog"
+        openGraph={{
+          url: 'https://jakequinter.io/blog',
+          title: 'Jake Quinter ✍️',
+        }}
+      />
       <h1
         className={text({
           size: '7',

@@ -14,6 +14,8 @@ const Container = ({ children }) => (
         maxWidth: '42rem',
         mx: 'auto',
         minHeight: 'calc(100vh - 422px)',
+        px: '$3',
+        '@bp3': { px: 0 },
       })}
     >
       {children}

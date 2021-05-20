@@ -24,6 +24,8 @@ export default function Food({ food }) {
           marginTop: '$6',
           maxWidth: '56rem',
           mx: 'auto',
+          px: '$3',
+          '@bp3': { px: 0 },
         })}
       >
         <h1

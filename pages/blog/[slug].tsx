@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote';
@@ -73,6 +74,14 @@ export default function Post({ source, frontMatter, readingTime }) {
 
   return (
     <>
+      <NextSeo
+        title={`${frontMatter.title}`}
+        canonical={`https://jakequinter.io/${frontMatter.slug}`}
+        openGraph={{
+          url: `https://jakequinter.io/${frontMatter.slug}`,
+          title: `${frontMatter.title}`,
+        }}
+      />
       <Header />
       <div
         className={box({
@@ -80,6 +89,8 @@ export default function Post({ source, frontMatter, readingTime }) {
           marginBottom: '$4',
           maxWidth: '56rem',
           mx: 'auto',
+          px: '$3',
+          '@bp3': { px: 0 },
         })}
       >
         <button
@@ -89,7 +100,7 @@ export default function Post({ source, frontMatter, readingTime }) {
             css: {
               display: 'flex',
               alignItems: 'center',
-              paddingLeft: '$2',
+              // paddingLeft: '$2',
             },
           })}
         >
@@ -102,7 +113,14 @@ export default function Post({ source, frontMatter, readingTime }) {
           Back
         </button>
       </div>
-      <div className={box({ maxWidth: '42rem', mx: 'auto' })}>
+      <div
+        className={box({
+          maxWidth: '42rem',
+          mx: 'auto',
+          px: '$3',
+          '@bp3': { px: 0 },
+        })}
+      >
         <div className={box({ marginBottom: '$4' })}>
           <h1
             className={text({

@@ -10,7 +10,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className={box({ maxWidth: '56rem', mx: 'auto' })}>
+      <div
+        className={box({
+          maxWidth: '56rem',
+          mx: 'auto',
+          px: '$3',
+          '@bp3': { px: 0 },
+        })}
+      >
         <div className={box({ maxWidth: '42rem' })}>
           <h1
             className={text({
