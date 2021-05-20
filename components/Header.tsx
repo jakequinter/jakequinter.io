@@ -35,7 +35,7 @@ export default function Header() {
         position: 'fixed',
         top: 0,
         zIndex: 10,
-        width: '100%',
+        width: '99%',
         py: '$3',
         backgroundColor: '$nav',
       })}
@@ -91,6 +91,7 @@ export default function Header() {
             flexWrap: 'wrap',
             alignItems: 'center',
             gap: '$3',
+            marginRight: '$3',
 
             '@bp1': { gap: '$4' },
           })}

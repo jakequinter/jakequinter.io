@@ -30,6 +30,12 @@ export default function Timeline2021() {
       />
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
+          <TimelineEntry
+            title="Redesigned and styled jakequinter.io with Stitches.js"
+            description="I've been very interested in Stitches.js, so I spent my Saturday removing Tailwind CSS and implementing Stitches.js on my personal site.  I also did some redesign, adding a dark theme, moving some components around, and adding a blog."
+            date="May 15"
+            logo={<HiOutlineDesktopComputer size={20} />}
+          />
           <li>
             <div
               className={box({

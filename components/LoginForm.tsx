@@ -18,6 +18,7 @@ export default function LoginForm() {
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
+        marginTop: '$6',
       })}
     >
       <Head>

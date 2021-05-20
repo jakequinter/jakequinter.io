@@ -11,11 +11,13 @@ export function Code({ ...props }) {
     <code
       className={text({
         weight: 'bold',
+        size: '1',
         css: {
           backgroundColor: '$tint',
           padding: '1px',
           color: '$primary',
           borderRadius: '$2',
+          '@bp1': { fontSize: '$2' },
         },
       })}
       {...props}

@@ -1,7 +1,7 @@
 ---
 title: Hello, world!
 slug: hello-world
-description: It was time to start a blog. Learn how I built mine, and how to build one of your own.
+description: It was time to start a blog. Learn how I built mine and how to build one of your own.
 publishedAt: '2021-05-27'
 ---
 
@@ -9,19 +9,19 @@ Writing is an invaluable skill, and I enjoy writing and getting lost in thought.
 
 ## Picking the technology
 
-With the recent beta release of the [Notion API](https://developers.notion.com/), initially I planned to use Notion to implement my blog. Although I do intend to migrate towards the Notion API, as it sits right now, the functionally it offers just isn't quite there yet. The main issue for me not choosing the Notion API is that it doesn't currently support code blocks.
+I initially planned to use Notion to implement my blog with the recent beta release of the [Notion API](https://developers.notion.com/). Although I do intend to migrate towards the Notion API, as it sits right now, the functionality it offers isn't quite there yet. The main issue for me not choosing the Notion API is that it doesn't currently support code blocks.
 
-I'm intending to write/blog about development and not having code blocks seemed like a major issue.
+I intend to write/blog about development, and not having code blocks seemed like a significant issue.
 
-I have used [react-notion](https://github.com/splitbee/react-notion), which uses Notion as a CMS. This has worked quite well in the past, but the one thing I don't like with using Notion is the inability to customize colors, (i.e., text colors, code blocks).
+I have used [react-notion](https://github.com/splitbee/react-notion), which uses Notion as a CMS. Using react-notion has worked quite well in the past, but the one thing I don't like about using Notion is the inability to customize colors (i.e., text colors, code blocks).
 
-I finally decided to use [MDX](https://mdxjs.com/), which allows for a lot of flexibility because it allows you to integrate with JSX.
+I finally decided to use [MDX](https://mdxjs.com/), which allows for flexibility because it will enable you to integrate with JSX.
 
 ## MDX Setup
 
-I didn't want to overcomplicate getting the blog set up, so I started looking for a few examples online. [Vercel](https://vercel.com) offer's an excellent [Github repo](https://github.com/vercel/next.js/tree/canary/examples) full of tons of examples using various technologies. I looked over the mdx example, and quickly got set up.
+I didn't want to overcomplicate getting the blog set up, so I started looking for a few examples online. [Vercel](https://vercel.com) offer's an excellent [Github repo](https://github.com/vercel/next.js/tree/canary/examples) full of tons of examples using various technologies. I looked over the MDX example and quickly got set up.
 
-Here is my _\`getStaticProps\`_ function at my _\`/blog\`_ route that is used to pre-fetch my blogs.
+Here is my _\`getStaticProps\`_ function at my _\`/blog\`_ route used to pre-fetch my blogs.
 
 ```
 export const getStaticProps: GetStaticProps = async () => {
@@ -40,13 +40,14 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 ```
 
-<p style={{ paddingTop: 16 }}></p>
+<p style={{ paddingBottom: 16 }}></p>
 
-_\`postFilePaths\`_ is a function that reads from my _\`data\`_ directory where I have all of my _\`.mdx\`_ files.
+_\`postFilePaths\`_ is a function that reads from my _\`data\`_ directory where I
+have all of my MDX files.
 
 ## Customization
 
-_\`MDX\`_ allows customizable styles for the markdown that you render. For simplicity sake, the _\`MDXRemote\`_ component from the _\`next-mdx-remote\`_ library takes in a _\`components\`_ prop that you can define with your own styles.
+MDX allows customizable styles for the markdown that you render. For simplicity's sake, the _\`MDXRemote\`_ component from the _\`next-mdx-remote\`_ library takes in a _\`components\`_ prop that you can define with your styles.
 
 ```
 const components = {
@@ -87,12 +88,21 @@ const components = {
 };
 ```
 
-As you can see I created a _\`components\`_ object and am replacing the default markdown styles. I am replacing the anchor, heading, paragraph, list, and code tags with my own personal styles.
+I explicitly state how I want my markdown to be styled in my' components' object. I replace the anchor, heading, paragraph, list, code, and pre tags with my styles.
 
-The _\`pre\`_ key in my _\`components\`_ object is what styles the following code block:
+The _\`pre\`_ key in my _\`components\`_ object is what styles my code blocks, like this one:
 
 ```
 	function styling() {
 		return 'This is pretty cool';
 	}
 ```
+
+<p style={{ paddingBottom: 16 }}></p>
+
+## Conclusion
+
+Implementing a personal, professional-looking blog with your design system has been made simple with MDX and Next.js.
+
+- [View the full code](https://github.com/jakequinter/jakequinter.io)
+- [View Vercel's Example](https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote)

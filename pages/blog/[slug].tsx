@@ -124,7 +124,7 @@ export default function Post({ source, frontMatter, readingTime }) {
             </p>
           </div>
         </div>
-        <main>
+        <main className={box({ marginBottom: '$5' })}>
           <MDXRemote {...source} components={components} />
         </main>
       </div>

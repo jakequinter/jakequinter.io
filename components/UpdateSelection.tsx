@@ -17,7 +17,11 @@ const UpdateSelection = () => {
     } else {
       return (
         <div
-          className={box({ display: 'flex', justifyContent: 'space-around' })}
+          className={box({
+            display: 'flex',
+            justifyContent: 'space-around',
+            marginTop: '$6',
+          })}
         >
           <button
             type="button"

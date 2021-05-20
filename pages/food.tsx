@@ -19,7 +19,13 @@ export default function Food({ food }) {
         }}
       />
       <Header />
-      <div className={box({ my: 80, maxWidth: '56rem', mx: 'auto' })}>
+      <div
+        className={box({
+          marginTop: '$6',
+          maxWidth: '56rem',
+          mx: 'auto',
+        })}
+      >
         <h1
           className={text({
             size: '7',

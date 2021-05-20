@@ -38,6 +38,7 @@ const ThingsForm = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: '$6',
       })}
     >
       <Head>

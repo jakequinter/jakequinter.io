@@ -17,7 +17,7 @@ export default function Blog({ posts }) {
         className={text({
           size: '7',
           weight: 'bold',
-          css: { marginBottom: '$4', marginTop: '$6' },
+          css: { marginTop: '$6', marginBottom: '$4' },
         })}
       >
         Blog
