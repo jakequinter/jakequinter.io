@@ -29,7 +29,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "next.config.js", "utils/fetcher.js", "lib/auth.js", "lib/auth.js", "pages/index.js"  ],
+, "next.config.js", "lib/auth.js", "lib/auth.js", "pages/index.js"  ],
   "exclude": [
     "node_modules"
   ]
