@@ -31,6 +31,12 @@ export default function Timeline2021() {
       <div>
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <TimelineEntry
+            title="Joined Delta Defense and the USCCA"
+            description="I am very excited to announce that I've accepted a new position as a Frontend Developer. I will be spending the majority of my time developing B2C and B2B applications utilizing the JAMstack. "
+            date="May 24"
+            logo={<HiOutlineLightningBolt size={20} />}
+          />
+          <TimelineEntry
             title="Redesigned and styled jakequinter.io with Stitches.js"
             description="I've been very interested in Stitches.js, so I spent my Saturday removing Tailwind CSS and implementing Stitches.js on my personal site.  I also did some redesign, adding a dark theme, moving some components around, and adding a blog."
             date="May 15"
