@@ -14,7 +14,7 @@ export default function Bookmarks({
   allThings,
   personalSites,
   people,
-  booksAndPodcasts,
+  booksAndPodcasts
 }) {
   return (
     <Container>
@@ -23,7 +23,7 @@ export default function Bookmarks({
         canonical="https://jakequinter.io/bookmarks"
         openGraph={{
           url: 'https://jakequinter.io/bookmarks',
-          title: 'Jake Quinter 📌',
+          title: 'Jake Quinter 📌'
         }}
       />
       <div className="flex-row justify-between align-center">
@@ -31,7 +31,7 @@ export default function Bookmarks({
           className={text({
             size: '7',
             weight: 'bold',
-            css: { marginBottom: '$4', marginTop: '$6' },
+            css: { marginBottom: '$4', marginTop: '$6' }
           })}
         >
           Internet Things
@@ -53,8 +53,8 @@ export default function Bookmarks({
               css: {
                 textAlign: 'center',
                 paddingBottom: '$2',
-                color: '$primary',
-              },
+                color: '$primary'
+              }
             })}
           >
             Currently reading 📚
@@ -62,13 +62,13 @@ export default function Bookmarks({
           <div
             className={grid({
               rows: '3',
-              css: { gap: '$2', marginBottom: '$5' },
+              css: { gap: '$2', marginBottom: '$5' }
             })}
           >
-            <Link href="https://www.amazon.com/Rational-Optimist-Prosperity-Evolves-P-s/dp/0061452068">
+            <Link href="https://www.amazon.com/Skin-Game-Hidden-Asymmetries-Daily/dp/042528462X">
               <a
                 className={link({
-                  type: 'unactive',
+                  type: 'unactive'
                 })}
                 target="_blank"
               >
@@ -83,21 +83,21 @@ export default function Bookmarks({
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
                     '@bp2': {
                       flexDirection: 'column',
-                      alignItems: 'start',
+                      alignItems: 'start'
                     },
                     '&:hover': {
-                      borderColor: '$borderhover',
-                    },
+                      borderColor: '$borderhover'
+                    }
                   })}
                 >
-                  <p className={text()}>The Rational Optimist</p>
+                  <p className={text()}>Skin in the Game</p>
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$shade', paddingTop: '$2' },
+                      css: { color: '$shade', paddingTop: '$2' }
                     })}
                   >
-                    Matt Ridley
+                    Nassim Nicholas Taleb
                   </p>
                 </div>
               </a>
@@ -105,7 +105,7 @@ export default function Bookmarks({
             <Link href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557">
               <a
                 className={link({
-                  type: 'unactive',
+                  type: 'unactive'
                 })}
                 target="_blank"
               >
@@ -120,11 +120,11 @@ export default function Bookmarks({
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
                     '@bp2': {
                       flexDirection: 'column',
-                      alignItems: 'start',
+                      alignItems: 'start'
                     },
                     '&:hover': {
-                      borderColor: '$borderhover',
-                    },
+                      borderColor: '$borderhover'
+                    }
                   })}
                 >
                   <div>
@@ -134,7 +134,7 @@ export default function Bookmarks({
                     <p
                       className={text({
                         size: '2',
-                        css: { color: '$shade', paddingTop: '$2' },
+                        css: { color: '$shade', paddingTop: '$2' }
                       })}
                     >
                       Donella Meadows
@@ -146,7 +146,7 @@ export default function Bookmarks({
             <Link href="https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation/dp/0307887898">
               <a
                 className={link({
-                  type: 'unactive',
+                  type: 'unactive'
                 })}
                 target="_blank"
               >
@@ -161,18 +161,18 @@ export default function Bookmarks({
                     boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
                     '@bp2': {
                       flexDirection: 'column',
-                      alignItems: 'start',
+                      alignItems: 'start'
                     },
                     '&:hover': {
-                      borderColor: '$borderhover',
-                    },
+                      borderColor: '$borderhover'
+                    }
                   })}
                 >
                   <p className={text()}>The Lean Startup</p>
                   <p
                     className={text({
                       size: '2',
-                      css: { color: '$shade', paddingTop: '$2' },
+                      css: { color: '$shade', paddingTop: '$2' }
                     })}
                   >
                     Eric Ries
@@ -202,6 +202,6 @@ export const getStaticProps: GetStaticProps = async context => {
   );
 
   return {
-    props: { allThings, personalSites, people, booksAndPodcasts },
+    props: { allThings, personalSites, people, booksAndPodcasts }
   };
 };
