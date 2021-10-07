@@ -32,7 +32,7 @@ export default function Timeline2021() {
         <ul className={box({ listStyle: 'none', padding: 0 })}>
           <TimelineEntry
             title="Joined Delta Defense and the USCCA"
-            description="I am very excited to announce that I've accepted a new position as a Frontend Developer. I will be spending the majority of my time developing B2C and B2B applications utilizing the JAMstack. "
+            description="I am very excited to start my new role as a software engineer. I will be spending the majority of my time developing B2C and B2B applications working with the JAMstack. "
             date="May 24"
             logo={<HiOutlineLightningBolt size={20} />}
           />

@@ -55,16 +55,16 @@ const About = () => {
         </div>
         <div>
           <p className={text({ css: { paddingBottom: '$3' } })}>
-            Hello, I’m Jake. I’m a software developer based in Boston, MA. I
-            work at{' '}
+            Hello, I’m Jake. I’m a software engineer based in Boston, MA. I work
+            on the B2B team at{' '}
             <a
               className={link()}
               target="_blank"
               href="https://www.deltadefense.com/"
             >
               Delta Defense
-            </a>{' '}
-            as a Frontend Developer.
+            </a>
+            .
           </p>
           <p className={text({ css: { paddingBottom: '$3' } })}>
             Outside of my full-time role, I tinker with indie projects and build
