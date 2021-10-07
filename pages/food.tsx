@@ -21,7 +21,7 @@ export default function Food({ food }) {
       <Header />
       <div
         className={box({
-          marginTop: '$6',
+          my: '$6',
           maxWidth: '56rem',
           mx: 'auto',
           px: '$3',

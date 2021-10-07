@@ -29,9 +29,9 @@ export default function Home() {
             Jake Quinter
           </h1>
           <p className={text({ css: { marginBottom: '$3' } })}>
-            Software developer and wannabe designer interested in many things.
-            Mainly software, technology, and optimizing habits for a more
-            productive and self-fulfilling life.
+            Software engineer interested in many things. Mainly software,
+            technology, and optimizing habits for a more productive and
+            self-fulfilling life.
           </p>
           <p className={text()}>
             Currently saving lives with{' '}
