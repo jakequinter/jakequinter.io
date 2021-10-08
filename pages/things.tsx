@@ -1,6 +1,6 @@
+import { useAuth } from '@/lib/auth';
 import Container from '@/components/Container';
 import LoginForm from '@/components/LoginForm';
-import { useAuth } from '../lib/auth';
 import UpdateSelection from '@/components/UpdateSelection';
 
 export default function Things() {
