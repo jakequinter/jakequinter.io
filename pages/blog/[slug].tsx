@@ -1,25 +1,27 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
-import fs from 'fs';
-import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import path from 'path';
+import { format } from 'date-fns';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { format } from 'date-fns';
+import { MDXRemote } from 'next-mdx-remote';
+import { NextSeo } from 'next-seo';
+import { serialize } from 'next-mdx-remote/serialize';
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 import readingTime from 'reading-time';
 
-import Header from '@/components/Header';
-import CustomLink from '@/components/mdx/CustomLink';
-import { H1, H2, H3 } from '@/components/mdx/Heading';
 import { Code, P } from '@/components/mdx/Text';
-import { UL, LI } from '@/components/mdx/ListItem';
+import { H1, H2, H3 } from '@/components/mdx/Heading';
 import { line as styleline } from '@/styles/mdx/line';
 import { linecontent } from '@/styles/mdx/linecontent';
 import { pre } from '@/styles/mdx/pre';
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
+import { UL, LI } from '@/components/mdx/ListItem';
+import CustomLink from '@/components/mdx/CustomLink';
 import determineTheme from '@/utils/determineTheme';
+import Header from '@/components/Header';
+
 import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { button } from '@/styles/button';
@@ -32,10 +34,7 @@ const components = {
   p: P,
   ul: UL,
   li: LI,
-  em: Code,
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
+  em: Code, // @ts-ignore
   pre: props => (
     <Highlight
       {...defaultProps}
@@ -47,6 +46,7 @@ const components = {
         <pre className={pre()} style={style}>
           {tokens.map((line, i) => (
             <div
+              // @ts-ignore
               className={styleline()}
               key={i}
               {...getLineProps({ line, key: i })}
@@ -64,7 +64,32 @@ const components = {
   ),
 };
 
-export default function Post({ source, frontMatter, readingTime }) {
+type Props = {
+  source: Source;
+  frontMatter: Scope;
+  readingTime: ReadingTime;
+};
+
+type Source = {
+  compileSource: string;
+  scope: Scope;
+};
+
+type Scope = {
+  description: string;
+  publishedAt: string;
+  slug: string;
+  title: string;
+};
+
+type ReadingTime = {
+  minutes: number;
+  text: string;
+  time: number;
+  words: number;
+};
+
+export default function Post({ source, frontMatter, readingTime }: Props) {
   const router = useRouter();
 
   const date = new Date(frontMatter.publishedAt);
@@ -100,7 +125,6 @@ export default function Post({ source, frontMatter, readingTime }) {
             css: {
               display: 'flex',
               alignItems: 'center',
-              // paddingLeft: '$2',
             },
           })}
         >
@@ -143,6 +167,7 @@ export default function Post({ source, frontMatter, readingTime }) {
           </div>
         </div>
         <main className={box({ marginBottom: '$5' })}>
+          {/*  @ts-ignore */}
           <MDXRemote {...source} components={components} />
         </main>
       </div>
@@ -150,7 +175,7 @@ export default function Post({ source, frontMatter, readingTime }) {
   );
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = postFilePaths
     // Remove file extensions for page paths
     .map(path => path.replace(/\.mdx?$/, ''))
@@ -163,8 +188,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);

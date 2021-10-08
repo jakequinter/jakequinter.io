@@ -2,20 +2,29 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
+import { getAllThings } from '@/lib/db-admin';
+import { Thing } from '@/types/thing';
 import Container from '@/components/Container';
 import Things from '@/components/Things';
-import { text } from '@/styles/text';
+
 import { box } from '@/styles/box';
-import { link } from '@/styles/link';
-import { getAllThings } from '@/lib/db-admin';
 import { grid } from '@/styles/grid';
+import { link } from '@/styles/link';
+import { text } from '@/styles/text';
+
+type Props = {
+  allThings: Thing[];
+  personalSites: Thing[];
+  people: Thing[];
+  booksAndPodcasts: Thing[];
+};
 
 export default function Bookmarks({
   allThings,
   personalSites,
   people,
   booksAndPodcasts,
-}) {
+}: Props) {
   return (
     <Container>
       <NextSeo

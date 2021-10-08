@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Header from '../components/Header';
-import { box } from '../styles/box';
-import { text } from '../styles/text';
-import { link } from '../styles/link';
+import Header from '@/components/Header';
+import { box } from '@/styles/box';
+import { text } from '@/styles/text';
+import { link } from '@/styles/link';
 
 export default function Home() {
   return (

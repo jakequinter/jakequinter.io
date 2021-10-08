@@ -1,17 +1,35 @@
 import { GetStaticProps } from 'next';
+import { format } from 'date-fns';
 import { NextSeo } from 'next-seo';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { format } from 'date-fns';
 
-import Container from '@/components/Container';
-import BlogPost from '@/components/BlogPost';
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
-import { text } from '@/styles/text';
-import { box } from '@/styles/box';
+import BlogPost from '@/components/BlogPost';
+import Container from '@/components/Container';
 
-export default function Blog({ posts }) {
+import { box } from '@/styles/box';
+import { text } from '@/styles/text';
+
+type Props = {
+  posts: Post[];
+};
+
+type Post = {
+  content: string;
+  data: PostData;
+  filePath: string;
+};
+
+type PostData = {
+  description: string;
+  publishedAt: string;
+  slug: string;
+  title: string;
+};
+
+export default function Blog({ posts }: Props) {
   return (
     <Container>
       <NextSeo
@@ -34,7 +52,6 @@ export default function Blog({ posts }) {
 
       <ul className={box({ listStyle: 'none', padding: 0 })}>
         {posts.map(post => {
-          // fix date-fns issue assuming timezone
           const date = new Date(post.data.publishedAt);
           const formattedDate = new Date(
             date.valueOf() + date.getTimezoneOffset() * 60 * 1000

@@ -1,13 +1,19 @@
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
+import { Food } from '@/types/food';
+import { getAllFood } from '@/lib/db-admin';
 import Header from '@/components/Header';
 import FoodList from '@/components/FoodList';
-import { text } from '@/styles/text';
-import { box } from '@/styles/box';
-import { getAllFood } from '@/lib/db-admin';
 
-export default function Food({ food }) {
+import { box } from '@/styles/box';
+import { text } from '@/styles/text';
+
+type Props = {
+  food: Food[];
+};
+
+export default function FoodHome({ food }: Props) {
   return (
     <div>
       <NextSeo
