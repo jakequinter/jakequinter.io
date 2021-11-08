@@ -17,20 +17,35 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-      "baseUrl": ".",
-      "paths": {
-        "@/components/*": ["src/components/*"],
-        "@/lib/*": ["src/lib/*"],
-        "@/styles/*": ["src/styles/*"],
-        "@/types/*": ["src/types/*"],
-        "@/utils/*": ["src/utils/*"]
-    }
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ],
+      "@/types/*": [
+        "src/types/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ]
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "next.config.js", "lib/auth.js", "lib/auth.js", "pages/index.js"  ],
+    "**/*.tsx",
+    "next.config.js",
+    "lib/auth.js",
+    "lib/auth.js",
+    "pages/index.js"
+  ],
   "exclude": [
     "node_modules"
   ]
