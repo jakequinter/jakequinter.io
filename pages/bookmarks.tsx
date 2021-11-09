@@ -111,6 +111,47 @@ export default function Bookmarks({
                 </div>
               </a>
             </Link>
+            <Link href="https://eloquentjavascript.net/">
+              <a
+                className={link({
+                  type: 'unactive',
+                })}
+                target="_blank"
+              >
+                <div
+                  className={box({
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    border: '1px solid $border',
+                    padding: '$3',
+                    borderRadius: '5px',
+                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                    '@bp2': {
+                      flexDirection: 'column',
+                      alignItems: 'start',
+                    },
+                    '&:hover': {
+                      borderColor: '$borderhover',
+                    },
+                  })}
+                >
+                  <div>
+                    <p className={text()}>Eloquent JavaScript</p>
+                  </div>
+                  <div>
+                    <p
+                      className={text({
+                        size: '2',
+                        css: { color: '$shade', paddingTop: '$2' },
+                      })}
+                    >
+                      Marijn Haverbeke
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </Link>
             <Link href="https://www.amazon.com/Skin-Game-Hidden-Asymmetries-Daily/dp/042528462X">
               <a
                 className={link({
@@ -145,47 +186,6 @@ export default function Bookmarks({
                   >
                     Nassim Nicholas Taleb
                   </p>
-                </div>
-              </a>
-            </Link>
-            <Link href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557">
-              <a
-                className={link({
-                  type: 'unactive',
-                })}
-                target="_blank"
-              >
-                <div
-                  className={box({
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    border: '1px solid $border',
-                    padding: '$3',
-                    borderRadius: '5px',
-                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                    '@bp2': {
-                      flexDirection: 'column',
-                      alignItems: 'start',
-                    },
-                    '&:hover': {
-                      borderColor: '$borderhover',
-                    },
-                  })}
-                >
-                  <div>
-                    <p className={text()}>Thinking in Systems</p>
-                  </div>
-                  <div>
-                    <p
-                      className={text({
-                        size: '2',
-                        css: { color: '$shade', paddingTop: '$2' },
-                      })}
-                    >
-                      Donella Meadows
-                    </p>
-                  </div>
                 </div>
               </a>
             </Link>
