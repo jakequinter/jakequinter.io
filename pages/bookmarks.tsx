@@ -145,5 +145,6 @@ export const getStaticProps: GetStaticProps = async context => {
 
   return {
     props: { allThings, personalSites, people, booksAndPodcasts, rss },
+    revalidate: 60,
   };
 };
