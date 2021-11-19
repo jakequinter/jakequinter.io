@@ -2,10 +2,12 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
+import { Book } from '@/types/rss';
 import { getAllThings } from '@/lib/db-admin';
 import { Thing } from '@/types/thing';
 import Container from '@/components/Container';
 import Things from '@/components/Things';
+import { getReadngContent } from '@/lib/rss';
 
 import { box } from '@/styles/box';
 import { grid } from '@/styles/grid';
@@ -17,6 +19,7 @@ type Props = {
   personalSites: Thing[];
   people: Thing[];
   booksAndPodcasts: Thing[];
+  rss: Book[];
 };
 
 export default function Bookmarks({
@@ -24,6 +27,7 @@ export default function Bookmarks({
   personalSites,
   people,
   booksAndPodcasts,
+  rss,
 }: Props) {
   return (
     <Container>
@@ -77,127 +81,46 @@ export default function Bookmarks({
               },
             })}
           >
-            <Link href="https://github.com/MostlyAdequate/mostly-adequate-guide">
-              <a
-                className={link({
-                  type: 'unactive',
-                })}
-                target="_blank"
-              >
-                <div
-                  className={box({
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    border: '1px solid $border',
-                    padding: '$3',
-                    borderRadius: '5px',
-                    height: '100%',
-                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                    '@bp2': {
-                      flexDirection: 'column',
-                      alignItems: 'start',
-                    },
-                    '&:hover': {
-                      borderColor: '$borderhover',
-                    },
+            {rss.map(book => (
+              <Link key={book.guid} href={`${book.link}`}>
+                <a
+                  className={link({
+                    type: 'unactive',
                   })}
+                  target="_blank"
                 >
-                  <p className={text()}>
-                    Professor Frisby's Mostly Adequate Guide to Functional
-                    Programming
-                  </p>
-                  <p
-                    className={text({
-                      size: '2',
-                      css: { color: '$shade', paddingTop: '$2' },
+                  <div
+                    className={box({
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      border: '1px solid $border',
+                      padding: '$3',
+                      borderRadius: '5px',
+                      height: '100%',
+                      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+                      '@bp2': {
+                        flexDirection: 'column',
+                        alignItems: 'start',
+                      },
+                      '&:hover': {
+                        borderColor: '$borderhover',
+                      },
                     })}
                   >
-                    Brian Lonsdorf
-                  </p>
-                </div>
-              </a>
-            </Link>
-            <Link href="https://www.amazon.com/Minimalist-Entrepreneur-Great-Founders-More/dp/0593192397">
-              <a
-                className={link({
-                  type: 'unactive',
-                })}
-                target="_blank"
-              >
-                <div
-                  className={box({
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    border: '1px solid $border',
-                    padding: '$3',
-                    borderRadius: '5px',
-                    height: '100%',
-                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                    '@bp2': {
-                      flexDirection: 'column',
-                      alignItems: 'start',
-                    },
-                    '&:hover': {
-                      borderColor: '$borderhover',
-                    },
-                  })}
-                >
-                  <div>
-                    <p className={text()}>The Minimalist Entreprenuer</p>
-                  </div>
-                  <div>
+                    <p className={text()}>{book.title}</p>
                     <p
                       className={text({
                         size: '2',
                         css: { color: '$shade', paddingTop: '$2' },
                       })}
                     >
-                      Sahil Lavingia
+                      {book.creator}
                     </p>
                   </div>
-                </div>
-              </a>
-            </Link>
-            <Link href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">
-              <a
-                className={link({
-                  type: 'unactive',
-                })}
-                target="_blank"
-              >
-                <div
-                  className={box({
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    border: '1px solid $border',
-                    padding: '$3',
-                    borderRadius: '5px',
-                    height: '100%',
-                    boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                    '@bp2': {
-                      flexDirection: 'column',
-                      alignItems: 'start',
-                    },
-                    '&:hover': {
-                      borderColor: '$borderhover',
-                    },
-                  })}
-                >
-                  <p className={text()}>Clean Code</p>
-                  <p
-                    className={text({
-                      size: '2',
-                      css: { color: '$shade', paddingTop: '$2' },
-                    })}
-                  >
-                    Robert C. Martin
-                  </p>
-                </div>
-              </a>
-            </Link>
+                </a>
+              </Link>
+            ))}
           </div>
         </div>
         <Things
@@ -218,8 +141,9 @@ export const getStaticProps: GetStaticProps = async context => {
   const booksAndPodcasts = allThings.filter(
     t => t.type === 'book' || t.type === 'podcast'
   );
+  const rss = await getReadngContent();
 
   return {
-    props: { allThings, personalSites, people, booksAndPodcasts },
+    props: { allThings, personalSites, people, booksAndPodcasts, rss },
   };
 };
