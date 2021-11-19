@@ -7,6 +7,7 @@ My personal site changes often. I find it a space where I can implement new tech
 - `pages/api/things/*`: API routes for retrieving the 'internet things' destinations on the `/bookmarks` page.
 - `pages/api/food`: API route for retrieving all the food on the `/food` page.
 - `pages/bookmarks`: Retrieves information from `pages/api/things/*` to display the content on the internet I find most fascinating.
+  - The "Currently reading 📚" section data updates in real-time from an RSS feed from [Oku](https://oku.club/).
 - `pages/food`: Retrieves information from `pages/api/food` to display the food my girlfriend and I keep track of.
 - `pages/things`: This is an authenticated route which displays a UI for me to select which category I want to add to (bookmarks or food.)
 - `pages/*`: All other pages are static pages.
@@ -28,6 +29,7 @@ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=
 FIREBASE_PRIVATE_KEY=
 FIREBASE_CLIENT_EMAIL=
+OKU_CURRENTLY_READING_URL=
 ```
 
 ### Built With
