@@ -12,11 +12,12 @@ const Timeline = () => {
   return (
     <div className="flow-root mt-16">
       <h1
-        className={text({
-          size: '6',
-          weight: 'medium',
-          css: { marginTop: '$5', marginBottom: '$3' },
-        })}
+        className="text-red-500"
+        // className={text({
+        //   size: '6',
+        //   weight: 'medium',
+        //   css: { marginTop: '$5', marginBottom: '$3' },
+        // })}
       >
         Timeline
       </h1>

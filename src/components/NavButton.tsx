@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-import { link } from '@/styles/link';
-
 interface NavButtonProps {
   href: string;
   text: string;
@@ -18,9 +16,9 @@ const NavButton = ({ href, text }: NavButtonProps) => {
   return (
     <Link href={href}>
       <a
-        className={
-          isActive ? link({ type: 'active' }) : link({ type: 'unactive' })
-        }
+        className={`${
+          isActive ? 'text-gray-900 font-medium' : 'text-gray-500'
+        } text-decoration-none`}
         onClick={() => setIsActive(!isActive)}
       >
         {text}

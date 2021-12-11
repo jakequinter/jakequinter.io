@@ -44,7 +44,7 @@ export default function Bookmarks({
           className={text({
             size: '7',
             weight: 'bold',
-            css: { marginBottom: '$4', marginTop: '$6' },
+            css: { marginBottom: '$4' },
           })}
         >
           Internet Things

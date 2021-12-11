@@ -22,11 +22,12 @@ const About = () => {
         }}
       />
       <h1
-        className={text({
-          size: '7',
-          weight: 'bold',
-          css: { marginBottom: '$4', marginTop: '$6' },
-        })}
+        className="text-red-500 text-2xl font-semibold mb-2"
+        // className={text({
+        //   size: '7',
+        //   weight: 'bold',
+        //   css: { marginBottom: '$4', marginTop: '$6' },
+        // })}
       >
         About me
       </h1>

@@ -1,30 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
-import { FiMenu, FiX } from 'react-icons/fi';
 
 import { box } from '../styles/box';
 import NavButton from '@/components/NavButton';
-import useWindowSize from '@/utils/useWindowSize';
 import ThemeChanger from '@/components/ThemeChanger';
-import { button } from '@/styles/button';
 
 export default function Header() {
-  const router = useRouter();
-  // const { width } = useWindowSize();
-  // const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
-
-  const handlePageTitle = () => {
-    if (router.pathname === '/') return 'Home';
-    else
-      return (
-        router.pathname.slice(1).charAt(0).toUpperCase() +
-        router.pathname.slice(2)
-      );
-  };
 
   return (
     <nav
@@ -42,18 +25,6 @@ export default function Header() {
         '@bp3': { px: 0 },
       })}
     >
-      {/* {!isOpen && width < 767 ? (
-        <h5 className="text-gray-900 font-bold">{handlePageTitle()}</h5>
-      ) : null}
-      {width < 767 ? (
-        <button
-          className={button()}
-          // className="inline-flex p-3 rounded md:hidden text-gray-900 ml-auto outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-        </button>
-      ) : null} */}
       <div
         className={box({
           display: 'flex',

@@ -6,7 +6,7 @@ import { ThemeProvider } from 'next-themes';
 import { AuthProvider } from '@/lib/auth';
 import { useAnalytics } from '@/utils/analytics';
 import SEO from '../next-seo.config';
-import '@/styles/global.css';
+import '../src/styles/global.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useAnalytics();
