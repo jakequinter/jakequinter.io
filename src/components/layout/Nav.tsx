@@ -5,6 +5,7 @@ import { Disclosure } from '@headlessui/react';
 import HamburgerMenu from './HamburgerMenu';
 import NavLink from '../NavLink';
 import ThemeChanger from '../ThemeChanger';
+import homeImage from '../../../public/test.svg';
 
 export default function Nav() {
   return (
@@ -18,7 +19,7 @@ export default function Nav() {
             <div className="flex items-center justify-between h-16">
               <Link href="/" passHref>
                 <a className="cursor-pointer">
-                  <Image src="/test.svg" height={50} width={60} />
+                  <Image src={homeImage} />
                 </a>
               </Link>
               <div className="hidden sm:flex space-x-4">

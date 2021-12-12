@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Container from '@/components/Container';
 import Nav from '@/components/layout/Nav';
 
 export default function Home() {
