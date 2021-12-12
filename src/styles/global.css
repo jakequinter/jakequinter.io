@@ -6,7 +6,5 @@ body {
   height: 100%;
   overflow: auto;
   margin: 0;
-  color: #666666;
-  /* background-color: #121212; */
   font-family: 'Inter', sans-serif, system-ui;
 }

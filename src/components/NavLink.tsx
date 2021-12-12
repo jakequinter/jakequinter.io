@@ -6,7 +6,7 @@ interface NavButtonProps {
   text: string;
 }
 
-const NavButton = ({ href, text }: NavButtonProps) => {
+const NavLink = ({ href, text }: NavButtonProps) => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const NavButton = ({ href, text }: NavButtonProps) => {
     <Link href={href}>
       <a
         className={`${
-          isActive ? 'text-gray-900 font-medium' : 'text-gray-500'
-        } text-decoration-none`}
+          isActive ? 'text-gray-900 dark:text-darkgray-900' : ''
+        } text-decoration-none hover:text-gray-900 dark:hover:text-darkgray-900`}
         onClick={() => setIsActive(!isActive)}
       >
         {text}
@@ -27,4 +27,4 @@ const NavButton = ({ href, text }: NavButtonProps) => {
   );
 };
 
-export default NavButton;
+export default NavLink;

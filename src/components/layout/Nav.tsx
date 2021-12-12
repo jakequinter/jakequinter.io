@@ -3,14 +3,14 @@ import Image from 'next/image';
 import { Disclosure } from '@headlessui/react';
 
 import HamburgerMenu from './HamburgerMenu';
-import NavButton from '../NavButton';
+import NavLink from '../NavLink';
 import ThemeChanger from '../ThemeChanger';
 
 export default function Nav() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 left-0 max-w-screen-lg mx-auto w-full bg-white dark:bg-black z-10"
+      className="sticky top-0 left-0 max-w-screen-lg mx-auto w-full bg-gray-100 dark:bg-darkgray-100 z-10"
     >
       {({ open }) => (
         <>
@@ -22,10 +22,10 @@ export default function Nav() {
                 </a>
               </Link>
               <div className="hidden sm:flex space-x-4">
-                <NavButton href="/about" text="About" />
-                <NavButton href="/bookmarks" text="Bookmarks" />
-                <NavButton href="/bookshelf" text="Bookshelf" />
-                <NavButton href="/blog" text="Blog" />
+                <NavLink href="/about" text="About" />
+                <NavLink href="/bookmarks" text="Bookmarks" />
+                <NavLink href="/bookshelf" text="Bookshelf" />
+                <NavLink href="/blog" text="Blog" />
               </div>
               <div className="flex sm:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2">
@@ -45,11 +45,11 @@ export default function Nav() {
                 open ? 'shadow-md' : ''
               } flex flex-col px-2 pt-2 pb-3 space-y-4`}
             >
-              <NavButton href="/about" text="About" />
-              <NavButton href="/bookmarks" text="Bookmarks" />
-              <NavButton href="/blog" text="Bookshelf" />
-              <NavButton href="/blog" text="Food" />
-              <NavButton href="/blog" text="Blog" />
+              <NavLink href="/about" text="About" />
+              <NavLink href="/bookmarks" text="Bookmarks" />
+              <NavLink href="/blog" text="Bookshelf" />
+              <NavLink href="/blog" text="Food" />
+              <NavLink href="/blog" text="Blog" />
             </div>
           </Disclosure.Panel>
         </>

@@ -4,11 +4,6 @@ import { NextSeo } from 'next-seo';
 
 import Container from '@/components/Container';
 import Timeline from '@/components/timeline/Timeline';
-import { text } from '@/styles/text';
-import { box } from '@/styles/box';
-import { link } from '@/styles/link';
-import { image } from '@/styles/image';
-import { grid } from '@/styles/grid';
 
 const About = () => {
   return (
@@ -21,14 +16,16 @@ const About = () => {
           title: 'Jake Quinter 👨‍💻',
         }}
       />
-      <h1 className="text-gray-900 text-5xl mb-8 font-semibold">About me</h1>
+      <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+        About me
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
         <div className="col-span-2">
           <p className="mb-4">
             Hello, I’m Jake. I’m a software engineer based in Boston, MA. I work
             on the B2B team at{' '}
             <a
-              className={link()}
+              className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
               target="_blank"
               href="https://www.deltadefense.com/"
             >
@@ -49,13 +46,7 @@ const About = () => {
           </p>
         </div>
         <div className="text-center sm:text-start ml-0 sm:ml-auto">
-          <Image
-            className={image()}
-            src="/jake.png"
-            alt="Jake Quinter"
-            height={200}
-            width={200}
-          />
+          <Image src="/jake.png" alt="Jake Quinter" height={200} width={200} />
         </div>
       </div>
 

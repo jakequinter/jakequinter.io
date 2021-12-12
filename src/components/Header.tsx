@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
 import { box } from '../styles/box';
-import NavButton from '@/components/NavButton';
+import NavLink from '@/components/NavLink';
 import ThemeChanger from '@/components/ThemeChanger';
 
 export default function Header() {
@@ -54,9 +54,9 @@ export default function Header() {
             '@bp1': { gap: '$4' },
           })}
         >
-          <NavButton href="/about" text="About" />
-          <NavButton href="/bookmarks" text="Bookmarks" />
-          <NavButton href="/blog" text="Blog" />
+          <NavLink href="/about" text="About" />
+          <NavLink href="/bookmarks" text="Bookmarks" />
+          <NavLink href="/blog" text="Blog" />
         </div>
         <div
           className={box({

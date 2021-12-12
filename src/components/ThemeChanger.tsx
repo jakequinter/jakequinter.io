@@ -23,14 +23,14 @@ export default function ThemeToggle() {
       checked={theme === 'light'}
       onChange={handleTheme}
       className={
-        'relative bg-gray-100 dark:bg-gray-800 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
+        'relative bg-gray-400 dark:bg-darkgray-400 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
       }
     >
       <span className="sr-only">Change light/dark mode</span>
       <span
         className={`${
           theme === 'light' ? 'translate-x-5' : 'translate-x-0'
-        } pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
+        } pointer-events-none relative inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-700`}
       >
         <span
           className={`
