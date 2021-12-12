@@ -12,7 +12,7 @@ const Container = ({ children }: Props) => (
   <>
     <Toaster position="bottom-right" />
     <Nav />
-    <main className="max-w-screen-md mx-auto px-0 md:px-4 mt-20">
+    <main className="max-w-screen-md mx-auto px-4 md:px-0 mt-20">
       <div style={{ minHeight: 'calc(100vh - 422px)' }}>{children}</div>
       <Footer />
     </main>

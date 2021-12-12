@@ -10,7 +10,7 @@ export default function Nav() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 left-0 max-w-screen-lg mx-auto w-full bg-white z-10"
+      className="sticky top-0 left-0 max-w-screen-lg mx-auto w-full bg-white dark:bg-black z-10"
     >
       {({ open }) => (
         <>
@@ -24,6 +24,7 @@ export default function Nav() {
               <div className="hidden sm:flex space-x-4">
                 <NavButton href="/about" text="About" />
                 <NavButton href="/bookmarks" text="Bookmarks" />
+                <NavButton href="/bookshelf" text="Bookshelf" />
                 <NavButton href="/blog" text="Blog" />
               </div>
               <div className="flex sm:hidden">
