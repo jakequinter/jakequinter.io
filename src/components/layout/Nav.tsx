@@ -10,15 +10,15 @@ export default function Nav() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 left-0 max-w-screen-lg mx-auto w-full bg-gray-100 dark:bg-darkgray-100 z-10"
+      className="sticky top-0 left-0 max-w-4xl mx-auto w-full bg-gray-100 dark:bg-darkgray-100 z-10"
     >
       {({ open }) => (
         <>
-          <div className="px-0 sm:px-4 py-2">
+          <div className="px-4 sm:px-0 py-2">
             <div className="flex items-center justify-between h-16">
               <Link href="/" passHref>
                 <a className="cursor-pointer">
-                  <Image src="/lightlogo.png" height={50} width={60} />
+                  <Image src="/test.svg" height={50} width={60} />
                 </a>
               </Link>
               <div className="hidden sm:flex space-x-4">

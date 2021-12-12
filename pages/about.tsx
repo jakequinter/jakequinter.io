@@ -49,8 +49,13 @@ const About = () => {
           <Image src="/jake.png" alt="Jake Quinter" height={200} width={200} />
         </div>
       </div>
-
-      <Timeline />
+      {/* <Timeline /> */}
+      <div className="mt-24">
+        <h2 className="text-2xl text-gray-900 dark:text-darkgray-900 font-semibold mb-8">
+          Currently
+        </h2>
+        test
+      </div>
     </Container>
   );
 };

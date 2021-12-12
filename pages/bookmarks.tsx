@@ -2,12 +2,10 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import { Book } from '@/types/rss';
 import { getAllThings } from '@/lib/db-admin';
 import { Thing } from '@/types/thing';
 import Container from '@/components/Container';
 import Things from '@/components/Things';
-import { getReadngContent } from '@/lib/rss';
 
 import { box } from '@/styles/box';
 import { grid } from '@/styles/grid';
@@ -19,7 +17,6 @@ type Props = {
   personalSites: Thing[];
   people: Thing[];
   booksAndPodcasts: Thing[];
-  rss: Book[];
 };
 
 export default function Bookmarks({
@@ -27,7 +24,6 @@ export default function Bookmarks({
   personalSites,
   people,
   booksAndPodcasts,
-  rss,
 }: Props) {
   return (
     <Container>
@@ -40,17 +36,11 @@ export default function Bookmarks({
         }}
       />
       <div className="flex-row justify-between align-center">
-        <h1
-          className={text({
-            size: '7',
-            weight: 'bold',
-            css: { marginBottom: '$4' },
-          })}
-        >
-          Internet Things
+        <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+          Bookmarks
         </h1>
         <div>
-          <p className={text({ css: { paddingBottom: '$4' } })}>
+          <p className="pb-8">
             This page is going to be a collection of “internet things” that I
             feel are exceptional and want to save for future reference. These
             "internet things" are going to range from personal websites I
@@ -58,70 +48,6 @@ export default function Bookmarks({
             are worth reading, podcasts that deserve a listen, blogs worth
             reading, musings, and who knows what else.
           </p>
-
-          <h3
-            className={text({
-              size: '3',
-              weight: 'medium',
-              css: {
-                textAlign: 'center',
-                paddingBottom: '$2',
-                color: '$primary',
-              },
-            })}
-          >
-            Currently reading 📚
-          </h3>
-          <div
-            className={grid({
-              rows: '3',
-              css: {
-                gap: '$2',
-                marginBottom: '$5',
-              },
-            })}
-          >
-            {rss.map(book => (
-              <Link key={book.guid} href={`${book.link}`}>
-                <a
-                  className={link({
-                    type: 'unactive',
-                  })}
-                  target="_blank"
-                >
-                  <div
-                    className={box({
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      border: '1px solid $border',
-                      padding: '$3',
-                      borderRadius: '5px',
-                      height: '100%',
-                      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
-                      '@bp2': {
-                        flexDirection: 'column',
-                        alignItems: 'start',
-                      },
-                      '&:hover': {
-                        borderColor: '$borderhover',
-                      },
-                    })}
-                  >
-                    <p className={text()}>{book.title}</p>
-                    <p
-                      className={text({
-                        size: '2',
-                        css: { color: '$shade', paddingTop: '$2' },
-                      })}
-                    >
-                      {book.creator}
-                    </p>
-                  </div>
-                </a>
-              </Link>
-            ))}
-          </div>
         </div>
         <Things
           allThings={allThings}
@@ -141,10 +67,9 @@ export const getStaticProps: GetStaticProps = async context => {
   const booksAndPodcasts = allThings.filter(
     t => t.type === 'book' || t.type === 'podcast'
   );
-  const rss = await getReadngContent();
 
   return {
-    props: { allThings, personalSites, people, booksAndPodcasts, rss },
+    props: { allThings, personalSites, people, booksAndPodcasts },
     revalidate: 60,
   };
 };
