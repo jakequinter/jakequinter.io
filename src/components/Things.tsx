@@ -16,11 +16,11 @@ type TabButtonProps = {
 const TabButton = ({ text, data, tabData, setTabData }: TabButtonProps) => (
   <button
     onClick={() => setTabData(data)}
-    className={
+    className={`${
       tabData === data
-        ? button({ type: 'activetab' })
-        : button({ type: 'inactivetab' })
-    }
+        ? 'border-b border-gray-900 dark:border-darkgray-900 text-gray-900 dark:text-darkgray-900'
+        : 'hover:text-gray-900 hover:dark:text-darkgray-900'
+    } text-sm mr-4`}
   >
     {text}
   </button>
@@ -48,11 +48,7 @@ const Things = ({
   return (
     <>
       <div>
-        <div
-          className={box({
-            borderBottom: '1px solid $border',
-          })}
-        >
+        <div className="border-b border-gray-500 dark:border-darkgray-500">
           <nav aria-label="Tabs">
             <TabButton
               text={'All'}
