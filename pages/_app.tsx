@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app';
-import { darkTheme } from '../stitches.config';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 
@@ -14,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <DefaultSeo {...SEO} />
-      <ThemeProvider attribute="class" defaultTheme="system">
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     </AuthProvider>

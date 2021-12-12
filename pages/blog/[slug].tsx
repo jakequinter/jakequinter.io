@@ -20,7 +20,7 @@ import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import { UL, LI } from '@/components/mdx/ListItem';
 import CustomLink from '@/components/mdx/CustomLink';
 import determineTheme from '@/utils/determineTheme';
-import Header from '@/components/Header';
+import Nav from '@/components/layout/Nav';
 
 import { text } from '@/styles/text';
 import { box } from '@/styles/box';
@@ -107,7 +107,7 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
           title: `${frontMatter.title}`,
         }}
       />
-      <Header />
+      <Nav />
       <div
         className={box({
           marginTop: '$6',

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import Header from '@/components/Header';
+import Nav from '@/components/layout/Nav';
 import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { link } from '@/styles/link';
@@ -16,7 +16,7 @@ const Contact = () => (
         title: 'Jake Quinter 📱',
       }}
     />
-    <Header />
+    <Nav />
     <div
       className={box({
         marginTop: '$6',

@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 
 import { Food } from '@/types/food';
 import { getAllFood } from '@/lib/db-admin';
-import Header from '@/components/Header';
+import Nav from '@/components/layout/Nav';
 import FoodList from '@/components/FoodList';
 
 import { box } from '@/styles/box';
@@ -24,7 +24,7 @@ export default function FoodHome({ food }: Props) {
           title: 'Jake Quinter 🍕',
         }}
       />
-      <Header />
+      <Nav />
       <div
         className={box({
           my: '$6',
