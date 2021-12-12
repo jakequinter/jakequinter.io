@@ -15,7 +15,7 @@ export default function Nav() {
     >
       {({ open }) => (
         <>
-          <div className="px-4 sm:px-0 py-2">
+          <div className="px-4 lg:px-0 py-2">
             <div className="flex items-center justify-between h-16">
               <Link href="/" passHref>
                 <a className="cursor-pointer">
@@ -28,13 +28,13 @@ export default function Nav() {
                 <NavLink href="/bookshelf" text="Bookshelf" />
                 <NavLink href="/blog" text="Blog" />
               </div>
-              <div className="flex sm:hidden">
+              <div className="flex sm:hidden order-3">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2">
                   <span className="sr-only">Open main menu</span>
                   <HamburgerMenu isOpen={open} />
                 </Disclosure.Button>
               </div>
-              <div className="hidden sm:block">
+              <div className="order-2 ml-auto sm:ml-0">
                 <ThemeChanger />
               </div>
             </div>

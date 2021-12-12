@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Nav />
       <div className="mt-20 max-w-4xl mx-auto">
-        <div className="max-w-xl">
+        <div className="max-w-xl px-4 lg:px-0">
           <h1 className="text-gray-900 dark:text-darkgray-900 text-6xl font-semibold mb-8">
             Jake Quinter
           </h1>
