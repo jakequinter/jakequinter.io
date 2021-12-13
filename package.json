@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
+    "@modulz/radix-icons": "^4.0.0",
     "@splitbee/web": "^0.2.4",
     "@stitches/react": "^0.1.9",
     "date-fns": "^2.16.1",

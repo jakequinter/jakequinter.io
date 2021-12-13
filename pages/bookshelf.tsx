@@ -1,16 +1,19 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { ExternalLinkIcon } from '@modulz/radix-icons';
 
 import { Book } from '@/types/rss';
 import { getReadngContent } from '@/lib/rss';
 import Container from '@/components/Container';
 
 type Props = {
-  rss: Book[];
+  toRead: Book[];
+  currentlyReading: Book[];
+  read: Book[];
 };
 
-export default function Bookshelf({ rss }: Props) {
+export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
   return (
     <Container>
       <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
@@ -21,31 +24,92 @@ export default function Bookshelf({ rss }: Props) {
         Books that I'm currently reading, have already finished, or plan to pick
         up in the future.
       </p>
-      <p className="pb-4">
+      <p>
         This list is nowhere near exhaustive, and is only currently displaying
-        books I've found or read this year, but it is a good place to start.
+        books I've found or read since 2021, but it is a good place to start.
       </p>
 
-      <div className="mt-8">
-        <h2 className="text-xl text-center font-medium text-gray-900 dark:text-darkgray-900 pb-2">
-          Currently reading 📚
+      <div>
+        <h2 className="text-xl text-center font-medium text-[#9E99AA] mt-20 mb-4">
+          Currently reading 📖
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {rss.map(book => (
-            <Link key={book.guid} href={`${book.link}`}>
-              <a
-                className="border bg-white dark:bg-black border-gray-400 hover:border-gray-600 dark:border-darkgray-400 hover:dark:border-darkgray-600 rounded p-4 shadow"
-                target="_blank"
+        <div className="h-[400px] p-8 bg-gradient-to-r from-[#D3CCE3] to-[#E9E4F0] dark:bg-gradient-to-r dark:from-[#9E99AA] dark:to-[#57555A] rounded">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {currentlyReading.map(book => (
+              <div
+                key={book.guid}
+                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
               >
-                <div className="flex flex-col justify-between h-full rounded">
+                <div className="flex gap-8 justify-between">
                   <p>{book.title}</p>
-                  <p className="text-gray-600 dark:text-darkgray-600 pt-4">
-                    {book.creator}
-                  </p>
+                  <Link href={`${book.link}`} passHref>
+                    <a target="_blank">
+                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                    </a>
+                  </Link>
                 </div>
-              </a>
-            </Link>
-          ))}
+                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                  {book.creator}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="text-xl text-center font-medium text-[#8F6E94] mt-20 mb-4">
+          Up next 📓
+        </h2>
+        <div className="h-[400px] p-8 bg-gradient-to-r from-[#be93c5] to-[#7bc6cc] dark:bg-gradient-to-r dark:from-[#8F6E94] dark:to-[#2E4A4D] rounded overflow-y-scroll">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {toRead.map(book => (
+              <div
+                key={book.guid}
+                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
+              >
+                <div className="flex gap-8 justify-between">
+                  <p>{book.title}</p>
+                  <Link href={`${book.link}`} passHref>
+                    <a target="_blank">
+                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                    </a>
+                  </Link>
+                </div>
+                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                  {book.creator}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="text-xl text-center font-medium text-[#7E838E] mt-20 mb-4">
+          Finished reading 📚
+        </h2>
+        <div className="h-[400px] p-8 bg-gradient-to-r from-[#e0eafc] to-[#cfdef3] dark:bg-gradient-to-l dark:from-[#7E838E] dark:to-[#4E535B] rounded overflow-y-scroll">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {read.map(book => (
+              <div
+                key={book.guid}
+                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
+              >
+                <div className="flex gap-8 justify-between">
+                  <p>{book.title}</p>
+                  <Link href={`${book.link}`} passHref>
+                    <a target="_blank">
+                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                    </a>
+                  </Link>
+                </div>
+                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                  {book.creator}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Container>
@@ -56,7 +120,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const rss = await getReadngContent();
 
   return {
-    props: { rss },
+    props: {
+      toRead: rss.toRead,
+      currentlyReading: rss.currentlyReading,
+      read: rss.read,
+    },
     revalidate: 60,
   };
 };
