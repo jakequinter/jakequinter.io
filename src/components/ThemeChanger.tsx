@@ -17,7 +17,6 @@ export default function ThemeToggle() {
 
     setTheme(targetTheme);
   };
-  console.log('theme', theme);
 
   return (
     <Switch
