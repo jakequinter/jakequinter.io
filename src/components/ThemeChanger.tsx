@@ -4,7 +4,7 @@ import { Switch } from '@headlessui/react';
 import { MoonIcon, SunIcon } from '@modulz/radix-icons';
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(true);
   const { theme, setTheme } = useTheme();
 
   // When mounted on client, now we can show the UI
@@ -17,6 +17,7 @@ export default function ThemeToggle() {
 
     setTheme(targetTheme);
   };
+  console.log('theme', theme);
 
   return (
     <Switch
