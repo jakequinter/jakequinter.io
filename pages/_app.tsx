@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <DefaultSeo {...SEO} />
-      <ThemeProvider attribute="class" defaultTheme="system">
+      <ThemeProvider attribute="class" defaultTheme="light">
         <Component {...pageProps} />
       </ThemeProvider>
     </AuthProvider>
