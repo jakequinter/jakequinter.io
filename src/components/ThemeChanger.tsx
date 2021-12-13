@@ -20,7 +20,7 @@ export default function ThemeToggle() {
 
   return (
     <Switch
-      checked={theme === 'light'}
+      checked={theme === 'dark'}
       onChange={handleTheme}
       className={
         'relative bg-gray-400 dark:bg-darkgray-400 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
@@ -29,7 +29,7 @@ export default function ThemeToggle() {
       <span className="sr-only">Change light/dark mode</span>
       <span
         className={`${
-          theme === 'dark' ? 'translate-x-5' : 'translate-x-0'
+          theme === 'light' ? 'translate-x-5' : 'translate-x-0'
         } pointer-events-none relative inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-500`}
       >
         <span
