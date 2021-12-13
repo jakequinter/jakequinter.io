@@ -48,8 +48,7 @@ export default function Nav() {
             >
               <NavLink href="/about" text="About" />
               <NavLink href="/bookmarks" text="Bookmarks" />
-              <NavLink href="/blog" text="Bookshelf" />
-              <NavLink href="/blog" text="Food" />
+              <NavLink href="/bookshelf" text="Bookshelf" />
               <NavLink href="/blog" text="Blog" />
             </div>
           </Disclosure.Panel>

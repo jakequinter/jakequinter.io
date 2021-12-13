@@ -33,7 +33,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
         <h2 className="text-xl text-center font-medium text-[#9E99AA] mt-20 mb-4">
           Currently reading 📖
         </h2>
-        <div className="h-[400px] p-8 bg-gradient-to-r from-[#D3CCE3] to-[#E9E4F0] dark:bg-gradient-to-r dark:from-[#9E99AA] dark:to-[#57555A] rounded">
+        <div className="h-[400px] p-8 bg-gradient-to-r from-[#D3CCE3] to-[#E9E4F0] dark:bg-gradient-to-r dark:from-[#9E99AA] dark:to-[#57555A] rounded overflow-y-scroll">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {currentlyReading.map(book => (
               <div
