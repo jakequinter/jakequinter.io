@@ -29,7 +29,7 @@ export default function ThemeToggle() {
       <span className="sr-only">Change light/dark mode</span>
       <span
         className={`${
-          theme === 'light' ? 'translate-x-5' : 'translate-x-0'
+          theme === 'dark' ? 'translate-x-5' : 'translate-x-0'
         } pointer-events-none relative inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-500`}
       >
         <span
@@ -54,7 +54,7 @@ export default function ThemeToggle() {
           } absolute bg-gray-900 border border-gray-900 rounded-full inset-0 h-full w-full flex items-center justify-center transition-opacity`}
           aria-hidden="true"
         >
-          <MoonIcon className="text-[#68DDFD]" />
+          <MoonIcon className="text-[#2EC8EE]" />
         </span>
       </span>
     </Switch>
