@@ -30,14 +30,14 @@ export default function Bookshelf({ rss }: Props) {
         <h2 className="text-xl text-center font-medium text-gray-900 dark:text-darkgray-900 pb-2">
           Currently reading 📚
         </h2>
-        <div className="flex gap-4 overflow-x-scroll">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {rss.map(book => (
             <Link key={book.guid} href={`${book.link}`}>
               <a
-                className="border border-gray-400 hover:border-gray-600 dark:border-darkgray-400 hover:dark:border-darkgray-600 rounded p-4 shadow"
+                className="border bg-white dark:bg-black border-gray-400 hover:border-gray-600 dark:border-darkgray-400 hover:dark:border-darkgray-600 rounded p-4 shadow"
                 target="_blank"
               >
-                <div className="flex flex-col justify-between h-full rounded w-60">
+                <div className="flex flex-col justify-between h-full rounded">
                   <p>{book.title}</p>
                   <p className="text-gray-600 dark:text-darkgray-600 pt-4">
                     {book.creator}

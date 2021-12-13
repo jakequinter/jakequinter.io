@@ -2,9 +2,6 @@ import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
 import Nav from '@/components/layout/Nav';
-import { text } from '@/styles/text';
-import { box } from '@/styles/box';
-import { link } from '@/styles/link';
 
 const Contact = () => (
   <div>
@@ -17,34 +14,12 @@ const Contact = () => (
       }}
     />
     <Nav />
-    <div
-      className={box({
-        marginTop: '$6',
-        maxWidth: '42rem',
-        mx: 'auto',
-        px: '$3',
-        '@bp3': { px: 0 },
-      })}
-    >
-      <p className={text({ css: { color: '$primary' } })}>Get in touch.</p>
-      <div
-        className={box({
-          borderLeft: '3px solid $secondary',
-          marginTop: '$4',
-          py: '2px',
-          px: '$3',
-        })}
-      >
-        <p className={text({ css: { marginLeft: '$3' } })}>
+    <div className="mt-20 max-w-screen-sm mx-auto px-0 md:px-4">
+      <p className="text-gray-900 dark:text-darkgray-900">Get in touch.</p>
+      <div className="border-l-2 border-gray-900 dark:border-darkgray-900 mt-8">
+        <p className="ml-4">
           <Link href="mailto:hello@jakequinter.io?subject=Hello" passHref>
-            <a
-              className={link({
-                type: 'unactive',
-                css: {
-                  border: 'none',
-                },
-              })}
-            >
+            <a className="hover:text-gray-900 dark:hover:text-darkgray-900">
               hello@jakequinter.io
             </a>
           </Link>
