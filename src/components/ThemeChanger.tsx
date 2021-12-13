@@ -20,7 +20,7 @@ export default function ThemeToggle() {
 
   return (
     <Switch
-      checked={theme === 'dark'}
+      checked={theme === 'light'}
       onChange={handleTheme}
       className={
         'relative bg-gray-400 dark:bg-darkgray-400 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
