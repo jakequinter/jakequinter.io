@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { box } from '@/styles/box';
-import { image } from '@/styles/image';
-import { link as stylelink } from '@/styles/link';
-import { text } from '@/styles/text';
-
 type Props = {
   name: string;
   link: string;
@@ -22,69 +17,32 @@ export default function FoodCard({
   imageUrl,
 }: Props) {
   return (
-    <div
-      className={box({
-        padding: '$4',
-        borderRadius: '5px',
-        border: '1px solid $border',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      })}
-    >
-      <div className={box({ textAlign: 'center' })}>
+    <div className="p-4 border border-gray-400 shadow rounded">
+      <div className="text-center">
         <Link href={link}>
-          <a
-            className={stylelink({ css: { fontSize: '$5', border: 'none' } })}
-            target="_blank"
-          >
+          <a className="text-2xl text-blue-500" target="_blank">
             {name}
           </a>
         </Link>
-        <div
-          className={box({
-            py: '$4',
-            display: 'flex',
-            justifyContent: 'space-around',
-          })}
-        >
-          <div className={box({ display: 'flex', alignItems: 'center' })}>
-            <Image
-              height={50}
-              width={50}
-              src="/jakeAvi.png"
-              alt="Jake avatar"
-            />
-            <p
-              className={text({
-                size: '3',
-                css: { marginLeft: '$3' },
-              })}
-            >
-              {jakeRating}
-            </p>
-          </div>
-          <div className={box({ display: 'flex', alignItems: 'center' })}>
-            <Image height={50} width={50} src="/jenAvi.png" alt="Jen avatar" />
-            <p
-              className={text({
-                size: '3',
-                css: { marginLeft: '$3' },
-              })}
-            >
-              {jenRating}
-            </p>
-          </div>
+      </div>
+      <div className="flex p-4 justify-between mt-4 mb-2">
+        <div className="flex items-center">
+          <Image height={35} width={35} src="/jakeAvi.png" alt="Jake avatar" />
+          <p className="ml-2 text-gray-900">{jakeRating}</p>
+        </div>
+        <div className="flex items-center">
+          <Image height={35} width={35} src="/jenAvi.png" alt="Jen avatar" />
+          <p className="ml-2 text-gray-900">{jenRating}</p>
         </div>
       </div>
-      <div style={{ borderRadius: '10px' }}>
-        <Image
-          className={image()}
-          src={imageUrl}
-          alt="Jake Quinter"
-          height={800}
-          width={650}
-          priority
-        />
-      </div>
+      <Image
+        className="rounded"
+        src={imageUrl}
+        alt={name}
+        height={373}
+        width={280}
+        priority
+      />
     </div>
   );
 }

@@ -1,15 +1,13 @@
 import FoodCard from '@/components/FoodCard';
 import { Food } from '@/types/food';
 
-import { grid } from '@/styles/grid';
-
 type Props = {
   data: Food[];
 };
 
 export default function FoodList({ data }: Props) {
   return (
-    <div className={grid()}>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {data &&
         data.map(item => (
           <FoodCard
