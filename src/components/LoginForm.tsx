@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineExclamation } from 'react-icons/hi';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 import { useAuth } from '@/lib/auth';
 import { box } from '@/styles/box';
@@ -78,7 +79,7 @@ export default function LoginForm() {
               alignItems: 'center',
             },
           })}
-          onClick={() => auth.signinWithGoogle()}
+          onClick={() => signIn()}
         >
           <FcGoogle
             className={text({

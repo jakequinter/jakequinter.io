@@ -2,17 +2,22 @@ import { useAuth } from '@/lib/auth';
 import Container from '@/components/Container';
 import LoginForm from '@/components/LoginForm';
 import UpdateSelection from '@/components/UpdateSelection';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Things() {
-  const auth = useAuth();
+  const { data: session } = useSession();
 
-  const determineUser = () => {
-    if (!auth.user || auth.user.email !== 'hello@jakequinter.io') {
-      auth.signout();
-      return <LoginForm />;
-    } else {
-      return <UpdateSelection />;
-    }
-  };
-  return <Container>{determineUser()}</Container>;
+  if (session && session.user?.email === 'hello@jakequinter.io') {
+    return (
+      <Container>
+        <UpdateSelection />
+      </Container>
+    );
+  }
+
+  return (
+    <Container>
+      <LoginForm />
+    </Container>
+  );
 }
