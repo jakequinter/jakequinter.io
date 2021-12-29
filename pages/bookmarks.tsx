@@ -2,25 +2,21 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import { getAllThings } from '@/lib/db-admin';
+// import { getAllThings } from '@/lib/db-admin';
+import { getBookmarks } from '@/lib/helpers';
 import { Thing } from '@/types/thing';
 import Container from '@/components/Container';
 import Things from '@/components/Things';
 
-import { box } from '@/styles/box';
-import { grid } from '@/styles/grid';
-import { link } from '@/styles/link';
-import { text } from '@/styles/text';
-
 type Props = {
-  allThings: Thing[];
+  bookmarks: Thing[];
   personalSites: Thing[];
   people: Thing[];
   booksAndPodcasts: Thing[];
 };
 
 export default function Bookmarks({
-  allThings,
+  bookmarks,
   personalSites,
   people,
   booksAndPodcasts,
@@ -50,7 +46,7 @@ export default function Bookmarks({
           </p>
         </div>
         <Things
-          allThings={allThings}
+          allThings={bookmarks}
           personalSites={personalSites}
           people={people}
           booksAndPodcasts={booksAndPodcasts}
@@ -61,15 +57,15 @@ export default function Bookmarks({
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const allThings = await getAllThings();
-  const personalSites = allThings.filter(t => t.type === 'site');
-  const people = allThings.filter(t => t.type === 'people');
-  const booksAndPodcasts = allThings.filter(
+  const bookmarks = await getBookmarks();
+  const personalSites = bookmarks.filter(t => t.type === 'site');
+  const people = bookmarks.filter(t => t.type === 'people');
+  const booksAndPodcasts = bookmarks.filter(
     t => t.type === 'book' || t.type === 'podcast'
   );
 
   return {
-    props: { allThings, personalSites, people, booksAndPodcasts },
+    props: { bookmarks, personalSites, people, booksAndPodcasts },
     revalidate: 60,
   };
 };
