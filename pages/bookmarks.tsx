@@ -1,8 +1,6 @@
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-// import { getAllThings } from '@/lib/db-admin';
 import { getBookmarks } from '@/lib/helpers';
 import { Thing } from '@/types/thing';
 import Container from '@/components/Container';
@@ -37,12 +35,12 @@ export default function Bookmarks({
         </h1>
         <div>
           <p className="pb-8">
-            This page is going to be a collection of “internet things” that I
-            feel are exceptional and want to save for future reference. These
-            "internet things" are going to range from personal websites I
-            admire, people who I believe are worth following, books I believe
-            are worth reading, podcasts that deserve a listen, blogs worth
-            reading, musings, and who knows what else.
+            This page is a collection of "internet things" that I feel are
+            exceptional and want to save for future reference. These "internet
+            things" are going to range from personal websites I admire, people
+            who I believe are worth following, books I think are worth reading,
+            podcasts that deserve a listen, blogs worth reading, musings, and
+            who knows what else.
           </p>
         </div>
         <Things
@@ -58,10 +56,10 @@ export default function Bookmarks({
 
 export const getStaticProps: GetStaticProps = async context => {
   const bookmarks = await getBookmarks();
-  const personalSites = bookmarks.filter(t => t.type === 'site');
-  const people = bookmarks.filter(t => t.type === 'people');
+  const personalSites = bookmarks.filter(b => b.type === 'site');
+  const people = bookmarks.filter(b => b.type === 'people');
   const booksAndPodcasts = bookmarks.filter(
-    t => t.type === 'book' || t.type === 'podcast'
+    b => b.type === 'book' || b.type === 'podcast'
   );
 
   return {

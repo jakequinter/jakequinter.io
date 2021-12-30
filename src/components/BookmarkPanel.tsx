@@ -5,9 +5,10 @@ import Thing from '@/components/Thing';
 
 type Props = {
   data: ThingType[];
+  tabButtonText: string;
 };
 
-const BookmarkPanel = ({ data }: Props) => {
+const BookmarkPanel = ({ data, tabButtonText }: Props) => {
   return (
     <div>
       {data &&
@@ -19,6 +20,7 @@ const BookmarkPanel = ({ data }: Props) => {
             title={thing.title}
             type={thing.type}
             description={thing.description}
+            tabButtonText={tabButtonText}
           />
         ))}
     </div>

@@ -10,53 +10,35 @@ type Thing = {
   title: string;
   type: string;
   description: string;
+  tabButtonText: string;
 };
 
-export default function Thing({ id, link, title, type, description }: Thing) {
+export default function Thing({
+  id,
+  link,
+  title,
+  type,
+  description,
+  tabButtonText,
+}: Thing) {
   return (
-    <div key={id} className={box({ py: '$3' })}>
+    <div key={id} className="py-3">
       <div>
         <Link href={link} passHref>
           <a
-            className={stylelink({
-              type: 'unactive',
-              css: { '&:hover': { borderBottom: '1px solid $primary' } },
-            })}
+            className="text-gray-900 dark:text-darkgray-900 hover:border-b hover:border-gray-900 dark:hover:border-darkgray-800"
             target="_blank"
           >
-            <p
-              className={text({
-                weight: 'medium',
-                css: {
-                  display: 'inline',
-                  cursor: 'default',
-                  color: '$primary',
-                },
-              })}
-            >
-              {title}
-            </p>
+            {title}
           </a>
         </Link>
-        <span
-          className={text({
-            css: {
-              display: 'inline-flex',
-              marginLeft: '$1',
-              alignItems: 'center',
-              px: '$2',
-              borderRadius: '9999px',
-              fontSize: '$1',
-              lineHeight: '$2',
-              backgroundColor: '$tertiary',
-              color: '$gray500',
-            },
-          })}
-        >
-          {type}
-        </span>
+        {tabButtonText === 'All' ? (
+          <span className="ml-2 items-center px-1.5 py-0.5 rounded-full bg-gray-400 dark:bg-darkgray-400 text-xs">
+            {type}
+          </span>
+        ) : null}
       </div>
-      <p className={text()}>{description}</p>
+      <p>{description}</p>
     </div>
   );
 }

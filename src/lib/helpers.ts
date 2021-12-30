@@ -11,6 +11,9 @@ export async function getBookmarks() {
     },
     where: {
       userId: process.env.USER_ID
+    },
+    orderBy: {
+      createdAt: 'desc'
     }
   });
   
