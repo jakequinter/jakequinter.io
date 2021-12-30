@@ -27,7 +27,7 @@ const TabButton = ({
       tabData === data
         ? 'border-b border-gray-900 dark:border-darkgray-900 text-gray-900 dark:text-darkgray-900'
         : 'hover:text-gray-900 hover:dark:text-darkgray-900'
-    } text-sm mr-4 pb-0.5`}
+    } text-sm whitespace-nowrap mr-4 pb-0.5`}
   >
     {text}
   </button>
@@ -55,40 +55,39 @@ const Things = ({
 
   return (
     <>
-      <div>
-        <div className="border-b border-gray-500 dark:border-darkgray-500">
-          <nav aria-label="Tabs">
-            <TabButton
-              text={'All'}
-              data={allThings}
-              tabData={tabData}
-              setTabData={setTabData}
-              setTabText={setTabText}
-            />
-            <TabButton
-              text={'Personal Sites'}
-              data={personalSites}
-              tabData={tabData}
-              setTabData={setTabData}
-              setTabText={setTabText}
-            />
-            <TabButton
-              text={'People'}
-              data={people}
-              tabData={tabData}
-              setTabData={setTabData}
-              setTabText={setTabText}
-            />
-            <TabButton
-              text={'Books & Podcasts'}
-              data={booksAndPodcasts}
-              tabData={tabData}
-              setTabData={setTabData}
-              setTabText={setTabText}
-            />
-          </nav>
-        </div>
-      </div>
+      <nav
+        className="flex border-b border-gray-500 dark:border-darkgray-500 overflow-x-scroll"
+        aria-label="Tabs"
+      >
+        <TabButton
+          text={'All'}
+          data={allThings}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'Personal Sites'}
+          data={personalSites}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'People'}
+          data={people}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'Books & Podcasts'}
+          data={booksAndPodcasts}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+      </nav>
       <BookmarkPanel data={tabData} tabButtonText={tabText} />
     </>
   );
