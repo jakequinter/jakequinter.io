@@ -23,13 +23,13 @@ const About = () => {
         <div className="col-span-2">
           <p className="mb-4">
             Hello, I’m Jake. I’m a software engineer based in Boston, MA. I work
-            on the B2B team at{' '}
+            on the engineering team at{' '}
             <a
               className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
               target="_blank"
-              href="https://www.deltadefense.com/"
+              href="https://www.merryfield.com/"
             >
-              Delta Defense
+              Merryfield
             </a>
             .
           </p>
@@ -54,7 +54,16 @@ const About = () => {
         <h2 className="text-2xl text-gray-900 dark:text-darkgray-900 font-semibold mb-8">
           Currently
         </h2>
-        test
+        <p>
+          Dedicating my time to focus on improving myself through reading,
+          learning, and building products. In 2022, I'm going to focus more on
+          shipping.
+        </p>
+        <p className="mt-4">
+          (Re) learning low-level programming with Racket. Interested in Rust
+          and Go, and dedicated to React, Next.js, and TypeScript for building
+          user interfaces.
+        </p>
       </div>
     </Container>
   );

@@ -18,22 +18,14 @@ export default function Home() {
             self-fulfilling life.
           </p>
           <p>
-            Currently saving lives with{' '}
-            <Link href="https://www.deltadefense.com/" passHref>
+            Currently helping ease decision-making fatigue when choosing
+            better-for-you products at{' '}
+            <Link href="https://www.merryfield.com/" passHref>
               <a
                 className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
                 target="_blank"
               >
-                Delta Defense
-              </a>
-            </Link>{' '}
-            and the{' '}
-            <Link href="https://www.usconcealedcarry.com/" passHref>
-              <a
-                className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
-                target="_blank"
-              >
-                USCCA
+                Merryfield
               </a>
             </Link>
             .
