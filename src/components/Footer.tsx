@@ -2,17 +2,14 @@ import Link from 'next/link';
 
 import { box } from '@/styles/box';
 import { grid } from '@/styles/grid';
-import { text } from '@/styles/text';
 import { link } from '@/styles/link';
 
 export default function Footer() {
   return (
     <footer
       className={box({
-        // display: 'flex',
         maxWidth: '42rem',
         borderTop: '1px solid $border',
-        // justifyContent: 'center',
         width: '100%',
         mx: 'auto',
         px: '$3',
@@ -29,10 +26,7 @@ export default function Footer() {
           },
         })}
       >
-        <div
-          className={box({ display: 'flex', flexDirection: 'column' })}
-          // className="flex flex-col space-y-4"
-        >
+        <div className={box({ display: 'flex', flexDirection: 'column' })}>
           <Link href="/">
             <a
               className={link({
