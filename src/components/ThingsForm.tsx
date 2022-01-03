@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
+import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
-
-import { createThing } from '@/lib/db';
-import { useAuth } from '@/lib/auth';
 
 import { box } from '@/styles/box';
 import { button } from '@/styles/button';
@@ -18,12 +16,11 @@ type FormData = {
 };
 
 const ThingsForm = () => {
-  const auth = useAuth();
   const { handleSubmit, register } = useForm();
 
   const onCreateThing = ({ title, type, description, link }: FormData) => {
     const newThing = {
-      authorId: auth.user.uid,
+      // authorId: auth.user.uid,
       createdAt: new Date().toISOString(),
       title,
       type,
@@ -32,7 +29,7 @@ const ThingsForm = () => {
     };
 
     try {
-      createThing(newThing);
+      // createThing(newThing);
 
       toast.success('Your thing has been added.');
     } catch (error) {
@@ -149,7 +146,7 @@ const ThingsForm = () => {
               <button className={button()} type="submit">
                 Submit
               </button>
-              <button className={button()} onClick={() => auth.signout()}>
+              <button className={button()} onClick={() => signOut()}>
                 Sign out
               </button>
             </div>

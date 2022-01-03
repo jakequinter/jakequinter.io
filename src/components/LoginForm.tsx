@@ -2,16 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import { FcGoogle } from 'react-icons/fc';
 import { HiOutlineExclamation } from 'react-icons/hi';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 
-import { useAuth } from '@/lib/auth';
 import { box } from '@/styles/box';
 import { text } from '@/styles/text';
 import { button } from '@/styles/button';
 
 export default function LoginForm() {
-  const auth = useAuth();
-
   return (
     <div
       className={box({

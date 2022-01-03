@@ -42,8 +42,6 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.js",
-    "lib/auth.js",
-    "lib/auth.js",
     "pages/index.js"
   ],
   "exclude": [

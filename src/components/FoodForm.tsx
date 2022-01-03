@@ -1,10 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
+import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
 
-import { createFood } from '@/lib/db';
-import { useAuth } from '@/lib/auth';
 import { box } from '@/styles/box';
 import { text } from '@/styles/text';
 import { input } from '@/styles/input';
@@ -20,7 +19,6 @@ type FormData = {
 };
 
 const FoodForm = () => {
-  const auth = useAuth();
   const { handleSubmit, register } = useForm();
 
   const onCreateFood = ({
@@ -31,19 +29,8 @@ const FoodForm = () => {
     jenRating,
     imageUrl,
   }: FormData) => {
-    const newFood = {
-      authorId: auth.user.uid,
-      createdAt: new Date().toISOString(),
-      name,
-      description,
-      link,
-      jakeRating,
-      jenRating,
-      imageUrl,
-    };
-
     try {
-      createFood(newFood);
+      // createFood(newFood);
 
       toast.success('Your food has been added.');
     } catch (error) {
@@ -182,7 +169,7 @@ const FoodForm = () => {
                 justifyContent: 'space-around',
               })}
             >
-              <button className={button()} onClick={() => auth.signout()}>
+              <button className={button()} onClick={() => signOut()}>
                 Sign out
               </button>
               <button className={button()} type="submit">
