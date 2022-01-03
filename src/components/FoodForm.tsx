@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
 
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
-import { input } from '@/styles/input';
-import { button } from '@/styles/button';
-
 type FormData = {
-  name: string;
-  description: string;
-  link: string;
+  restaurantName: string;
   jakeRating: string;
   jenRating: string;
-  imageUrl: string;
+  link: string;
+  image: string;
 };
 
 const FoodForm = () => {
-  const { handleSubmit, register } = useForm();
+  const [previewImage, setPreviewImage] = useState('');
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
-  const onCreateFood = ({
-    name,
-    description,
-    link,
-    jakeRating,
-    jenRating,
-    imageUrl,
-  }: FormData) => {
+  const onSubmit = (values: FormData) => {
     try {
       // createFood(newFood);
+      console.log('values', values);
 
       toast.success('Your food has been added.');
     } catch (error) {
@@ -39,147 +33,131 @@ const FoodForm = () => {
   };
 
   return (
-    <div
-      className={box({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '$6',
-      })}
-    >
+    <>
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
       <div>
-        <h3 className={text({ size: '7', css: { paddingBottom: '$4' } })}>
+        <h1 className="text-4xl text-gray-900 font-bold text-center mb-12">
           Add new food
-        </h3>
+        </h1>
         <div>
-          <form onSubmit={handleSubmit(onCreateFood)}>
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-6">
+              <label htmlFor="restaurantName">
                 Restaurant name
-              </label>
-              <div className="mt-1">
                 <input
                   type="text"
-                  name="name"
-                  id="name"
-                  className={input()}
-                  placeholder="Regina's Pizzeria"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  id="restaurantName"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  {...register('restaurantName', { required: true })}
                 />
-              </div>
+              </label>
             </div>
 
-            <div>
-              <label
-                htmlFor="jakeRating"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Jake's rating
-              </label>
-              <div className="mt-1">
+            <div className="mb-6">
+              <label htmlFor="jakeRating">
+                Jake rating
                 <input
                   type="number"
-                  step=".1"
-                  name="jakeRating"
                   id="jakeRating"
-                  className={input()}
-                  placeholder="Naval is a must follow."
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  {...register('jakeRating', { required: true })}
                 />
-              </div>
+              </label>
             </div>
 
-            <div>
-              <label
-                htmlFor="jenRating"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Jen's rating
-              </label>
-              <div className="mt-1">
+            <div className="mb-6">
+              <label htmlFor="jenRating">
+                Jen rating
                 <input
                   type="number"
-                  step=".1"
-                  name="jenRating"
                   id="jenRating"
-                  className={input()}
-                  placeholder="Naval is a must follow."
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  {...register('jenRating', { required: true })}
                 />
-              </div>
+              </label>
             </div>
 
-            <div>
-              <label
-                htmlFor="link"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Link
-              </label>
-              <div className="mt-1">
+            <div className="mb-6">
+              <label htmlFor="link">
+                Restaurant link
                 <input
                   type="text"
-                  name="link"
                   id="link"
-                  className={input()}
-                  placeholder="https://websiteurl.com"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  {...register('link', { required: true })}
                 />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="imageUrl"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Image URL
               </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="imageUrl"
-                  id="imageUrl"
-                  className={input()}
-                  placeholder="https://websiteurl.com"
-                  ref={register({
-                    required: 'Required',
-                  })}
-                />
-              </div>
             </div>
 
-            <div
-              className={box({
-                display: 'flex',
-                justifyContent: 'space-around',
-              })}
-            >
-              <button className={button()} onClick={() => signOut()}>
-                Sign out
-              </button>
-              <button className={button()} type="submit">
+            <div className="mb-6">
+              <label
+                htmlFor="image"
+                className="mt-1 shadow-sm block w-full p-2 border-2 border-dashed border-gray-400 cursor-pointer rounded-md"
+              >
+                Click to add image (4:3)
+                <input
+                  type="file"
+                  id="image"
+                  accept="image/*"
+                  className="hidden"
+                  {...register('image', {
+                    validate: (fileList: FileList) => {
+                      if (fileList.length === 1) return true;
+
+                      return 'Please upload an employee image';
+                    },
+                  })}
+                  onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    if (e?.target?.files?.[0]) {
+                      const file = e.target.files[0];
+                      const reader = new FileReader();
+                      reader.onloadend = () => {
+                        setPreviewImage(reader.result as string);
+                      };
+                      reader.readAsDataURL(file);
+                    }
+                  }}
+                />
+              </label>
+
+              {previewImage && (
+                <div className="mt-4 text-center">
+                  <Image
+                    className="object-cover rounded"
+                    width="384"
+                    height={`${(4 / 3) * 384}px`}
+                    src={previewImage}
+                  />
+                </div>
+              )}
+              {errors.image && (
+                <span data-testid="error" className="text-redPrimary">
+                  {errors.image.message}
+                </span>
+              )}
+            </div>
+
+            <div className="flex justify-between">
+              <button
+                type="submit"
+                className="text-center w-full py-3 mr-2 border text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-gray-900 hover:opacity-90 focus:outline-none"
+              >
                 Submit
+              </button>
+              <button
+                type="button"
+                className="text-center w-full py-3 border border-gray-400 hover:border-gray-600 text-sm leading-4 font-medium rounded-md shadow-sm text-gray-900 bg-white focus:outline-none"
+                onClick={() => signOut()}
+              >
+                Sign out
               </button>
             </div>
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

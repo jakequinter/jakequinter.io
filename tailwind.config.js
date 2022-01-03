@@ -42,5 +42,5 @@ module.exports = {
       '7xl': '4rem',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

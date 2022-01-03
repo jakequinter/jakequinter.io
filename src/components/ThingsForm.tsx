@@ -65,13 +65,10 @@ const ThingsForm = () => {
               <div className="mt-1">
                 <input
                   type="text"
-                  name="title"
                   id="title"
                   className={input()}
                   placeholder="Naval"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  {...register('title', { required: true })}
                 />
               </div>
             </div>
@@ -82,11 +79,8 @@ const ThingsForm = () => {
               </label>
               <select
                 id="type"
-                name="type"
                 className={input()}
-                ref={register({
-                  required: 'Required',
-                })}
+                {...register('type', { required: true })}
               >
                 <option value="site">Site</option>
                 <option value="people">People</option>
@@ -105,13 +99,10 @@ const ThingsForm = () => {
               <div className="mt-1">
                 <input
                   type="text"
-                  name="description"
                   id="description"
                   className={input()}
                   placeholder="Naval is a must follow."
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  {...register('description', { required: true })}
                 />
               </div>
             </div>
@@ -126,13 +117,10 @@ const ThingsForm = () => {
               <div className="mt-1">
                 <input
                   type="text"
-                  name="link"
                   id="link"
                   className={input()}
                   placeholder="https://websiteurl.com"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  {...register('link', { required: true })}
                 />
               </div>
             </div>
