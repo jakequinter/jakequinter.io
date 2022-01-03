@@ -10,7 +10,11 @@ type FormData = {
   jakeRating: string;
   jenRating: string;
   link: string;
-  image: string;
+  image: FileList;
+};
+
+type UploadImageResponse = {
+  secure_url: string;
 };
 
 const FoodForm = () => {
@@ -21,15 +25,36 @@ const FoodForm = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (values: FormData) => {
-    try {
-      // createFood(newFood);
-      console.log('values', values);
+  const uploadImage = async (
+    image: File,
+    signature: string,
+    timestamp: number
+  ): Promise<UploadImageResponse> => {
+    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload/`;
+    const formData = new FormData();
+    formData.append('file', image);
+    formData.append('signature', signature);
+    formData.append('timestamp', timestamp.toString());
+    formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_KEY ?? '');
 
-      toast.success('Your food has been added.');
-    } catch (error) {
-      toast.error('Error: there was a problem');
-    }
+    const res = await fetch(url, {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await res.json();
+    console.log('data', data);
+
+    return data;
+  };
+
+  const onSubmit = async (values: FormData) => {
+    const res = await fetch('/api/image');
+    const { timestamp, signature } = await res.json();
+
+    const imageData = await uploadImage(values.image[0], signature, timestamp);
+    // toast.success('Your food has been added.');
+
+    // toast.error('Error: there was a problem');
   };
 
   return (
