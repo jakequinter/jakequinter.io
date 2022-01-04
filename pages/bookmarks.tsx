@@ -30,7 +30,7 @@ export default function Bookmarks({
         }}
       />
       <div className="flex-row justify-between align-center">
-        <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+        <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
           Bookmarks
         </h1>
         <div>

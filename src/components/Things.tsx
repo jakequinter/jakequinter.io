@@ -25,9 +25,9 @@ const TabButton = ({
     }}
     className={`${
       tabData === data
-        ? 'border-b border-gray-900 dark:border-darkgray-900 text-gray-900 dark:text-darkgray-900'
-        : 'hover:text-gray-900 hover:dark:text-darkgray-900'
-    } text-sm whitespace-nowrap mr-4 pb-0.5`}
+        ? 'border-b border-zinc-900 dark:border-zinc-300 text-zinc-900 dark:text-zinc-300'
+        : 'hover:text-zinc-900 hover:dark:text-zinc-300'
+    } text-sm whitespace-nowrap mr-4`}
   >
     {text}
   </button>
@@ -56,7 +56,7 @@ const Things = ({
   return (
     <>
       <nav
-        className="scroll flex border-b border-gray-500 dark:border-darkgray-500 overflow-x-auto"
+        className="scroll flex border-b border-zinc-300 dark:border-zinc-700 overflow-x-auto"
         aria-label="Tabs"
       >
         <TabButton

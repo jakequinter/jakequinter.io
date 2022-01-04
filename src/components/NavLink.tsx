@@ -17,8 +17,8 @@ const NavLink = ({ href, text }: NavButtonProps) => {
     <Link href={href}>
       <a
         className={`${
-          isActive ? 'text-gray-900 dark:text-darkgray-900' : ''
-        } text-decoration-none hover:text-gray-900 dark:hover:text-darkgray-900`}
+          isActive ? 'text-zinc-900 dark:text-zinc-100' : ''
+        } text-decoration-none hover:text-zinc-900 dark:hover:text-zinc-100`}
         onClick={() => setIsActive(!isActive)}
       >
         {text}

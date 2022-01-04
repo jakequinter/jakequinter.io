@@ -17,7 +17,7 @@ export default function FoodCard({
   image,
 }: Props) {
   return (
-    <div className="p-4 border border-gray-400 dark:border-darkgray-400 shadow rounded">
+    <div className="p-4 border border-zinc-200 dark:border-zinc-700 shadow rounded">
       <div className="text-center">
         <Link href={link}>
           <a className="text-2xl text-blue-500 hover:text-blue-600 dark:text-orange-500 hover:dark:text-orange-600">

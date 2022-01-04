@@ -16,7 +16,7 @@ const About = () => {
           title: 'Jake Quinter 👨‍💻',
         }}
       />
-      <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         About me
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
@@ -50,7 +50,7 @@ const About = () => {
       </div>
       {/* <Timeline /> */}
       <div className="mt-24">
-        <h2 className="text-2xl text-gray-900 dark:text-darkgray-900 font-semibold mb-8">
+        <h2 className="text-2xl text-zinc-900 dark:text-zinc-50 font-semibold mb-8">
           Currently
         </h2>
         <p>

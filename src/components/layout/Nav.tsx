@@ -11,7 +11,7 @@ export default function Nav() {
   return (
     <Disclosure
       as="nav"
-      className="sticky top-0 left-0 max-w-4xl mx-auto w-full bg-gray-100 dark:bg-darkgray-100 z-10"
+      className="sticky top-0 left-0 max-w-4xl mx-auto w-full bg-zinc-50 dark:bg-zinc-900 z-10"
     >
       {({ open }) => (
         <>

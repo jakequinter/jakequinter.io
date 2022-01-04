@@ -15,11 +15,11 @@ const Contact = () => (
     />
     <Nav />
     <div className="mt-20 max-w-screen-sm mx-auto px-0 md:px-4">
-      <p className="text-gray-900 dark:text-darkgray-900">Get in touch.</p>
-      <div className="border-l-2 border-gray-900 dark:border-darkgray-900 mt-8">
+      <p className="text-zinc-900 dark:text-zinc-50">Get in touch.</p>
+      <div className="border-l-2 border-zinc-900 dark:border-zinc-300 mt-8">
         <p className="ml-4">
           <Link href="mailto:hello@jakequinter.io?subject=Hello" passHref>
-            <a className="hover:text-gray-900 dark:hover:text-darkgray-900">
+            <a className="hover:text-zinc-900 dark:hover:text-zinc-300">
               hello@jakequinter.io
             </a>
           </Link>

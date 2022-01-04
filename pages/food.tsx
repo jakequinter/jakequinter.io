@@ -21,7 +21,7 @@ export default function FoodHome({ food }: Props) {
           title: 'Jake Quinter 🍕',
         }}
       />
-      <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         Food 🍕
       </h1>
       <p className="pb-8">

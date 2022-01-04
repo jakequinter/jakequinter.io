@@ -85,7 +85,7 @@ const FoodForm = () => {
         <title>Jake Quinter | Things</title>
       </Head>
       <div>
-        <h1 className="text-4xl text-gray-900 font-bold text-center mb-12">
+        <h1 className="text-4xl text-zinc-900 dark:text-zinc-50 font-bold text-center mb-12">
           Add new food
         </h1>
         <div>
@@ -96,7 +96,7 @@ const FoodForm = () => {
                 <input
                   type="text"
                   id="restaurantName"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
                   {...register('restaurantName', { required: true })}
                 />
               </label>
@@ -109,7 +109,7 @@ const FoodForm = () => {
                   type="number"
                   step="0.1"
                   id="jakeRating"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
                   {...register('jakeRating', { required: true })}
                 />
               </label>
@@ -122,7 +122,7 @@ const FoodForm = () => {
                   type="number"
                   step="0.1"
                   id="jenRating"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
                   {...register('jenRating', { required: true })}
                 />
               </label>
@@ -134,7 +134,7 @@ const FoodForm = () => {
                 <input
                   type="text"
                   id="link"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
                   {...register('link', { required: true })}
                 />
               </label>
@@ -143,7 +143,7 @@ const FoodForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="image"
-                className="mt-1 shadow-sm block w-full p-2 border-2 border-dashed border-gray-400 cursor-pointer rounded-md"
+                className="mt-1 shadow-sm block w-full p-2 border border-dashed border-zinc-300 dark:border-zinc-700 cursor-pointer rounded-md"
               >
                 Click to add image (4:3)
                 <input
@@ -191,13 +191,13 @@ const FoodForm = () => {
             <div className="flex justify-between">
               <button
                 type="submit"
-                className="text-center w-full py-3 mr-2 border text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-gray-900 hover:opacity-90 focus:outline-none"
+                className="text-center w-full py-3 mr-2 border dark:border-zinc-700 dark:hover:border-zinc-600 text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-zinc-900 hover:bg-zinc-800 dark:hover:bg-inherit focus:outline-none"
               >
                 Submit
               </button>
               <button
                 type="button"
-                className="text-center w-full py-3 border border-gray-400 hover:border-gray-600 text-sm leading-4 font-medium rounded-md shadow-sm text-gray-900 bg-white focus:outline-none"
+                className="text-center w-full py-3 border border-zinc-300 hover:border-zinc-400 text-sm leading-4 font-medium rounded-md shadow-sm text-zinc-900 bg-white dark:hover:bg-zinc-100 focus:outline-none"
                 onClick={() => signOut()}
               >
                 Sign out

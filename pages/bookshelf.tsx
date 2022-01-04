@@ -16,7 +16,7 @@ type Props = {
 export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
   return (
     <Container>
-      <h1 className="text-gray-900 dark:text-darkgray-900 text-5xl mb-8 font-semibold">
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         Bookshelf
       </h1>
       <p className="pb-4">
@@ -44,11 +44,11 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>
-                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
                   {book.creator}
                 </p>
               </div>
@@ -72,11 +72,11 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>
-                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
                   {book.creator}
                 </p>
               </div>
@@ -100,11 +100,11 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-gray-900 dark:hover:text-darkgray-900" />
+                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>
-                <p className="text-gray-600 dark:text-darkgray-600 pt-4">
+                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
                   {book.creator}
                 </p>
               </div>

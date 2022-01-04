@@ -23,7 +23,7 @@ export default function ThemeToggle() {
       checked={theme === 'dark'}
       onChange={handleTheme}
       className={
-        'relative bg-gray-400 dark:bg-darkgray-400 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
+        'relative bg-zinc-200 dark:bg-zinc-700 inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-0'
       }
     >
       <span className="sr-only">Change light/dark mode</span>
@@ -39,11 +39,11 @@ export default function ThemeToggle() {
                 ? 'opacity-0 ease-out duration-100'
                 : 'opacity-100 ease-in duration-200'
             }
-            'absolute bg-gray-900 border border-gray-900 rounded-full inset-0 h-full w-full flex items-center justify-center transition-opacity'
+            'absolute bg-zinc-900 border border-zinc-900 rounded-full inset-0 h-full w-full flex items-center justify-center transition-opacity'
           `}
           aria-hidden="true"
         >
-          <MoonIcon className="text-[#2EC8EE]" />
+          <MoonIcon className="text-sky-400" />
         </span>
 
         <span
@@ -51,10 +51,10 @@ export default function ThemeToggle() {
             theme === 'dark'
               ? 'opacity-100 ease-in duration-200'
               : 'opacity-0 ease-out duration-100'
-          } absolute bg-gray-900 border border-gray-900 rounded-full inset-0 h-full w-full flex items-center justify-center transition-opacity`}
+          } absolute bg-zinc-900 border border-zinc-900 rounded-full inset-0 h-full w-full flex items-center justify-center transition-opacity`}
           aria-hidden="true"
         >
-          <SunIcon className="text-[#FFEF5C]" />
+          <SunIcon className="text-yellow-200" />
         </span>
       </span>
     </Switch>
