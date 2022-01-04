@@ -15,6 +15,9 @@ type FormData = {
 
 type UploadImageResponse = {
   secure_url: string;
+  error?: {
+    message: string;
+  };
 };
 
 const FoodForm = () => {
@@ -33,6 +36,10 @@ const FoodForm = () => {
     const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload/`;
     const formData = new FormData();
     formData.append('file', image);
+    formData.append(
+      'upload_preset',
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string
+    );
     formData.append('signature', signature);
     formData.append('timestamp', timestamp.toString());
     formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_KEY ?? '');
@@ -41,20 +48,21 @@ const FoodForm = () => {
       method: 'POST',
       body: formData,
     });
-    const data = await res.json();
-    console.log('data', data);
 
-    return data;
+    return res.json();
   };
 
   const onSubmit = async (values: FormData) => {
     const res = await fetch('/api/image');
     const { timestamp, signature } = await res.json();
 
-    const imageData = await uploadImage(values.image[0], signature, timestamp);
-    // toast.success('Your food has been added.');
+    const image = await uploadImage(values.image[0], signature, timestamp);
 
-    // toast.error('Error: there was a problem');
+    if (image.error) {
+      toast.error('Error: there was a problem uploading image to Cloudinary');
+    } else {
+      toast.success('Your food has been added.');
+    }
   };
 
   return (
