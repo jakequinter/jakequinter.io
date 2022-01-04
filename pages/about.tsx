@@ -25,8 +25,7 @@ const About = () => {
             Hello, I’m Jake. I’m a software engineer based in Boston, MA. I work
             on the engineering team at{' '}
             <a
-              className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
-              target="_blank"
+              className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2"
               href="https://www.merryfield.com/"
             >
               Merryfield

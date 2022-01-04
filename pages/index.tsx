@@ -21,10 +21,7 @@ export default function Home() {
             Currently helping ease decision-making fatigue when choosing
             better-for-you products at{' '}
             <Link href="https://www.merryfield.com/" passHref>
-              <a
-                className="text-blue-500 hover:text-blue-600 dark:text-darkgray-700 dark:hover:text-darkgray-800 underline underline-offset-2"
-                target="_blank"
-              >
+              <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
                 Merryfield
               </a>
             </Link>
