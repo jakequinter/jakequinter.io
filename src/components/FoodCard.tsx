@@ -2,26 +2,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 type Props = {
-  name: string;
-  link: string;
+  restaurantName: string;
   jakeRating: string;
   jenRating: string;
-  imageUrl: string;
+  link: string;
+  image: string;
 };
 
 export default function FoodCard({
-  name,
-  link,
+  restaurantName,
   jakeRating,
   jenRating,
-  imageUrl,
+  link,
+  image,
 }: Props) {
   return (
     <div className="p-4 border border-gray-400 shadow rounded">
       <div className="text-center">
         <Link href={link}>
           <a className="text-2xl text-blue-500" target="_blank">
-            {name}
+            {restaurantName}
           </a>
         </Link>
       </div>
@@ -37,8 +37,8 @@ export default function FoodCard({
       </div>
       <Image
         className="rounded"
-        src={imageUrl}
-        alt={name}
+        src={image}
+        alt={restaurantName}
         height={373}
         width={280}
         priority

@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
+import { getFood } from '@/lib/helpers';
 import { Food } from '@/types/food';
 import Container from '@/components/Container';
 import FoodList from '@/components/FoodList';
@@ -38,9 +39,9 @@ export default function FoodHome({ food }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  // const food = await getAllFood();
+  const food = await getFood();
 
   return {
-    props: { food: [] },
+    props: { food },
   };
 };
