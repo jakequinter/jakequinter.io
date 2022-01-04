@@ -5,8 +5,7 @@ import { useSession } from 'next-auth/react';
 
 export default function Things() {
   const { data: session } = useSession();
-
-  if (session && session.user?.email === 'hello@jakequinter.io') {
+  if (session && session.user?.email === process.env.NEXT_PUBLIC_USER_EMAIL) {
     return (
       <Container>
         <UpdateSelection />

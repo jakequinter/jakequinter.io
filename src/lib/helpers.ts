@@ -22,7 +22,7 @@ export async function getBookmarks() {
 }
 
 export async function getFood() {
-  const things = await prisma.food.findMany({
+  const food = await prisma.food.findMany({
     select: {
       id: true,
       restaurantName: true,
@@ -40,5 +40,5 @@ export async function getFood() {
   });
   
 
-  return things;
+  return food;
 }
