@@ -12,13 +12,13 @@ const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
-  // callbacks: {
-  //   // @ts-ignore
-  //   async session({ session, user, }) {
-  //     session.id = user.id;
-  //     return Promise.resolve(session);
-  //   },
-  // },
+  callbacks: {
+    // @ts-ignore
+    async session({ session, user, }) {
+      session.id = user.id;
+      return Promise.resolve(session);
+    },
+  },
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
 };

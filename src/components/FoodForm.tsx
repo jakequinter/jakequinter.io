@@ -40,6 +40,7 @@ const FoodForm = () => {
       'upload_preset',
       process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string
     );
+    formData.append('use_filename', 'true');
     formData.append('signature', signature);
     formData.append('timestamp', timestamp.toString());
     formData.append('api_key', process.env.NEXT_PUBLIC_CLOUDINARY_KEY ?? '');
@@ -56,11 +57,24 @@ const FoodForm = () => {
     const res = await fetch('/api/image');
     const { timestamp, signature } = await res.json();
 
-    const image = await uploadImage(values.image[0], signature, timestamp);
+    const imageData = await uploadImage(values.image[0], signature, timestamp);
 
-    if (image.error) {
+    if (imageData.error) {
       toast.error('Error: there was a problem uploading image to Cloudinary');
     } else {
+      const res = await fetch('/api/food', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...values,
+          jakeRating: Number(values.jakeRating),
+          jenRating: Number(values.jenRating),
+          image: imageData.secure_url,
+        }),
+      });
+
       toast.success('Your food has been added.');
     }
   };
@@ -93,6 +107,7 @@ const FoodForm = () => {
                 Jake rating
                 <input
                   type="number"
+                  step="0.1"
                   id="jakeRating"
                   className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
                   {...register('jakeRating', { required: true })}
@@ -105,6 +120,7 @@ const FoodForm = () => {
                 Jen rating
                 <input
                   type="number"
+                  step="0.1"
                   id="jenRating"
                   className="mt-1 shadow-sm block w-full sm:text-sm border-gray-400 rounded-md"
                   {...register('jenRating', { required: true })}
