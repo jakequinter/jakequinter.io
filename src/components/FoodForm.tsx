@@ -75,7 +75,9 @@ const FoodForm = () => {
         }),
       });
 
-      toast.success('Your food has been added.');
+      if (res.ok) {
+        toast.success('Your food has been added.');
+      }
     }
   };
 
