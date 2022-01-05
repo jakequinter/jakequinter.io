@@ -1,92 +1,51 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import { ExclamationTriangleIcon } from '@modulz/radix-icons';
 import { FcGoogle } from 'react-icons/fc';
-import { HiOutlineExclamation } from 'react-icons/hi';
 import { signIn } from 'next-auth/react';
-
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
-import { button } from '@/styles/button';
 
 export default function LoginForm() {
   return (
-    <div
-      className={box({
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginTop: '$6',
-      })}
-    >
+    <>
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
-      <div
-        className={box({
-          borderRadius: '10px',
-          backgroundColor: '$yellow100',
-          padding: '$2',
-          marginBottom: '$3',
-        })}
-      >
-        <div className={box({ display: 'flex' })}>
-          <div>
-            <HiOutlineExclamation
-              fill="#FBBF24"
-              // color="#FBBF24"
-              size={24}
+      <div className="rounded-md bg-yellow-100 p-4">
+        <div className="flex">
+          <div className="flex-shrink-0">
+            <ExclamationTriangleIcon
+              className="h-5 w-5 text-yellow-600"
+              aria-hidden="true"
             />
           </div>
-          <div className={box({ marginLeft: '$2' })}>
-            <h3
-              className={text({
-                weight: 'medium',
-                size: '2',
-                css: { color: '$yellow700' },
-              })}
-            >
-              Attention
+          <div className="ml-3">
+            <h3 className="text-sm font-medium text-yellow-800">
+              Attention needed
             </h3>
-            <div
-              className={box({
-                marginTop: '$1',
-                fontSize: '$2',
-              })}
-            >
-              <p className={text({ css: { color: '$yellow700' } })}>
+            <div className="mt-2 text-sm text-yellow-700">
+              <p>
                 This page is intended for the developer and owner of this site
-                only!
+                only.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div
-        className={box({
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        })}
-      >
+
+      <div className="flex justify-between mt-8">
         <button
-          className={button({
-            css: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          })}
+          className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded"
           onClick={() => signIn()}
         >
-          <FcGoogle
-            className={text({
-              css: { marginRight: '$3', color: 'inherit' },
-            })}
-            size={20}
-          />{' '}
-          Sign In with Google
+          <FcGoogle className="mr-4" /> Sign In with Google
         </button>
+        <Link href="/" passHref>
+          <a className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded">
+            Go home
+          </a>
+        </Link>
       </div>
-    </div>
+    </>
   );
 }
