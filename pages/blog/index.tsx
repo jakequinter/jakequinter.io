@@ -5,7 +5,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
+import { Posts } from '@/types/notion';
+import { getNotionBlog } from '@/lib/helpers';
 import BlogPost from '@/components/BlogPost';
 import Container from '@/components/Container';
 
@@ -13,20 +14,7 @@ import { box } from '@/styles/box';
 import { text } from '@/styles/text';
 
 type Props = {
-  posts: Post[];
-};
-
-type Post = {
-  content: string;
-  data: PostData;
-  filePath: string;
-};
-
-type PostData = {
-  description: string;
-  publishedAt: string;
-  slug: string;
-  title: string;
+  posts: Posts;
 };
 
 export default function Blog({ posts }: Props) {
@@ -51,38 +39,32 @@ export default function Blog({ posts }: Props) {
       </h1>
 
       <ul className={box({ listStyle: 'none', padding: 0 })}>
-        {posts.map(post => {
-          const date = new Date(post.data.publishedAt);
-          const formattedDate = new Date(
-            date.valueOf() + date.getTimezoneOffset() * 60 * 1000
-          );
-          return (
-            <li key={post.filePath}>
-              <BlogPost
-                title={post.data.title}
-                description={post.data.description}
-                publishedAt={format(formattedDate, 'PP')}
-                slug={`/blog/${post.data.slug}`}
-              />
-            </li>
-          );
-        })}
+        {posts.results &&
+          posts.results.map(post => {
+            const date = new Date(post.properties.created_at.date.start);
+            const formattedDate = new Date(
+              date.valueOf() + date.getTimezoneOffset() * 60 * 1000
+            );
+            return (
+              <li key={post.id}>
+                <BlogPost
+                  title={post.properties.title.title[0].plain_text}
+                  description={
+                    post.properties.description.rich_text[0].plain_text
+                  }
+                  publishedAt={format(formattedDate, 'PP')}
+                  slug={`/blog/2`}
+                />
+              </li>
+            );
+          })}
       </ul>
     </Container>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = postFilePaths.map(filePath => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
-    const { content, data } = matter(source);
-
-    return {
-      content,
-      data,
-      filePath,
-    };
-  });
+  const posts = await getNotionBlog();
 
   return { props: { posts } };
 };
