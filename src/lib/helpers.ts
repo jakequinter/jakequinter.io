@@ -47,7 +47,7 @@ export async function getFood() {
   return food;
 }
 
-export async function getNotionBlog() {
+export async function getNotionDatabase() {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID as string,
     sorts: [
