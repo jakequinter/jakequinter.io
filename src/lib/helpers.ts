@@ -60,3 +60,18 @@ export async function getNotionDatabase() {
 
   return response;
 }
+
+export async function getNotionPage(pageId: string) {
+  const response = await notion.pages.retrieve({ page_id: pageId });
+
+  return response;
+}
+
+export async function getNotionBlocks(blogId: string) {
+  const response = await notion.blocks.children.list({
+    block_id: blogId,
+    page_size: 50,
+  });
+
+  return response;
+}

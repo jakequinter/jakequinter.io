@@ -10,7 +10,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
-
+import Block from '../../src/components/notion/Block';
 import { Code, P } from '@/components/mdx/Text';
 import { H1, H2, H3 } from '@/components/mdx/Heading';
 import { line as styleline } from '@/styles/mdx/line';
@@ -25,6 +25,12 @@ import Nav from '@/components/layout/Nav';
 import { text } from '@/styles/text';
 import { box } from '@/styles/box';
 import { button } from '@/styles/button';
+import {
+  getNotionBlocks,
+  getNotionDatabase,
+  getNotionPage,
+} from '@/lib/helpers';
+import Container from '@/components/Container';
 
 const components = {
   a: CustomLink,
@@ -89,125 +95,51 @@ type ReadingTime = {
   words: number;
 };
 
-export default function Post({ source, frontMatter, readingTime }: Props) {
+export default function Post({ blocks, page }: Props) {
   const router = useRouter();
-
-  const date = new Date(frontMatter.publishedAt);
-  const formattedDate = new Date(
-    date.valueOf() + date.getTimezoneOffset() * 60 * 1000
-  );
+  console.log('blocks', blocks);
 
   return (
-    <>
-      <NextSeo
+    <Container>
+      {/* <NextSeo
         title={`${frontMatter.title}`}
         canonical={`https://jakequinter.io/${frontMatter.slug}`}
         openGraph={{
           url: `https://jakequinter.io/${frontMatter.slug}`,
           title: `${frontMatter.title}`,
         }}
-      />
-      <Nav />
-      <div
-        className={box({
-          marginTop: '$6',
-          marginBottom: '$4',
-          maxWidth: '56rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
-        <button
-          onClick={() => router.back()}
-          className={button({
-            type: 'blog',
-            css: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          })}
-        >
-          <HiArrowNarrowLeft
-            className={text({
-              css: { marginRight: '$2', color: 'inherit' },
-            })}
-            size={20}
-          />
-          Back
-        </button>
-      </div>
-      <div
-        className={box({
-          maxWidth: '42rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
-        <div className={box({ marginBottom: '$4' })}>
-          <h1
-            className={text({
-              size: '7',
-              weight: 'bold',
-            })}
-          >
-            {frontMatter.title}
-          </h1>
-          <div
-            className={box({
-              display: 'flex',
-              alignItems: 'center',
-              paddingTop: '$2',
-            })}
-          >
-            <p className={text({ size: '2' })}>
-              {format(formattedDate, 'PP')} • {readingTime.text}
-            </p>
-          </div>
-        </div>
-        <main className={box({ marginBottom: '$5' })}>
-          {/*  @ts-ignore */}
-          <MDXRemote {...source} components={components} />
-        </main>
-      </div>
-    </>
+      /> */}
+      {/* <Nav /> */}
+      {blocks.results.map(block => (
+        <Block key={block.id} block={block} />
+      ))}
+    </Container>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = postFilePaths
-    // Remove file extensions for page paths
-    .map(path => path.replace(/\.mdx?$/, ''))
-    // Map the path into the static paths object required by Next.js
-    .map(slug => ({ params: { slug } }));
+  const blogs = await getNotionDatabase();
 
   return {
-    paths,
-    fallback: false,
+    paths: blogs.results.map(el => ({
+      params: {
+        blogId: el.id,
+      },
+    })),
+    fallback: 'blocking',
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params?.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
-
-  const { content, data } = matter(source);
-
-  const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
-    scope: data,
-  });
+export const getStaticProps: GetStaticProps = async context => {
+  const { blogId } = context.params;
+  const blocks = await getNotionBlocks(blogId);
+  const page = await getNotionPage(blogId);
 
   return {
     props: {
-      source: mdxSource,
-      frontMatter: data,
-      readingTime: readingTime(content),
+      blocks,
+      page,
     },
+    revalidate: 3600,
   };
 };

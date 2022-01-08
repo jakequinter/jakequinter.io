@@ -1,12 +1,9 @@
 import { GetStaticProps } from 'next';
 import { format } from 'date-fns';
 import { NextSeo } from 'next-seo';
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
 
 import { Posts } from '@/types/notion';
-import { getNotionBlog } from '@/lib/helpers';
+import { getNotionDatabase } from '@/lib/helpers';
 import BlogPost from '@/components/BlogPost';
 import Container from '@/components/Container';
 
@@ -53,7 +50,7 @@ export default function Blog({ posts }: Props) {
                     post.properties.description.rich_text[0].plain_text
                   }
                   publishedAt={format(formattedDate, 'PP')}
-                  slug={`/blog/2`}
+                  slug={`/blog/${post.id}`}
                 />
               </li>
             );
@@ -64,7 +61,7 @@ export default function Blog({ posts }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getNotionBlog();
+  const posts = await getNotionDatabase();
 
   return { props: { posts } };
 };

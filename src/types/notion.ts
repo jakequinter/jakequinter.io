@@ -40,3 +40,24 @@ export type Posts = {
  type SubTitle = {
   plain_text: string;
  }
+
+ export type Text = {
+   annotations: Annotation;
+   plain_text: string;
+   text: {
+     content: string;
+     link: {
+       url: string;
+     };
+   }
+   type: string;
+ }
+
+ type Annotation = {
+  bold: boolean;
+  code: boolean;
+  color: string
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+ }
