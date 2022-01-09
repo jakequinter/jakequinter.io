@@ -1,24 +1,22 @@
 import FoodCard from '@/components/FoodCard';
 import { Food } from '@/types/food';
 
-import { grid } from '@/styles/grid';
-
 type Props = {
   data: Food[];
 };
 
 export default function FoodList({ data }: Props) {
   return (
-    <div className={grid()}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {data &&
-        data.map(item => (
+        data.map(food => (
           <FoodCard
-            key={item.id}
-            name={item.name}
-            link={item.link}
-            jakeRating={item.jakeRating}
-            jenRating={item.jenRating}
-            imageUrl={item.imageUrl}
+            key={food.id}
+            restaurantName={food.restaurantName}
+            jakeRating={food.jakeRating}
+            jenRating={food.jenRating}
+            link={food.link}
+            image={food.image}
           />
         ))}
     </div>

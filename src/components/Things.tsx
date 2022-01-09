@@ -3,24 +3,31 @@ import { useState, useEffect } from 'react';
 import { Thing } from '@/types/thing';
 import BookmarkPanel from '@/components/BookmarkPanel';
 
-import { box } from '@/styles/box';
-import { button } from '@/styles/button';
-
 type TabButtonProps = {
   text: string;
   data: Thing[];
   tabData: Thing[];
   setTabData: (data: Thing[]) => void;
+  setTabText: (text: string) => void;
 };
 
-const TabButton = ({ text, data, tabData, setTabData }: TabButtonProps) => (
+const TabButton = ({
+  text,
+  data,
+  tabData,
+  setTabData,
+  setTabText,
+}: TabButtonProps) => (
   <button
-    onClick={() => setTabData(data)}
-    className={
+    onClick={() => {
+      setTabData(data);
+      setTabText(text);
+    }}
+    className={`${
       tabData === data
-        ? button({ type: 'activetab' })
-        : button({ type: 'inactivetab' })
-    }
+        ? 'border-b border-zinc-900 dark:border-zinc-300 text-zinc-900 dark:text-zinc-300'
+        : 'hover:text-zinc-900 hover:dark:text-zinc-300'
+    } text-sm whitespace-nowrap mr-4`}
   >
     {text}
   </button>
@@ -40,6 +47,7 @@ const Things = ({
   booksAndPodcasts,
 }: Props) => {
   const [tabData, setTabData] = useState<Thing[]>([]);
+  const [tabText, setTabText] = useState('All');
 
   useEffect(() => {
     setTabData(allThings);
@@ -47,41 +55,40 @@ const Things = ({
 
   return (
     <>
-      <div>
-        <div
-          className={box({
-            borderBottom: '1px solid $border',
-          })}
-        >
-          <nav aria-label="Tabs">
-            <TabButton
-              text={'All'}
-              data={allThings}
-              tabData={tabData}
-              setTabData={setTabData}
-            />
-            <TabButton
-              text={'Personal Sites'}
-              data={personalSites}
-              tabData={tabData}
-              setTabData={setTabData}
-            />
-            <TabButton
-              text={'People'}
-              data={people}
-              tabData={tabData}
-              setTabData={setTabData}
-            />
-            <TabButton
-              text={'Books & Podcasts'}
-              data={booksAndPodcasts}
-              tabData={tabData}
-              setTabData={setTabData}
-            />
-          </nav>
-        </div>
-      </div>
-      <BookmarkPanel data={tabData} />
+      <nav
+        className="scroll flex border-b border-zinc-300 dark:border-zinc-700 overflow-x-auto mt-16"
+        aria-label="Tabs"
+      >
+        <TabButton
+          text={'All'}
+          data={allThings}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'Personal Sites'}
+          data={personalSites}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'People'}
+          data={people}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+        <TabButton
+          text={'Books & Podcasts'}
+          data={booksAndPodcasts}
+          tabData={tabData}
+          setTabData={setTabData}
+          setTabText={setTabText}
+        />
+      </nav>
+      <BookmarkPanel data={tabData} tabButtonText={tabText} />
     </>
   );
 };

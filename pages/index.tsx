@@ -1,49 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Header from '@/components/Header';
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
-import { link } from '@/styles/link';
+import Nav from '@/components/layout/Nav';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <div
-        className={box({
-          maxWidth: '56rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
-        <div className={box({ maxWidth: '42rem' })}>
-          <h1
-            className={text({
-              size: '8',
-              weight: 'bold',
-              css: { marginBottom: '$4', marginTop: '$6', color: '$primary' },
-            })}
-          >
+      <Nav />
+      <div className="mt-20 max-w-4xl mx-auto">
+        <div className="max-w-xl px-4 lg:px-0">
+          <h1 className="text-zinc-900 dark:text-zinc-50 text-6xl font-semibold mb-8">
             Jake Quinter
           </h1>
-          <p className={text({ css: { marginBottom: '$3' } })}>
+          <p className="mb-4">
             Software engineer interested in many things. Mainly software,
             technology, and optimizing habits for a more productive and
             self-fulfilling life.
           </p>
-          <p className={text()}>
-            Currently saving lives with{' '}
-            <Link href="https://www.deltadefense.com/" passHref>
-              <a className={link()} target="_blank">
-                Delta Defense
-              </a>
-            </Link>{' '}
-            and the{' '}
-            <Link href="https://www.usconcealedcarry.com/" passHref>
-              <a className={link()} target="_blank">
-                USCCA
+          <p>
+            Currently helping ease decision-making fatigue when choosing
+            better-for-you products at{' '}
+            <Link href="https://www.merryfield.com/" passHref>
+              <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
+                Merryfield
               </a>
             </Link>
             .

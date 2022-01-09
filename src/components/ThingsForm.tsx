@@ -1,162 +1,120 @@
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
+import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
-
-import { createThing } from '@/lib/db';
-import { useAuth } from '@/lib/auth';
-
-import { box } from '@/styles/box';
-import { button } from '@/styles/button';
-import { input } from '@/styles/input';
-import { text } from '@/styles/text';
 
 type FormData = {
   title: string;
-  type: string;
   description: string;
   link: string;
+  type: string;
 };
 
 const ThingsForm = () => {
-  const auth = useAuth();
   const { handleSubmit, register } = useForm();
 
-  const onCreateThing = ({ title, type, description, link }: FormData) => {
-    const newThing = {
-      authorId: auth.user.uid,
-      createdAt: new Date().toISOString(),
-      title,
-      type,
-      description,
-      link,
-    };
-
+  const onSubmit = async (values: FormData) => {
     try {
-      createThing(newThing);
+      const res = await fetch('/api/bookmarks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...values,
+        }),
+      });
 
-      toast.success('Your thing has been added.');
+      if (res.ok) {
+        toast.success('Your food has been added.');
+      }
     } catch (error) {
       toast.error('Error: there was a problem');
     }
   };
 
   return (
-    <div
-      className={box({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: '$6',
-      })}
-    >
+    <>
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
       <div>
-        <h3 className={text({ size: '7', css: { paddingBottom: '$4' } })}>
-          Add new thing
-        </h3>
+        <h1 className="text-4xl text-zinc-900 dark:text-zinc-50 font-bold text-center mb-12">
+          Add new food
+        </h1>
         <div>
-          <form onSubmit={handleSubmit(onCreateThing)}>
-            <div>
-              <label
-                htmlFor="title"
-                className="block text-sm font-medium text-gray-700"
-              >
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="mb-6">
+              <label htmlFor="restaurantName">
                 Title
-              </label>
-              <div className="mt-1">
                 <input
                   type="text"
-                  name="title"
                   id="title"
-                  className={input()}
-                  placeholder="Naval"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  {...register('title', { required: true })}
                 />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="type" className="block text-gray-700">
-                Type
               </label>
-              <select
-                id="type"
-                name="type"
-                className={input()}
-                ref={register({
-                  required: 'Required',
-                })}
-              >
-                <option value="site">Site</option>
-                <option value="people">People</option>
-                <option value="book">Book</option>
-                <option value="podcast">Podcast</option>
-              </select>
             </div>
 
-            <div>
-              <label
-                htmlFor="description"
-                className="block text-sm font-medium text-gray-700"
-              >
+            <div className="mb-6">
+              <label htmlFor="jakeRating">
                 Description
-              </label>
-              <div className="mt-1">
                 <input
                   type="text"
-                  name="description"
                   id="description"
-                  className={input()}
-                  placeholder="Naval is a must follow."
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  {...register('description', { required: true })}
                 />
-              </div>
+              </label>
             </div>
 
-            <div>
-              <label
-                htmlFor="link"
-                className="block text-sm font-medium text-gray-700"
-              >
+            <div className="mb-6">
+              <label htmlFor="link">
                 Link
-              </label>
-              <div className="mt-1">
                 <input
                   type="text"
-                  name="link"
                   id="link"
-                  className={input()}
-                  placeholder="https://websiteurl.com"
-                  ref={register({
-                    required: 'Required',
-                  })}
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  {...register('link', { required: true })}
                 />
-              </div>
+              </label>
             </div>
 
-            <div
-              className={box({
-                display: 'flex',
-                justifyContent: 'space-around',
-              })}
-            >
-              <button className={button()} type="submit">
+            <div className="mb-6">
+              <label htmlFor="type">
+                Type
+                <select
+                  id="type"
+                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  {...register('type', { required: true })}
+                >
+                  <option value="people">People</option>
+                  <option value="site">Site</option>
+                  <option value="book">Book</option>
+                  <option value="podcast">Podcast</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="flex justify-between">
+              <button
+                type="submit"
+                className="text-center w-full py-3 mr-2 border dark:border-zinc-700 dark:hover:border-zinc-600 text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-zinc-900 hover:bg-zinc-800 dark:hover:bg-inherit focus:outline-none"
+              >
                 Submit
               </button>
-              <button className={button()} onClick={() => auth.signout()}>
+              <button
+                type="button"
+                className="text-center w-full py-3 border border-zinc-300 hover:border-zinc-400 text-sm leading-4 font-medium rounded-md shadow-sm text-zinc-900 bg-white dark:hover:bg-zinc-100 focus:outline-none"
+                onClick={() => signOut()}
+              >
                 Sign out
               </button>
             </div>
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

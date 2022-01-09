@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react';
 import { Toaster } from 'react-hot-toast';
 
-import Header from './Header';
+import Nav from '@/components/layout/Nav';
 import Footer from './Footer';
-import { box } from '../styles/box';
 
 type Props = {
   children: ReactNode;
@@ -11,21 +10,14 @@ type Props = {
 
 const Container = ({ children }: Props) => (
   <>
-    <Header />
     <Toaster position="bottom-right" />
-    <div
-      className={box({
-        my: 80,
-        maxWidth: '42rem',
-        mx: 'auto',
-        minHeight: 'calc(100vh - 422px)',
-        px: '$3',
-        '@bp3': { px: 0 },
-      })}
-    >
-      {children}
-    </div>
-    <Footer />
+    <Nav />
+    <main className="max-w-screen-sm mx-auto px-4 md:px-0 mt-20">
+      <div className="mb-20" style={{ minHeight: 'calc(100vh - 443px)' }}>
+        {children}
+      </div>
+      <Footer />
+    </main>
   </>
 );
 

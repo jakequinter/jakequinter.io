@@ -1,27 +1,23 @@
+import React from 'react';
 import type { AppProps } from 'next/app';
-import { darkTheme } from '../stitches.config';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
+import { SessionProvider } from 'next-auth/react';
 
-import { AuthProvider } from '@/lib/auth';
 import { useAnalytics } from '@/utils/analytics';
 import SEO from '../next-seo.config';
-import '@/styles/global.css';
+import '../src/styles/global.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useAnalytics();
 
   return (
-    <AuthProvider>
+    <ThemeProvider attribute="class" defaultTheme="light">
       <DefaultSeo {...SEO} />
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        value={{ dark: darkTheme.className, light: 'light' }}
-      >
+      <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
-      </ThemeProvider>
-    </AuthProvider>
+      </SessionProvider>
+    </ThemeProvider>
   );
 }
 

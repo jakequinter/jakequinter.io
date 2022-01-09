@@ -1,24 +1,8 @@
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
 import React from 'react';
 
 export function UL({ ...props }) {
-  return (
-    <div
-      className={box({
-        paddingBottom: '$3',
-        marginLeft: '$4',
-        listStyle: 'inside',
-      })}
-      {...props}
-    />
-  );
+  return <div className="ml-12" {...props} />;
 }
 export function LI({ ...props }) {
-  return (
-    <p
-      className={text({ css: { display: 'list-item', paddingBottom: '$3' } })}
-      {...props}
-    />
-  );
+  return <p className="list-item pb-4" {...props} />;
 }

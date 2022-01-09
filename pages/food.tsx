@@ -1,13 +1,10 @@
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
+import { getFood } from '@/lib/helpers';
 import { Food } from '@/types/food';
-import { getAllFood } from '@/lib/db-admin';
-import Header from '@/components/Header';
+import Container from '@/components/Container';
 import FoodList from '@/components/FoodList';
-
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
 
 type Props = {
   food: Food[];
@@ -15,7 +12,7 @@ type Props = {
 
 export default function FoodHome({ food }: Props) {
   return (
-    <div>
+    <Container>
       <NextSeo
         title="Jake Quinter 🍕"
         canonical="https://jakequinter.io/food"
@@ -24,46 +21,28 @@ export default function FoodHome({ food }: Props) {
           title: 'Jake Quinter 🍕',
         }}
       />
-      <Header />
-      <div
-        className={box({
-          my: '$6',
-          maxWidth: '56rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
-        <h1
-          className={text({
-            size: '7',
-            weight: 'bold',
-            css: { marginBottom: '$4' },
-          })}
-        >
-          Food 😋
-        </h1>
-        <div>
-          <p className={text({ css: { paddingBottom: '$5' } })}>
-            My girlfriend and I love food. We love trying new places, cuisines,
-            keeping track of what we loved, what we liked, and what we didn’t
-            care for. Since moving to Boston, we have been introduced to a new
-            realm of restaurants. It’s quite different than what we were
-            accustomed to in Appleton, WI. There’s food everywhere here. So, we
-            thought it would be cool to keep track of the food we’ve tried, give
-            it a rating, and remember it for future reference.
-          </p>
-        </div>
-        <FoodList data={food} />
-      </div>
-    </div>
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
+        Food 🍕
+      </h1>
+      <p className="pb-8">
+        My girlfriend and I love food. We love trying new places, cuisines,
+        keeping track of what we loved, what we liked, and what we didn’t care
+        for. Since moving to Boston, we have been introduced to a new realm of
+        restaurants. It’s quite different than what we were accustomed to in
+        Appleton, WI. There’s food everywhere here. So, we thought it would be
+        cool to keep track of the food we’ve tried, give it a rating, and
+        remember it for future reference.
+      </p>
+      <FoodList data={food} />
+    </Container>
   );
 }
 
 export const getStaticProps: GetStaticProps = async context => {
-  const food = await getAllFood();
+  const food = await getFood();
 
   return {
     props: { food },
+    revalidate: 60,
   };
 };

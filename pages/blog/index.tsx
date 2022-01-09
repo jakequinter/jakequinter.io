@@ -9,9 +9,6 @@ import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import BlogPost from '@/components/BlogPost';
 import Container from '@/components/Container';
 
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
-
 type Props = {
   posts: Post[];
 };
@@ -40,17 +37,11 @@ export default function Blog({ posts }: Props) {
           title: 'Jake Quinter ✍️',
         }}
       />
-      <h1
-        className={text({
-          size: '7',
-          weight: 'bold',
-          css: { marginTop: '$6', marginBottom: '$4' },
-        })}
-      >
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         Blog
       </h1>
 
-      <ul className={box({ listStyle: 'none', padding: 0 })}>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {posts.map(post => {
           const date = new Date(post.data.publishedAt);
           const formattedDate = new Date(

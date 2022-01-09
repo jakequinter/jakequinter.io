@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import ThingsForm from '@/components/ThingsForm';
 import FoodForm from '@/components/FoodForm';
-import { button } from '@/styles/button';
-import { box } from '@/styles/box';
 
 const UpdateSelection = () => {
   const [form, setForm] = useState('');
@@ -15,23 +13,17 @@ const UpdateSelection = () => {
       return <FoodForm />;
     } else {
       return (
-        <div
-          className={box({
-            display: 'flex',
-            justifyContent: 'space-around',
-            marginTop: '$6',
-          })}
-        >
+        <div className="flex justify-around mt-20">
           <button
             type="button"
-            className={button()}
+            className="px-4 py-2 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded"
             onClick={() => setForm('Bookmarks')}
           >
             Add bookmark
           </button>
           <button
             type="button"
-            className={button()}
+            className="px-4 py-2 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded"
             onClick={() => setForm('Food')}
           >
             Add food

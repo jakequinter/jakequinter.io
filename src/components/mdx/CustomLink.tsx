@@ -9,7 +9,11 @@ type Props = {
 export default function CustomLink({ as, href, ...otherProps }: Props) {
   return (
     <Link as={as} href={href}>
-      <a className={link()} target="_blank" {...otherProps} />
+      <a
+        className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2"
+        target="_blank"
+        {...otherProps}
+      />
     </Link>
   );
 }

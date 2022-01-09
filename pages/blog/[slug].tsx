@@ -13,18 +13,11 @@ import readingTime from 'reading-time';
 
 import { Code, P } from '@/components/mdx/Text';
 import { H1, H2, H3 } from '@/components/mdx/Heading';
-import { line as styleline } from '@/styles/mdx/line';
-import { linecontent } from '@/styles/mdx/linecontent';
-import { pre } from '@/styles/mdx/pre';
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import { UL, LI } from '@/components/mdx/ListItem';
 import CustomLink from '@/components/mdx/CustomLink';
 import determineTheme from '@/utils/determineTheme';
-import Header from '@/components/Header';
-
-import { text } from '@/styles/text';
-import { box } from '@/styles/box';
-import { button } from '@/styles/button';
+import Nav from '@/components/layout/Nav';
 
 const components = {
   a: CustomLink,
@@ -42,16 +35,19 @@ const components = {
       code={props.children.props.children}
       language="jsx"
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={pre()} style={style}>
+      {({ style, tokens, getLineProps, getTokenProps }) => (
+        <pre
+          className="text-javascript text-left p-2 overflow-auto text-xs rounded-md"
+          style={style}
+        >
           {tokens.map((line, i) => (
             <div
               // @ts-ignore
-              className={styleline()}
+              className="table-row"
               key={i}
               {...getLineProps({ line, key: i })}
             >
-              <span className={linecontent()}>
+              <span className="table-row">
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
@@ -107,66 +103,28 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
           title: `${frontMatter.title}`,
         }}
       />
-      <Header />
-      <div
-        className={box({
-          marginTop: '$6',
-          marginBottom: '$4',
-          maxWidth: '56rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
+      <Nav />
+      <div className="my-20 max-w-4xl mx-auto px-4 lg:px-0">
         <button
           onClick={() => router.back()}
-          className={button({
-            type: 'blog',
-            css: {
-              display: 'flex',
-              alignItems: 'center',
-            },
-          })}
+          className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300"
         >
-          <HiArrowNarrowLeft
-            className={text({
-              css: { marginRight: '$2', color: 'inherit' },
-            })}
-            size={20}
-          />
+          <HiArrowNarrowLeft className="mr-4 " size={20} />
           Back
         </button>
       </div>
-      <div
-        className={box({
-          maxWidth: '42rem',
-          mx: 'auto',
-          px: '$3',
-          '@bp3': { px: 0 },
-        })}
-      >
-        <div className={box({ marginBottom: '$4' })}>
-          <h1
-            className={text({
-              size: '7',
-              weight: 'bold',
-            })}
-          >
+      <div className="max-w-screen-sm mx-auto px-4 md:px-0">
+        <div className="mb-8">
+          <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl font-semibold">
             {frontMatter.title}
           </h1>
-          <div
-            className={box({
-              display: 'flex',
-              alignItems: 'center',
-              paddingTop: '$2',
-            })}
-          >
-            <p className={text({ size: '2' })}>
+          <span>
+            <p>
               {format(formattedDate, 'PP')} • {readingTime.text}
             </p>
-          </div>
+          </span>
         </div>
-        <main className={box({ marginBottom: '$5' })}>
+        <main className="mb-8">
           {/*  @ts-ignore */}
           <MDXRemote {...source} components={components} />
         </main>

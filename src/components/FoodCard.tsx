@@ -1,90 +1,53 @@
 import Link from 'next/link';
-import Image from 'next/image';
-
-import { box } from '@/styles/box';
-import { image } from '@/styles/image';
-import { link as stylelink } from '@/styles/link';
-import { text } from '@/styles/text';
+import { Image } from 'cloudinary-react';
 
 type Props = {
-  name: string;
-  link: string;
+  restaurantName: string;
   jakeRating: string;
   jenRating: string;
-  imageUrl: string;
+  link: string;
+  image: string;
 };
 
 export default function FoodCard({
-  name,
-  link,
+  restaurantName,
   jakeRating,
   jenRating,
-  imageUrl,
+  link,
+  image,
 }: Props) {
   return (
-    <div
-      className={box({
-        padding: '$4',
-        borderRadius: '5px',
-        border: '1px solid $border',
-        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      })}
-    >
-      <div className={box({ textAlign: 'center' })}>
+    <div className="p-4 border border-zinc-200 dark:border-zinc-700 shadow rounded">
+      <div className="text-center">
         <Link href={link}>
-          <a
-            className={stylelink({ css: { fontSize: '$5', border: 'none' } })}
-            target="_blank"
-          >
-            {name}
+          <a className="text-2xl text-blue-500 hover:text-blue-600 dark:text-orange-500 hover:dark:text-orange-600">
+            {restaurantName}
           </a>
         </Link>
-        <div
-          className={box({
-            py: '$4',
-            display: 'flex',
-            justifyContent: 'space-around',
-          })}
-        >
-          <div className={box({ display: 'flex', alignItems: 'center' })}>
-            <Image
-              height={50}
-              width={50}
-              src="/jakeAvi.png"
-              alt="Jake avatar"
-            />
-            <p
-              className={text({
-                size: '3',
-                css: { marginLeft: '$3' },
-              })}
-            >
-              {jakeRating}
-            </p>
-          </div>
-          <div className={box({ display: 'flex', alignItems: 'center' })}>
-            <Image height={50} width={50} src="/jenAvi.png" alt="Jen avatar" />
-            <p
-              className={text({
-                size: '3',
-                css: { marginLeft: '$3' },
-              })}
-            >
-              {jenRating}
-            </p>
-          </div>
+      </div>
+      <div className="flex p-4 justify-between mt-4 mb-2 max-w-sm mx-auto">
+        <div className="flex items-center">
+          <Image height={35} width={35} src="/jakeAvi.png" alt="Jake avatar" />
+          <p className="ml-2">{jakeRating}</p>
+        </div>
+        <div className="flex items-center">
+          <Image height={35} width={35} src="/jenAvi.png" alt="Jen avatar" />
+          <p className="ml-2">{jenRating}</p>
         </div>
       </div>
-      <div style={{ borderRadius: '10px' }}>
-        <Image
-          className={image()}
-          src={imageUrl}
-          alt="Jake Quinter"
-          height={800}
-          width={650}
-          priority
-        />
-      </div>
+      <Image
+        className="object-cover shadow-lg rounded-lg"
+        cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+        publicId={image}
+        alt={restaurantName}
+        secure
+        dpr="auto"
+        quality="auto"
+        width={640}
+        height={Math.floor((3 / 4) * 640)}
+        crop="fill"
+        gravity="auto"
+      />
     </div>
   );
 }
