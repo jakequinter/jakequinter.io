@@ -56,7 +56,7 @@ const Things = ({
   return (
     <>
       <nav
-        className="scroll flex border-b border-zinc-300 dark:border-zinc-700 overflow-x-auto"
+        className="scroll flex border-b border-zinc-300 dark:border-zinc-700 overflow-x-auto mt-16"
         aria-label="Tabs"
       >
         <TabButton

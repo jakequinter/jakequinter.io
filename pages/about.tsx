@@ -49,7 +49,7 @@ const About = () => {
         </div>
       </div>
       {/* <Timeline /> */}
-      <div className="mt-24">
+      <div className="mt-16">
         <h2 className="text-2xl text-zinc-900 dark:text-zinc-50 font-semibold mb-8">
           Currently
         </h2>

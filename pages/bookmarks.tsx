@@ -34,7 +34,7 @@ export default function Bookmarks({
           Bookmarks
         </h1>
         <div>
-          <p className="pb-8">
+          <p>
             This page is a collection of "internet things" that I feel are
             exceptional and want to save for future reference. These "internet
             things" are going to range from personal websites I admire, people

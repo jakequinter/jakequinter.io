@@ -1,8 +1,4 @@
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
-
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
 
 type Props = {
   description: string;
@@ -18,32 +14,15 @@ export default function BlogPost({
   title,
 }: Props) {
   return (
-    <Link href={slug}>
-      <div
-        className={box({
-          padding: '$3',
-          my: '$3',
-          borderRadius: '5px',
-          border: '1px solid $border',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-          '&:hover': { border: '1px solid $borderhover' },
-        })}
-      >
-        <div
-          className={box({
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'baseline',
-          })}
-        >
-          <h3 className={text({ size: '5', weight: 'medium' })}>{title}</h3>
-          <p className={text({ size: '2', css: { color: '$secondary' } })}>
-            {publishedAt}
-          </p>
-        </div>
-        <p className={text({ css: { color: '$secondary', paddingTop: '$2' } })}>
-          {description}
-        </p>
+    <Link href={slug} passHref>
+      <div className="p-4 border border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600 shadow rounded cursor-pointer">
+        <span className="flex justify-between items-baseline">
+          <h1 className="text-zinc-900 dark:text-zinc-50 text-2xl mb-4 font-semibold">
+            {title}
+          </h1>
+          <p className="text-zinc-400 dark:text-zinc-600">{publishedAt}</p>
+        </span>
+        <p>{description}</p>
       </div>
     </Link>
   );

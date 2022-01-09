@@ -13,9 +13,6 @@ import readingTime from 'reading-time';
 
 import { Code, P } from '@/components/mdx/Text';
 import { H1, H2, H3 } from '@/components/mdx/Heading';
-import { line as styleline } from '@/styles/mdx/line';
-import { linecontent } from '@/styles/mdx/linecontent';
-import { pre } from '@/styles/mdx/pre';
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import { UL, LI } from '@/components/mdx/ListItem';
 import CustomLink from '@/components/mdx/CustomLink';
@@ -39,15 +36,18 @@ const components = {
       language="jsx"
     >
       {({ style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={pre()} style={style}>
+        <pre
+          className="text-left p-2 overflow-auto text-sm rounded-md"
+          style={style}
+        >
           {tokens.map((line, i) => (
             <div
               // @ts-ignore
-              className={styleline()}
+              className="table-row"
               key={i}
               {...getLineProps({ line, key: i })}
             >
-              <span className={linecontent()}>
+              <span className="table-row">
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}

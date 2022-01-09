@@ -9,9 +9,6 @@ import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import BlogPost from '@/components/BlogPost';
 import Container from '@/components/Container';
 
-import { box } from '@/styles/box';
-import { text } from '@/styles/text';
-
 type Props = {
   posts: Post[];
 };
@@ -44,7 +41,7 @@ export default function Blog({ posts }: Props) {
         Blog
       </h1>
 
-      <ul>
+      <ul className="grid grid-cols-2">
         {posts.map(post => {
           const date = new Date(post.data.publishedAt);
           const formattedDate = new Date(

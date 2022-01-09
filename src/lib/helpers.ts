@@ -1,8 +1,4 @@
-import { Client } from '@notionhq/client';
-
 import { prisma } from '@/lib/prisma';
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
 export async function getBookmarks() {
   const things = await prisma.bookmark.findMany({
@@ -45,33 +41,4 @@ export async function getFood() {
   
 
   return food;
-}
-
-export async function getNotionDatabase() {
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID as string,
-    sorts: [
-      {
-        property: 'created_at',
-        direction: 'descending',
-      },
-    ],
-  });
-
-  return response;
-}
-
-export async function getNotionPage(pageId: string) {
-  const response = await notion.pages.retrieve({ page_id: pageId });
-
-  return response;
-}
-
-export async function getNotionBlocks(blogId: string) {
-  const response = await notion.blocks.children.list({
-    block_id: blogId,
-    page_size: 50,
-  });
-
-  return response;
 }
