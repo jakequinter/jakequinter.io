@@ -41,7 +41,7 @@ export default function Blog({ posts }: Props) {
         Blog
       </h1>
 
-      <ul className="grid grid-cols-2">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {posts.map(post => {
           const date = new Date(post.data.publishedAt);
           const formattedDate = new Date(

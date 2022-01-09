@@ -38,10 +38,10 @@ const About = () => {
             the thought of entrepreneurship and indie software.
           </p>
           <p>
-            I grew up in Wisconsin but moved to Boston at the beginning of the
-            year. When I find myself needing to step away from the computer, I
-            enjoy reading, health and fitness, spending time with friends and
-            family, the outdoors, and exploring my new home.
+            I grew up in Wisconsin but moved to Boston at the beginning of 2021.
+            When I find myself needing to step away from the computer, I enjoy
+            reading, health and fitness, spending time with friends and family,
+            the outdoors, and exploring my new home.
           </p>
         </div>
         <div className="text-center sm:text-start ml-0 sm:ml-auto">
@@ -54,9 +54,14 @@ const About = () => {
           Currently
         </h2>
         <p>
-          Dedicating my time to focus on improving myself through reading,
-          learning, and building products. In 2022, I'm going to focus more on
-          shipping.
+          Dedicating my time to improving myself through reading, learning, and
+          building products. In 2022, I'm focusing more on shipping.
+        </p>
+        <p className="mt-4">
+          Building Formably, an online SaaS built for law offices (i.e., state
+          public defenders offices) to help ease the process for individuals
+          applying for representation and law offices accepting (or declining)
+          applicants who need representation.
         </p>
         <p className="mt-4">
           (Re) learning low-level programming with Racket. Interested in Rust

@@ -37,7 +37,7 @@ const components = {
     >
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className="text-left p-2 overflow-auto text-sm rounded-md"
+          className="text-javascript text-left p-2 overflow-auto text-xs rounded-md"
           style={style}
         >
           {tokens.map((line, i) => (
@@ -104,7 +104,7 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
         }}
       />
       <Nav />
-      <div className="my-20 max-w-4xl mx-auto">
+      <div className="my-20 max-w-4xl mx-auto px-4 lg:px-0">
         <button
           onClick={() => router.back()}
           className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300"
@@ -113,7 +113,7 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
           Back
         </button>
       </div>
-      <div className="max-w-screen-sm mx-auto">
+      <div className="max-w-screen-sm mx-auto px-4 md:px-0">
         <div className="mb-8">
           <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl font-semibold">
             {frontMatter.title}

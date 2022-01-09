@@ -3,11 +3,6 @@ import { useForm } from 'react-hook-form';
 import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
 
-import { box } from '@/styles/box';
-import { button } from '@/styles/button';
-import { input } from '@/styles/input';
-import { text } from '@/styles/text';
-
 type FormData = {
   title: string;
   description: string;
