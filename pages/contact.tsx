@@ -14,7 +14,7 @@ const Contact = () => (
       }}
     />
     <Nav />
-    <div className="mt-20 max-w-screen-sm mx-auto px-0 md:px-4">
+    <div className="mt-20 max-w-screen-sm mx-auto px-4 md:px-0">
       <p className="text-zinc-900 dark:text-zinc-50">Get in touch.</p>
       <div className="border-l-2 border-zinc-900 dark:border-zinc-300 mt-8">
         <p className="ml-4">
