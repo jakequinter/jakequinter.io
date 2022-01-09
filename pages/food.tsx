@@ -43,5 +43,6 @@ export const getStaticProps: GetStaticProps = async context => {
 
   return {
     props: { food },
+    revalidate: 60,
   };
 };
