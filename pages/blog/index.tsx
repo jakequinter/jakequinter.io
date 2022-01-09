@@ -1,9 +1,11 @@
 import { GetStaticProps } from 'next';
 import { format } from 'date-fns';
 import { NextSeo } from 'next-seo';
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
-import { Posts } from '@/types/notion';
-import { getNotionDatabase } from '@/lib/helpers';
+import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import BlogPost from '@/components/BlogPost';
 import Container from '@/components/Container';
 
@@ -11,7 +13,20 @@ import { box } from '@/styles/box';
 import { text } from '@/styles/text';
 
 type Props = {
-  posts: Posts;
+  posts: Post[];
+};
+
+type Post = {
+  content: string;
+  data: PostData;
+  filePath: string;
+};
+
+type PostData = {
+  description: string;
+  publishedAt: string;
+  slug: string;
+  title: string;
 };
 
 export default function Blog({ posts }: Props) {
@@ -25,43 +40,43 @@ export default function Blog({ posts }: Props) {
           title: 'Jake Quinter ✍️',
         }}
       />
-      <h1
-        className={text({
-          size: '7',
-          weight: 'bold',
-          css: { marginTop: '$6', marginBottom: '$4' },
-        })}
-      >
+      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         Blog
       </h1>
 
-      <ul className={box({ listStyle: 'none', padding: 0 })}>
-        {posts.results &&
-          posts.results.map(post => {
-            const date = new Date(post.properties.created_at.date.start);
-            const formattedDate = new Date(
-              date.valueOf() + date.getTimezoneOffset() * 60 * 1000
-            );
-            return (
-              <li key={post.id}>
-                <BlogPost
-                  title={post.properties.title.title[0].plain_text}
-                  description={
-                    post.properties.description.rich_text[0].plain_text
-                  }
-                  publishedAt={format(formattedDate, 'PP')}
-                  slug={`/blog/${post.id}`}
-                />
-              </li>
-            );
-          })}
+      <ul>
+        {posts.map(post => {
+          const date = new Date(post.data.publishedAt);
+          const formattedDate = new Date(
+            date.valueOf() + date.getTimezoneOffset() * 60 * 1000
+          );
+          return (
+            <li key={post.filePath}>
+              <BlogPost
+                title={post.data.title}
+                description={post.data.description}
+                publishedAt={format(formattedDate, 'PP')}
+                slug={`/blog/${post.data.slug}`}
+              />
+            </li>
+          );
+        })}
       </ul>
     </Container>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getNotionDatabase();
+  const posts = postFilePaths.map(filePath => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const { content, data } = matter(source);
+
+    return {
+      content,
+      data,
+      filePath,
+    };
+  });
 
   return { props: { posts } };
 };
