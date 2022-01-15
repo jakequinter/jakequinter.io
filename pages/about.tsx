@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
@@ -24,12 +25,11 @@ const About = () => {
           <p className="mb-4">
             Hello, I’m Jake. I’m a software engineer based in Boston, MA. I work
             on the engineering team at{' '}
-            <a
-              className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2"
-              href="https://www.merryfield.com/"
-            >
-              Merryfield
-            </a>
+            <Link href="https://www.merryfield.com/" passHref>
+              <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
+                Merryfield
+              </a>
+            </Link>
             .
           </p>
           <p className="mb-4">
@@ -64,9 +64,23 @@ const About = () => {
           applicants who need representation.
         </p>
         <p className="mt-4">
-          (Re) learning low-level programming with Racket. Interested in Rust
-          and Go, and dedicated to React, Next.js, and TypeScript for building
-          user interfaces.
+          Diving into{' '}
+          <Link
+            href="https://github.com/jakequinter/the-book-exercises"
+            passHref
+          >
+            <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
+              learning Rust
+            </a>
+          </Link>{' '}
+          🦀. (Re) learning low-level programming with{' '}
+          <Link href="https://github.com/jakequinter/mit-sicp" passHref>
+            <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
+              Lisp and Racket
+            </a>
+          </Link>
+          . Interested in Rust and Go, and dedicated to React, Next.js, and
+          TypeScript for building user interfaces.
         </p>
       </div>
     </Container>
