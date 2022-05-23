@@ -1,7 +1,8 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import { ExternalLinkIcon } from '@modulz/radix-icons';
+import { GetStaticProps } from 'next';
+import { NextSeo } from 'next-seo';
+import Link from 'next/link';
 
 import { Book } from '@/types/rss';
 import { getReadngContent } from '@/lib/rss';
@@ -16,6 +17,14 @@ type Props = {
 export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
   return (
     <Container>
+      <NextSeo
+        title="Jake Quinter 📚"
+        canonical="https://jakequinter.io/bookshelf"
+        openGraph={{
+          url: 'https://jakequinter.io/bookshelf',
+          title: 'Jake Quinter 📚',
+        }}
+      />
       <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
         Bookshelf
       </h1>
