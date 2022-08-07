@@ -64,23 +64,9 @@ const About = () => {
           applicants who need representation.
         </p>
         <p className="mt-4">
-          Diving into{' '}
-          <Link
-            href="https://github.com/jakequinter/the-book-exercises"
-            passHref
-          >
-            <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
-              learning Rust
-            </a>
-          </Link>{' '}
-          🦀. (Re) learning low-level programming with{' '}
-          <Link href="https://github.com/jakequinter/mit-sicp" passHref>
-            <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
-              Lisp and Racket
-            </a>
-          </Link>
-          . Interested in Rust and Go, and dedicated to React, Next.js, and
-          TypeScript for building user interfaces.
+          Diving into learning Swift and SwiftUI. Interested in C/C++, and
+          dedicated to React, Next.js, and TypeScript for building user
+          interfaces.
         </p>
       </div>
     </Container>
