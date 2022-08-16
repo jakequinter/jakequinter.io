@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
 import Container from '@/components/Container';
-import Timeline from '@/components/timeline/Timeline';
 
 const About = () => {
   return (
@@ -48,7 +47,6 @@ const About = () => {
           <Image src="/jake.png" alt="Jake Quinter" height={200} width={200} />
         </div>
       </div>
-      {/* <Timeline /> */}
       <div className="mt-16">
         <h2 className="text-2xl text-zinc-900 dark:text-zinc-50 font-semibold mb-8">
           Currently
@@ -58,10 +56,16 @@ const About = () => {
           building products. In 2022, I'm focusing more on shipping.
         </p>
         <p className="mt-4">
-          Building Formably, an online SaaS built for law offices (i.e., state
-          public defenders offices) to help ease the process for individuals
-          applying for representation and law offices accepting (or declining)
-          applicants who need representation.
+          Building{' '}
+          <Link href="https://www.funds.fyi" passHref>
+            <a className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2">
+              Funds
+            </a>
+          </Link>
+          , a different take on budgeting software. What started as a simple web
+          app to make myself frequent my budgeting software tool more often has
+          also become my defacto project for experimenting with learning Swift
+          and SwiftUI.
         </p>
         <p className="mt-4">
           Diving into learning Swift and SwiftUI. Interested in C/C++, and

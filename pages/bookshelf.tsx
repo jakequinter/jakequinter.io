@@ -44,6 +44,17 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
         </h2>
         <div className="scroll h-[400px] p-8 bg-gradient-to-r from-[#D3CCE3] to-[#E9E4F0] dark:bg-gradient-to-r dark:from-[#9E99AA] dark:to-[#57555A] rounded overflow-y-scroll">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40">
+              <div className="flex gap-8 justify-between">
+                <p>The Swift Programming Language (Swift 5.7 Edition)</p>
+                <Link href="https://docs.swift.org/swift-book/" passHref>
+                  <a target="_blank">
+                    <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
+                  </a>
+                </Link>
+              </div>
+              <p className="text-zinc-400 dark:text-zinc-700 pt-4">Apple</p>
+            </div>
             {currentlyReading.map(book => (
               <div
                 key={book.guid}
