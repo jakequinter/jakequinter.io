@@ -6,18 +6,9 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-            rel="stylesheet"
-          />
+          <link rel="stylesheet" href="https://use.typekit.net/hwk5xdw.css" />
         </Head>
-        <body className="bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-500 text-base">
+        <body className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-600 text-base">
           <Main />
           <NextScript />
         </body>

@@ -3,19 +3,21 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
 
   theme: {
-    extend: {},
-    fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      base: '.9375rem',
-      lg: '1rem',
-      xl: '1.125rem',
-      '2xl': '1.25rem',
-      '3xl': '1.5rem',
-      '4xl': '1.875rem',
-      '5xl': '2.25rem',
-      '6xl': '3rem',
-      '7xl': '4rem',
+    extend: {
+      colors: {
+        gray: {
+          50: '#f8f8f8',
+          100: '#f3f3f3',
+          200: '#e8e8e8',
+          300: '#e2e2e2',
+          400: '#dbdbdb',
+          500: '#c7c7c7',
+          600: '#8f8f8f',
+          700: '#858585',
+          800: '#6f6f6f',
+          900: '#171717',
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],
