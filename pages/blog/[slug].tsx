@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
+import { ArrowLeft } from 'phosphor-react';
 import { MDXRemote } from 'next-mdx-remote';
 import { NextSeo } from 'next-seo';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -17,7 +17,6 @@ import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import { UL, LI } from '@/components/mdx/ListItem';
 import CustomLink from '@/components/mdx/CustomLink';
 import determineTheme from '@/utils/determineTheme';
-import Nav from '@/components/layout/Nav';
 
 const components = {
   a: CustomLink,
@@ -103,13 +102,12 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
           title: `${frontMatter.title}`,
         }}
       />
-      <Nav />
       <div className="my-20 max-w-4xl mx-auto px-4 lg:px-0">
         <button
           onClick={() => router.back()}
           className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300"
         >
-          <HiArrowNarrowLeft className="mr-4 " size={20} />
+          <ArrowLeft className="mr-4 " size={20} />
           Back
         </button>
       </div>
