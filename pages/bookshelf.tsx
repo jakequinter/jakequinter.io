@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLinkIcon } from '@modulz/radix-icons';
+import { ArrowSquareOut } from 'phosphor-react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
@@ -49,7 +49,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                 <p>The Swift Programming Language (Swift 5.7 Edition)</p>
                 <Link href="https://docs.swift.org/swift-book/" passHref>
                   <a target="_blank">
-                    <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
+                    <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                   </a>
                 </Link>
               </div>
@@ -64,7 +64,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
+                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>
@@ -92,7 +92,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
+                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>
@@ -120,7 +120,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   <p>{book.title}</p>
                   <Link href={`${book.link}`} passHref>
                     <a target="_blank">
-                      <ExternalLinkIcon className="hover:text-zinc-900 dark:hover:text-zinc-400" />
+                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
                     </a>
                   </Link>
                 </div>

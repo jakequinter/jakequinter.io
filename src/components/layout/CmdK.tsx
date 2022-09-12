@@ -5,8 +5,14 @@ import {
   ArrowRight,
   EnvelopeOpen,
   GithubLogo,
+  MoonStars,
+  SunHorizon,
   TwitterLogo,
 } from 'phosphor-react';
+import { useTheme } from 'next-themes';
+
+import { CmdKItem } from '@/types/CmdKItem';
+import classNames from '@/utils/classNames';
 
 const items = [
   {
@@ -59,17 +65,31 @@ const items = [
     icon: <TwitterLogo className="mr-2" size="16" />,
   },
   {
-    id: 7,
+    id: 8,
     name: 'Email',
     category: 'Socials',
     href: 'mailto:hello@jakequinter.io',
     icon: <EnvelopeOpen className="mr-2" size="16" />,
   },
+  {
+    id: 9,
+    name: 'Change theme to light',
+    category: 'System',
+    icon: <SunHorizon className="mr-2" size="16" />,
+    action: (setTheme: () => void) => {
+      setTheme();
+    },
+  },
+  {
+    id: 10,
+    name: 'Change theme to dark',
+    category: 'System',
+    icon: <MoonStars className="mr-2" size="16" />,
+    action: (setTheme: () => void) => {
+      setTheme();
+    },
+  },
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
 
 type Props = {
   open: boolean;
@@ -79,6 +99,19 @@ type Props = {
 export default function CmdK({ open, setOpen }: Props) {
   const router = useRouter();
   const [query, setQuery] = useState('');
+  const [mounted, setMounted] = useState(true);
+  const { theme, setTheme } = useTheme();
+
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  const handleTheme = () => {
+    const targetTheme = theme === 'light' ? 'dark' : 'light';
+
+    setTheme(targetTheme);
+  };
 
   const filteredItems =
     query === ''
@@ -90,14 +123,15 @@ export default function CmdK({ open, setOpen }: Props) {
   const groups = filteredItems.reduce((groups, item) => {
     return {
       ...groups,
+      // @ts-expect-error
       [item.category]: [...(groups[item.category] || []), item],
     };
   }, {});
 
   useEffect(() => {
-    const down = e => {
+    const down = (e: { key: string; metaKey: any }) => {
       if (e.key === 'k' && e.metaKey) {
-        setOpen(open => !open);
+        setOpen(!open);
       }
     };
 
@@ -136,7 +170,11 @@ export default function CmdK({ open, setOpen }: Props) {
             leaveTo="opacity-0 scale-95"
           >
             <Dialog.Panel className="mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y divide-gray-300">
-              <Combobox onChange={item => router.push(item.href)}>
+              <Combobox
+                onChange={(item: CmdKItem) =>
+                  item.href ? router.push(item.href) : item.action(handleTheme)
+                }
+              >
                 <div className="relative">
                   <Combobox.Input
                     className="h-12 w-full border-0 bg-transparent pl-4 text-gray-800 placeholder-gray-400 focus:ring-0 sm:text-sm"
@@ -156,22 +194,48 @@ export default function CmdK({ open, setOpen }: Props) {
                           {category}
                         </h2>
                         <ul className="mt-1 text-sm">
-                          {items.map(item => (
-                            <Combobox.Option
-                              key={item.id}
-                              value={item}
-                              className={({ active }) =>
-                                classNames(
-                                  'cursor-default select-none px-4 py-2 rounded-md flex items-center',
-                                  active &&
-                                    'bg-gray-200 bg-opacity-75 text-gray-900'
-                                )
-                              }
-                            >
-                              {item.icon}
-                              {item.name}
-                            </Combobox.Option>
-                          ))}
+                          {theme === 'light' &&
+                            // @ts-expect-error
+                            items
+                              .filter((i: CmdKItem) => i.id !== 9)
+                              .map((item: CmdKItem) => (
+                                <Combobox.Option
+                                  key={item.id}
+                                  value={item}
+                                  className={({ active }) =>
+                                    classNames(
+                                      'cursor-default select-none px-4 py-2 rounded-md flex items-center',
+                                      active
+                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900'
+                                        : ''
+                                    )
+                                  }
+                                >
+                                  {item.icon}
+                                  {item.name}
+                                </Combobox.Option>
+                              ))}
+                          {theme === 'dark' &&
+                            // @ts-expect-error
+                            items
+                              .filter((i: CmdKItem) => i.id !== 10)
+                              .map((item: CmdKItem) => (
+                                <Combobox.Option
+                                  key={item.id}
+                                  value={item}
+                                  className={({ active }) =>
+                                    classNames(
+                                      'cursor-default select-none px-4 py-2 rounded-md flex items-center',
+                                      active
+                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900'
+                                        : ''
+                                    )
+                                  }
+                                >
+                                  {item.icon}
+                                  {item.name}
+                                </Combobox.Option>
+                              ))}
                         </ul>
                       </li>
                     ))}

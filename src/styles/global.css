@@ -6,7 +6,7 @@ body {
   height: 100%;
   overflow: auto;
   margin: 0;
-  font-family: sofia-pro, sans-serif, system-ui;
+  font-family: 'Inter', sans-serif, system-ui;
 }
 
 .scroll::-webkit-scrollbar {
