@@ -7,9 +7,3 @@ export type Thing = {
   title: string;
   type: string;
 }
-
-// export type ThingDocument = {
-//   data: {
-//     thing: Thing[];
-//   };
-// }

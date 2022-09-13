@@ -55,20 +55,20 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
         <div className="space-y-4">
           <Link href="https://docs.swift.org/swift-book/" passHref>
             <motion.div
-              className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+              className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
               whileHover={{ scale: 1.01 }}
             >
               <div className="flex flex-col justify-between truncate pr-8">
-                <p className="truncate pr-8 text-gray-900">
+                <p className="truncate pr-8 text-gray-900 dark:text-gray-50">
                   The Swift Programming Language (Swift 5.7 Edition)
                 </p>
 
-                <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
                   Apple
                 </p>
               </div>
               <a target="_blank">
-                <CaretRight className="text-gray-500" />
+                <CaretRight className="text-gray-500 dark:text-gray-800" />
               </a>
             </motion.div>
           </Link>
@@ -76,18 +76,20 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {currentlyReading.map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
-                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+                  <p className="truncate pr-8 text-gray-900 dark:text-gray-50">
+                    {book.title}
+                  </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
                     {book.creator}
                   </p>
                 </div>
                 <a target="_blank">
-                  <CaretRight className="text-gray-500" />
+                  <CaretRight className="text-gray-500 dark:text-gray-800" />
                 </a>
               </motion.div>
             </Link>
@@ -100,18 +102,20 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {toRead.map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer"
+                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
-                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+                  <p className="truncate pr-8 text-gray-900 dark:text-gray-50">
+                    {book.title}
+                  </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
                     {book.creator}
                   </p>
                 </div>
                 <a target="_blank">
-                  <CaretRight className="text-gray-500" />
+                  <CaretRight className="text-gray-500 dark:text-gray-800" />
                 </a>
               </motion.div>
             </Link>
@@ -124,18 +128,20 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {read.map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
-                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+                  <p className="truncate pr-8 text-gray-900 dark:text-gray-50">
+                    {book.title}
+                  </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
                     {book.creator}
                   </p>
                 </div>
                 <a target="_blank">
-                  <CaretRight className="text-gray-500" />
+                  <CaretRight className="text-gray-500 dark:text-gray-800" />
                 </a>
               </motion.div>
             </Link>

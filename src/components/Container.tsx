@@ -24,7 +24,7 @@ const Container = ({ children }: Props) => {
           </a>
         </Link>
         <button
-          className="border border-gray-300 focus:ring-2 ring-offset-2 ring-blue-300 outline-none rounded-md px-2 py-1 text-xl"
+          className="border border-gray-300 dark:border-gray-800 dark:border-opacity-40 focus:ring-2 ring-offset-2 ring-blue-300 outline-none rounded-md px-2 py-1 text-xl"
           onClick={() => setCmdKOpen(!cmdKOpen)}
         >
           ⌘
