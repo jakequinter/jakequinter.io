@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 
 import CmdK from './layout/CmdK';
 import Footer from './Footer';
+import { useTheme } from 'next-themes';
 
 type Props = {
   children: ReactNode;
@@ -16,27 +17,21 @@ const Container = ({ children }: Props) => {
   return (
     <>
       <Toaster position="bottom-right" />
-      <div className="max-w-screen-xl mx-auto flex justify-between mt-4 px-4 md:px-0">
+      <div className="max-w-screen-sm mx-auto flex justify-between mt-4 px-4 md:px-0">
         <Link href="/" passHref>
           <a>
-            <Image
-              className="cursor-pointer"
-              src="/logo.svg"
-              alt="JDQ logo"
-              height="32"
-              width="32"
-            />
+            <Logo />
           </a>
         </Link>
         <button
-          className="border border-gray-300 focus:border-none focus:ring-2 ring-blue-500 outline-none rounded-md px-2 py-1 text-xl"
+          className="border border-gray-300 focus:ring-2 ring-offset-2 ring-blue-300 outline-none rounded-md px-2 py-1 text-xl"
           onClick={() => setCmdKOpen(!cmdKOpen)}
         >
           ⌘
         </button>
       </div>
       <CmdK open={cmdKOpen} setOpen={setCmdKOpen} />
-      <main className="max-w-screen-xl mx-auto px-4 md:px-0 mt-20">
+      <main className="max-w-screen-sm mx-auto px-4 md:px-0 mt-20">
         <div className="mb-20" style={{ minHeight: 'calc(100vh - 443px)' }}>
           {children}
         </div>
@@ -47,3 +42,19 @@ const Container = ({ children }: Props) => {
 };
 
 export default Container;
+
+function Logo() {
+  const { resolvedTheme } = useTheme();
+  let src;
+
+  switch (resolvedTheme) {
+    case 'dark':
+      src = '/jdq-light.svg';
+      break;
+    default:
+      src = '/jdq-dark.svg';
+      break;
+  }
+
+  return <Image src={src} width={32} height={32} />;
+}

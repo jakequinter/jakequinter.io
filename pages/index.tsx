@@ -6,7 +6,7 @@ import Container from '@/components/Container';
 export default function Home() {
   return (
     <Container>
-      <div className="max-w-xl px-4 lg:px-0">
+      <div>
         <h1 className="text-gray-900 dark:text-gray-50 text-6xl font-bold mb-8">
           Jake Quinter
         </h1>

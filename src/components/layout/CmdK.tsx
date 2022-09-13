@@ -115,7 +115,7 @@ export default function CmdK({ open, setOpen }: Props) {
   if (!mounted) return null;
 
   const handleTheme = () => {
-    const targetTheme = theme === 'light' ? 'dark' : 'light';
+    const targetTheme = theme === 'light' || theme === null ? 'dark' : 'light';
 
     setTheme(targetTheme);
   };
@@ -176,15 +176,21 @@ export default function CmdK({ open, setOpen }: Props) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y divide-gray-300">
+            <Dialog.Panel className="mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white dark:bg-black shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y divide-gray-300 dark:divide-gray-900">
               <Combobox
-                onChange={(item: CmdKItem) =>
-                  item.href ? router.push(item.href) : item.action(handleTheme)
-                }
+                onChange={(item: CmdKItem) => {
+                  if (item?.href) {
+                    router.push(item.href);
+                  } else {
+                    item.action(handleTheme);
+                  }
+
+                  setOpen(false);
+                }}
               >
                 <div className="relative">
                   <Combobox.Input
-                    className="h-12 w-full border-0 bg-transparent pl-4 text-gray-800 placeholder-gray-400 focus:ring-0 sm:text-sm"
+                    className="h-12 w-full border-0 bg-transparent pl-4 placeholder-gray-500 dark:placeholder-gray-800 dark:placeholder-opacity-50 focus:ring-0 sm:text-sm"
                     placeholder="Search..."
                     onChange={event => setQuery(event.target.value)}
                   />
@@ -193,7 +199,7 @@ export default function CmdK({ open, setOpen }: Props) {
                 {filteredItems.length > 0 && (
                   <Combobox.Options
                     static
-                    className="max-h-60 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-1 pt-2"
+                    className="max-h-64 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-1 pt-2"
                   >
                     {Object.entries(groups).map(([category, items]) => (
                       <li key={category} className="mx-1">
@@ -201,7 +207,7 @@ export default function CmdK({ open, setOpen }: Props) {
                           {category}
                         </h2>
                         <ul className="mt-1 text-sm">
-                          {theme === 'light' &&
+                          {(theme === 'light' || theme === null) &&
                             // @ts-expect-error
                             items
                               .filter((i: CmdKItem) => i.id !== 10)
@@ -213,7 +219,7 @@ export default function CmdK({ open, setOpen }: Props) {
                                     classNames(
                                       'cursor-default select-none px-4 py-2 rounded-md flex items-center',
                                       active
-                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900'
+                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
                                     )
                                   }
@@ -234,7 +240,7 @@ export default function CmdK({ open, setOpen }: Props) {
                                     classNames(
                                       'cursor-default select-none px-4 py-2 rounded-md flex items-center',
                                       active
-                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900'
+                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
                                     )
                                   }
