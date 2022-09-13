@@ -20,6 +20,7 @@
     "cloudinary-react": "^1.7.0",
     "cmdk": "^0.1.20",
     "date-fns": "^2.16.1",
+    "framer-motion": "^7.3.4",
     "gray-matter": "^4.0.3",
     "lil-gui": "^0.16.1",
     "next": "^12.3.0",

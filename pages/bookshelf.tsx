@@ -1,11 +1,13 @@
-import React from 'react';
-import { ArrowSquareOut } from 'phosphor-react';
+import { useState } from 'react';
+import { CaretRight } from 'phosphor-react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { Book } from '@/types/rss';
 import { getReadngContent } from '@/lib/rss';
+import BookshelfTabs from '@/components/BookshelfTabs';
 import Container from '@/components/Container';
 
 type Props = {
@@ -15,6 +17,8 @@ type Props = {
 };
 
 export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
+  const [selectedTab, setSelectedTab] = useState('Reading');
+
   return (
     <Container>
       <NextSeo
@@ -25,113 +29,119 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           title: 'Jake Quinter 📚',
         }}
       />
-      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
-        Bookshelf
-      </h1>
-      <p className="pb-4">
-        This is my internet library where I keep track of my favorite books.
-        Books that I'm currently reading, have already finished, or plan to pick
-        up in the future.
-      </p>
-      <p>
-        This list is nowhere near exhaustive, and is only currently displaying
-        books I've found or read since 2021, but it is a good place to start.
-      </p>
 
-      <div>
-        <h2 className="text-xl text-center font-medium text-[#9E99AA] mt-16 mb-4">
-          Currently reading 📖
-        </h2>
-        <div className="scroll h-[400px] p-8 bg-gradient-to-r from-[#D3CCE3] to-[#E9E4F0] dark:bg-gradient-to-r dark:from-[#9E99AA] dark:to-[#57555A] rounded overflow-y-scroll">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40">
-              <div className="flex gap-8 justify-between">
-                <p>The Swift Programming Language (Swift 5.7 Edition)</p>
-                <Link href="https://docs.swift.org/swift-book/" passHref>
-                  <a target="_blank">
-                    <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
-                  </a>
-                </Link>
-              </div>
-              <p className="text-zinc-400 dark:text-zinc-700 pt-4">Apple</p>
-            </div>
-            {currentlyReading.map(book => (
-              <div
-                key={book.guid}
-                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
-              >
-                <div className="flex gap-8 justify-between">
-                  <p>{book.title}</p>
-                  <Link href={`${book.link}`} passHref>
-                    <a target="_blank">
-                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
-                    </a>
-                  </Link>
-                </div>
-                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
-                  {book.creator}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="space-y-2">
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-semibold mb-6">
+          Bookshelf
+        </h1>
+        <p>
+          This is my internet library where I keep track of my favorite books.
+          Books that I&apos;m currently reading, have already finished, or plan
+          to pick up in the future
+        </p>
+        <p>
+          This list is nowhere near exhaustive, and is only currently displaying
+          books I&apos;ve found or read since 2021, but it is a good place to
+          start.
+        </p>
       </div>
 
-      <div>
-        <h2 className="text-xl text-center font-medium text-[#8F6E94] mt-20 mb-4">
-          Up next 📓
-        </h2>
-        <div className="scroll h-[400px] p-8 bg-gradient-to-r from-[#be93c5] to-[#7bc6cc] dark:bg-gradient-to-r dark:from-[#8F6E94] dark:to-[#2E4A4D] rounded overflow-y-scroll">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {toRead.map(book => (
-              <div
-                key={book.guid}
-                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
-              >
-                <div className="flex gap-8 justify-between">
-                  <p>{book.title}</p>
-                  <Link href={`${book.link}`} passHref>
-                    <a target="_blank">
-                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
-                    </a>
-                  </Link>
-                </div>
-                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
-                  {book.creator}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <BookshelfTabs
+        selectedTab={selectedTab}
+        setSelectedTab={setSelectedTab}
+      />
 
-      <div>
-        <h2 className="text-xl text-center font-medium text-[#7E838E] mt-20 mb-4">
-          Finished reading 📚
-        </h2>
-        <div className="scroll h-[400px] p-8 bg-gradient-to-r from-[#e0eafc] to-[#cfdef3] dark:bg-gradient-to-l dark:from-[#7E838E] dark:to-[#4E535B] rounded overflow-y-scroll">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {read.map(book => (
-              <div
-                key={book.guid}
-                className="flex flex-col justify-between bg-white dark:bg-black rounded p-4 shadow-lg h-40"
-              >
-                <div className="flex gap-8 justify-between">
-                  <p>{book.title}</p>
-                  <Link href={`${book.link}`} passHref>
-                    <a target="_blank">
-                      <ArrowSquareOut className="hover:text-zinc-900 dark:hover:text-zinc-400" />
-                    </a>
-                  </Link>
-                </div>
-                <p className="text-zinc-400 dark:text-zinc-700 pt-4">
-                  {book.creator}
+      {selectedTab === 'Reading' ? (
+        <div className="space-y-4">
+          <Link href="https://docs.swift.org/swift-book/" passHref>
+            <motion.div
+              className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+              whileHover={{ scale: 1.01 }}
+            >
+              <div className="flex flex-col justify-between truncate pr-8">
+                <p className="truncate pr-8 text-gray-900">
+                  The Swift Programming Language (Swift 5.7 Edition)
+                </p>
+
+                <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                  Apple
                 </p>
               </div>
-            ))}
-          </div>
+              <a target="_blank">
+                <CaretRight className="text-gray-500" />
+              </a>
+            </motion.div>
+          </Link>
+
+          {currentlyReading.map(book => (
+            <Link key={book.guid} href={book.link} passHref>
+              <motion.div
+                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+                whileHover={{ scale: 1.01 }}
+              >
+                <div className="flex flex-col justify-between truncate pr-8">
+                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+
+                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                    {book.creator}
+                  </p>
+                </div>
+                <a target="_blank">
+                  <CaretRight className="text-gray-500" />
+                </a>
+              </motion.div>
+            </Link>
+          ))}
         </div>
-      </div>
+      ) : null}
+
+      {selectedTab === 'To read' ? (
+        <div className="space-y-4">
+          {toRead.map(book => (
+            <Link key={book.guid} href={book.link} passHref>
+              <motion.div
+                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer"
+                whileHover={{ scale: 1.01 }}
+              >
+                <div className="flex flex-col justify-between truncate pr-8">
+                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+
+                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                    {book.creator}
+                  </p>
+                </div>
+                <a target="_blank">
+                  <CaretRight className="text-gray-500" />
+                </a>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      ) : null}
+
+      {selectedTab === 'Finished' ? (
+        <div className="space-y-4">
+          {read.map(book => (
+            <Link key={book.guid} href={book.link} passHref>
+              <motion.div
+                className="flex justify-between items-center bg-white rounded-lg p-4 hover:cursor-pointer shadow-md"
+                whileHover={{ scale: 1.01 }}
+              >
+                <div className="flex flex-col justify-between truncate pr-8">
+                  <p className="truncate pr-8 text-gray-900">{book.title}</p>
+
+                  <p className="text-gray-500 text-sm font-light dark:text-zinc-700 pt-4">
+                    {book.creator}
+                  </p>
+                </div>
+                <a target="_blank">
+                  <CaretRight className="text-gray-500" />
+                </a>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      ) : null}
     </Container>
   );
 }
