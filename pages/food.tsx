@@ -21,18 +21,22 @@ export default function FoodHome({ food }: Props) {
           title: 'Jake Quinter 🍕',
         }}
       />
-      <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl mb-8 font-semibold">
-        Food 🍕
-      </h1>
-      <p className="pb-8">
-        My girlfriend and I love food. We love trying new places, cuisines,
-        keeping track of what we loved, what we liked, and what we didn’t care
-        for. Since moving to Boston, we have been introduced to a new realm of
-        restaurants. It’s quite different than what we were accustomed to in
-        Appleton, WI. There’s food everywhere here. So, we thought it would be
-        cool to keep track of the food we’ve tried, give it a rating, and
-        remember it for future reference.
-      </p>
+
+      <div className="space-y-4">
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-semibold mb-6">
+          Food 🍕
+        </h1>
+        <p>
+          My girlfriend and I love food. We love trying new places, cuisines,
+          keeping track of what we loved, what we liked, and what we didn&apos;t
+          care for. Since moving to Boston, we have been introduced to a new
+          realm of restaurants. It&apos;s quite different than what we were
+          accustomed to in Appleton, WI. There&apos;s food everywhere here. So,
+          we thought it would be cool to keep track of the food we&apos;ve
+          tried, give it a rating, and remember it for future reference.
+        </p>
+      </div>
+
       <FoodList data={food} />
     </Container>
   );
