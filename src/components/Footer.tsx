@@ -8,12 +8,10 @@ export default function Footer() {
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
-
-      const time = formatInTimeZone(now, 'America/New_York', 'H:mm:ss a');
+      const time = formatInTimeZone(now, 'America/New_York', 'hh:mm:ss a');
 
       setMeridiem(time.includes('AM') ? 'AM' : 'PM');
-
-      setCurrentTime(formatInTimeZone(now, 'America/New_York', 'H:mm:ss'));
+      setCurrentTime(formatInTimeZone(now, 'America/New_York', 'hh:mm:ss'));
     }, 1000);
 
     return () => clearInterval(interval);
@@ -23,11 +21,11 @@ export default function Footer() {
     <footer className="border-t border-gray-300 dark:border-gray-800 dark:border-opacity-40 px-4 md:px-0">
       <div className="max-w-screen-sm mx-auto py-4 text-xs text-gray-600 dark:text-gray-800 flex justify-between items-center">
         <p>Better than yesterday.</p>
-        <div className="flex items-center">
+        <div className="flex items-center gap-0.5">
           <p className="boston-time">
-            Boston {currentTime ? `· ${currentTime}` : null}
+            Boston {currentTime ? `· ${currentTime}` : '00:00:00'}
           </p>
-          {meridiem ? <p>{meridiem}</p> : null}
+          {meridiem ? <p>{meridiem}</p> : '--'}
         </div>
       </div>
     </footer>
