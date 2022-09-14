@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { formatInTimeZone } from 'date-fns-tz';
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState('');
@@ -6,18 +7,13 @@ export default function Footer() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date()
-        .toLocaleTimeString([], {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        })
-        .toUpperCase();
+      const now = new Date();
 
-      setMeridiem(now.includes('AM') ? 'AM' : 'PM');
+      const time = formatInTimeZone(now, 'America/New_York', 'H:mm:ss a');
 
-      setCurrentTime(now);
+      setMeridiem(time.includes('AM') ? 'AM' : 'PM');
+
+      setCurrentTime(formatInTimeZone(now, 'America/New_York', 'H:mm:ss'));
     }, 1000);
 
     return () => clearInterval(interval);
