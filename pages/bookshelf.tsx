@@ -9,6 +9,7 @@ import { Book } from '@/types/rss';
 import { getReadngContent } from '@/lib/rss';
 import BookshelfTabs from '@/components/BookshelfTabs';
 import Container from '@/components/Container';
+import Pagination from '@/components/Pagination';
 
 type Props = {
   toRead: Book[];
@@ -18,6 +19,27 @@ type Props = {
 
 export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
   const [selectedTab, setSelectedTab] = useState('Reading');
+  const [page, setPage] = useState(1);
+
+  const paginationData = () => {
+    if (selectedTab === 'Reading') {
+      return currentlyReading;
+    }
+
+    if (selectedTab === 'To read') {
+      return toRead;
+    }
+
+    return read;
+  };
+
+  const determineResults = (data: Book[]) => {
+    if (page === 1) {
+      return data.slice(0, 10);
+    }
+
+    return data.slice((page - 1) * 10, page * 10);
+  };
 
   return (
     <Container>
@@ -49,6 +71,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
       <BookshelfTabs
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
+        setPage={setPage}
       />
 
       {selectedTab === 'Reading' ? (
@@ -73,7 +96,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
             </motion.div>
           </Link>
 
-          {currentlyReading.map(book => (
+          {determineResults(currentlyReading).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
                 className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
@@ -99,7 +122,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
 
       {selectedTab === 'To read' ? (
         <div className="space-y-4">
-          {toRead.map(book => (
+          {determineResults(toRead).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
                 className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
@@ -125,7 +148,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
 
       {selectedTab === 'Finished' ? (
         <div className="space-y-4">
-          {read.map(book => (
+          {determineResults(read).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
                 className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
@@ -148,6 +171,8 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           ))}
         </div>
       ) : null}
+
+      <Pagination data={paginationData()} page={page} setPage={setPage} />
     </Container>
   );
 }

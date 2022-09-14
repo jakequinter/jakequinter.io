@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 type Props = {
   selectedTab: string;
   setSelectedTab: (tab: string) => void;
+  setPage: (page: number) => void;
 };
 
-export default function BookshelfTabs({ selectedTab, setSelectedTab }: Props) {
+export default function BookshelfTabs({
+  selectedTab,
+  setSelectedTab,
+  setPage,
+}: Props) {
   const tabs = [
     {
       name: 'Reading',
@@ -21,6 +26,11 @@ export default function BookshelfTabs({ selectedTab, setSelectedTab }: Props) {
     },
   ];
 
+  const handleClick = (tab: { name: string; selected: boolean }) => {
+    setPage(1);
+    setSelectedTab(tab.name);
+  };
+
   return (
     <div className="flex justify-center my-12">
       <div className="z-0 rounded-full bg-white dark:bg-black p-0.5 shadow-md border border-gray-300 dark:border-gray-800 dark:border-opacity-40">
@@ -29,7 +39,7 @@ export default function BookshelfTabs({ selectedTab, setSelectedTab }: Props) {
             <motion.div
               className="relative"
               key={tab.name}
-              onClick={() => setSelectedTab(tab.name)}
+              onClick={() => handleClick(tab)}
             >
               {tab.selected ? (
                 <motion.div
