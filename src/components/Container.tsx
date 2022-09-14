@@ -32,11 +32,11 @@ const Container = ({ children }: Props) => {
       </div>
       <CmdK open={cmdKOpen} setOpen={setCmdKOpen} />
       <main className="max-w-screen-sm mx-auto px-4 md:px-0 mt-20">
-        <div className="mb-20" style={{ minHeight: 'calc(100vh - 443px)' }}>
+        <div className="mb-20" style={{ minHeight: 'calc(100vh - 264px)' }}>
           {children}
         </div>
-        {/* <Footer /> */}
       </main>
+      <Footer />
     </>
   );
 };
