@@ -20,62 +20,62 @@ const items = [
     name: 'Home',
     category: 'Navigation',
     href: '/',
-    icon: <ArrowRight className="mr-2" size="16" />,
+    icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
     id: 2,
     name: 'About',
     category: 'Navigation',
     href: '/about',
-    icon: <ArrowRight className="mr-2" size="16" />,
+    icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
     id: 3,
     name: 'Bookshelf',
     category: 'Navigation',
     href: '/bookshelf',
-    icon: <ArrowRight className="mr-2" size="16" />,
+    icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
     id: 4,
     name: 'Food',
     category: 'Navigation',
     href: '/food',
-    icon: <ArrowRight className="mr-2" size="16" />,
+    icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
     id: 5,
     name: 'Blog',
     category: 'Navigation',
     href: '/blog',
-    icon: <ArrowRight className="mr-2" size="16" />,
+    icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
     id: 6,
     name: 'Github',
     category: 'Socials',
     href: 'https://github.com/jakequinter',
-    icon: <GithubLogo className="mr-2" size="16" />,
+    icon: <GithubLogo className="mr-4" size="20" />,
   },
   {
     id: 7,
     name: 'Twitter',
     category: 'Socials',
     href: 'https://twitter.com/jakequinter',
-    icon: <TwitterLogo className="mr-2" size="16" />,
+    icon: <TwitterLogo className="mr-4" size="20" />,
   },
   {
     id: 8,
     name: 'Email',
     category: 'Socials',
     href: 'mailto:hello@jakequinter.io',
-    icon: <EnvelopeOpen className="mr-2" size="16" />,
+    icon: <EnvelopeOpen className="mr-4" size="20" />,
   },
   {
     id: 9,
     name: 'Change theme to light',
     category: 'System',
-    icon: <SunHorizon className="mr-2" size="16" />,
+    icon: <SunHorizon className="mr-4" size="20" />,
     action: (setTheme: () => void) => {
       setTheme();
     },
@@ -84,7 +84,7 @@ const items = [
     id: 10,
     name: 'Change theme to dark',
     category: 'System',
-    icon: <MoonStars className="mr-2" size="16" />,
+    icon: <MoonStars className="mr-4" size="16" />,
     action: (setTheme: () => void) => {
       setTheme();
     },
@@ -156,10 +156,10 @@ export default function CmdK({ open, setOpen }: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-50 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-40">
+        <div className="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:pt-60">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -192,11 +192,12 @@ export default function CmdK({ open, setOpen }: Props) {
                 {filteredItems.length > 0 && (
                   <Combobox.Options
                     static
-                    className="max-h-60 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-1 pt-2"
+                    className="max-h-60 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-2 pt-2"
+                    style={{ maxHeight: '333px' }}
                   >
                     {Object.entries(groups).map(([category, items]) => (
-                      <li key={category} className="mx-1">
-                        <h2 className="px-4 text-xs italic font-light">
+                      <li key={category} className="mx-2">
+                        <h2 className="px-2 text-xs italic font-light py-1">
                           {category}
                         </h2>
                         <ul className="mt-1 text-sm">
@@ -210,9 +211,9 @@ export default function CmdK({ open, setOpen }: Props) {
                                   value={item}
                                   className={({ active }) =>
                                     classNames(
-                                      'cursor-default select-none px-4 py-2 rounded-md flex items-center',
+                                      'cursor-default select-none px-4 py-3 rounded-lg flex items-center',
                                       active
-                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
+                                        ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
                                     )
                                   }
@@ -231,9 +232,9 @@ export default function CmdK({ open, setOpen }: Props) {
                                   value={item}
                                   className={({ active }) =>
                                     classNames(
-                                      'cursor-default select-none px-4 py-2 rounded-md flex items-center',
+                                      'cursor-default select-none px-4 py-3 rounded-lg flex items-center',
                                       active
-                                        ? 'bg-gray-200 bg-opacity-75 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
+                                        ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
                                     )
                                   }
