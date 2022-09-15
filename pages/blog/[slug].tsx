@@ -34,11 +34,13 @@ const components = {
       code={props.children.props.children}
       language="jsx"
     >
+      {/* @ts-expect-error */}
       {({ style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className="text-javascript text-left p-2 overflow-auto text-xs rounded-md"
           style={style}
         >
+          {/* @ts-expect-error */}
           {tokens.map((line, i) => (
             <div
               // @ts-ignore
@@ -47,6 +49,7 @@ const components = {
               {...getLineProps({ line, key: i })}
             >
               <span className="table-row">
+                {/* @ts-expect-error */}
                 {line.map((token, key) => (
                   <span key={key} {...getTokenProps({ token, key })} />
                 ))}
