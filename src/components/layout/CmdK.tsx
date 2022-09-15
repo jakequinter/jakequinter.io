@@ -193,7 +193,7 @@ export default function CmdK({ open, setOpen }: Props) {
                   <Combobox.Options
                     static
                     className="max-h-60 scroll-pt-11 scroll-pb-2 space-y-2 overflow-y-auto pb-2 pt-2"
-                    style={{ maxHeight: '333px' }}
+                    style={{ maxHeight: '345px' }}
                   >
                     {Object.entries(groups).map(([category, items]) => (
                       <li key={category} className="mx-2">
