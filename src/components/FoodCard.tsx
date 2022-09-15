@@ -19,7 +19,7 @@ export default function FoodCard({
 }: Props) {
   return (
     <motion.div
-      className="relative shadow rounded hover:cursor-pointer"
+      className="relative shadow rounded hover:cursor-pointer grayscale hover:grayscale-0"
       whileHover={{ scale: 1.01 }}
     >
       <Link href={link} passHref>

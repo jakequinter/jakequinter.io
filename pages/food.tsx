@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 
@@ -5,12 +6,23 @@ import { getFood } from '@/lib/helpers';
 import { Food } from '@/types/food';
 import Container from '@/components/Container';
 import FoodList from '@/components/FoodList';
+import Pagination from '@/components/Pagination';
 
 type Props = {
   food: Food[];
 };
 
 export default function FoodHome({ food }: Props) {
+  const [page, setPage] = useState(1);
+
+  const determineResults = (data: Food[]) => {
+    if (page === 1) {
+      return data.slice(0, 10);
+    }
+
+    return data.slice((page - 1) * 10, page * 10);
+  };
+
   return (
     <Container>
       <NextSeo
@@ -37,12 +49,13 @@ export default function FoodHome({ food }: Props) {
         </p>
       </div>
 
-      <FoodList data={food} />
+      <FoodList data={determineResults(food)} />
+      <Pagination page={page} setPage={setPage} data={food} />
     </Container>
   );
 }
 
-export const getStaticProps: GetStaticProps = async context => {
+export const getStaticProps: GetStaticProps = async () => {
   const food = await getFood();
 
   return {

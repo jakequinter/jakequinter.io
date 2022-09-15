@@ -1,7 +1,8 @@
 import { Book } from '@/types/rss';
+import { Food } from '@/types/food';
 
 type Props = {
-  data: Book[];
+  data: Book[] | Food[];
   page: number;
   setPage: (page: number) => void;
 };
@@ -21,6 +22,16 @@ export default function Pagination({ data, page, setPage }: Props) {
     }`;
   };
 
+  const handlePrevious = () => {
+    setPage(page - 1);
+    window.scrollTo(0, 0);
+  };
+
+  const handleNext = () => {
+    setPage(page + 1);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="flex justify-between items-center mt-8 text-sm">
       <p>
@@ -31,14 +42,14 @@ export default function Pagination({ data, page, setPage }: Props) {
         <button
           className="bg-black dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
           disabled={page === 1}
-          onClick={() => setPage(page - 1)}
+          onClick={handlePrevious}
         >
           Previous
         </button>
         <button
           className="bg-black dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
           disabled={page === Math.ceil(data.length / 10)}
-          onClick={() => setPage(page + 1)}
+          onClick={handleNext}
         >
           Next
         </button>
