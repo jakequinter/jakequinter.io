@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo';
 
 import { getFood } from '@/lib/helpers';
 import { Food } from '@/types/food';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import FoodList from '@/components/FoodList';
 import Pagination from '@/components/Pagination';
 
@@ -35,7 +35,7 @@ export default function FoodHome({ food }: Props) {
       />
 
       <div className="space-y-4">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-semibold mb-6">
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-6">
           Food 🍕
         </h1>
         <p>

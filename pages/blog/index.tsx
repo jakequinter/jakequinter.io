@@ -7,7 +7,7 @@ import path from 'path';
 
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import BlogPost from '@/components/BlogPost';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 
 type Props = {
   posts: Post[];

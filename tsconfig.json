@@ -33,7 +33,11 @@
       ],
       "@/utils/*": [
         "src/utils/*"
-      ]
+      ],
+      "@/data/*": [
+        "src/data/*"
+      ],
+      
     },
     "incremental": true
   },

@@ -24,55 +24,48 @@ const items = [
   },
   {
     id: 2,
-    name: 'About',
-    category: 'Navigation',
-    href: '/about',
-    icon: <ArrowRight className="mr-4" size="20" />,
-  },
-  {
-    id: 3,
     name: 'Bookshelf',
     category: 'Navigation',
     href: '/bookshelf',
     icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
-    id: 4,
+    id: 3,
     name: 'Food',
     category: 'Navigation',
     href: '/food',
     icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
-    id: 5,
+    id: 4,
     name: 'Blog',
     category: 'Navigation',
     href: '/blog',
     icon: <ArrowRight className="mr-4" size="20" />,
   },
   {
-    id: 6,
+    id: 5,
     name: 'Github',
     category: 'Socials',
     href: 'https://github.com/jakequinter',
     icon: <GithubLogo className="mr-4" size="20" />,
   },
   {
-    id: 7,
+    id: 6,
     name: 'Twitter',
     category: 'Socials',
     href: 'https://twitter.com/jakequinter',
     icon: <TwitterLogo className="mr-4" size="20" />,
   },
   {
-    id: 8,
+    id: 7,
     name: 'Email',
     category: 'Socials',
     href: 'mailto:hello@jakequinter.io',
     icon: <EnvelopeOpen className="mr-4" size="20" />,
   },
   {
-    id: 9,
+    id: 8,
     name: 'Change theme to light',
     category: 'System',
     icon: <SunHorizon className="mr-4" size="20" />,
@@ -81,7 +74,7 @@ const items = [
     },
   },
   {
-    id: 10,
+    id: 9,
     name: 'Change theme to dark',
     category: 'System',
     icon: <MoonStars className="mr-4" size="16" />,
@@ -204,7 +197,7 @@ export default function CmdK({ open, setOpen }: Props) {
                           {(theme === 'light' || theme === null) &&
                             // @ts-expect-error
                             items
-                              .filter((i: CmdKItem) => i.id !== 9)
+                              .filter((i: CmdKItem) => i.id !== 8)
                               .map((item: CmdKItem) => (
                                 <Combobox.Option
                                   key={item.id}
@@ -225,7 +218,7 @@ export default function CmdK({ open, setOpen }: Props) {
                           {theme === 'dark' &&
                             // @ts-expect-error
                             items
-                              .filter((i: CmdKItem) => i.id !== 10)
+                              .filter((i: CmdKItem) => i.id !== 9)
                               .map((item: CmdKItem) => (
                                 <Combobox.Option
                                   key={item.id}

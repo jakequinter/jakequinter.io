@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Book } from '@/types/rss';
 import { getReadngContent } from '@/lib/rss';
 import BookshelfTabs from '@/components/BookshelfTabs';
-import Container from '@/components/Container';
+import Container from '@/components/layout/Container';
 import Pagination from '@/components/Pagination';
 
 type Props = {
@@ -53,7 +53,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
       />
 
       <div className="space-y-2">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-semibold mb-6">
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-6">
           Bookshelf
         </h1>
         <p>
