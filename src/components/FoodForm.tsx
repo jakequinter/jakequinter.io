@@ -26,7 +26,7 @@ const FoodForm = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
   const uploadImage = async (
     image: File,
