@@ -10,7 +10,7 @@ export default function CustomLink({ as, href, ...otherProps }: Props) {
   return (
     <Link as={as} href={href}>
       <a
-        className="text-blue-500 dark:text-orange-500 hover:underline underline-offset-2"
+        className="text-gray-900 dark:text-gray-50 hover:underline underline-offset-2"
         target="_blank"
         {...otherProps}
       />

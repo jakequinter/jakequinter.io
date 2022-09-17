@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Container maxWidth="max-w-none">
       <div className="space-y-4 mb-8 max-w-screen-sm mx-auto">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-6">
+        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-8">
           Jake Quinter
         </h1>
         <p>
@@ -31,7 +31,7 @@ export default function Home() {
         <p>
           When I find myself needing to step away from the computer, I enjoy
           reading, health and fitness, spending time with friends and family,
-          the outdoors, and exploring my new home, Boston.
+          the outdoors, and exploring my new home in Boston.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes'
 import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
-import github from 'prism-react-renderer/themes/github';
+import github from 'prism-react-renderer/themes/vsLight';
 
 export default function determineTheme() {
   const { theme } = useTheme();
