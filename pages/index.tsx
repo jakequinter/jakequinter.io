@@ -8,8 +8,8 @@ import ProjectsScroll from '@/components/ProjectsScroll';
 export default function Home() {
   return (
     <Container maxWidth="max-w-none">
-      <div className="space-y-4 mb-8 max-w-screen-sm mx-auto">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-8">
+      <div className="mx-auto mb-8 max-w-screen-sm space-y-4 ">
+        <h1 className="mb-8 text-2xl font-bold text-gray-900 dark:text-gray-50">
           Jake Quinter
         </h1>
         <p>
@@ -21,7 +21,7 @@ export default function Home() {
           Currently helping ease decision-making fatigue when choosing
           better-for-you products at{' '}
           <Link href="https://www.merryfield.com/" passHref>
-            <a className="text-gray-900 dark:text-gray-50 hover:underline underline-offset-2">
+            <a className="text-gray-900 underline-offset-2 hover:underline dark:text-gray-50">
               Merryfield
             </a>
           </Link>

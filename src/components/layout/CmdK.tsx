@@ -149,7 +149,7 @@ export default function CmdK({ open, setOpen }: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-50 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-50 bg-opacity-80 transition-opacity dark:bg-gray-900 dark:bg-opacity-80" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:pt-60">
@@ -162,7 +162,7 @@ export default function CmdK({ open, setOpen }: Props) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="mx-auto max-w-xl transform overflow-hidden rounded-xl bg-white dark:bg-black shadow-2xl ring-1 ring-black ring-opacity-5 transition-all divide-y divide-gray-300 dark:divide-gray-900">
+            <Dialog.Panel className="mx-auto max-w-xl transform divide-y divide-gray-300 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all dark:divide-gray-900 dark:bg-black">
               <Combobox
                 onChange={(item: CmdKItem) => {
                   if (item?.href) {
@@ -176,7 +176,7 @@ export default function CmdK({ open, setOpen }: Props) {
               >
                 <div className="relative">
                   <Combobox.Input
-                    className="h-12 w-full border-0 bg-transparent pl-4 placeholder-gray-500 dark:placeholder-gray-800 dark:placeholder-opacity-50 focus:ring-0 sm:text-sm"
+                    className="h-12 w-full border-0 bg-transparent pl-4 placeholder-gray-500 focus:ring-0 dark:placeholder-gray-800 dark:placeholder-opacity-50 sm:text-sm"
                     placeholder="Search..."
                     onChange={event => setQuery(event.target.value)}
                   />
@@ -190,7 +190,7 @@ export default function CmdK({ open, setOpen }: Props) {
                   >
                     {Object.entries(groups).map(([category, items]) => (
                       <li key={category} className="mx-2">
-                        <h2 className="px-2 text-xs italic font-light py-1">
+                        <h2 className="px-2 py-1 text-xs font-light italic">
                           {category}
                         </h2>
                         <ul className="mt-1 text-sm">
@@ -204,7 +204,7 @@ export default function CmdK({ open, setOpen }: Props) {
                                   value={item}
                                   className={({ active }) =>
                                     classNames(
-                                      'cursor-default select-none px-4 py-3 rounded-lg flex items-center',
+                                      'flex cursor-default select-none items-center rounded-lg px-4 py-3',
                                       active
                                         ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
@@ -225,7 +225,7 @@ export default function CmdK({ open, setOpen }: Props) {
                                   value={item}
                                   className={({ active }) =>
                                     classNames(
-                                      'cursor-default select-none px-4 py-3 rounded-lg flex items-center',
+                                      'flex cursor-default select-none items-center rounded-lg px-4 py-3',
                                       active
                                         ? 'bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-50'
                                         : ''
@@ -243,7 +243,7 @@ export default function CmdK({ open, setOpen }: Props) {
                 )}
 
                 {query !== '' && filteredItems.length === 0 && (
-                  <div className="border-t border-gray-100 text-center text-sm py-3">
+                  <div className="border-t border-gray-100 py-3 text-center text-sm">
                     <p className="font-semibold text-gray-900">
                       No results found
                     </p>

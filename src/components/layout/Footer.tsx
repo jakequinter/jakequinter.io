@@ -18,8 +18,8 @@ export default function Footer() {
   }, [currentTime]);
 
   return (
-    <footer className="border-t border-gray-300 dark:border-gray-800 dark:border-opacity-40 px-4 md:px-0">
-      <div className="max-w-screen-sm mx-auto py-4 text-xs text-gray-600 dark:text-gray-800 flex justify-between items-center">
+    <footer className="border-t border-gray-300 px-4 dark:border-gray-800 dark:border-opacity-40 md:px-0">
+      <div className="mx-auto flex max-w-screen-sm items-center justify-between py-4 text-xs text-gray-600 dark:text-gray-800">
         <p>Better than yesterday.</p>
         <div className="flex items-center gap-0.5">
           <p className="boston-time">

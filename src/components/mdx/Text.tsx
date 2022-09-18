@@ -7,7 +7,7 @@ export function P({ ...props }) {
 export function Code({ ...props }) {
   return (
     <code
-      className="bg-zinc-200 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-200 text-xs rounded p-0.5 font-bold"
+      className="rounded bg-zinc-200 p-0.5 text-xs font-bold text-zinc-900 dark:bg-zinc-700 dark:text-zinc-200"
       {...props}
     />
   );

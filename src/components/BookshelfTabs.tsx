@@ -32,8 +32,8 @@ export default function BookshelfTabs({
   };
 
   return (
-    <div className="flex justify-center my-12">
-      <div className="z-0 rounded-full bg-white dark:bg-black p-0.5 shadow-md border border-gray-300 dark:border-gray-800 dark:border-opacity-40">
+    <div className="my-12 flex justify-center">
+      <div className="z-0 rounded-full border border-gray-300 bg-white p-0.5 shadow-md dark:border-gray-800 dark:border-opacity-40 dark:bg-black">
         <nav className="flex space-x-2" aria-label="Tabs">
           {tabs.map(tab => (
             <motion.div
@@ -56,8 +56,8 @@ export default function BookshelfTabs({
                 className={`${
                   tab.selected
                     ? 'text-white dark:text-black'
-                    : 'text-gray-700 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-400'
-                } z-0 hidden cursor-pointer px-3 py-1 sm:flex`}
+                    : 'text-gray-700 hover:text-gray-900 dark:text-gray-600 dark:hover:text-gray-400'
+                } z-0 flex cursor-pointer px-3 py-1`}
               >
                 {tab.name}
               </span>

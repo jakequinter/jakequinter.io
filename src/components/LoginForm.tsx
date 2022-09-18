@@ -29,15 +29,15 @@ export default function LoginForm() {
         </div>
       </div>
 
-      <div className="flex justify-between mt-8">
+      <div className="mt-8 flex justify-between">
         <button
-          className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded"
+          className="flex w-60 items-center justify-center rounded border border-zinc-300 bg-zinc-100 py-2 hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
           onClick={() => signIn()}
         >
           <GoogleLogo className="mr-4" /> Sign In with Google
         </button>
         <Link href="/" passHref>
-          <a className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded">
+          <a className="flex w-60 items-center justify-center rounded border border-zinc-300 bg-zinc-100 py-2 hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600">
             Go home
           </a>
         </Link>

@@ -53,7 +53,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
       />
 
       <div className="space-y-2">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-6">
+        <h1 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-50">
           Bookshelf
         </h1>
         <p>
@@ -78,7 +78,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
         <div className="space-y-4">
           <Link href="https://docs.swift.org/swift-book/" passHref>
             <motion.div
-              className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
+              className="flex items-center justify-between rounded-lg bg-white  p-4 shadow-md hover:cursor-pointer dark:bg-black"
               whileHover={{ scale: 1.01 }}
             >
               <div className="flex flex-col justify-between truncate pr-8">
@@ -86,7 +86,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                   The Swift Programming Language (Swift 5.7 Edition)
                 </p>
 
-                <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
+                <p className="pt-4 text-sm font-light text-gray-500 dark:text-gray-800">
                   Apple
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {determineResults(currentlyReading).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
+                className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer dark:bg-black"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
@@ -107,7 +107,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                     {book.title}
                   </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
+                  <p className="pt-4 text-sm font-light text-gray-500 dark:text-gray-800">
                     {book.creator}
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {determineResults(toRead).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
+                className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer dark:bg-black"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
@@ -133,7 +133,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                     {book.title}
                   </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
+                  <p className="pt-4 text-sm font-light text-gray-500 dark:text-gray-800">
                     {book.creator}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
           {determineResults(read).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
-                className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
+                className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer dark:bg-black"
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex flex-col justify-between truncate pr-8">
@@ -159,7 +159,7 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
                     {book.title}
                   </p>
 
-                  <p className="text-gray-500 text-sm font-light dark:text-gray-800 pt-4">
+                  <p className="pt-4 text-sm font-light text-gray-500 dark:text-gray-800">
                     {book.creator}
                   </p>
                 </div>

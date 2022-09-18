@@ -19,13 +19,13 @@ export default function FoodCard({
 }: Props) {
   return (
     <motion.div
-      className="relative shadow rounded hover:cursor-pointer grayscale hover:grayscale-0"
+      className="relative rounded shadow grayscale hover:cursor-pointer hover:grayscale-0"
       whileHover={{ scale: 1.01 }}
     >
       <Link href={link} passHref>
         <a>
           <Image
-            className="object-cover shadow-lg rounded-lg brightness-50"
+            className="rounded-lg object-cover shadow-lg brightness-50"
             cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
             publicId={image}
             alt={restaurantName}
@@ -39,11 +39,11 @@ export default function FoodCard({
           />
 
           <div className="text-white">
-            <h2 className="absolute top-8 left-1/2 -translate-x-1/2 text-xl font-medium text-center">
+            <h2 className="absolute top-8 left-1/2 -translate-x-1/2 text-center text-xl font-medium">
               {restaurantName}
             </h2>
 
-            <div className="absolute top-1/4 -translate-y-1/4 left-6">
+            <div className="absolute top-1/4 left-6 -translate-y-1/4">
               <div className="flex items-center">
                 <Image
                   height={35}
@@ -55,7 +55,7 @@ export default function FoodCard({
               </div>
             </div>
 
-            <div className="absolute top-1/4 -translate-y-1/4 right-6">
+            <div className="absolute top-1/4 right-6 -translate-y-1/4">
               <div className="flex items-center">
                 <Image
                   height={35}

@@ -18,7 +18,7 @@ export default function BlogPost({
   return (
     <Link href={slug} passHref>
       <motion.div
-        className="flex justify-between items-center bg-white dark:bg-black rounded-lg p-4 hover:cursor-pointer shadow-md"
+        className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer dark:bg-black"
         whileHover={{ scale: 1.01 }}
       >
         <div className="flex flex-col justify-between truncate">
@@ -30,7 +30,7 @@ export default function BlogPost({
             {publishedAt}
           </p>
 
-          <p className="font-light pt-4 text-sm pr-8 truncate">{description}</p>
+          <p className="truncate pt-4 pr-8 text-sm font-light">{description}</p>
         </div>
         <a target="_blank">
           <CaretRight className="text-gray-500 dark:text-gray-800" />

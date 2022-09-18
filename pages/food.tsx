@@ -35,7 +35,7 @@ export default function FoodHome({ food }: Props) {
       />
 
       <div className="space-y-4">
-        <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold mb-6">
+        <h1 className="mb-6 text-2xl font-bold text-gray-900 dark:text-gray-50">
           Food 🍕
         </h1>
         <p>

@@ -6,4 +6,4 @@ export type Thing = {
   link: string;
   title: string;
   type: string;
-}
+};

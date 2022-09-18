@@ -11,13 +11,12 @@ export async function getFood() {
       image: true,
     },
     where: {
-      userId: process.env.USER_ID
+      userId: process.env.USER_ID,
     },
     orderBy: {
-      createdAt: 'desc'
-    }
+      createdAt: 'desc',
+    },
   });
-  
 
   return food;
 }

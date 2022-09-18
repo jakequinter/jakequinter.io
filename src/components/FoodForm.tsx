@@ -87,7 +87,7 @@ const FoodForm = () => {
         <title>Jake Quinter | Things</title>
       </Head>
       <div>
-        <h1 className="text-4xl text-zinc-900 dark:text-zinc-50 font-bold text-center mb-12">
+        <h1 className="mb-12 text-center text-4xl font-bold text-zinc-900 dark:text-zinc-50">
           Add new food
         </h1>
         <div>
@@ -98,7 +98,7 @@ const FoodForm = () => {
                 <input
                   type="text"
                   id="restaurantName"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 sm:text-sm"
                   {...register('restaurantName', { required: true })}
                 />
               </label>
@@ -111,7 +111,7 @@ const FoodForm = () => {
                   type="number"
                   step="0.1"
                   id="jakeRating"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 sm:text-sm"
                   {...register('jakeRating', { required: true })}
                 />
               </label>
@@ -124,7 +124,7 @@ const FoodForm = () => {
                   type="number"
                   step="0.1"
                   id="jenRating"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 sm:text-sm"
                   {...register('jenRating', { required: true })}
                 />
               </label>
@@ -136,7 +136,7 @@ const FoodForm = () => {
                 <input
                   type="text"
                   id="link"
-                  className="mt-1 shadow-sm block w-full sm:text-sm border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 rounded-md"
+                  className="mt-1 block w-full rounded-md border-zinc-300 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 sm:text-sm"
                   {...register('link', { required: true })}
                 />
               </label>
@@ -145,7 +145,7 @@ const FoodForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="image"
-                className="mt-1 shadow-sm block w-full p-2 border border-dashed border-zinc-300 dark:border-zinc-700 cursor-pointer rounded-md"
+                className="mt-1 block w-full cursor-pointer rounded-md border border-dashed border-zinc-300 p-2 shadow-sm dark:border-zinc-700"
               >
                 Click to add image (4:3)
                 <input
@@ -176,7 +176,7 @@ const FoodForm = () => {
               {previewImage && (
                 <div className="mt-4 text-center">
                   <Image
-                    className="object-cover rounded"
+                    className="rounded object-cover"
                     width="384"
                     height={`${(4 / 3) * 384}px`}
                     src={previewImage}
@@ -193,13 +193,13 @@ const FoodForm = () => {
             <div className="flex justify-between">
               <button
                 type="submit"
-                className="text-center w-full py-3 mr-2 border dark:border-zinc-700 dark:hover:border-zinc-600 text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-zinc-900 hover:bg-zinc-800 dark:hover:bg-inherit focus:outline-none"
+                className="mr-2 w-full rounded-md border bg-zinc-900 py-3 text-center text-sm font-medium leading-4 text-white shadow-sm hover:bg-zinc-800 focus:outline-none dark:border-zinc-700 dark:hover:border-zinc-600 dark:hover:bg-inherit"
               >
                 Submit
               </button>
               <button
                 type="button"
-                className="text-center w-full py-3 border border-zinc-300 hover:border-zinc-400 text-sm leading-4 font-medium rounded-md shadow-sm text-zinc-900 bg-white dark:hover:bg-zinc-100 focus:outline-none"
+                className="w-full rounded-md border border-zinc-300 bg-white py-3 text-center text-sm font-medium leading-4 text-zinc-900 shadow-sm hover:border-zinc-400 focus:outline-none dark:hover:bg-zinc-100"
                 onClick={() => signOut()}
               >
                 Sign out

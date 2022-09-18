@@ -19,14 +19,14 @@ const Container = ({ children, maxWidth = 'max-w-screen-sm' }: Props) => {
     <>
       <Toaster position="bottom-right" />
       <div className="navbar z-10">
-        <div className="max-w-screen-sm mx-auto flex items-center justify-between px-4 md:px-0 py-6">
+        <div className="mx-auto flex max-w-screen-sm items-center justify-between px-4 py-6 md:px-0">
           <Link href="/" passHref>
             <a className="mt-2">
               <Logo />
             </a>
           </Link>
           <button
-            className="border border-gray-300 dark:border-gray-800 dark:border-opacity-40 focus:ring-2 ring-offset-2 ring-blue-300 outline-none rounded-md px-2 py-1 text-xl"
+            className="rounded-md border border-gray-300 px-2 py-1 text-xl outline-none ring-blue-300 ring-offset-2 focus:ring-2 dark:border-gray-800 dark:border-opacity-40"
             onClick={() => setCmdKOpen(!cmdKOpen)}
           >
             ⌘
@@ -34,7 +34,7 @@ const Container = ({ children, maxWidth = 'max-w-screen-sm' }: Props) => {
         </div>
       </div>
       <CmdK open={cmdKOpen} setOpen={setCmdKOpen} />
-      <main className={`${maxWidth} mx-auto px-4 md:px-0 mt-12`}>
+      <main className={`${maxWidth} mx-auto mt-12 px-4 md:px-0`}>
         <div className="mb-20" style={{ minHeight: 'calc(100vh - 272px)' }}>
           {children}
         </div>

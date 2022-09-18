@@ -33,21 +33,21 @@ export default function Pagination({ data, page, setPage }: Props) {
   };
 
   return (
-    <div className="flex justify-between items-center mt-8 text-sm">
+    <div className="mt-8 flex items-center justify-between text-sm">
       <p>
         {determineResults()} of {data.length} results
       </p>
 
-      <div className="space-x-4 flex">
+      <div className="flex space-x-4">
         <button
-          className="bg-black dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
+          className="rounded-full bg-black px-3 py-1.5 text-white disabled:cursor-not-allowed disabled:bg-gray-300 dark:bg-white dark:text-black dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
           disabled={page === 1}
           onClick={handlePrevious}
         >
           Previous
         </button>
         <button
-          className="bg-black dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full disabled:cursor-not-allowed disabled:bg-gray-300 dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
+          className="rounded-full bg-black px-3 py-1.5 text-white disabled:cursor-not-allowed disabled:bg-gray-300 dark:bg-white dark:text-black dark:disabled:bg-gray-800 dark:disabled:bg-opacity-20"
           disabled={page === Math.ceil(data.length / 10)}
           onClick={handleNext}
         >
