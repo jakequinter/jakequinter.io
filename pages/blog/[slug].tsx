@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
 import { MDXRemote } from 'next-mdx-remote';
 import { NextSeo } from 'next-seo';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -11,13 +10,13 @@ import matter from 'gray-matter';
 import path from 'path';
 import readingTime from 'reading-time';
 
+import Container from '@/components/layout/Container';
 import { Code, P } from '@/components/mdx/Text';
 import { H1, H2, H3 } from '@/components/mdx/Heading';
 import { postFilePaths, POSTS_PATH } from '@/utils/mdxUtils';
 import { UL, LI } from '@/components/mdx/ListItem';
 import CustomLink from '@/components/mdx/CustomLink';
 import determineTheme from '@/utils/determineTheme';
-import Nav from '@/components/layout/Nav';
 
 const components = {
   a: CustomLink,
@@ -94,7 +93,7 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
   );
 
   return (
-    <>
+    <Container>
       <NextSeo
         title={`${frontMatter.title}`}
         canonical={`https://jakequinter.io/${frontMatter.slug}`}
@@ -103,33 +102,21 @@ export default function Post({ source, frontMatter, readingTime }: Props) {
           title: `${frontMatter.title}`,
         }}
       />
-      <Nav />
-      <div className="my-20 max-w-4xl mx-auto px-4 lg:px-0">
-        <button
-          onClick={() => router.back()}
-          className="flex items-center hover:text-zinc-900 dark:hover:text-zinc-300"
-        >
-          <HiArrowNarrowLeft className="mr-4 " size={20} />
-          Back
-        </button>
-      </div>
       <div className="max-w-screen-sm mx-auto px-4 md:px-0">
         <div className="mb-8">
-          <h1 className="text-zinc-900 dark:text-zinc-50 text-5xl font-semibold">
+          <h1 className="text-gray-900 dark:text-gray-50 text-2xl font-bold">
             {frontMatter.title}
           </h1>
-          <span>
-            <p>
-              {format(formattedDate, 'PP')} • {readingTime.text}
-            </p>
-          </span>
+          <p className="text-xs text-gray-500 dark:text-gray-800">
+            {format(formattedDate, 'PP')} • {readingTime.text}
+          </p>
         </div>
         <main className="mb-8">
           {/*  @ts-ignore */}
           <MDXRemote {...source} components={components} />
         </main>
       </div>
-    </>
+    </Container>
   );
 }
 

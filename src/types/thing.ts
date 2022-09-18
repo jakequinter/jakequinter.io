@@ -6,10 +6,4 @@ export type Thing = {
   link: string;
   title: string;
   type: string;
-}
-
-// export type ThingDocument = {
-//   data: {
-//     thing: Thing[];
-//   };
-// }
+};

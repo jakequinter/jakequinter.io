@@ -1,8 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { ExclamationTriangleIcon } from '@modulz/radix-icons';
-import { FcGoogle } from 'react-icons/fc';
+import { GoogleLogo, Warning } from 'phosphor-react';
 import { signIn } from 'next-auth/react';
 
 export default function LoginForm() {
@@ -14,10 +13,7 @@ export default function LoginForm() {
       <div className="rounded-md bg-yellow-100 p-4">
         <div className="flex">
           <div className="flex-shrink-0">
-            <ExclamationTriangleIcon
-              className="h-5 w-5 text-yellow-600"
-              aria-hidden="true"
-            />
+            <Warning className="h-5 w-5 text-yellow-600" aria-hidden="true" />
           </div>
           <div className="ml-3">
             <h3 className="text-sm font-medium text-yellow-800">
@@ -33,15 +29,15 @@ export default function LoginForm() {
         </div>
       </div>
 
-      <div className="flex justify-between mt-8">
+      <div className="mt-8 flex justify-between">
         <button
-          className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded"
+          className="flex w-60 items-center justify-center rounded border border-zinc-300 bg-zinc-100 py-2 hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600"
           onClick={() => signIn()}
         >
-          <FcGoogle className="mr-4" /> Sign In with Google
+          <GoogleLogo className="mr-4" /> Sign In with Google
         </button>
         <Link href="/" passHref>
-          <a className="flex justify-center items-center w-60 py-2 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600 rounded">
+          <a className="flex w-60 items-center justify-center rounded border border-zinc-300 bg-zinc-100 py-2 hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600">
             Go home
           </a>
         </Link>

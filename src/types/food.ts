@@ -8,4 +8,4 @@ export type Food = {
   image: string;
   createdAt: Date;
   updatedAt: Date;
-}
+};

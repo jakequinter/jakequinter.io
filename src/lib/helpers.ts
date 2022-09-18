@@ -1,26 +1,5 @@
 import { prisma } from '@/lib/prisma';
 
-export async function getBookmarks() {
-  const things = await prisma.bookmark.findMany({
-    select: {
-      id: true,
-      title: true,
-      description: true,
-      link: true,
-      type: true,
-    },
-    where: {
-      userId: process.env.USER_ID
-    },
-    orderBy: {
-      createdAt: 'desc'
-    }
-  });
-  
-
-  return things;
-}
-
 export async function getFood() {
   const food = await prisma.food.findMany({
     select: {
@@ -32,13 +11,12 @@ export async function getFood() {
       image: true,
     },
     where: {
-      userId: process.env.USER_ID
+      userId: process.env.USER_ID,
     },
     orderBy: {
-      createdAt: 'desc'
-    }
+      createdAt: 'desc',
+    },
   });
-  
 
   return food;
 }

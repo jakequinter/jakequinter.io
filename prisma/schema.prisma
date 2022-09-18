@@ -4,6 +4,7 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
+  binaryTargets   = ["native"]
 }
 
 datasource db {
@@ -76,7 +77,6 @@ model Account {
   oauth_token        String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
 
   @@unique([provider, providerAccountId])
   @@map(name: "accounts")

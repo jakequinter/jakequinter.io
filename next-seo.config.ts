@@ -17,14 +17,14 @@ const SEO = {
         url: 'https://jakequinter.io/browserconfig.xml',
         alt: title,
         width: 1280,
-        height: 720
-      }
-    ]
+        height: 720,
+      },
+    ],
   },
   twitter: {
     handle: '@jakequinter',
-    site: '@jakequinter'
-  }
+    site: '@jakequinter',
+  },
 };
 
 export default SEO;

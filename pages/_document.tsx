@@ -13,11 +13,11 @@ export default class Document extends NextDocument {
             crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-500 text-base">
+        <body className="bg-gray-50 text-base text-gray-700 dark:bg-gray-900 dark:text-gray-600">
           <Main />
           <NextScript />
         </body>

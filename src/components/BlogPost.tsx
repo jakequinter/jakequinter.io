@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { CaretRight } from 'phosphor-react';
 
 type Props = {
   description: string;
@@ -15,17 +17,25 @@ export default function BlogPost({
 }: Props) {
   return (
     <Link href={slug} passHref>
-      <div className="h-40 p-4 border border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600 shadow rounded cursor-pointer">
-        <span className="flex justify-between items-baseline">
-          <h1 className="text-zinc-900 dark:text-zinc-50 text-2xl mb-4 font-semibold">
+      <motion.div
+        className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer dark:bg-black"
+        whileHover={{ scale: 1.01 }}
+      >
+        <div className="flex flex-col justify-between truncate">
+          <h2 className="font-medium text-gray-900 dark:text-gray-50">
             {title}
-          </h1>
-          <p className="text-zinc-400 dark:text-zinc-600 text-xs">
+          </h2>
+
+          <p className="text-xs font-light text-gray-500 dark:text-gray-800">
             {publishedAt}
           </p>
-        </span>
-        <p>{description}</p>
-      </div>
+
+          <p className="truncate pt-4 pr-8 text-sm font-light">{description}</p>
+        </div>
+        <a target="_blank">
+          <CaretRight className="text-gray-500 dark:text-gray-800" />
+        </a>
+      </motion.div>
     </Link>
   );
 }

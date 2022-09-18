@@ -3,4 +3,4 @@ export type Book = {
   creator: string;
   link: string;
   title: string;
-}
+};

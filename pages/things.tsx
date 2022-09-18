@@ -1,7 +1,8 @@
-import Container from '@/components/Container';
+import { useSession } from 'next-auth/react';
+
+import Container from '@/components/layout/Container';
 import LoginForm from '@/components/LoginForm';
 import UpdateSelection from '@/components/UpdateSelection';
-import { useSession } from 'next-auth/react';
 
 export default function Things() {
   const { data: session } = useSession();
