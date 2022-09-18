@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Image } from 'cloudinary-react';
 import { motion } from 'framer-motion';
+import { ArrowSquareOut } from 'phosphor-react';
 
 type Props = {
   restaurantName: string;
@@ -19,7 +20,7 @@ export default function FoodCard({
 }: Props) {
   return (
     <motion.div
-      className="relative rounded shadow grayscale hover:cursor-pointer hover:grayscale-0"
+      className="group relative rounded shadow grayscale hover:cursor-pointer hover:grayscale-0"
       whileHover={{ scale: 1.01 }}
     >
       <Link href={link} passHref>
@@ -42,6 +43,11 @@ export default function FoodCard({
             <h2 className="absolute top-8 left-1/2 -translate-x-1/2 text-center text-xl font-medium">
               {restaurantName}
             </h2>
+
+            <ArrowSquareOut
+              className="absolute top-2 right-2 hidden text-gray-50 group-hover:block"
+              size="20"
+            />
 
             <div className="absolute top-1/4 left-6 -translate-y-1/4">
               <div className="flex items-center">

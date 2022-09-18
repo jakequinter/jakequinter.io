@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowSquareOut } from 'phosphor-react';
 
 import projects from '@/data/projects';
 
@@ -19,6 +20,11 @@ export default function ProjectsScroll() {
                 src={project.imageUrl}
                 height="350"
                 width="350"
+              />
+
+              <ArrowSquareOut
+                className="absolute top-2 right-2 hidden text-gray-900 group-hover:block dark:text-gray-50"
+                size="20"
               />
 
               <div className="absolute bottom-4 left-2 hidden text-gray-900 group-hover:block dark:text-gray-50">
