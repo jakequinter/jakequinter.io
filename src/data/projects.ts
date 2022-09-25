@@ -4,7 +4,7 @@ const projects = [
     imageUrl: '/images/projects/Merryfield.svg',
     name: 'Merryfield',
     description:
-      'This is where I work. I am responsible for all Merryyfield web applications, and am currently rewriting our marketing website in Next.js and TypeScript.',
+      'This is where I work. I am responsible for all Merryfield web applications, and am currently rewriting our marketing website in Next.js and TypeScript.',
     url: 'https://merryfield.com',
   },
   {
