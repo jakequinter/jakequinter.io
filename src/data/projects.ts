@@ -43,7 +43,7 @@ const projects = [
     imageUrl: '/images/projects/bisondrywall.svg',
     name: 'bisondrywall.io',
     description:
-      'A quick website I through together to experiment with Svelte and Supabase.  The gallery page also hits the Facebook API and pulls in images the client uploads to their business profile.',
+      'A quick website I threw together to experiment with Svelte and Supabase.  The gallery page also hits the Facebook API and pulls in images the client uploads to their business profile.',
     url: 'https://bisondrywall.io',
   },
 ];
