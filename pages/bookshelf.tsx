@@ -76,26 +76,6 @@ export default function Bookshelf({ toRead, currentlyReading, read }: Props) {
 
       {selectedTab === 'Reading' ? (
         <div className="space-y-4">
-          <Link href="https://docs.swift.org/swift-book/" passHref>
-            <motion.div
-              className="flex items-center justify-between rounded-lg bg-white  p-4 shadow-md hover:cursor-pointer dark:bg-black"
-              whileHover={{ scale: 1.01 }}
-            >
-              <div className="flex flex-col justify-between truncate pr-8">
-                <p className="truncate pr-8 text-gray-900 dark:text-gray-50">
-                  The Swift Programming Language (Swift 5.7 Edition)
-                </p>
-
-                <p className="pt-4 text-sm font-light text-gray-500 dark:text-gray-800">
-                  Apple
-                </p>
-              </div>
-              <a target="_blank">
-                <CaretRight className="text-gray-500 dark:text-gray-800" />
-              </a>
-            </motion.div>
-          </Link>
-
           {determineResults(currentlyReading).map(book => (
             <Link key={book.guid} href={book.link} passHref>
               <motion.div
