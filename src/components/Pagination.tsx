@@ -17,8 +17,12 @@ export default function Pagination({ data, page, setPage }: Props) {
       return `${(page - 1) * 10 + 1} – ${page * 10}`;
     }
 
+    if (page === Math.ceil(data.length / 10)) {
+      return `${(page - 1) * 10 + 1} – ${data.length}`;
+    }
+
     return `${(page - 1) * 10 + 1} – ${
-      (page + page) * data.slice((page - 1) * 10, page * 10).length
+      (page + page) * data.slice((page - 1) * 10).length
     }`;
   };
 
@@ -31,6 +35,8 @@ export default function Pagination({ data, page, setPage }: Props) {
     setPage(page + 1);
     window.scrollTo(0, 0);
   };
+  console.log('data', data);
+  console.log('data.length', data.length);
 
   return (
     <div className="mt-8 flex items-center justify-between text-sm">
