@@ -1,6 +1,7 @@
 import type { NextComponentType, NextPageContext } from 'next';
 import type { Session } from 'next-auth';
 import type { Router } from 'next/router';
+import type { DefaultUser } from 'next-auth';
 
 declare module 'next/app' {
   type AppProps<P = Record<string, unknown>> = {
@@ -13,4 +14,15 @@ declare module 'next/app' {
       session?: Session;
     };
   };
+}
+
+declare module 'next-auth' {
+  interface Session {
+    id: string;
+    user?: DefaultUser & {
+      stripeCustomerId: string;
+      subscriptionStatus: string;
+      accountSetup: boolean;
+    };
+  }
 }
