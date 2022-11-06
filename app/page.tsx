@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 
+import ProjectsScroll from './ProjectsScroll';
+
 export default function Home() {
   return (
     <>
@@ -32,6 +34,8 @@ export default function Home() {
           the outdoors, and exploring my new home in Boston.
         </p>
       </div>
+
+      <ProjectsScroll />
     </>
   );
 }
