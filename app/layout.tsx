@@ -59,7 +59,7 @@ export default function RootLayout({
           </main>
         </LayoutWrapper>
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
