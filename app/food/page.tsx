@@ -1,9 +1,7 @@
 import Food from './FoodList';
 
 async function fetchFood() {
-  const response = await fetch(`http://localhost:3000/api/food`, {
-    next: { revalidate: 10 },
-  });
+  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/food`);
 
   return response.json();
 }

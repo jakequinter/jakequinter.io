@@ -1,9 +1,7 @@
 import Books from './Books';
 
 async function fetchRSS() {
-  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/rss`, {
-    next: { revalidate: 10 },
-  });
+  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/rss`);
 
   return response.json();
 }
