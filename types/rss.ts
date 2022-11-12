@@ -3,4 +3,7 @@ export type Book = {
   creator: string;
   link: string;
   title: string;
+  enclosure?: {
+    url: string;
+  };
 };

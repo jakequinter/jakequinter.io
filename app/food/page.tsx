@@ -3,7 +3,6 @@ import Food from './FoodList';
 
 export default async function FoodHome() {
   const food = await getFood();
-  console.log('food', food);
 
   return (
     <>

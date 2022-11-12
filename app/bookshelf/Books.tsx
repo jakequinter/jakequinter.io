@@ -14,7 +14,7 @@ export default function Books({ currentlyReading, toRead, read }: any) {
   const handleBooks = () => {
     if (selectedTab === 'Reading') {
       return currentlyReading;
-    } else if (selectedTab === 'To Read') {
+    } else if (selectedTab === 'To read') {
       return toRead;
     } else {
       return read;
