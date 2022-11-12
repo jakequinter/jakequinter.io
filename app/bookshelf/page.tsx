@@ -1,6 +1,8 @@
 import { getOKUContent } from 'lib/rss';
 import Books from './Books';
 
+export const revalidate = 60;
+
 export default async function Bookshelf() {
   const { currentlyReading, toRead, read } = await getOKUContent();
 
