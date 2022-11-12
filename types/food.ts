@@ -1,11 +1,11 @@
 export type Food = {
   id?: string;
-  userId: string;
+  userId?: string;
   restaurantName: string;
-  jakeRating: string;
-  jenRating: string;
+  jakeRating: number;
+  jenRating: number;
   link: string;
   image: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 };

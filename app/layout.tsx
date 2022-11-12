@@ -9,7 +9,7 @@ import CmdK from './CmdK';
 import Footer from './Footer';
 import LayoutWrapper from './LayoutWrapper';
 
-import '../styles/globals.css';
+import './globals.css';
 
 type Props = {
   children: React.ReactNode;
@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html>
       <head>
+        <meta name="viewport" content="width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -59,7 +60,7 @@ export default function RootLayout({
           </main>
         </LayoutWrapper>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

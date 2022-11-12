@@ -1,8 +1,15 @@
-import { getReadngContent } from 'lib/rss';
 import Books from './Books';
 
+async function fetchRSS() {
+  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/rss`, {
+    next: { revalidate: 10 },
+  });
+
+  return response.json();
+}
+
 export default async function Bookshelf() {
-  const { currentlyReading, toRead, read } = await getReadngContent();
+  const { currentlyReading, toRead, read } = await fetchRSS();
 
   return (
     <>

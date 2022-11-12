@@ -49,25 +49,18 @@ const items = [
     id: 5,
     name: 'Github',
     category: 'Socials',
-    href: 'https://github.com/jakequinter',
+    link: 'https://github.com/jakequinter',
     icon: <GithubLogo className="mr-4" size="20" />,
   },
   {
     id: 6,
     name: 'Twitter',
     category: 'Socials',
-    href: 'https://twitter.com/jakequinter',
+    link: 'https://twitter.com/jakequinter',
     icon: <TwitterLogo className="mr-4" size="20" />,
   },
   {
     id: 7,
-    name: 'Email',
-    category: 'Socials',
-    href: 'mailto:hello@jakequinter.io',
-    icon: <EnvelopeOpen className="mr-4" size="20" />,
-  },
-  {
-    id: 8,
     name: 'Change theme to light',
     category: 'System',
     icon: <SunHorizon className="mr-4" size="20" />,
@@ -76,7 +69,7 @@ const items = [
     },
   },
   {
-    id: 9,
+    id: 8,
     name: 'Change theme to dark',
     category: 'System',
     icon: <MoonStars className="mr-4" size="16" />,
@@ -169,6 +162,8 @@ export default function CmdK({ open, setOpen }: Props) {
                 onChange={(item: any) => {
                   if (item?.href) {
                     router.push(item.href);
+                  } else if (item?.link) {
+                    document.location.href = item.link;
                   } else {
                     item.action(handleTheme);
                   }
@@ -199,7 +194,7 @@ export default function CmdK({ open, setOpen }: Props) {
                           {(theme === 'light' || theme === null) &&
                             // @ts-expect-error
                             items
-                              .filter((i: any) => i.id !== 8)
+                              .filter((i: any) => i.id !== 7)
                               .map((item: any) => (
                                 <Combobox.Option
                                   key={item.id}
@@ -220,7 +215,7 @@ export default function CmdK({ open, setOpen }: Props) {
                           {theme === 'dark' &&
                             // @ts-expect-error
                             items
-                              .filter((i: any) => i.id !== 9)
+                              .filter((i: any) => i.id !== 8)
                               .map((item: any) => (
                                 <Combobox.Option
                                   key={item.id}
