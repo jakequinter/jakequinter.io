@@ -25,6 +25,7 @@ export default function FoodList({ data }: Props) {
     <div>
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {data &&
+          data.length > 0 &&
           determineResults(data).map(food => (
             <FoodCard
               key={food.id}
