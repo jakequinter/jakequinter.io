@@ -20,13 +20,14 @@ export default function Books({ currentlyReading, toRead, read }: any) {
       return read;
     }
   };
-  // const determineResults = (data: Book[]) => {
-  //   if (page === 1) {
-  //     return data.slice(0, 10);
-  //   }
 
-  //   return data.slice((page - 1) * 10, page * 10);
-  // };
+  const determineResults = (data: Book[]) => {
+    if (page === 1) {
+      return data.slice(0, 10);
+    }
+
+    return data.slice((page - 1) * 10, page * 10);
+  };
 
   const paginationData = () => {
     if (selectedTab === 'Reading') {
@@ -48,9 +49,9 @@ export default function Books({ currentlyReading, toRead, read }: any) {
         setPage={setPage}
       />
 
-      <BookGroup books={handleBooks()} />
+      <BookGroup books={determineResults(handleBooks())} />
 
-      {/* <Pagination data={paginationData()} page={page} setPage={setPage} /> */}
+      <Pagination data={paginationData()} page={page} setPage={setPage} />
     </>
   );
 }

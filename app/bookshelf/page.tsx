@@ -1,13 +1,8 @@
+import { getOKUContent } from 'lib/rss';
 import Books from './Books';
 
-async function fetchRSS() {
-  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/rss`);
-
-  return response.json();
-}
-
 export default async function Bookshelf() {
-  const { currentlyReading, toRead, read } = await fetchRSS();
+  const { currentlyReading, toRead, read } = await getOKUContent();
 
   return (
     <>

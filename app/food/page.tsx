@@ -1,13 +1,9 @@
+import { getFood } from 'lib/helpers';
 import Food from './FoodList';
 
-async function fetchFood() {
-  const response = await fetch(`${process.env.JAKEQUINTERIO_URL}/api/food`);
-
-  return response.json();
-}
-
 export default async function FoodHome() {
-  const food = await fetchFood();
+  const food = await getFood();
+  console.log('food', food);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import Parser from 'rss-parser';
 
-export const getReadngContent = async () => {
+export const getOKUContent = async () => {
   const parser = new Parser();
 
   const { items: toRead } = await parser.parseURL(

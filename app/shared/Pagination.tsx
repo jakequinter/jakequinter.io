@@ -12,19 +12,19 @@ export default function Pagination({ data, page, setPage }: Props) {
     return null;
   }
 
-  // const determineResults = () => {
-  //   if (data.slice((page - 1) * 10, page * 10).length === 10) {
-  //     return `${(page - 1) * 10 + 1} – ${page * 10}`;
-  //   }
+  const determineResults = () => {
+    if (data.slice((page - 1) * 10, page * 10).length === 10) {
+      return `${(page - 1) * 10 + 1} – ${page * 10}`;
+    }
 
-  //   if (page === Math.ceil(data.length / 10)) {
-  //     return `${(page - 1) * 10 + 1} – ${data.length}`;
-  //   }
+    if (page === Math.ceil(data.length / 10)) {
+      return `${(page - 1) * 10 + 1} – ${data.length}`;
+    }
 
-  //   return `${(page - 1) * 10 + 1} – ${
-  //     (page + page) * data.slice((page - 1) * 10).length
-  //   }`;
-  // };
+    return `${(page - 1) * 10 + 1} – ${
+      (page + page) * data.slice((page - 1) * 10).length
+    }`;
+  };
 
   const handlePrevious = () => {
     setPage(page - 1);
@@ -38,7 +38,9 @@ export default function Pagination({ data, page, setPage }: Props) {
 
   return (
     <div className="mt-6 flex w-full items-center justify-between text-sm">
-      <p>{/* {determineResults()} of {data.length} results */}</p>
+      <p>
+        {determineResults()} of {data.length} results
+      </p>
 
       <div className="flex space-x-4">
         <button
