@@ -27,15 +27,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
       </head>
       <body className="bg-gray-50 text-base text-gray-700 dark:bg-gray-900 dark:text-gray-600">
         <LayoutWrapper>

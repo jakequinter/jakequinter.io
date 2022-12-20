@@ -6,7 +6,7 @@ body {
   height: 100%;
   overflow: auto;
   margin: 0;
-  font-family: 'Inter', sans-serif, system-ui;
+  font-family: 'Satoshi', sans-serif, system-ui;
 }
 
 .scroll::-webkit-scrollbar {
