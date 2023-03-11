@@ -1,11 +1,9 @@
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Inter, Montserrat } from 'next/font/google';
 
 export default function Home() {
   return (
-    <main className="h-screen flex justify-center items-center">
-      <h1 className="text-red-500">Website 3.0</h1>
+    <main className="mb-8 flex h-screen items-center justify-center">
+      <h1 className="text-2xl">Website 3.0</h1>
     </main>
   );
 }
