@@ -1,6 +1,6 @@
 import { Montserrat } from '@next/font/google';
 
-import Nav from '@/components/nav';
+import Nav from '@/components/Nav';
 import classNames from '@/utils/classNames';
 
 import './globals.css';
@@ -22,7 +22,7 @@ export default function RootLayout({
       lang="en"
       className={classNames(
         montserrat.className,
-        'bg-gray-100 text-base text-gray-600'
+        'bg-gray-100 text-base text-gray-700'
       )}
     >
       <body>
