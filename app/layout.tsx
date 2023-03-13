@@ -1,5 +1,6 @@
 import { Montserrat } from '@next/font/google';
 
+import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import classNames from '@/utils/classNames';
 
@@ -27,7 +28,12 @@ export default function RootLayout({
     >
       <body>
         <Nav />
-        {children}
+        <main className="mx-auto mt-40">
+          <div className="mb-20" style={{ minHeight: 'calc(100vh - 289px)' }}>
+            {children}
+          </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ export default function Nav() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0, transition: { duration: 0.5 } }}
-      className="fixed top-4 left-2 right-2 mx-auto max-w-sm rounded-2xl bg-stone-800 p-1.5 text-sm"
+      className="fixed top-4 left-2 right-2 z-10 mx-auto max-w-sm rounded-2xl bg-gray-800 p-1.5 text-sm"
     >
       <ul className="flex items-center justify-between">
         <li>
@@ -24,7 +24,7 @@ export default function Nav() {
           </Link>
         </li>
         <li className="text-gray-50 hover:text-gray-300">
-          <Link href="/">Bookshelf</Link>
+          <Link href="/bookshelf">Bookshelf</Link>
         </li>
         <li className="text-gray-50 hover:text-gray-300">
           <Link href="/">Food</Link>
@@ -32,8 +32,13 @@ export default function Nav() {
         <li className="text-gray-50 hover:text-gray-300">
           <Link href="/">Blog</Link>
         </li>
-        <li className="rounded-[10px] bg-white py-2 px-4 font-medium text-black">
-          <Link href="mailto:hello@jakequinter.io">Contact</Link>
+        <li>
+          <Link
+            className="rounded-[10px] bg-white py-2.5 px-4 font-medium text-black hover:bg-gray-100"
+            href="mailto:hello@jakequinter.io"
+          >
+            Contact
+          </Link>
         </li>
       </ul>
     </motion.nav>
