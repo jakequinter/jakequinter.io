@@ -1,6 +1,6 @@
 import { Montserrat } from '@next/font/google';
 
-import Nav from '@/components/Nav';
+import Nav from '@/components/test';
 import classNames from '@/utils/classNames';
 
 import './globals.css';
