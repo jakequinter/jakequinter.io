@@ -1,12 +1,29 @@
 'use client';
 
 import { ArrowRight, ArrowLeft } from 'phosphor-react';
+import { motion } from 'framer-motion';
+
 import { Book } from '@/types/rss';
 
 type Props = {
   data: Book[] /*| Food[];*/;
   page: number;
   setPage: (page: number) => void;
+};
+
+const leftArrow = {
+  hover: {
+    x: -2,
+  },
+};
+
+const rightArrow = {
+  hover: {
+    x: 2,
+  },
+  disabled: {
+    x: 0,
+  },
 };
 
 export default function Pagination({ data, page, setPage }: Props) {
@@ -45,22 +62,28 @@ export default function Pagination({ data, page, setPage }: Props) {
       </p>
 
       <div className="flex space-x-4">
-        <button
+        <motion.button
+          whileHover="hover"
           className="inline-flex items-center justify-center gap-2 rounded-lg bg-gray-800 px-3 py-1.5 text-white disabled:cursor-not-allowed disabled:bg-gray-300"
           disabled={page === 1}
           onClick={handlePrevious}
         >
-          <ArrowLeft />
+          <motion.span variants={leftArrow}>
+            <ArrowLeft />
+          </motion.span>
           Previous
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+          whileHover="hover"
           className="inline-flex items-center justify-center gap-2  rounded-lg bg-gray-800 px-3 py-1.5 text-white disabled:cursor-not-allowed disabled:bg-gray-300"
           disabled={page === Math.ceil(data.length / 10)}
           onClick={handleNext}
         >
           Next
-          <ArrowRight />
-        </button>
+          <motion.span variants={rightArrow}>
+            <ArrowRight />
+          </motion.span>
+        </motion.button>
       </div>
     </div>
   );
