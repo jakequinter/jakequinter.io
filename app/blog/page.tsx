@@ -25,17 +25,10 @@ export default async function Blog() {
   const posts = await getBlogPosts();
 
   return (
-    <div className="mx-auto mt-40 max-w-screen-sm">
+    <>
       <div className="mb-16 flex flex-col items-center">
         <h1 className="text-4xl font-bold text-gray-900">Blog</h1>
       </div>
-
-      {/* <p className="mb-16">
-    This is my internet library where I keep track of my favorite books.
-    Books that I&apos;m currently reading, have already finished, or plan to
-    pick up in the future. This list is nowhere near exhaustive, and is
-    currently displaying books I&apos;ve found or read since 2021.
-  </p> */}
 
       <ul className="space-y-4">
         {posts.map(post => {
@@ -55,6 +48,6 @@ export default async function Blog() {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 }

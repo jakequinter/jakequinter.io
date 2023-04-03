@@ -27,7 +27,7 @@ export default function Nav() {
           <Link href="/bookshelf">Bookshelf</Link>
         </li>
         <li className="text-gray-50 hover:text-gray-300">
-          <Link href="/">Food</Link>
+          <Link href="/food">Food</Link>
         </li>
         <li className="text-gray-50 hover:text-gray-300">
           <Link href="/blog">Blog</Link>

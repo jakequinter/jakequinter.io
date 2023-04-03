@@ -4,7 +4,7 @@ import RecentEndeavors from './RecentEndeavors';
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-screen-sm space-y-16">
+    <div className="space-y-16">
       <div className="flex flex-col items-center space-y-2">
         <h1 className="text-4xl font-bold text-gray-900">Jake Quinter</h1>
         <h2 className="text-xl font-medium">Software Engineer</h2>

@@ -1,12 +1,11 @@
-'use client';
-
 import { ArrowRight, ArrowLeft } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
 import { Book } from '@/types/rss';
+import { Food } from '@/types/food';
 
 type Props = {
-  data: Book[] /*| Food[];*/;
+  data: Book[] | Food[];
   page: number;
   setPage: (page: number) => void;
 };

@@ -7,7 +7,7 @@ export default async function Bookshelf() {
   const { currentlyReading, read, toRead } = await getOkuContent();
 
   return (
-    <div className="mx-auto mt-40 max-w-screen-sm">
+    <>
       <div className="mb-16 flex flex-col items-center">
         <h1 className="text-4xl font-bold text-gray-900">Bookshelf</h1>
       </div>
@@ -24,6 +24,6 @@ export default async function Bookshelf() {
         toRead={toRead}
         read={read}
       />
-    </div>
+    </>
   );
 }
