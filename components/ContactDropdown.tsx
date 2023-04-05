@@ -1,10 +1,11 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Envelope, GithubLogo, TwitterLogo } from 'phosphor-react';
+import { CaretDown, Envelope, GithubLogo, TwitterLogo } from 'phosphor-react';
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
 
+import classNames from '@/utils/classNames';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 
@@ -37,8 +38,14 @@ export default function ContactDropdown() {
   return (
     <DropdownMenu.Root open={open} onOpenChange={setOpen}>
       <DropdownMenu.Trigger asChild>
-        <button className="rounded-[10px] bg-white py-2.5 px-4 font-medium text-black hover:bg-gray-100">
+        <button className="inline-flex items-center gap-2 rounded-[10px] bg-white py-2.5 px-4 font-medium text-black hover:bg-gray-100">
           Contact
+          <CaretDown
+            className={classNames(
+              open ? 'rotate-180' : '',
+              'transition duration-150 ease-in-out'
+            )}
+          />
         </button>
       </DropdownMenu.Trigger>
 

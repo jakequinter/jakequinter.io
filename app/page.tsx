@@ -16,7 +16,7 @@ export default function Home() {
           where I&apos;m currently helping ease decision-making fatigue when
           choosing better-for-you products at{' '}
           <Link
-            className="text-gray-500 hover:underline"
+            className="text-blue-500 hover:text-blue-600"
             href="https://www.merryfield.com"
           >
             Merryfield

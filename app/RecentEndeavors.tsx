@@ -2,30 +2,32 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const projects = [
   {
     name: 'jakequinter.io',
     logo: '/images/jake.svg',
-    description: 'This is my personal slice of the internet. ',
+    description:
+      'My home on the internet. Here, I experiment with new technologies I am interested in trying.',
   },
   {
     name: 'Merryfield',
     logo: '/images/merryfield.svg',
     description:
-      'This is where I work. I am responsible for all Merryfield web applications, and am currently rewriting our marketing website in Next.js and TypeScript.',
+      'This is where I work and where I am responsible for all Merryfield web applicaitons. Recently, I rewrote our marketing website in Next.js and TypeScript. Currently, we are in the process of creating a new web application and busy launch Learn & Earn.',
   },
   {
     name: 'Funds',
     logo: '/images/funds.svg',
     description:
-      'A personal finance app that I built to help me track my spending and investments. Built with React, TypeScript, and Tailwind CSS.',
+      "Funds is where I'm experimenting with and learning Swift and Swiftui. It's a pretty straightforward app that allows users to keep track of different accounts on a monthly basis.",
   },
   {
     name: 'Bison Drywall',
     logo: '/images/bison.svg',
     description:
-      'A simple, lightweight, and fast static site generator. Built with Rust and Handlebars.',
+      'A website I build for a friend who started his own drywall business.',
   },
 ];
 
