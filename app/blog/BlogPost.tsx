@@ -22,6 +22,7 @@ export default function BlogPost({
       <motion.div
         className="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer"
         whileHover={{ scale: 1.01 }}
+        transition={{ type: 'spring', stiffness: 100 }}
       >
         <div className="flex flex-col justify-between truncate">
           <h2 className="text-gray-90 font-medium">{title}</h2>

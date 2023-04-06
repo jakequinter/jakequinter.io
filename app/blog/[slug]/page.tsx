@@ -52,19 +52,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <div className="mx-auto max-w-screen-sm px-4 md:px-0">
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900">
-            {frontMatter.title}
-          </h1>
-          <p className="text-xs text-gray-500">
-            {format(formattedDate, 'PP')} • {readingTime.text}
-          </p>
-        </div>
-        <main className="mb-8">
-          <MDX source={source} />
-        </main>
+      <div className="mb-16 flex flex-col items-center">
+        <h1 className="text-4xl font-bold text-gray-900">
+          {frontMatter.title}
+        </h1>
+        <p className="text-xs text-gray-500">
+          {format(formattedDate, 'PP')} • {readingTime.text}
+        </p>
       </div>
+
+      <main className="mb-8">
+        <MDX source={source} />
+      </main>
     </>
   );
 }

@@ -24,6 +24,7 @@ export default function FoodCard({
     <motion.div
       className="group relative rounded shadow grayscale hover:cursor-pointer hover:grayscale-0"
       whileHover={{ scale: 1.01 }}
+      transition={{ type: 'spring', stiffness: 100 }}
     >
       <Link href={link}>
         <Image
@@ -55,7 +56,7 @@ export default function FoodCard({
               <Image
                 height={35}
                 width={35}
-                src="/jakeAvi.png"
+                src="/images/jakeAvi.png"
                 alt="Jake avatar"
               />
               <p className="ml-2">{jakeRating}</p>
@@ -67,7 +68,7 @@ export default function FoodCard({
               <Image
                 height={35}
                 width={35}
-                src="/jenAvi.png"
+                src="/images/jenAvi.png"
                 alt="Jen avatar"
               />
               <p className="ml-2">{jenRating}</p>

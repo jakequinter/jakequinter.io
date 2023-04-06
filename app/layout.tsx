@@ -28,7 +28,7 @@ export default function RootLayout({
     >
       <body>
         <Nav />
-        <main className="mx-auto mt-40 max-w-screen-sm">
+        <main className="mx-auto mt-40 max-w-screen-sm px-4 sm:px-0">
           <div className="mb-20" style={{ minHeight: 'calc(100vh - 289px)' }}>
             {children}
           </div>
