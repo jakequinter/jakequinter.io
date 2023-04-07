@@ -66,9 +66,7 @@ export default function BookContent({ currentlyReading, toRead, read }: Props) {
                   </p>
                 </div>
 
-                <a target="_blank">
-                  <ArrowRight className="text-gray-500" />
-                </a>
+                <ArrowRight className="text-gray-500" />
               </motion.div>
             </Link>
           </li>

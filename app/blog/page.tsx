@@ -8,7 +8,7 @@ import { postFilePaths, POSTS_PATH } from '@/mdx/mdxUtils';
 import BlogPost from './BlogPost';
 
 export const metadata: Metadata = {
-  title: 'Jake Quinter | Blog',
+  title: 'Blog',
   description: 'Read some of my thoughts and ideas.',
 };
 

@@ -3,7 +3,7 @@ import { getOkuContent } from '@/lib/rss';
 import BookContent from './BookContent';
 
 export const metadata: Metadata = {
-  title: 'Jake Quinter | Bookshelf',
+  title: 'Bookshelf',
   description: 'A list of books I have read, am reading, or plan to read.',
 };
 

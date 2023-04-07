@@ -3,7 +3,7 @@ import { getFood } from '@/lib/helpers';
 import FoodContent from './FoodContent';
 
 export const metadata: Metadata = {
-  title: 'Jake Quinter | Food',
+  title: 'Food',
   description: 'A list of food I have tried, liked, or disliked.',
 };
 

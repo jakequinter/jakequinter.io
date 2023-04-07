@@ -6,7 +6,7 @@ import FoodForm from './FoodForm';
 import LoginForm from './LoginForm';
 
 export const metadata: Metadata = {
-  title: 'Jake Quinter | Admin',
+  title: 'Admin',
   description: 'Admin page for Jake Quinter.',
 };
 
