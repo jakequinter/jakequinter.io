@@ -31,9 +31,8 @@ export default function BlogPost({
 
           <p className="truncate pt-4 pr-8 text-sm font-light">{description}</p>
         </div>
-        <a target="_blank">
-          <CaretRight className="text-gray-500" />
-        </a>
+
+        <CaretRight className="text-gray-500" />
       </motion.div>
     </Link>
   );
