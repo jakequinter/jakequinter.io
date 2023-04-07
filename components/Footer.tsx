@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="flex items-center justify-between py-4 text-xs text-gray-500">
         <p>Better than yesterday.</p>
         <div className="flex items-center gap-0.5">
-          <p className="w-[6.4375rem]">
+          <p className="w-[6.5375rem]">
             Boston {currentTime ? `· ${currentTime}` : '00:00:00'}
           </p>
           {meridiem ? <p>{meridiem}</p> : '--'}
