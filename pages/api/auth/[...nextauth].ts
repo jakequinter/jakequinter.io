@@ -1,11 +1,10 @@
-import { NextApiHandler } from 'next';
-import NextAuth from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 import { prisma } from '@/lib/prisma';
 
-const options = {
+export const options: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -13,7 +12,6 @@ const options = {
     }),
   ],
   callbacks: {
-    // @ts-ignore
     async session({ session, user }) {
       session.id = user.id;
       return Promise.resolve(session);
@@ -23,6 +21,4 @@ const options = {
   secret: process.env.SECRET,
 };
 
-const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
-
-export default authHandler;
+export default NextAuth(options);

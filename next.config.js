@@ -1,5 +1,12 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['oku.ams3.cdn.digitaloceanspaces.com'],
   },
 };
+
+module.exports = nextConfig;

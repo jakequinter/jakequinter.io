@@ -3,7 +3,6 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
   binaryTargets   = ["native"]
 }
 
@@ -11,7 +10,7 @@ datasource db {
   provider             = "mysql"
   url                  = env("PLANETSCALE_PRISMA_DATABASE_URL")
   shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
-  referentialIntegrity = "prisma"
+  relationMode = "prisma"
 }
 
 model User {
@@ -22,26 +21,12 @@ model User {
   image         String?
   createdAt     DateTime   @default(now()) @map(name: "created_at")
   updatedAt     DateTime   @default(now()) @map(name: "updated_at")
-  Bookmark      Bookmark[]
+
   Food          Food[]
   accounts      Account[]
   sessions      Session[]
 
   @@map(name: "users")
-}
-
-model Bookmark {
-  id          String   @id @default(cuid())
-  title       String   @db.VarChar(255)
-  description String   @db.VarChar(255)
-  link        String   @db.VarChar(255)
-  type        String   @db.VarChar(255)
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @default(now()) @map(name: "updated_at")
-  user        User     @relation(fields: [userId], references: [id])
-  userId      String   @map(name: "user_id")
-
-  @@map(name: "bookmarks")
 }
 
 model Food {
@@ -57,6 +42,7 @@ model Food {
   userId         String   @map(name: "user_id")
 
   @@map(name: "food")
+  @@index([userId])
 }
 
 // Next auth
@@ -80,6 +66,7 @@ model Account {
 
   @@unique([provider, providerAccountId])
   @@map(name: "accounts")
+  @@index([userId])
 }
 
 model Session {
@@ -90,4 +77,5 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
+  @@index([userId])
 }

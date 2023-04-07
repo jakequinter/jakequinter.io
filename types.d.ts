@@ -19,10 +19,5 @@ declare module 'next/app' {
 declare module 'next-auth' {
   interface Session {
     id: string;
-    user?: DefaultUser & {
-      stripeCustomerId: string;
-      subscriptionStatus: string;
-      accountSetup: boolean;
-    };
   }
 }
