@@ -18,14 +18,14 @@ const projects = [
     name: 'Merryfield',
     logo: '/images/merryfield.svg',
     description:
-      'This is where I work and where I am responsible for all Merryfield web applications. Recently, I rewrote our marketing website in Next.js and TypeScript. Currently, we are in the process of creating two new web applications and busy launch Learn & Earn.',
+      'This is where I work and where I am responsible for all Merryfield web applications. Recently, I rewrote our marketing website in Next.js and TypeScript. Currently, we are in the process of creating two new web applications and busy launching Learn & Earn.',
     url: 'https://www.merryfield.com/',
   },
   {
     name: 'Funds',
     logo: '/images/funds.svg',
     description:
-      "Funds is where I'm experimenting and learning Swift and SwiftUI, a simple native app. It enables users to monitor their accounts, such as banking, investments, or crypto, and monitor their value over time.",
+      "Funds is where I'm experimenting and learning Swift and SwiftUI, a simple native app. It enables users to track their accounts, such as banking, investments, or crypto, and monitor their value over time.",
     url: 'https://www.funds.fyi',
     githubUrl: 'https://github.com/jakequinter/funds-swift',
   },
