@@ -11,21 +11,21 @@ const projects = [
     name: 'jakequinter.io',
     logo: '/images/jake.svg',
     description:
-      'My home on the internet. Here, I experiment with new technologies I am interested in trying. I recently migrated this site to Next.js 13 using their new app directory and React server components.',
+      'My home on the internet. Here, I experiment with new technologies I am interested in trying. I recently migrated this site to Next.js 13 using their new app directory and React Server Components.',
     githubUrl: 'https://github.com/jakequinter/jakequinter.io',
   },
   {
     name: 'Merryfield',
     logo: '/images/merryfield.svg',
     description:
-      'This is where I work and where I am responsible for all Merryfield web applicaitons. Recently, I rewrote our marketing website in Next.js and TypeScript. Currently, we are in the process of creating a new web application and busy launch Learn & Earn.',
+      'This is where I work and where I am responsible for all Merryfield web applications. Recently, I rewrote our marketing website in Next.js and TypeScript. Currently, we are in the process of creating two new web applications and busy launch Learn & Earn.',
     url: 'https://www.merryfield.com/',
   },
   {
     name: 'Funds',
     logo: '/images/funds.svg',
     description:
-      "Funds is where I'm experimenting with and learning Swift and Swiftui. It's a pretty straightforward app that allows users to keep track of different accounts on a monthly basis.",
+      "Funds is where I'm experimenting and learning Swift and SwiftUI, a simple native app. It enables users to monitor their accounts, such as banking, investments, or crypto, and monitor their value over time.",
     url: 'https://www.funds.fyi',
     githubUrl: 'https://github.com/jakequinter/funds-swift',
   },
@@ -33,7 +33,7 @@ const projects = [
     name: 'Bison Drywall',
     logo: '/images/bison.svg',
     description:
-      'A website I built for a friend who recently started his own drywall business. The photos marquee section you see is pulling photos from his Facebook account using the Facebook Graph API.',
+      'A website I built for a friend who started his own drywall business. The most enjoyable part was creating the photos marquee section, which sources photos from his Facebook account through the Facebook Graph API.',
     url: 'https://bisondrywall.io',
     githubUrl: 'https://github.com/jakequinter/bisondrywall.io',
   },
