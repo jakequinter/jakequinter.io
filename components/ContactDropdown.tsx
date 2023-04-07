@@ -66,7 +66,7 @@ export default function ContactDropdown() {
                 <DropdownMenu.Item className="rounded-[10px] outline-none focus:bg-gray-700 focus:text-white">
                   <Link
                     href="mailto:hello@jakequinter.io"
-                    className="inline-flex items-center gap-4 px-4 py-2.5 text-sm"
+                    className="flex items-center gap-4 px-4 py-2.5 text-sm"
                   >
                     <Envelope size={20} />
                     Email
