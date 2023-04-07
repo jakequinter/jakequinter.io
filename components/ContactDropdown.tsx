@@ -72,16 +72,20 @@ export default function ContactDropdown() {
                     Email
                   </Link>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className="flex items-center gap-4 rounded-[10px] px-4 py-2.5 text-sm outline-none focus:bg-gray-700 focus:text-white">
-                  {' '}
-                  <GithubLogo size={20} />
-                  <Link href="https://github.com/jakequinter">Github</Link>
-                </DropdownMenu.Item>
-                <DropdownMenu.Item className="flex items-center gap-4 rounded-[10px] px-4 py-2.5 text-sm outline-none focus:bg-gray-700 focus:text-white">
-                  {' '}
-                  <TwitterLogo size={20} />
-                  <Link href="https://twitter.com/jakequinter">Twitter</Link>
-                </DropdownMenu.Item>
+
+                <Link href="https://github.com/jakequinter">
+                  <DropdownMenu.Item className="flex items-center gap-4 rounded-[10px] px-4 py-2.5 text-sm outline-none focus:bg-gray-700 focus:text-white">
+                    <GithubLogo size={20} />
+                    Github
+                  </DropdownMenu.Item>
+                </Link>
+
+                <Link href="https://twitter.com/jakequinter">
+                  <DropdownMenu.Item className="flex items-center gap-4 rounded-[10px] px-4 py-2.5 text-sm outline-none focus:bg-gray-700 focus:text-white">
+                    <TwitterLogo size={20} />
+                    Twitter
+                  </DropdownMenu.Item>
+                </Link>
               </motion.div>
             </DropdownMenu.Content>
           </DropdownMenu.Portal>
