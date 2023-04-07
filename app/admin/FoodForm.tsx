@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import { signOut } from 'next-auth/react';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 type FormData = {
   restaurantName: string;
@@ -88,6 +88,7 @@ const FoodForm = () => {
       <Head>
         <title>Jake Quinter | Things</title>
       </Head>
+      <Toaster />
       <div>
         <h1 className="mb-12 text-center text-4xl font-bold text-zinc-900 dark:text-zinc-50">
           Add new food

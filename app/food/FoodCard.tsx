@@ -59,7 +59,7 @@ export default function FoodCard({
                 src="/images/jakeAvi.png"
                 alt="Jake avatar"
               />
-              <p className="ml-2">{jakeRating}</p>
+              <p className="ml-2">{jakeRating.toFixed(1)}</p>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ export default function FoodCard({
                 src="/images/jenAvi.png"
                 alt="Jen avatar"
               />
-              <p className="ml-2">{jenRating}</p>
+              <p className="ml-2">{jenRating.toFixed(1)}</p>
             </div>
           </div>
         </div>
