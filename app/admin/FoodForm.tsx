@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import { signOut } from 'next-auth/react';
@@ -180,7 +180,7 @@ const FoodForm = () => {
                   <Image
                     className="rounded object-cover"
                     width="384"
-                    height={`${(4 / 3) * 384}px`}
+                    height={`${(4 / 3) * 384}`}
                     src={previewImage}
                     alt="Preview"
                   />
