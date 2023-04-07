@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import { getFood } from '@/lib/helpers';
 import FoodContent from './FoodContent';
+
+export const metadata: Metadata = {
+  title: 'Jake Quinter | Food',
+  description: 'A list of food I have tried, liked, or disliked.',
+};
 
 async function getGood() {
   const food = await getFood();

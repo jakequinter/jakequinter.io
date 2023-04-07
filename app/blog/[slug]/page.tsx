@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -8,6 +9,21 @@ import readingTime from 'reading-time';
 
 import { postFilePaths, POSTS_PATH } from '@/mdx/mdxUtils';
 import MDX from './MDX';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata | undefined> {
+  const { data } = matter(
+    fs.readFileSync(path.join(POSTS_PATH, `${params.slug}.mdx`))
+  );
+
+  return {
+    title: `${data.title}`,
+    description: data.description,
+  };
+}
 
 export async function generateStaticParams() {
   const paths = postFilePaths

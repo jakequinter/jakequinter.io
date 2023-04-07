@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { format } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -5,6 +6,11 @@ import path from 'path';
 
 import { postFilePaths, POSTS_PATH } from '@/mdx/mdxUtils';
 import BlogPost from './BlogPost';
+
+export const metadata: Metadata = {
+  title: 'Jake Quinter | Blog',
+  description: 'Read some of my thoughts and ideas.',
+};
 
 async function getBlogPosts() {
   const posts = postFilePaths.map(filePath => {

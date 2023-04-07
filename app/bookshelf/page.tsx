@@ -1,7 +1,11 @@
-import Image from 'next/legacy/image';
-
+import type { Metadata } from 'next';
 import { getOkuContent } from '@/lib/rss';
 import BookContent from './BookContent';
+
+export const metadata: Metadata = {
+  title: 'Jake Quinter | Bookshelf',
+  description: 'A list of books I have read, am reading, or plan to read.',
+};
 
 export default async function Bookshelf() {
   const { currentlyReading, read, toRead } = await getOkuContent();

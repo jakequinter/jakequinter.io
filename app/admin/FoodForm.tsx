@@ -85,9 +85,6 @@ const FoodForm = () => {
 
   return (
     <>
-      <Head>
-        <title>Jake Quinter | Things</title>
-      </Head>
       <Toaster />
       <div>
         <h1 className="mb-12 text-center text-4xl font-bold text-zinc-900 dark:text-zinc-50">
