@@ -1,38 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [jakequinter.io](https://jakequinter.io/)
 
-## Getting Started
+My personal site changes often. I treat it as a space where I can implement new technologies I find interesting. In the latest iteration, I updated to use Next.js 13 app directory with React Server Components.
 
-First, run the development server:
+### Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+- `pages/api/food`: API route for retrieving all the food on the `/food` page.
+- `pages/api/image`: API route for generating a timestamp and signature needed to upload images to [Cloudinary](https://cloudinary.com/).
+- `pages/bookshelf`: Retrieves data in real-time from [Oku](https://oku.club/) RSS feed.
+- `pages/food`: Retrieves information from `pages/api/food` to display the food my girlfriend and I keep track of.
+- `pages/admin`: This is an authenticated route which displays a form for me to upload images to Cloudinary and display them on the `/food` page.
+- `pages/*`: All other pages are static pages.
+
+### Running Locally
+
+```
+$ git clone https://github.com/jakequinter/jakequinter.io.git
+$ cd jakequinter.io
+$ pnpm
+$ pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env.local` file similar to what is posted below:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+# Cloudinary
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+NEXT_PUBLIC_CLOUDINARY_KEY=
+CLOUDINARY_SECRET=
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Oku
+OKU_CURRENTLY_READING_URL=
+OKU_TO_READ_URL=
+OKU_READ_URL=
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Prisma
+PLANETSCALE_PRISMA_DATABASE_URL=
+SHADOW_DATABASE_URL=
+USER_ID=
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# NextAuth
+NEXTAUTH_URL=
+SECRET=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_CLIENT_ID=
+NEXT_PUBLIC_USER_EMAIL=
+```
 
-## Learn More
+### Built With
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Vercel](https://vercel.com/)
+- [Next.js](https://nextjs.org/)
+- [PlanetScale](https://planetscale.com/)
+- [Prisma](https://www.prisma.io/)
+- [Cloudinary](https://cloudinary.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
