@@ -54,4 +54,5 @@ NEXT_PUBLIC_USER_EMAIL=
 - [PlanetScale](https://planetscale.com/)
 - [Prisma](https://www.prisma.io/)
 - [Cloudinary](https://cloudinary.com/)
+- [Radix](https://www.radix-ui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
