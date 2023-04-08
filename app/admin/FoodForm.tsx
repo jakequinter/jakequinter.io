@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import { signOut } from 'next-auth/react';
 import toast, { Toaster } from 'react-hot-toast';

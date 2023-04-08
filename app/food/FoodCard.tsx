@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { Image } from 'cloudinary-react';
-import { motion } from 'framer-motion';
 import { ArrowSquareOut } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 type Props = {
   restaurantName: string;

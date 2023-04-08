@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { CaretRight } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 type Props = {
   description: string;
