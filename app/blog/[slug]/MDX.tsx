@@ -1,6 +1,6 @@
 'use client';
 
-import { JetBrains_Mono } from '@next/font/google';
+import { JetBrains_Mono } from "next/font/google";
 
 import oceanicNext from 'prism-react-renderer/themes/oceanicNext';
 import classNames from '@/utils/classNames';
