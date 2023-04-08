@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import { getFood } from '@/lib/helpers';
 import FoodContent from './FoodContent';
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import { getOkuContent } from '@/lib/rss';
 import BookContent from './BookContent';
 

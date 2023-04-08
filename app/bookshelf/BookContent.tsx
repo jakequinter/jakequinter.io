@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'phosphor-react';
+import { motion } from 'framer-motion';
 
 import { Book } from '@/types/rss';
 import BookshelfTabs from './BookshelfTabs';

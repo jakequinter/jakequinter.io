@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowLeft } from 'phosphor-react';
+import { ArrowLeft, ArrowRight } from 'phosphor-react';
 import { motion } from 'framer-motion';
 
 import { Book } from '@/types/rss';
@@ -39,9 +39,8 @@ export default function Pagination({ data, page, setPage }: Props) {
       return `${(page - 1) * 10 + 1} – ${data.length}`;
     }
 
-    return `${(page - 1) * 10 + 1} – ${
-      (page + page) * data.slice((page - 1) * 10).length
-    }`;
+    return `${(page - 1) * 10 + 1} – ${(page + page) * data.slice((page - 1) * 10).length
+      }`;
   };
 
   const handlePrevious = () => {

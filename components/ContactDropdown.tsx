@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 import { CaretDown, Envelope, GithubLogo, TwitterLogo } from 'phosphor-react';
 import { AnimatePresence, motion, useAnimationControls } from 'framer-motion';
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 import classNames from '@/utils/classNames';
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 
 const variants = {
