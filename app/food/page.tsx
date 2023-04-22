@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description: 'A list of food I have tried, liked, or disliked.',
 };
 
-async function getGood() {
+async function getFoodData() {
   const food = await getFood();
   return food;
 }
 
 export default async function page() {
-  const food = await getGood();
+  const food = await getFoodData();
 
   return (
     <div>

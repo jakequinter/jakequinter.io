@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'A list of books I have read, am reading, or plan to read.',
 };
 
+export const revalidate = 60;
+
 export default async function Bookshelf() {
   const { currentlyReading, read, toRead } = await getOkuContent();
 
