@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { getFood } from '@/lib/helpers';
 import FoodContent from './FoodContent';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = {
   title: 'Food',
   description: 'A list of food I have tried, liked, or disliked.',
