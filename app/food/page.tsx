@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 async function getFoodData() {
-  const response = await fetch('http://localhost:3000/api/food', { next: { revalidate: 60 } });
+  const response = await fetch(`${process.env.SITE_URL}/api/food `, { next: { revalidate: 60 } });
   const data = await response.json();
 
   return data;
