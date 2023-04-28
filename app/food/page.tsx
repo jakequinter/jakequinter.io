@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import { getFood } from '@/lib/helpers';
 import FoodContent from './FoodContent';
 
 export const revalidate = 60;
@@ -11,8 +10,10 @@ export const metadata: Metadata = {
 };
 
 async function getFoodData() {
-  const food = await getFood();
-  return food;
+  const response = await fetch('http://localhost:3000/api/food', { next: { revalidate: 60 } });
+  const data = await response.json();
+
+  return data;
 }
 
 export default async function page() {
@@ -25,14 +26,12 @@ export default async function page() {
       </div>
 
       <p className="mb-16">
-        Although I try to eat healthy ~95% of the time, my girlfriend and I love
-        food. We love trying new restaurants, cuisines, keeping track of what we
-        loved, what we liked, and what we didn&apos;t care for. Since moving to
-        Boston, we have been introduced to a new realm of restaurants. It&apos;s
-        quite different than what we were accustomed to in Appleton, WI.
-        There&apos;s food everywhere here. So, we thought it would be cool to
-        keep track of the food we&apos;ve tried, give it a rating, and remember
-        it for future reference.
+        Although I try to eat healthy ~95% of the time, my girlfriend and I love food. We love
+        trying new restaurants, cuisines, keeping track of what we loved, what we liked, and what we
+        didn&apos;t care for. Since moving to Boston, we have been introduced to a new realm of
+        restaurants. It&apos;s quite different than what we were accustomed to in Appleton, WI.
+        There&apos;s food everywhere here. So, we thought it would be cool to keep track of the food
+        we&apos;ve tried, give it a rating, and remember it for future reference.
       </p>
 
       <FoodContent data={food} />
