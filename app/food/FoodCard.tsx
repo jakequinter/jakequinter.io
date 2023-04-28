@@ -22,7 +22,7 @@ export default function FoodCard({
 }: Props) {
   return (
     <motion.div
-      className="group relative rounded shadow grayscale hover:cursor-pointer hover:grayscale-0"
+      className="group relative rounded-lg shadow grayscale hover:cursor-pointer hover:grayscale-0"
       whileHover={{ scale: 1.01 }}
       transition={{ type: 'spring', stiffness: 100 }}
     >
