@@ -9,8 +9,12 @@ export default async function handle(
   res: NextApiResponse
 ) {
   const session = await getServerSession(req, res, options);
+  const token = req.headers.authorization;
 
-  if (!session || session.user?.email !== process.env.NEXT_PUBLIC_USER_EMAIL) {
+  if (
+    !token &&
+    (!session || session.user?.email !== process.env.NEXT_PUBLIC_USER_EMAIL)
+  ) {
     res.status(401).send({ message: 'Unauthenticated' });
   }
 
@@ -34,7 +38,7 @@ export default async function handle(
     try {
       const result = await prisma.food.create({
         data: {
-          userId: session?.id as string,
+          userId: token ? token : (session?.id as string),
           restaurantName,
           jakeRating,
           jenRating,
