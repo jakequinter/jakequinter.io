@@ -22,12 +22,11 @@ const projects = [
     url: 'https://www.merryfield.com/',
   },
   {
-    name: 'Funds',
-    logo: '/images/funds.svg',
+    name: 'CloudinaryUpload',
+    logo: '/images/cloudinary.svg',
     description:
-      "Funds is where I'm experimenting and learning Swift and SwiftUI, a simple native app. It enables users to track their accounts, such as banking, investments, or crypto, and monitor their value over time.",
-    url: 'https://www.funds.fyi',
-    githubUrl: 'https://github.com/jakequinter/funds-swift',
+      'A SwiftUI iOS application for uploading images to Cloudinary and creating a new row in my food table. This little app makes it easy to quickly snap a photo at the restaurant, add the desired fields, and upload straight to this website.',
+    githubUrl: 'https://github.com/jakequinter/CloudinaryUpload',
   },
   {
     name: 'Bison Drywall',
@@ -63,24 +62,14 @@ export default function RecentEndeavors() {
       <h2 className="text-xl font-semibold text-gray-900">Recent Endeavors</h2>
       <div className="my-4 flex gap-2">
         {projects.map(project => (
-          <button
-            key={project.name}
-            onClick={() => setSelectedProject(project)}
-          >
-            <Image
-              src={project.logo}
-              alt={`${project.name} logo`}
-              width={64}
-              height={64}
-            />
+          <button key={project.name} onClick={() => setSelectedProject(project)}>
+            <Image src={project.logo} alt={`${project.name} logo`} width={64} height={64} />
           </button>
         ))}
       </div>
 
       <div className="space-y-8 rounded-t-3xl border-l border-r border-t border-gray-200 bg-gradient-to-b from-white to-gray-100 px-8 pt-8">
-        <h3 className="text-center text-lg font-semibold">
-          {selectedProject.name}
-        </h3>
+        <h3 className="text-center text-lg font-semibold">{selectedProject.name}</h3>
         <p>{selectedProject.description}</p>
 
         <div className="flex space-x-4">
