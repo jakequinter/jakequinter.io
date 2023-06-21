@@ -23,6 +23,9 @@ $ pnpm dev
 Create a `.env.local` file similar to what is posted below:
 
 ```
+#App
+SITE_URL=
+
 # Cloudinary
 NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=

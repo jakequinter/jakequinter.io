@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { formatInTimeZone } from 'date-fns-tz';
 
 export default function Footer() {
@@ -22,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="border-gray-220 border-t px-4">
       <div className="flex items-center justify-between py-4 text-xs text-gray-500">
-        <p>Better than yesterday.</p>
+        <Link href="https://bitcoin.org/bitcoin.pdf" className="hover:text-gray-600">∞ / 21M</Link>
         <div className="flex items-center gap-0.5">
           <p className="w-[6.5375rem]">
             Boston {currentTime ? `· ${currentTime}` : '00:00:00'}
