@@ -1,61 +1,86 @@
-# [jakequinter.io](https://jakequinter.io/)
+<picture>
+    <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_Solid_White.svg" media="(prefers-color-scheme: dark)">
+    <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo">
+</picture>
 
-My personal site changes often. I treat it as a space where I can implement new technologies I find interesting. In the latest iteration, I updated to use Next.js 13 app directory with React Server Components.
+# Leptos Axum Starter Template
 
-### Overview
+This is a template for use with the [Leptos](https://github.com/leptos-rs/leptos) web framework and the [cargo-leptos](https://github.com/akesson/cargo-leptos) tool using [Axum](https://github.com/tokio-rs/axum).
 
-- `pages/api/food`: API route for retrieving all the food on the `/food` page.
-- `pages/api/image`: API route for generating a timestamp and signature needed to upload images to [Cloudinary](https://cloudinary.com/).
-- `pages/bookshelf`: Retrieves data in real-time from [Oku](https://oku.club/) RSS feed.
-- `pages/food`: Retrieves information from `pages/api/food` to display the food my girlfriend and I keep track of.
-- `pages/admin`: This is an authenticated route which displays a form for me to upload images to Cloudinary and display them on the `/food` page.
-- `pages/*`: All other pages are static pages.
+## Creating your template repo
 
-### Running Locally
+If you don't have `cargo-leptos` installed you can install it with
 
-```
-$ git clone https://github.com/jakequinter/jakequinter.io.git
-$ cd jakequinter.io
-$ pnpm
-$ pnpm dev
+```bash
+cargo install cargo-leptos
 ```
 
-Create a `.env.local` file similar to what is posted below:
-
-```
-#App
-SITE_URL=
-
-# Cloudinary
-NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
-NEXT_PUBLIC_CLOUDINARY_KEY=
-CLOUDINARY_SECRET=
-
-# Oku
-OKU_CURRENTLY_READING_URL=
-OKU_TO_READ_URL=
-OKU_READ_URL=
-
-# Prisma
-PLANETSCALE_PRISMA_DATABASE_URL=
-SHADOW_DATABASE_URL=
-USER_ID=
-
-# NextAuth
-NEXTAUTH_URL=
-SECRET=
-GOOGLE_CLIENT_SECRET=
-GOOGLE_CLIENT_ID=
-NEXT_PUBLIC_USER_EMAIL=
+Then run
+```bash
+cargo leptos new --git leptos-rs/start-axum
 ```
 
-### Built With
+to generate a new project template.
 
-- [Vercel](https://vercel.com/)
-- [Next.js](https://nextjs.org/)
-- [PlanetScale](https://planetscale.com/)
-- [Prisma](https://www.prisma.io/)
-- [Cloudinary](https://cloudinary.com/)
-- [Radix](https://www.radix-ui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
+```bash
+cd test
+```
+
+to go to your newly created project.  
+Feel free to explore the project structure, but the best place to start with your application code is in `src/app.rs`.  
+Addtionally, Cargo.toml may need updating as new versions of the dependencies are released, especially if things are not working after a `cargo update`.
+
+## Running your project
+
+```bash
+cargo leptos watch
+```
+
+## Installing Additional Tools
+
+By default, `cargo-leptos` uses `nightly` Rust, `cargo-generate`, and `sass`. If you run into any trouble, you may need to install one or more of these tools.
+
+1. `rustup toolchain install nightly --allow-downgrade` - make sure you have Rust nightly
+2. `rustup target add wasm32-unknown-unknown` - add the ability to compile Rust to WebAssembly
+3. `cargo install cargo-generate` - install `cargo-generate` binary (should be installed automatically in future)
+4. `npm install -g sass` - install `dart-sass` (should be optional in future
+
+## Compiling for Release
+```bash
+cargo leptos build --release
+```
+
+Will generate your server binary in target/server/release and your site package in target/site
+
+## Testing Your Project
+```bash
+cargo leptos end-to-end
+```
+
+```bash
+cargo leptos end-to-end --release
+```
+
+Cargo-leptos uses Playwright as the end-to-end test tool.  
+Tests are located in end2end/tests directory.
+
+## Executing a Server on a Remote Machine Without the Toolchain
+After running a `cargo leptos build --release` the minimum files needed are:
+
+1. The server binary located in `target/server/release`
+2. The `site` directory and all files within located in `target/site`
+
+Copy these files to your remote server. The directory structure should be:
+```text
+test
+site/
+```
+Set the following environment variables (updating for your project as needed):
+```text
+LEPTOS_OUTPUT_NAME="test"
+LEPTOS_SITE_ROOT="site"
+LEPTOS_SITE_PKG_DIR="pkg"
+LEPTOS_SITE_ADDR="127.0.0.1:3000"
+LEPTOS_RELOAD_PORT="3001"
+```
+Finally, run the server binary.
