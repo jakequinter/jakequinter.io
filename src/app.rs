@@ -3,6 +3,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+use crate::routes::{bookshelf::BookshelfPage, homepage::HomePage};
+
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
@@ -30,18 +32,9 @@ pub fn App(cx: Scope) -> impl IntoView {
             <main>
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
+                    <Route path="bookshelf" view=|cx| view! { cx, <BookshelfPage /> }/>
                 </Routes>
             </main>
         </Router>
-    }
-}
-
-#[component]
-fn HomePage(cx: Scope) -> impl IntoView {
-    view! { cx,
-        <section class="flex flex-col items-center justify-center min-h-screen">
-            <h1 class="text-gray-500">"🚧 Under construction 🚧"</h1>
-            <h2 class="text-3xl font-medium">"Rebuilding in Rust 🦀"</h2>
-        </section>
     }
 }
