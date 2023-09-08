@@ -3,7 +3,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-use crate::routes::{bookshelf::BookshelfPage, homepage::HomePage};
+use crate::components::shared::nav::Nav;
+use crate::pages::{bookshelf::BookshelfPage, homepage::HomePage};
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -15,6 +16,9 @@ pub fn App(cx: Scope) -> impl IntoView {
 
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
+        <Link rel="preconnect" href="https://fonts.googleapis.com" />
+        <Link rel="preconnect" href="https://fonts.gstatic.com" />
+        <Stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
         <Stylesheet id="leptos" href="/pkg/jakequinter_io.css"/>
 
         // sets the document title
@@ -29,11 +33,13 @@ pub fn App(cx: Scope) -> impl IntoView {
             }
             .into_view(cx)
         }>
-            <main>
+            <main class="mx-auto mt-40 max-w-screen-sm px-4 sm:px-0">
+                <Nav/>
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
                     <Route path="bookshelf" view=|cx| view! { cx, <BookshelfPage /> }/>
                 </Routes>
+
             </main>
         </Router>
     }
