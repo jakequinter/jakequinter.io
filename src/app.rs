@@ -3,7 +3,7 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-use crate::components::shared::nav::Nav;
+use crate::components::shared::{footer::Footer, nav::Nav};
 use crate::pages::{bookshelf::BookshelfPage, homepage::HomePage};
 
 #[component]
@@ -28,14 +28,20 @@ pub fn App(cx: Scope) -> impl IntoView {
             outside_errors.insert_with_default_key(AppError::NotFound);
             view! { cx, <ErrorTemplate outside_errors/> }.into_view(cx)
         }>
-            <main class="mx-auto mt-40 max-w-screen-sm px-4 sm:px-0">
-                <Nav/>
+            <Nav/>
+
+            <main
+                class="mb-20 mx-auto mt-40 max-w-screen-sm px-4 sm:px-0"
+                style="min-height: calc(100vh - 289px)"
+            >
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
                     <Route path="bookshelf" view=|cx| view! { cx, <BookshelfPage/> }/>
                 </Routes>
 
             </main>
+
+            <Footer/>
         </Router>
     }
 }
