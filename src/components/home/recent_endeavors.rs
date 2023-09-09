@@ -89,7 +89,8 @@ pub fn RecentEndeavors(cx: Scope) -> impl IntoView {
                     >
                         <a class="w-full" href=selected_project.get().url.get()>
                             <button class="inline-flex w-full items-center justify-center rounded-lg bg-black py-2 px-4 text-white">
-                                Visit <img class="ml-2" src="/icons/arrow-right.svg" height=16 width=16 />
+                                Visit
+                                <img class="ml-2" src="/icons/arrow-right.svg" height=16 width=16/>
                             </button>
                         </a>
                     </Show>
@@ -99,7 +100,8 @@ pub fn RecentEndeavors(cx: Scope) -> impl IntoView {
                     >
                         <a class="w-full" href=selected_project.get().github_url.get()>
                             <button class="inline-flex w-full items-center justify-center rounded-lg bg-emerald-600 py-2 px-4 text-white">
-                                View source <img class="ml-2" src="/icons/github-logo.svg" height=16 width=16 />
+                                View source
+                                <img class="ml-2" src="/icons/github-logo.svg" height=16 width=16/>
                             </button>
                         </a>
                     </Show>
