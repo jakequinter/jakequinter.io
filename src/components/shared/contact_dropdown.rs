@@ -9,8 +9,8 @@ pub fn ContactDropdown(cx: Scope) -> impl IntoView {
                 class="transition duration-150 ease-in-out"
                 src="/caret-down.svg"
                 alt="Jake"
-                height=16
-                width=16
+                height=14
+                width=14
             />
         </button>
     }

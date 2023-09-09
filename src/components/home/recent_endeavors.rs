@@ -28,6 +28,20 @@ pub fn RecentEndeavors(cx: Scope) -> impl IntoView {
                 url: create_rw_signal(cx, Some(String::from("https://merryfield.com"))),
                 github_url: create_rw_signal(cx, None),
             },
+            Project {
+                name: create_rw_signal(cx, String::from("CloudinaryUploader")),
+                logo: create_rw_signal(cx, String::from("/cloudinary.svg")),
+                description: create_rw_signal(cx, String::from("A SwiftUI iOS application for uploading images to Cloudinary and creating a new row in my food table. This little app makes it easy to quickly snap a photo at the restaurant, add the desired fields, and upload straight to this website.")),
+                url: create_rw_signal(cx, None),
+                github_url: create_rw_signal(cx, Some(String::from("https://github.com/jakequinter/CloudinaryUpload"))),
+            },
+            Project {
+                name: create_rw_signal(cx, String::from("Bison Drywall")),
+                logo: create_rw_signal(cx, String::from("/bison.svg")),
+                description: create_rw_signal(cx, String::from("A website I built for a friend who started his own drywall business. The most enjoyable part was creating the photos marquee section, which sources photos from his Facebook account through the Facebook Graph API. Up next, I'm going to rewrite this in OCaml/Reason ML.")),
+                url: create_rw_signal(cx, Some(String::from("https://bisondrywall.io"))),
+                github_url: create_rw_signal(cx, Some(String::from("https://github.com/jakequinter/bisondrywall.io"))),
+            }
         ],
     );
     let (selected_project, set_selected_project) =
