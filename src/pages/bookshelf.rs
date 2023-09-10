@@ -3,6 +3,8 @@ use reqwest;
 use rss::Channel;
 use serde::{Deserialize, Serialize};
 
+use crate::components::bookshelf::tabs::Tabs;
+
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Book {
     creators: Vec<String>,
@@ -48,6 +50,8 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                 currently displaying books I've found or read since 2021."
             </p>
 
+            <Tabs/>
+
             <Transition fallback=move || {
                 view! { cx, <p>"Loading..."</p> }
             }>
@@ -91,7 +95,7 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                                                                             xmlns="http://www.w3.org/2000/svg"
                                                                             width="16"
                                                                             height="16"
-                                                                            fill="#000"
+                                                                            fill="#78716c"
                                                                             viewBox="0 0 256 256"
                                                                         >
                                                                             <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
