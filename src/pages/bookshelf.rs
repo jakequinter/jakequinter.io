@@ -2,20 +2,13 @@ use leptos::*;
 use reqwest;
 use rss::Channel;
 use serde::{Deserialize, Serialize};
-use std::fmt;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Book {
-    // creators: String,
+    creators: Vec<String>,
     guid: String,
     link: String,
     title: String,
-}
-
-impl fmt::Display for Book {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.title)
-    }
 }
 
 #[server(Books, "/api")]
@@ -30,6 +23,7 @@ pub async fn get_read() -> Result<Vec<Book>, ServerFnError> {
     let mut books = Vec::new();
     for item in channel.items {
         let book = Book {
+            creators: item.dublin_core_ext.unwrap().creators,
             guid: item.guid.unwrap().value,
             link: item.link.unwrap(),
             title: item.title.unwrap(),
@@ -71,14 +65,42 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                                     }
                                     Ok(books) => {
                                         if books.is_empty() {
+
                                             view! { cx, <p>"No tasks were found."</p> }
                                                 .into_view(cx)
                                         } else {
                                             books
                                                 .into_iter()
-                                                .map(move |todo| {
+                                                .map(move |book| {
 
-                                                    view! { cx, <li>{todo.title}</li> }
+                                                    view! { cx,
+                                                        <li>
+                                                            <a href=book.link>
+                                                                <div class="flex items-center justify-between rounded-lg bg-white p-4 shadow-md hover:cursor-pointer">
+                                                                    <div class="flex flex-col justify-between truncate pr-8">
+                                                                        <p class="truncate font-medium text-gray-900">
+                                                                            {book.title}
+                                                                        </p>
+
+                                                                        <p class="pt-4 text-sm font-light text-gray-500">
+                                                                            {book.creators}
+                                                                        </p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <svg
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16"
+                                                                            height="16"
+                                                                            fill="#000"
+                                                                            viewBox="0 0 256 256"
+                                                                        >
+                                                                            <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    }
                                                 })
                                                 .collect_view(cx)
                                         }
@@ -88,8 +110,9 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                         }
                     };
 
-                    view! { cx, <ul>{read_books}</ul> }
+                    view! { cx, <ul class="space-y-4">{read_books}</ul> }
                 }}
+
             </Transition>
         </div>
     }
