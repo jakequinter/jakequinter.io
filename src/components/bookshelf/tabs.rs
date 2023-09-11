@@ -25,7 +25,7 @@ pub fn Tabs(cx: Scope) -> impl IntoView {
 
     view! { cx,
         <div class="my-12 flex justify-center">
-            <div class="z-0 rounded-2xl border border-gray-300 bg-white p-1.5 shadow-md">
+            <div class="rounded-2xl border border-gray-300 bg-white p-1.5 shadow-md">
                 <nav class="flex space-x-2" aria-label="Tabs">
                     <For
                         each=move || tabs.get()
