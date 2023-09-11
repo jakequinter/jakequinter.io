@@ -1,7 +1,3 @@
-# [jakequinter.io](https://jakequinter.io/)
-
-My personal site changes often. I treat it as a space where I can implement new technologies I find interesting. In the latest iteration, I updated to use Next.js 13 app directory with React Server Components.
-
 ### Overview
 
 - `pages/api/food`: API route for retrieving all the food on the `/food` page.
