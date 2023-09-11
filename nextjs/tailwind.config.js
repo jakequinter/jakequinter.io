@@ -8,15 +8,20 @@ delete colors['coolGray'];
 delete colors['blueGray'];
 
 module.exports = {
-  content: { 
-    files: ["*.html", "./src/**/*.rs"],
-  },
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './mdx/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
+    fontFamily: {
+      mono: ['ui-monospace', 'SFMono-Regular'],
+    },
     colors: {
       ...colors,
       gray: colors.stone,
     },
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require('@tailwindcss/forms')],
+};
