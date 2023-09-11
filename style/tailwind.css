@@ -17,3 +17,8 @@ body {
   overflow-x: hidden;
 }
 
+.activeTab {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+}

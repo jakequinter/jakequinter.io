@@ -36,7 +36,7 @@ pub fn App(cx: Scope) -> impl IntoView {
             >
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
-                    <Route path="bookshelf" view=|cx| view! { cx, <BookshelfPage/> }/>
+                    <Route path="bookshelf" view=BookshelfPage ssr=SsrMode::Async/>
                 </Routes>
 
             </main>
