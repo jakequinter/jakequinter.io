@@ -9,6 +9,6 @@ In the latest iteration, I updated to use Next.js 13 app directory with React Se
 
 
 ### rust 
-This is the [Leptos](https://leptos.dev/)/[Rust](https://www.rust-lang.org/) version of my website, which can be viewed at [https://https://jakequinter-io.fly.dev/](https://https://jakequinter-io.fly.dev/).
+This is the [Leptos](https://leptos.dev/)/[Rust](https://www.rust-lang.org/) version of my website, which can be viewed at [https://jakequinter-io.fly.dev/](https://jakequinter-io.fly.dev/).
 
 This is currently a work in progress while I'm exploring Rust/Wasm.
