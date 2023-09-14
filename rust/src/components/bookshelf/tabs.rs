@@ -6,7 +6,12 @@ struct Tab {
 }
 
 #[component]
-pub fn Tabs(cx: Scope) -> impl IntoView {
+pub fn Tabs(
+    cx: Scope,
+    active_tab: ReadSignal<String>,
+    set_active_tab: WriteSignal<String>,
+    set_page: WriteSignal<usize>,
+) -> impl IntoView {
     let (tabs, _) = create_signal(
         cx,
         vec![
@@ -21,7 +26,6 @@ pub fn Tabs(cx: Scope) -> impl IntoView {
             },
         ],
     );
-    let (active_tab, set_active_tab) = create_signal(cx, tabs.get_untracked()[0].clone());
 
     view! { cx,
         <div class="my-12 flex justify-center">
@@ -33,16 +37,15 @@ pub fn Tabs(cx: Scope) -> impl IntoView {
                         view=move |cx, tab| {
                             let cloned_tab = tab.clone();
                             let handle_change = move |cloned_tab: Tab| {
-                                set_active_tab(cloned_tab);
+                                set_page(0);
+                                set_active_tab(cloned_tab.name.get());
                             };
 
                             view! { cx,
                                 <button
                                     class="flex cursor-pointer px-3 py-1"
-                                    class=(
-                                        "activeTab",
-                                        move || active_tab.get().name.get() == tab.name.get(),
-                                    )
+                                    class=("activeTab", move || active_tab.get() == tab.name.get())
+
                                     on:click=move |_| handle_change(cloned_tab.clone())
                                 >
                                     {move || tab.name.get()}
