@@ -48,6 +48,18 @@ pub async fn get_oku_content() -> Result<HashMap<String, Vec<Book>>, ServerFnErr
         oku_content.insert(String::from(name), books);
     }
 
+    let ocaml = Book {
+        creators: vec![String::from("Michael R. Clarkson et al.")],
+        guid: String::from("ocaml"),
+        link: String::from("https://cs3110.github.io/textbook/cover.html"),
+        title: String::from("OCaml Programming: Correct + Efficient + Beautiful"),
+    };
+
+    oku_content
+        .entry(String::from("Reading"))
+        .or_insert(vec![ocaml.clone()])
+        .push(ocaml);
+
     Ok(oku_content)
 }
 
