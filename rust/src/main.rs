@@ -2,16 +2,22 @@ use cfg_if::cfg_if;
 
 cfg_if! {
     if #[cfg(feature = "ssr")] {
-        use axum::{routing::post, Router};
+        use axum::{
+            body::Body as AxumBody,
+            extract::{FromRef, Path, State, RawQuery},
+            http::{Request, header::HeaderMap},
+            response::{Response, IntoResponse},
+            routing::get,
+            Router,
+        };
         use dotenv::dotenv;
         use jakequinter_io::app::*;
         use jakequinter_io::fileserv::file_and_error_handler;
-        use leptos::*;
-        use leptos_axum::{generate_route_list, LeptosRoutes};
+        use leptos_axum::{generate_route_list, LeptosRoutes, handle_server_fns_with_context};
+        use leptos::{log, view, provide_context, get_configuration};
         use sqlx::mysql::{MySqlPool, MySqlPoolOptions};
         use sqlx::Row;
 
-        use axum::extract::FromRef;
         use leptos_router::RouteListing;
         use leptos::LeptosOptions;
 
@@ -21,6 +27,26 @@ cfg_if! {
             pub pool: MySqlPool,
             pub routes: Vec<RouteListing>,
         }
+
+         async fn server_fn_handler(State(app_state): State<AppState>, path: Path<String>, headers: HeaderMap, raw_query: RawQuery,
+            request: Request<AxumBody>) -> impl IntoResponse {
+
+                log!("{:?}", path);
+
+                handle_server_fns_with_context(path, headers, raw_query, move |cx| {
+                    provide_context(cx, app_state.pool.clone());
+                }, request).await
+            }
+
+            async fn leptos_routes_handler(State(app_state): State<AppState>, req: Request<AxumBody>) -> Response{
+                    let handler = leptos_axum::render_app_to_stream_with_context(app_state.leptos_options.clone(),
+                    move |cx| {
+                        provide_context(cx, app_state.pool.clone());
+                    },
+                    |cx| view! { cx, <App /> }
+                );
+                handler(req).await.into_response()
+            }
 
         #[tokio::main]
         async fn main() {
@@ -44,18 +70,20 @@ cfg_if! {
             let addr = leptos_options.site_addr;
             let routes = generate_route_list(|cx| view! { cx, <App/> }).await;
 
-            // let app_state = AppState {
-            //     leptos_options,
-            //     pool: pool.clone(),
-            //     routes: routes.clone(),
-            // };
+            let app_state = AppState {
+                leptos_options,
+                pool: pool.clone(),
+                routes: routes.clone(),
+            };
 
             // build our application with a route
             let app = Router::new()
-                .route("/api/*fn_name", post(leptos_axum::handle_server_fns))
-                .leptos_routes(&leptos_options, routes, |cx| view! { cx, <App/> })
+                // .route("/api/*fn_name", post(leptos_axum::handle_server_fns))
+                .route("/api/*fn_name", get(server_fn_handler).post(server_fn_handler))
+                // .leptos_routes(&leptos_options, routes, |cx| view! { cx, <App/> })
+                .leptos_routes_with_handler(routes, get(leptos_routes_handler) )
                 .fallback(file_and_error_handler)
-                .with_state(leptos_options);
+                .with_state(app_state);
 
             // run our app with hyper
             // `axum::Server` is a re-export of `hyper::Server`
