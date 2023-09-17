@@ -1,3 +1,4 @@
+use crate::components::bookshelf::pagination::Pagination;
 use cfg_if::cfg_if;
 use leptos::*;
 use serde::{Deserialize, Serialize};
@@ -77,13 +78,16 @@ pub async fn get_food(cx: Scope) -> Result<Vec<FoodItem>, ServerFnError> {
 #[component]
 pub fn FoodPage(cx: Scope) -> impl IntoView {
     let food = create_resource(cx, || (), move |_| get_food(cx));
+    let (page, set_page) = create_signal(cx, 0);
+    let (total_pages, set_total_pages) = create_signal(cx, 0);
+    let food_per_page = 10;
 
     view! { cx,
-        <div class="space-y-16">
-            <h1 class="text-4xl text-center font-bold text-gray-900">"Food 🍕"</h1>
+        <div>
+            <h1 class="mb-16 text-4xl text-center font-bold text-gray-900">"Food 🍕"</h1>
 
             <section class="space-y-4">
-                <p>
+                <p class="mb-16">
                     "Although I try to eat healthy ~95% of the time, my girlfriend and I love food. We love trying new restaurants, cuisines, keeping track of what we loved, what we liked, and what we didn't care for. Since moving to Boston, we have been introduced to a new realm of restaurants. It's quite different than what we were accustomed to in Appleton, WI. There's food everywhere here. So, we thought it would be cool to keep track of the food we've tried, give it a rating, and remember it for future reference."
                 </p>
             </section>
@@ -109,7 +113,18 @@ pub fn FoodPage(cx: Scope) -> impl IntoView {
                                             view! { cx, <p>"No tasks were found."</p> }
                                                 .into_view(cx)
                                         } else {
-                                            food.iter()
+
+                                                let start = food_per_page * page.get();
+                                                let end = std::cmp::min(
+                                                    start + food_per_page,
+                                                    food.len(),
+                                                );
+                                                set_total_pages(
+                                                    (food.len() as f32 / food_per_page as f32 - 1.0).ceil()
+                                                        as usize,
+                                                );
+                                                let food_page = &food[start as usize..end as usize];
+                                            food_page.iter()
                                                 .map(move |item| {
 
                                                     view! { cx,
@@ -166,6 +181,7 @@ pub fn FoodPage(cx: Scope) -> impl IntoView {
 
                     view! { cx,
                         <div class="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">{food_view}</div>
+                        <Pagination page=page set_page=set_page total_pages=total_pages/>
                     }
                 }}
 
