@@ -4,7 +4,7 @@ use leptos_meta::*;
 use leptos_router::*;
 
 use crate::components::shared::{footer::Footer, nav::Nav};
-use crate::pages::{bookshelf::BookshelfPage, homepage::HomePage};
+use crate::pages::{bookshelf::BookshelfPage, food::FoodPage, homepage::HomePage};
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -37,6 +37,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
                     <Route path="bookshelf" view=BookshelfPage ssr=SsrMode::Async/>
+                    <Route path="food" view=FoodPage ssr=SsrMode::Async/>
                 </Routes>
 
             </main>

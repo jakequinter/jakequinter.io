@@ -16,7 +16,6 @@ cfg_if! {
         use leptos_axum::{generate_route_list, LeptosRoutes, handle_server_fns_with_context};
         use leptos::{log, view, provide_context, get_configuration};
         use sqlx::mysql::{MySqlPool, MySqlPoolOptions};
-        use sqlx::Row;
 
         use leptos_router::RouteListing;
         use leptos::LeptosOptions;

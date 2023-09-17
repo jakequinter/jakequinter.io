@@ -87,7 +87,7 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                 view! { cx, <div>Loading...</div> }
             }>
                 {move || {
-                    let tab_books = {
+                    let books_view = {
                         move || {
                             oku.read(cx)
                                 .map(move |oku| match oku {
@@ -162,7 +162,7 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                     };
 
                     view! { cx,
-                        <ul class="space-y-4">{tab_books}</ul>
+                        <ul class="space-y-4">{books_view}</ul>
                         <Pagination page=page set_page=set_page total_pages=total_pages/>
                     }
                 }}
