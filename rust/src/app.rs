@@ -4,7 +4,7 @@ use leptos_meta::*;
 use leptos_router::*;
 
 use crate::components::shared::{footer::Footer, nav::Nav};
-use crate::pages::{bookshelf::BookshelfPage, homepage::HomePage};
+use crate::pages::{bookshelf::BookshelfPage, food::FoodPage, homepage::HomePage};
 
 #[component]
 pub fn App(cx: Scope) -> impl IntoView {
@@ -16,7 +16,7 @@ pub fn App(cx: Scope) -> impl IntoView {
         // id=leptos means cargo-leptos will hot-reload this stylesheet
         <Link rel="preconnect" href="https://fonts.googleapis.com"/>
         <Link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <Stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"/>
+        <Stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"/>
         <Stylesheet id="leptos" href="/pkg/jakequinter_io.css"/>
 
         // sets the document title
@@ -37,6 +37,7 @@ pub fn App(cx: Scope) -> impl IntoView {
                 <Routes>
                     <Route path="" view=|cx| view! { cx, <HomePage/> }/>
                     <Route path="bookshelf" view=BookshelfPage ssr=SsrMode::Async/>
+                    <Route path="food" view=FoodPage ssr=SsrMode::Async/>
                 </Routes>
 
             </main>

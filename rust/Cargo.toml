@@ -29,6 +29,9 @@ chrono-tz = "0.8.3"
 serde = { version = "1.0.188", features = ["derive"] }
 reqwest = "0.11.20"
 rss = "2.0.6"
+sqlx = { version = "0.7.1", features = [ "mysql", "runtime-tokio-rustls" ], optional = true }
+dotenv = "0.15.0"
+futures = "0.3.28"
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
@@ -38,6 +41,7 @@ ssr = [
     "dep:tower",
     "dep:tower-http",
     "dep:leptos_axum",
+	  "dep:sqlx",
     "leptos/ssr",
     "leptos_meta/ssr",
     "leptos_router/ssr",
