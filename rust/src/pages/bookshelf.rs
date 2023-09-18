@@ -5,7 +5,8 @@ use reqwest;
 use rss::Channel;
 use serde::{Deserialize, Serialize};
 
-use crate::components::bookshelf::{pagination::Pagination, tabs::Tabs};
+use crate::components::bookshelf::tabs::Tabs;
+use crate::components::shared::pagination::Pagination;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Book {
@@ -68,6 +69,7 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
     let (active_tab, set_active_tab) = create_signal(cx, String::from("Reading"));
     let (page, set_page) = create_signal(cx, 0);
     let (total_pages, set_total_pages) = create_signal(cx, 0);
+    let (total_items, set_total_items) = create_signal(cx, 0);
     let oku = create_resource(cx, || (), |_| async { get_oku_content().await });
     let books_per_page = 10;
 
@@ -101,10 +103,12 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
                                         let active_books = oku_content.get(&*active_tab.get());
                                         if let Some(books) = active_books {
                                             if books.is_empty() {
+                                                set_total_items(0);
 
                                                 view! { cx, <p>"No tasks were found."</p> }
                                                     .into_view(cx)
                                             } else {
+                                                set_total_items(books.len());
                                                 let start = books_per_page * page.get();
                                                 let end = std::cmp::min(
                                                     start + books_per_page,
@@ -163,7 +167,12 @@ pub fn BookshelfPage(cx: Scope) -> impl IntoView {
 
                     view! { cx,
                         <ul class="space-y-4">{books_view}</ul>
-                        <Pagination page=page set_page=set_page total_pages=total_pages/>
+                        <Pagination
+                            page=page
+                            set_page=set_page
+                            total_pages=total_pages
+                            total_items=total_items
+                        />
                     }
                 }}
 
