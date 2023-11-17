@@ -30,7 +30,7 @@ export default function GA() {
                 gtag('js', new Date());
 
                 gtag('consent', 'default', {
-                    'analytics_storage': 'denied'
+                    'analytics_storage': 'granted'
                 });
                 
                 gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
