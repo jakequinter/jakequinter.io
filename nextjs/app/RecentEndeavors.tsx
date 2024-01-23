@@ -32,7 +32,7 @@ const projects = [
     name: 'Bison Drywall',
     logo: '/images/bison.svg',
     description:
-      'A website I built for a friend who started his own drywall business. The most enjoyable part was creating the photos marquee section, which sources photos from his Facebook account through the Facebook Graph API.',
+      'A website (recently rewritten in OCaml) I built for a friend who started his own drywall business. The most enjoyable part was creating the photos marquee section, which sources photos from his Facebook account through the Facebook Graph API.',
     url: 'https://bisondrywall.io',
     githubUrl: 'https://github.com/jakequinter/bisondrywall.io',
   },

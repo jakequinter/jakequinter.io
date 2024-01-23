@@ -38,13 +38,10 @@ export default function ContactDropdown() {
   return (
     <DropdownMenu.Root open={open} onOpenChange={setOpen}>
       <DropdownMenu.Trigger asChild>
-        <button className="inline-flex items-center gap-2 rounded-[10px] bg-white py-2.5 px-4 font-medium text-black hover:bg-gray-100">
+        <button className="inline-flex items-center gap-2 rounded-[10px] bg-white py-[7.8px] px-4 font-medium text-black hover:bg-gray-100">
           Contact
           <CaretDown
-            className={classNames(
-              open ? 'rotate-180' : '',
-              'transition duration-150 ease-in-out'
-            )}
+            className={classNames(open ? 'rotate-180' : '', 'transition duration-150 ease-in-out')}
           />
         </button>
       </DropdownMenu.Trigger>
@@ -57,12 +54,7 @@ export default function ContactDropdown() {
               alignOffset={-6}
               className="mt-2 rounded-2xl bg-black/80 p-1.5 text-gray-200 shadow backdrop-blur-sm"
             >
-              <motion.div
-                initial="closed"
-                animate={controls}
-                exit="closed"
-                variants={variants}
-              >
+              <motion.div initial="closed" animate={controls} exit="closed" variants={variants}>
                 <DropdownMenu.Item className="rounded-[10px] outline-none focus:bg-gray-700 focus:text-white">
                   <Link
                     href="mailto:hello@jakequinter.io"
