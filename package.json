@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
-    "@prisma/client": "^4.12.0",
+    "@prisma/client": "^5.12.1",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@tailwindcss/forms": "^0.5.3",
     "@types/node": "18.15.0",
@@ -43,7 +43,7 @@
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
-    "prisma": "^4.12.0",
+    "prisma": "^5.12.1",
     "tailwindcss": "^3.2.7"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
