@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import FoodContent from './FoodContent';
+// import FoodContent from './FoodContent';
+import InfoCard from './InfoCard';
 
 export const revalidate = 60;
 
@@ -9,15 +10,15 @@ export const metadata: Metadata = {
   description: 'A list of food I have tried, liked, or disliked.',
 };
 
-async function getFoodData() {
-  const response = await fetch(`${process.env.SITE_URL}/api/food`, { next: { revalidate: 60 } });
-  const data = await response.json();
-
-  return data;
-}
+// async function getFoodData() {
+//   const response = await fetch(`${process.env.SITE_URL}/api/food`, { next: { revalidate: 60 } });
+//   const data = await response.json();
+//
+//   return data;
+// }
 
 export default async function page() {
-  const food = await getFoodData();
+  // const food = await getFoodData();
 
   return (
     <div>
@@ -34,7 +35,8 @@ export default async function page() {
         we&apos;ve tried, give it a rating, and remember it for future reference.
       </p>
 
-      <FoodContent data={food} />
+      {/*<FoodContent data={food} />*/}
+      <InfoCard />
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { Montserrat } from "next/font/google";
+import { Montserrat } from 'next/font/google';
 
 import classNames from '@/utils/classNames';
 import Footer from '@/components/Footer';
-import GA from '@/components/GA';
 import Nav from '@/components/Nav';
 import './globals.css';
 
@@ -25,21 +24,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={classNames(
-        montserrat.className,
-        'bg-gray-100 text-base text-gray-700'
-      )}
+      className={classNames(montserrat.className, 'bg-gray-100 text-base text-gray-700')}
     >
       <body>
-        <GA />
         <Nav />
         <main className="mx-auto mt-40 max-w-screen-sm px-4 sm:px-0">
           <div className="mb-20" style={{ minHeight: 'calc(100vh - 289px)' }}>
